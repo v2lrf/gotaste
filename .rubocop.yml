@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**/*
+  DisplayCopNames: true
+  TargetRailsVersion: 5.0
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
