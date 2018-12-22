@@ -14,7 +14,7 @@ class GraphqlController < ApplicationController
   private
 
   def result
-    WinegraphSchema.execute(
+    GovinuSchema.execute(
       query,
       variables:      variables,
       context:        context,

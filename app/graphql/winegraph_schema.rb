@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class WinegraphSchema < GraphQL::Schema
+class GovinuSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 end
