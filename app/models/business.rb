@@ -2,5 +2,12 @@
 
 class Business < ApplicationRecord
   validates :name, :street_name, :street_number,
-            :postal_code, :city, :latitude, :longitude, presence: true
+            :postal_code, :city, :latitude, :longitude,
+            :business_type, presence: true
+
+  enum business_type: {
+    shop:       0,
+    bar:        1,
+    restaurant: 2
+  }
 end

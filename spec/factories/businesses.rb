@@ -9,5 +9,6 @@ FactoryBot.define do
     city          { 'Copenhagen' }
     latitude      { 55.6761 }
     longitude     { 12.5683 }
+    business_type { :shop }
   end
 end
