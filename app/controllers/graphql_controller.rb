@@ -31,7 +31,9 @@ class GraphqlController < ApplicationController
   end
 
   def context
-    {}
+    {
+      current_user: current_user
+    }
   end
 
   def operation_name
