@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :event do
-    title { 'Wine Event' }
+    title       { 'Wine Event' }
     association :host, factory: :business
-    begins_at { '2019-01-02 17:03:46' }
+    begins_at   { Date.tomorrow.in_time_zone.change(hour: 20) }
   end
 end
