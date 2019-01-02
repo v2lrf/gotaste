@@ -10,4 +10,9 @@ class Business < ApplicationRecord
     bar:        1,
     restaurant: 2
   }
+
+  has_many :events,
+           foreign_key: :host_id,
+           inverse_of:  :host,
+           dependent:   :destroy
 end
