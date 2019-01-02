@@ -17,5 +17,9 @@ module Types
     field :ends_at, GraphQL::Types::ISO8601DateTime,
           description: 'When the event ends.',
           null:        true
+
+    def host
+      Loaders::FindLoader.for(Business).load(object.host_id)
+    end
   end
 end

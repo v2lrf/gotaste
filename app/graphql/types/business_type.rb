@@ -27,5 +27,9 @@ module Types
           null:           false
 
     field :events, [EventType], 'Events hosted by the business', null: true
+
+    def events
+      Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
+    end
   end
 end
