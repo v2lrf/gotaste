@@ -8,6 +8,7 @@ ruby '2.5.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'graphql'
+gem 'graphql-batch'
 gem 'js-routes'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
