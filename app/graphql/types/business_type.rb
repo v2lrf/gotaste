@@ -25,5 +25,7 @@ module Types
           description:    "Type of the business.
                            Either a _Shop_, _Bar_ or _Restaurant_",
           null:           false
+
+    field :events, [EventType], 'Events hosted by the business', null: true
   end
 end
