@@ -10,6 +10,9 @@
     "semi": false,
     "singleQuote": true
   },
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript"
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "@storybook/react": "^3.4.11",
