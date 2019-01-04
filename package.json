@@ -2,6 +2,7 @@
   "name": "govinu",
   "private": true,
   "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript",
     "prestorybook": "tailwind build ./app/javascript/css/application.css -c ./app/javascript/css/tailwind.js -o ./.storybook/application.css",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest"
@@ -9,9 +10,6 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "scripts": {
-    "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
