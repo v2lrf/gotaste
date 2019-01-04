@@ -5,6 +5,7 @@ AllCops:
     - tmp/**/*
     - vendor/**/*
     - bin/**/*
+    - config/environments/*
   DisplayCopNames: true
   TargetRailsVersion: 5.0
 
