@@ -6,7 +6,6 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/ruby:2.5.3-node-browsers
         environment:
           PGHOST: 127.0.0.1
@@ -19,13 +18,6 @@ jobs:
           POSTGRES_DB: govinu_test
           POSTGRES_PASSWORD: ''
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -37,12 +29,9 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run:
-          name: Yarn Install
-          command: yarn install
+            bundle install --jobs=4 --retry=3 --path vendor/bundle && yarn
 
       - save_cache:
           name: Cache gems
@@ -56,8 +45,6 @@ jobs:
             - ~/.yarn-cache
           key: govinu-yarn-{{ checksum "yarn.lock" }}
 
-      - run: yarn test
-
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
@@ -70,7 +57,12 @@ jobs:
 
       # run tests!
       - run:
-          name: run tests
+          name: Jest
+          command: |
+            yarn test
+
+      - run:
+          name: RSpec
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
