@@ -17,7 +17,7 @@ jobs:
         environment:
           POSTGRES_USER: govinu-test
           POSTGRES_DB: govinu_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: ''
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -32,9 +32,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
       - run:
           name: install dependencies
@@ -55,6 +55,8 @@ jobs:
           paths:
             - ~/.yarn-cache
           key: govinu-yarn-{{ checksum "yarn.lock" }}
+
+      - run: yarn test
 
       # Database setup
       - run: bundle exec rake db:create
