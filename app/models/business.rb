@@ -15,4 +15,10 @@ class Business < ApplicationRecord
            foreign_key: :host_id,
            inverse_of:  :host,
            dependent:   :destroy
+
+  scope :within, ->(latitude, longitude, distance = 1000) {
+    where(%{
+      ST_Distance(longitude_latitude, 'POINT(%f %f)') < %d
+    } % [longitude, latitude, distance])
+  }
 end

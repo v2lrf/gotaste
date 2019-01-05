@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_02_160346) do
+ActiveRecord::Schema.define(version: 2019_01_04_221518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
@@ -29,7 +30,9 @@ ActiveRecord::Schema.define(version: 2019_01_02_160346) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "business_type", null: false
+    t.geography "longitude_latitude", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.index ["business_type"], name: "index_businesses_on_business_type"
+    t.index ["longitude_latitude"], name: "index_businesses_on_longitude_latitude", using: :gist
     t.index ["name"], name: "index_businesses_on_name", unique: true
   end
 
