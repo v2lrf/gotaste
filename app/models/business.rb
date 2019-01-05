@@ -16,9 +16,24 @@ class Business < ApplicationRecord
            inverse_of:  :host,
            dependent:   :destroy
 
-  scope :within, ->(latitude, longitude, distance = 1000) {
-    where(%{
-      ST_Distance(longitude_latitude, 'POINT(%f %f)') < %d
-    } % [longitude, latitude, distance])
-  }
+  before_save :set_longitude_latitude_point
+
+  class << self
+    def closest_within(latitude:, longitude:, distance: 1000)
+      where(
+        "ST_DWithin(longitude_latitude, 'POINT(? ?)', ?)",
+        longitude, latitude, distance
+      ).order(
+        Arel.sql(
+          "ST_Distance(longitude_latitude, 'POINT(#{longitude} #{latitude})')"
+        )
+      )
+    end
+  end
+
+  private
+
+  def set_longitude_latitude_point
+    self.longitude_latitude = "POINT(#{longitude} #{latitude})"
+  end
 end
