@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Fields
-  module Search
+  module BusinessSearch
     def self.included(child_class)
       child_class.field(:search, [Types::BusinessType], null: true) do
         description DESCRIPTION[:search_field]
