@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url:  <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
   database: govinu_production
   username: govinu
   password: <%= ENV['WINEGRAPH_DATABASE_PASSWORD'] %>
