@@ -2,6 +2,8 @@
 
 module Types
   class QueryType < Types::BaseObject
+    include Fields::BusinessSearch
+
     field :businesses, [BusinessType],
           description: 'Wine stores or wine bars.',
           null: true

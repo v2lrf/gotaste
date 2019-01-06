@@ -14,3 +14,10 @@ Rails:
 
 Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/graphql/fields/**/*'
