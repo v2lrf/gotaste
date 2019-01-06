@@ -17,3 +17,7 @@ Documentation:
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/graphql/fields/**/*'
