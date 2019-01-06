@@ -30,5 +30,6 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+.storybook/application.css
 
 .env

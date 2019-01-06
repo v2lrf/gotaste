@@ -5,7 +5,12 @@
     "prettier/prettier": ["error"]
   },
   "globals": {
-    "Routes": false
+    "Routes": false,
+    "describe": true,
+    "beforeEach": true,
+    "shallow": true,
+    "it": true,
+    "expect": true
   },
   "env": {
     "es6": true,
