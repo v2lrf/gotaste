@@ -2,6 +2,10 @@
 
 module Types
   class BusinessType < Types::BaseObject
+    global_id_field :id
+
+    implements GraphQL::Relay::Node.interface
+
     field :name, String, 'Name of the business.', null: false
     field :street_name, String,
           description: 'Name of the street where the business is located.',
