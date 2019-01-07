@@ -3,7 +3,9 @@
 module Fields
   module BusinessSearch
     def self.included(child_class)
-      child_class.field(:search, Types::BusinessType.connection_type, null: true) do
+      child_class.field(
+        :search, Types::BusinessType.connection_type, null: true
+      ) do
         description DESCRIPTION[:search_field]
 
         argument :latitude, Float,

@@ -14,13 +14,4 @@ class GovinuSchema < GraphQL::Schema
     type_name, item_id = GraphQL::Schema::UniqueWithinType.decode(id)
     Object.const_get(type_name).find(item_id)
   end
-
-  def self.resolve_type(type, object, ctx)
-    case object
-    when Business
-      Types::BusinessType
-    else
-      raise("Unexpected object: #{object}")
-    end
-  end
 end
