@@ -9,6 +9,7 @@
     "describe": true,
     "beforeEach": true,
     "shallow": true,
+    "render": true,
     "it": true,
     "expect": true
   },
