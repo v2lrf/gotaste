@@ -32,8 +32,16 @@ module Types
 
     field :events, [EventType], 'Events hosted by the business', null: true
 
+    field :opening_hours, [OpeningHourType],
+          description: 'Opening hours of the business',
+          null:        true
+
     def events
       Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
+    end
+
+    def opening_hours
+      Loaders::ForeignKeyLoader.for(OpeningHour, :business_id).load([object.id])
     end
   end
 end
