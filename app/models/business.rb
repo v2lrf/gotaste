@@ -16,6 +16,8 @@ class Business < ApplicationRecord
            inverse_of:  :host,
            dependent:   :destroy
 
+  has_many :opening_hours, dependent: :destroy
+
   before_save :set_longitude_latitude_point
 
   class << self
