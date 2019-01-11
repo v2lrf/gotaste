@@ -23,7 +23,7 @@ const NavBar = () => (
           <div className="flex items-center sm:justify-between py-4">
             <div className="w-1/4 sm:hidden">
               <svg
-                className="fill-current text-red h-8 w-8"
+                className="fill-current text-white h-8 w-8"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -34,7 +34,7 @@ const NavBar = () => (
             <div className="w-1/2 sm:w-auto text-center">
               <a
                 href={Routes.root_path()}
-                className="text-red text-2xl font-extrabold no-underline"
+                className="text-white text-2xl font-bold no-underline"
               >
                 govinu
               </a>
@@ -45,7 +45,7 @@ const NavBar = () => (
                 {data.viewer ? (
                   <a
                     href={Routes.destroy_user_session_path()}
-                    className="text-grey-darkest no-underline"
+                    className="text-white no-underline"
                     data-method="delete"
                   >
                     Sign out
@@ -53,7 +53,7 @@ const NavBar = () => (
                 ) : (
                   <a
                     href={Routes.new_user_session_path()}
-                    className="text-grey-darkest no-underline"
+                    className="text-white no-underline"
                   >
                     Sign in
                   </a>
