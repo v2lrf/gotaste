@@ -4,7 +4,7 @@ import Spacer from './Spacer'
 describe('Spacer', () => {
   let component
   beforeEach(() => {
-    component = render(<Spacer>I am inside a spacer!</Spacer>)
+    component = shallow(<Spacer>I am inside a spacer!</Spacer>)
   })
 
   describe('Snapshots', () => {
