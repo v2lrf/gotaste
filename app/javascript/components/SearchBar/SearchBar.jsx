@@ -6,8 +6,8 @@ class SearchBar extends Component {
   componentDidMount() {
     const { onChange } = this.props
     const placesAutocomplete = Places({
-      appId: 'plLOLX7HJZL4',
-      apiKey: '8d3d74f780371b26a3f07b788a85e592',
+      appId: process.env.ALGOLIA_PLACES_APP_ID,
+      apiKey: process.env.ALGOLIA_PLACES_API_KEY,
       container: this.autoCompletePlace
     })
     placesAutocomplete.on('change', event => onChange(event))
