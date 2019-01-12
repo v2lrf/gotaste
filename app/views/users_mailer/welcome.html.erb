@@ -1,8 +1,7 @@
-<h1>Kære <%= @user.first_name %>,</h1>
+<h1><%= I18n.t('users_mailer.welcome.headline', first_name: @user.first_name) %></h1>
 
 <p>
-  Velkommen til Govinu! Du kan nu logge ind og få adgang til alle de fordele
-  der er ved at være medlem.
+  <%= I18n.t('users_mailer.welcome.body') %>
 </p>
 
 <p>

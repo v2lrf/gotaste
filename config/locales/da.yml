@@ -1,4 +1,6 @@
-en:
+da:
   users_mailer:
     welcome:
       subject: "Velkommen til Govinu"
+      headline: "Kære %{first_name},"
+      body: "Velkommen til Govinu! Du kan nu logge ind og få adgang til alle de fordele der er ved at være medlem."

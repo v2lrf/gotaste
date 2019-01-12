@@ -2,3 +2,5 @@ en:
   users_mailer:
     welcome:
       subject: "Welcome to Govinu"
+      headline: "Dear %{first_name},"
+      body: "Welcome to Govinu!"

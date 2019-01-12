@@ -1,7 +1,5 @@
-Kære <%= @user.first_name %>,
+<%= I18n.t('users_mailer.welcome.headline', first_name: @user.first_name) %>
 
-
-Velkommen til Govinu! Du kan nu logge ind og få adgang til alle de fordele
-der er ved at være medlem.
+<%= I18n.t('users_mailer.welcome.body') %>
 
 <%= root_url %>
