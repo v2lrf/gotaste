@@ -37,5 +37,8 @@ module Govinu
     config.action_mailer.postmark_settings = {
       api_token: ENV['POSTMARK_API_KEY']
     }
+
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = %i[en da]
   end
 end

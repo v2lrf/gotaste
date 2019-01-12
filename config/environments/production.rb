@@ -112,4 +112,6 @@ Rails.application.configure do
     host:     'www.govinu.dk',
     protocol: 'https'
   }
+
+  config.i18n.fallbacks = true
 end

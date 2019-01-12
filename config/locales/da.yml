@@ -1,0 +1,16 @@
+da:
+  activerecord:
+    models:
+      user: Bruger
+    attributes:
+      user:
+        first_name: Fornavn
+        last_name: Efternavn
+        email: E-mail
+        password: Adgangskode
+        password_confirmation: Bekræft adgangskode
+  users_mailer:
+    welcome:
+      subject: "Velkommen til Govinu"
+      headline: "Kære %{first_name},"
+      body: "Velkommen til Govinu! Du kan nu logge ind og få adgang til alle de fordele der er ved at være medlem."
