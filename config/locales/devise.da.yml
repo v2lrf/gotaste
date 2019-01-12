@@ -56,3 +56,5 @@ da:
         subject: 'Genåbning af konto'
       password_change:
         subject: 'Adgangskode ændret'
+      email_changed:
+        subject: 'E-mail ændret'

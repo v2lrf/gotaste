@@ -23,4 +23,7 @@ da:
     password_change:
       headline: "Kære %{first_name},"
       body: "Vi kontakter dig, for at fortælle dig at din adgangskode er blevet ændret."
+    email_changed:
+      headline: "Kære %{first_name},"
+      body: "Vi kontakter dig, for at fortælle dig at din e-mail er blevet ændret til %{email}."
 

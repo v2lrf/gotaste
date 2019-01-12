@@ -9,6 +9,10 @@ class DevisePreview < ActionMailer::Preview
     Devise::Mailer.password_change(user)
   end
 
+  def email_changed
+    Devise::Mailer.email_changed(user)
+  end
+
   private
 
   def user
