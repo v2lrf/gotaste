@@ -14,3 +14,15 @@ en:
       subject: "Welcome to Govinu"
       headline: "Dear %{first_name},"
       body: "Welcome to Govinu!"
+  devise_mailer:
+    reset_password_instructions:
+      headline: "Reset your password"
+      body: "You told us you forgot your password. If you really did, click here to choose a new one:"
+      link: "Change my password"
+      disclaimer: "If you didn’t mean to reset your password, then you can just ignore this email; your password will not change."
+    password_change:
+      headline: "Dear %{first_name},"
+      body: "We're contacting you to notify you that your password has been changed."
+    email_changed:
+      headline: "Dear %{first_name},"
+      body: "We're contacting you to notify you that your email is being changed to %{email}."

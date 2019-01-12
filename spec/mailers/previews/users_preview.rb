@@ -5,6 +5,8 @@ class UsersPreview < ActionMailer::Preview
     UsersMailer.welcome(user: user)
   end
 
+  private
+
   def user
     @user ||= User.new(
       email:      'jens_hansen@example.com',

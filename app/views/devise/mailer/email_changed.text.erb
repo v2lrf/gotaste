@@ -1,0 +1,7 @@
+<%= I18n.t('devise_mailer.email_changed.headline', first_name: @resource.first_name) %>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <%= I18n.t('devise_mailer.email_changed.body', email: @resource.unconfirmed_email) %>
+<% else %>
+  <%= I18n.t('devise_mailer.email_changed.body', email: @resource.email) %>
+<% end %>
