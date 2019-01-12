@@ -20,4 +20,7 @@ da:
       body: "Du har fortalt os, at du har glemt din adgangskode. Hvis du virkelig har det, så klik her for at lave en ny:"
       link: "Skift min adgangskode"
       disclaimer: "Hvis du ikke bedt om at få nulstillet din adgangskode, kan du blot ignorere denne e-mail: Din adgangskode vil ikke blive ændret."
+    password_change:
+      headline: "Kære %{first_name},"
+      body: "Vi kontakter dig, for at fortælle dig at din adgangskode er blevet ændret."
 

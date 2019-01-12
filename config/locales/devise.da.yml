@@ -54,3 +54,5 @@ da:
         subject: 'Nulstil din adgangskode'
       unlock_instructions:
         subject: 'Genåbning af konto'
+      password_change:
+        subject: 'Adgangskode ændret'

@@ -9,6 +9,10 @@ class UsersPreview < ActionMailer::Preview
     Devise::Mailer.reset_password_instructions(user, 'faketoken', {})
   end
 
+  def password_change
+    Devise::Mailer.password_change(user)
+  end
+
   private
 
   def user
