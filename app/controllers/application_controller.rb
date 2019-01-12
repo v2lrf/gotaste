@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :require_admin_in_production!, unless: :devise_controller?
+  before_action :set_locale
 
   private
 
@@ -10,5 +11,9 @@ class ApplicationController < ActionController::Base
     return if current_user&.admin?
 
     render 'landing/_coming_soon'
+  end
+
+  def set_locale
+    I18n.locale = :da
   end
 end

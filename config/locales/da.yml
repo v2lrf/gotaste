@@ -1,0 +1,4 @@
+en:
+  users_mailer:
+    welcome:
+      subject: "Velkommen til Govinu"
