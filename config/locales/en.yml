@@ -1,4 +1,14 @@
 en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        first_name: First name
+        last_name: Last name
+        email: email
+        password: Password
+        password_confirmation: Confirm password
   users_mailer:
     welcome:
       subject: "Welcome to Govinu"
