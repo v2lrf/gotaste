@@ -15,7 +15,7 @@ da:
       unauthenticated: 'Du skal logge ind for at kunne fortsætte.'
       unconfirmed: 'Du skal bekræfte din konto for at kunne fortsætte.'
       locked: 'Din konto er låst i de næste to timer.'
-      invalid: 'Email eller kodeord er ikke gyldig.'
+      invalid: 'Email eller adgangskode er ikke gyldig.'
       invalid_token: 'Ugyldig token til autorisering.'
       timeout: 'Din session er udløbet. Log ind igen for at kunne fortsætte.'
       inactive: 'Din konto er ikke bekræftet.'
@@ -23,10 +23,10 @@ da:
       signed_in: 'Du er nu logget ind.'
       signed_out: 'Du er nu logget ud.'
     passwords:
-      send_instructions: 'Du vil om et øjeblik modtage en email vedrørende nulstilling af kodeord.'
-      updated: 'Dit kodeord er ændret og du er nu logget ind.'
-      updated_not_active: 'Dit kodeord er ændret.'
-      send_paranoid_instructions: 'Hvis din e-mail adresse findes i vores database vil du modtage et link til hvor du kan nulstille dit kodeord.'
+      send_instructions: 'Du vil om et øjeblik modtage en email vedrørende nulstilling af adgangskode.'
+      updated: 'Din adgangskode er ændret og du er nu logget ind.'
+      updated_not_active: 'Din adgangskode er ændret.'
+      send_paranoid_instructions: 'Hvis din e-mail adresse findes i vores database vil du modtage et link til hvor du kan nulstille din adgangskode.'
     confirmations:
       send_instructions: 'Om få minutter vil du modtage en email med instruktioner om aktivering af din konto.'
       send_paranoid_instructions: 'Hvis din e-mail adresse findes i vores database vil du modtage en e-mail med instruktioner om hvordan du kan aktivere din konto.'
@@ -51,6 +51,6 @@ da:
       confirmation_instructions:
         subject: 'Bekræftelsesinstruktioner'
       reset_password_instructions:
-        subject: 'Nulstilling af kodeord'
+        subject: 'Nulstil din adgangskode'
       unlock_instructions:
         subject: 'Genåbning af konto'
