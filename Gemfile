@@ -16,6 +16,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'postmark-rails'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2'
+gem 'rails-i18n'
 gem 'rollbar'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
