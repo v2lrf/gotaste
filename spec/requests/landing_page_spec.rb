@@ -7,7 +7,9 @@ RSpec.describe 'Landing page', type: :request do
     subject { get root_path }
 
     context 'when env is production' do
-      before { Rails.env.stub(production?: true) }
+      before do
+        allow(Rails).to receive(:env) { 'production'.inquiry }
+      end
 
       context 'when user is not signed in' do
         it 'renders "coming soon"' do
