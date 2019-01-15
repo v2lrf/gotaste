@@ -45,6 +45,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
     bcrypt (3.1.12)
@@ -91,6 +93,10 @@ GEM
       railties (>= 3.2)
       sprockets-rails
     json (2.1.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -134,6 +140,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
     rack-proxy (0.6.5)
@@ -162,6 +169,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
     railties (5.2.2)
       actionpack (= 5.2.2)
       activesupport (= 5.2.2)
@@ -270,6 +280,7 @@ DEPENDENCIES
   graphql
   graphql-batch
   js-routes
+  letter_opener
   listen (>= 3.0.5, < 3.2)
   oj
   pg (>= 0.18, < 2.0)
@@ -279,6 +290,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.2)
   rails-controller-testing
+  rails-i18n
   rb-readline (~> 0.5.5)
   rollbar
   rspec-rails (~> 3.8)
