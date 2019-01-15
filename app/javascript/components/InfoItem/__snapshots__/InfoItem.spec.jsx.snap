@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoItem Snapshots should match the large snapshot 1`] = `
+<div
+  className="flex items-center"
+>
+  <figure
+    className="flex self-start p-2 mr-2 bg-white shadow rounded-full w-16 h-16"
+  >
+    <img
+      alt=""
+      className="rounded-full"
+      src="https://via.placeholder.com/150"
+    />
+  </figure>
+  <div
+    className="flex-grow"
+  >
+    <div
+      className="font-bold text-xl"
+    >
+      I am a headline
+    </div>
+    <div
+      className="text-grey-darker text-base"
+    >
+      I am a tagline
+    </div>
+  </div>
+</div>
+`;
+
+exports[`InfoItem Snapshots should match the regular snapshot 1`] = `
+<div
+  className="flex items-center"
+>
+  <figure
+    className="flex self-start p-2 mr-2 bg-white shadow rounded-full w-12 h-12"
+  >
+    <img
+      alt=""
+      className="rounded-full"
+      src="https://via.placeholder.com/150"
+    />
+  </figure>
+  <div
+    className="flex-grow"
+  >
+    <div
+      className="font-bold text-base"
+    >
+      I am a headline
+    </div>
+    <div
+      className="text-grey-darker text-sm"
+    >
+      I am a tagline
+    </div>
+  </div>
+</div>
+`;

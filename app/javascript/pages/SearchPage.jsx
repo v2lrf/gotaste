@@ -25,6 +25,7 @@ const SearchPage = () => (
           </h2>
           <Row>
             <Col offset width="1/2">
+              {/* eslint-disable-next-line no-console */}
               <SearchBar onChange={event => console.log(event)} />
             </Col>
           </Row>
