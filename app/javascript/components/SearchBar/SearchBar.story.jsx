@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import SearchBar from './SearchBar'
+import { SearchBar } from '.'
 
 storiesOf('SearchBar', module).add('Default', () => (
   <div className="p-16 bg-grey-lighter">

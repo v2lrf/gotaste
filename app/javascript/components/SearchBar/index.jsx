@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Places from 'places.js'
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
   componentDidMount() {
     const { onChange } = this.props
     const placesAutocomplete = Places({

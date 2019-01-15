@@ -20,7 +20,7 @@ const sizes = [
   false
 ]
 
-function Spacer({
+export function Spacer({
   children,
   top,
   right,
