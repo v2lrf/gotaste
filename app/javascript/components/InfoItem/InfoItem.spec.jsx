@@ -1,5 +1,5 @@
 import React from 'react'
-import { InfoItem } from './index'
+import { InfoItem } from './'
 
 describe('InfoItem', () => {
   let component

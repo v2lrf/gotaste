@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
+export function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   const figureClasses = classnames(
     'flex self-start p-2 mr-2 bg-white shadow rounded-full',
     {
