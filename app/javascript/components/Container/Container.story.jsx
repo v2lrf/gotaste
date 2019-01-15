@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Container from './Container'
+import { Container } from '.'
 
 storiesOf('Container', module).add('Default', () => (
   <Fragment>

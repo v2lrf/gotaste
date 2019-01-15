@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import componentConfig from '../componentConfig'
 
-function Button({ children, type, kind }) {
-  const classNames = classnames(componentConfig.button.base, {
-    [componentConfig.button.primary]: kind === 'primary',
-    [componentConfig.button.secondary]: kind === 'secondary'
+export function Button({ children, type, kind }) {
+  const classNames = classnames('px-6 h-10 rounded shadow tracking-wide', {
+    'bg-red-darker text-white border border-red-darker hover:bg-red-darkest hover:border-red-darkest':
+      kind === 'primary',
+    'bg-white text-red-darker border border-red-darker hover:bg-red-darkest hover:text-white':
+      kind === 'secondary'
   })
 
   return (

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 
-import Container from '../components/Container/Container'
+import { Container } from '../components/Container'
 import NavBar from '../components/NavBar'
-import SearchBar from '../components/SearchBar/SearchBar'
-import Spacer from '../components/Spacer/Spacer'
+import { SearchBar } from '../components/SearchBar'
+import { Spacer } from '../components/Spacer'
 import { Row, Col } from '../components/Grid'
 
 const heroImageUrl =
