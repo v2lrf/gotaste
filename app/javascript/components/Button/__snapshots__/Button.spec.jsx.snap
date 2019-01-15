@@ -2,7 +2,7 @@
 
 exports[`Button Snapshots should match the snapshot 1`] = `
 <button
-  className="px-6 h-10 m-4 rounded shadow tracking-wide bg-red-darker text-white border border-red-darker hover:bg-red-darkest hover:border-red-darkest"
+  className="px-6 h-10 rounded shadow tracking-wide bg-red-darker text-white border border-red-darker hover:bg-red-darkest hover:border-red-darkest"
   type="submit"
 >
   I am a button!
