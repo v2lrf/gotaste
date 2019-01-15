@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { InfoItem } from './'
+import { InfoItem } from '.'
 
 storiesOf('InfoItem', module).add('Default', () => (
   <Fragment>

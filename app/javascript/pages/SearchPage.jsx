@@ -22,6 +22,7 @@ const SearchPage = () => (
           <h2 className="text-4xl font-serif text-white text-center mb-4">
             Smag på den bedste vin
           </h2>
+          {/* eslint-disable-next-line no-console */}
           <SearchBar onChange={event => console.log(event)} />
         </Spacer>
       </Container>
