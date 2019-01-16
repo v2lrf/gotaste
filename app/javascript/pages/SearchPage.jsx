@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { Container } from '../components/Container'
-import NavBar from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/SearchBar'
 import { Spacer } from '../components/Spacer'
 import { Row, Col } from '../components/Grid'
@@ -18,7 +18,7 @@ const SearchPage = () => (
       }}
     >
       <Container>
-        <NavBar />
+        <NavBar transparent />
         <Spacer top="20" bottom="32" inner>
           <h2 className="text-4xl font-serif text-white text-center mb-4">
             Smag på den bedste vin
