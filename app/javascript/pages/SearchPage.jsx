@@ -18,9 +18,7 @@ const SearchPage = () => (
       }}
     >
       <Container>
-        {/* <Spacer top="8" inner> */}
         <NavBar transparent />
-        {/* </Spacer> */}
         <Spacer top="20" bottom="32" inner>
           <h2 className="text-4xl font-serif text-white text-center mb-4">
             Smag på den bedste vin
