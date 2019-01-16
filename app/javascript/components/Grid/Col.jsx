@@ -14,12 +14,18 @@ const widths = [
   '3/5',
   '4/5',
   '1/6',
-  '5/6'
+  '5/6',
+  false
 ]
 
-function Col({ width, offset, children }) {
+function Col({ xs, sm, md, lg, xl, offset, children }) {
   const colClasses = classnames('px-2', {
-    [`w-${width}`]: width,
+    'w-full': !xs,
+    [`w-${xs}`]: xs,
+    [`sm:w-${sm}`]: sm,
+    [`md:w-${md}`]: md,
+    [`lg:w-${lg}`]: lg,
+    [`xl:w-${xl}`]: xl,
     'ml-auto': offset,
     'mr-auto': offset
   })
@@ -28,12 +34,21 @@ function Col({ width, offset, children }) {
 }
 
 Col.propTypes = {
-  width: PropTypes.oneOf(widths).isRequired,
+  xs: PropTypes.oneOf(widths),
+  sm: PropTypes.oneOf(widths),
+  md: PropTypes.oneOf(widths),
+  lg: PropTypes.oneOf(widths),
+  xl: PropTypes.oneOf(widths),
   offset: PropTypes.bool,
   children: PropTypes.node.isRequired
 }
 
 Col.defaultProps = {
+  xs: false,
+  sm: false,
+  md: false,
+  lg: false,
+  xl: false,
   offset: false
 }
 

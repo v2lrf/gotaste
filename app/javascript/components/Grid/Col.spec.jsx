@@ -6,7 +6,7 @@ describe('Col', () => {
   let props
   beforeEach(() => {
     props = {
-      width: 'full'
+      sm: 'full'
     }
 
     component = render(<Col {...props}>See, I am inside a col!</Col>)
