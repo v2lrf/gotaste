@@ -34,7 +34,7 @@ const NavBar = () => (
             <div className="w-1/2 sm:w-auto text-center">
               <a
                 href={Routes.root_path()}
-                className="text-white text-2xl font-bold no-underline"
+                className="text-red text-2xl font-bold no-underline"
               >
                 govinu
               </a>
