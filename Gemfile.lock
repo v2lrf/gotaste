@@ -77,6 +77,8 @@ GEM
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
     ffi (1.9.25)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.11)
@@ -276,6 +278,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot_rails
+  friendly_id
   graphiql-rails
   graphql
   graphql-batch

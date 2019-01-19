@@ -36,6 +36,8 @@ module Types
           description: 'Opening hours of the business',
           null:        true
 
+    field :slug, String, 'Slug of the business.', null: false
+
     def events
       Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
     end
