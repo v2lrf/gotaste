@@ -34,7 +34,7 @@ export function NavBar({ transparent }) {
                 <nav className="pb-4 pt-1 sm:pb-0 sm:pt-0 overflow-hidden max-w-full">
                   <ul className="list-reset flex overflow-x-auto flex-row whitespace-no-wrap text-sm sm:text-base">
                     <NavItem to={Routes.discover_path()} label="Begivenheder" />
-                    <NavItem to="#" label="Forhandlere" />
+                    <NavItem to={Routes.businesses_path()} label="Steder" />
                     {data.viewer ? (
                       <NavItem
                         to={Routes.destroy_user_session_path()}
