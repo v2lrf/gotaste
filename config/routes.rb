@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resource :discover, only: :show
   resources :businesses, only: %i[index show]
+  resources :events, only: :show
 
   root 'landing#index'
 end
