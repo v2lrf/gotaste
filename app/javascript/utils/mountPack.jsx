@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
-import ApolloClient from 'apollo-boost'
-import { camelCaseKeys } from './transformKeys'
 
-const client = new ApolloClient()
+import { camelCaseKeys } from './transformKeys'
+import client from './client'
 
 const mountPack = (componentClass, elementId) => {
   const element = document.getElementById(elementId)
