@@ -10,6 +10,7 @@ const SEARCH_FOR_BUSINESSES = gql`
     search(latitude: $latitude, longitude: $longitude) {
       edges {
         node {
+          id
           name
         }
       }
@@ -32,8 +33,8 @@ function DiscoverPage() {
             if (loading) return 'Loading...'
             if (error) return `Error! ${error.message}`
             return data.search.edges.map(result => {
-              const { name } = result.node
-              return <div>{name}</div>
+              const { id, name } = result.node
+              return <div key={id}>{name}</div>
             })
           }}
         </Query>

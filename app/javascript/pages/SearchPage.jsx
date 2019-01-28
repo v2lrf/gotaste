@@ -12,18 +12,17 @@ import Routes from '../services/Routes'
 const heroImageUrl =
   'https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=600&q=80'
 
-class SearchPage extends Component {
+export class SearchPage extends Component {
   constructor(props) {
     super(props)
     this.form = createRef()
+    this.state = {
+      latitude: 0,
+      longitude: 0
+    }
   }
 
-  state = {
-    latitude: 0,
-    longitude: 0
-  }
-
-  handleSubmit = event => {
+  handleSubmit(event) {
     const {
       suggestion: { latlng }
     } = event

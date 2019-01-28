@@ -1,4 +1,3 @@
-// TODO: Write specs
 export function getParameterByName(name, url = window.location.href) {
   const parsedName = name.replace(/[[]]/g, '\\$&')
   // eslint-disable-next-line prefer-template
