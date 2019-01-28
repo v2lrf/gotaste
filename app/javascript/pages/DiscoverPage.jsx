@@ -8,11 +8,9 @@ import { NavBar } from '../components/NavBar'
 const SEARCH_FOR_BUSINESSES = gql`
   query searchForBusinesses($latitude: Float!, $longitude: Float!) {
     search(latitude: $latitude, longitude: $longitude) {
-      edges {
-        node {
-          id
-          name
-        }
+      nodes {
+        id
+        name
       }
     }
   }
@@ -32,8 +30,8 @@ function DiscoverPage() {
           {({ loading, error, data }) => {
             if (loading) return 'Loading...'
             if (error) return `Error! ${error.message}`
-            return data.search.edges.map(result => {
-              const { id, name } = result.node
+            return data.search.nodes.map(node => {
+              const { id, name } = node
               return <div key={id}>{name}</div>
             })
           }}
