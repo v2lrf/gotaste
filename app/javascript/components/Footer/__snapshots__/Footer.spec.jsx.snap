@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer Snapshots should match the snapshot 1`] = `
-<div>
+<Fragment>
   <Container>
     <div
       className="flex border-b py-10"
@@ -98,5 +98,5 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
       </div>
     </div>
   </Container>
-</div>
+</Fragment>
 `;

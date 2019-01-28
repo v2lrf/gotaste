@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { Container } from '../Container'
 
 export function Footer() {
   return (
-    <div>
+    <Fragment>
       <Container>
         <div className="flex border-b py-10">
           <div className="pr-16">
@@ -62,7 +62,7 @@ export function Footer() {
           </div>
         </div>
       </Container>
-    </div>
+    </Fragment>
   )
 }
 
