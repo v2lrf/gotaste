@@ -3,12 +3,12 @@ import { ApolloClient } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { HttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
-import Rollbar from '../services/Rollbar'
+import rollbar from '../services/Rollbar'
 
 const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
   if (graphQLErrors) {
     graphQLErrors.forEach(({ message, locations, path }) => {
-      Rollbar.error(
+      rollbar.error(
         `[GraphQL Error] Message: ${message}, Location: ${JSON.stringify(
           locations
         )}, Path: ${path}`
@@ -17,7 +17,7 @@ const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
   }
 
   if (networkError) {
-    Rollbar.error(
+    rollbar.error(
       `[Network error ${networkError.message}] Operation: ${
         operation.operationName
       }`
