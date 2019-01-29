@@ -22,6 +22,7 @@ export class SearchBar extends Component {
           ref={input => {
             this.autoCompletePlace = input
           }}
+          placeholder="Indtast addresse"
         />
       </div>
     )

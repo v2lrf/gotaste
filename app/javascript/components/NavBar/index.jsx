@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
 import { Query } from 'react-apollo'
 
 import { GET_VIEWER } from './queries'
@@ -8,25 +6,21 @@ import { Container } from '../Container'
 import { NavItem } from './NavItem'
 import Routes from '../../services/Routes'
 
-export function NavBar({ transparent }) {
-  const wrapperClasses = classnames({
-    'bg-red-darker': !transparent,
-    'bg-transparent': transparent
-  })
-
+export function NavBar() {
   return (
     <Query query={GET_VIEWER}>
       {({ data, loading, error }) => {
         if (loading) return 'Loading'
         if (error) return 'Error...'
         return (
-          <div className={wrapperClasses}>
+          <div className="bg-white border-b border-grey-light">
+            <div className="bg-red-light h-1" />
             <Container>
               <div className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between">
                 <div className="my-2 sm:my-0">
                   <a
                     href={Routes.root_path()}
-                    className="text-white text-2xl font-bold no-underline"
+                    className="text-red-light text-2xl font-bold no-underline"
                   >
                     govinu
                   </a>
@@ -61,14 +55,6 @@ export function NavBar({ transparent }) {
       }}
     </Query>
   )
-}
-
-NavBar.propTypes = {
-  transparent: PropTypes.bool
-}
-
-NavBar.defaultProps = {
-  transparent: false
 }
 
 export default NavBar
