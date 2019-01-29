@@ -42,18 +42,22 @@ export class SearchPage extends Component {
 
     return (
       <Fragment>
+        <NavBar />
         <div
           className="bg-cover bg-no-repeat bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(${heroImageUrl})`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(${heroImageUrl})`
           }}
         >
           <Container>
-            <NavBar transparent />
             <Spacer top="20" bottom="32" inner>
-              <h2 className="text-4xl font-serif text-white text-center mb-4">
-                Smag på den bedste vin
+              <h2 className="text-3xl text-white text-center mb-1">
+                Find den bedste vin
               </h2>
+              <p className="text-white text-center mb-4">
+                Indtast en adresse nedenfor, så finder vi smagninger og
+                arrangementer tæt på dig
+              </p>
               <Row>
                 <Col offset sm="1/2">
                   <form
@@ -71,6 +75,11 @@ export class SearchPage extends Component {
             </Spacer>
           </Container>
         </div>
+        <Container>
+          <Spacer top="20" bottom="32" inner>
+            Empty space!
+          </Spacer>
+        </Container>
         <Footer />
       </Fragment>
     )

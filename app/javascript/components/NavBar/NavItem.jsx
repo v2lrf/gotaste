@@ -5,7 +5,7 @@ export function NavItem({ to, label }) {
   return (
     <li className="mr-6">
       <a
-        className="block text-white no-underline hover:underline focus:underline"
+        className="block text-red-dark no-underline hover:underline focus:underline"
         href={to}
       >
         {label}
