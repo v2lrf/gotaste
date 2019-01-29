@@ -1,7 +1,7 @@
 import Rollbar from 'rollbar'
 
 const rollbar = Rollbar.init({
-  enabled: `'%NODE_ENV%' === 'production'`,
+  enabled: process.env.NODE_ENV === 'production',
   accessToken: process.env.ROLLBAR_POST_CLIENT_ITEM,
   captureUncaught: true,
   captureUnhandledRejections: true,
