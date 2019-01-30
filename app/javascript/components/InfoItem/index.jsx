@@ -4,13 +4,13 @@ import classnames from 'classnames'
 
 export function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   const figureClasses = classnames(
-    'flex self-start p-2 mr-2 bg-white shadow rounded-full',
+    'flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full',
     {
       'w-12 h-12': !large,
       'w-16 h-16': large
     }
   )
-  const headlineClasses = classnames('font-bold', {
+  const headlineClasses = classnames('text-black font-bold', {
     'text-base': !large,
     'text-xl': large
   })

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BusinessCard Snapshots should match the snapshot 1`] = `
+<a
+  className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4"
+  href="some-path"
+>
+  <div>
+    <img
+      alt=""
+      className="rounded-t"
+      src="https://loremflickr.com/512/192"
+    />
+  </div>
+  <div
+    className="p-4"
+  >
+    <InfoItem
+      headline="Fine Wines"
+      imageAlt=""
+      imageSrc="https://loremflickr.com/64/64"
+      large={false}
+      tagline="Fake Street 123, 6660 New Awesome"
+    />
+  </div>
+</a>
+`;
