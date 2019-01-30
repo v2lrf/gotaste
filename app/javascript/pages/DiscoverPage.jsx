@@ -11,7 +11,7 @@ import { BusinessCard } from '../components/BusinessCard'
 import { Row, Col } from '../components/Grid'
 
 const DEFAULT_LATITUDE = '55.6753'
-const DEFAUKT_LONGITUDE = '12.5703'
+const DEFAULT_LONGITUDE = '12.5703'
 
 const SEARCH_FOR_BUSINESSES = gql`
   query searchForBusinesses($latitude: Float!, $longitude: Float!) {
@@ -34,7 +34,7 @@ function DiscoverPage() {
     getParameterByName('latitude') || DEFAULT_LATITUDE
   )
   const longitude = parseFloat(
-    getParameterByName('longitude') || DEFAUKT_LONGITUDE
+    getParameterByName('longitude') || DEFAULT_LONGITUDE
   )
   return (
     <Fragment>
