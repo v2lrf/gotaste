@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby '2.6.0'
 
 gem 'activerecord-postgis-adapter'
 gem 'apollo-tracing'
@@ -32,7 +32,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rails-controller-testing'
-  gem 'rb-readline', '~> 0.5.5'
   gem 'rspec-rails', '~> 3.8'
 end
 

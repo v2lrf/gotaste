@@ -187,7 +187,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rb-readline (0.5.5)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -297,7 +296,6 @@ DEPENDENCIES
   rails (~> 5.2.2)
   rails-controller-testing
   rails-i18n
-  rb-readline (~> 0.5.5)
   rollbar
   rspec-rails (~> 3.8)
   rubocop
@@ -310,7 +308,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.0p0
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
