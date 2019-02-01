@@ -3,6 +3,7 @@
 module Types
   class QueryType < Types::BaseObject
     include Fields::BusinessSearch
+    include Fields::AreaSearch
 
     field :business, BusinessType, "Find a business by it's ID.", null: true do
       argument :id, ID,
