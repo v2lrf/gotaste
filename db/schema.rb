@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_131_192_114) do
+ActiveRecord::Schema.define(version: 20_190_201_124_029) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
   enable_extension 'postgis'
@@ -49,6 +47,8 @@ ActiveRecord::Schema.define(version: 20_190_131_192_114) do
     t.integer 'business_type', null: false
     t.geography 'longitude_latitude', limit: { srid: 4326, type: 'st_point', geographic: true }
     t.string 'slug', null: false
+    t.integer 'area_id'
+    t.index ['area_id'], name: 'index_businesses_on_area_id'
     t.index ['business_type'], name: 'index_businesses_on_business_type'
     t.index ['longitude_latitude'], name: 'index_businesses_on_longitude_latitude', using: :gist
     t.index ['name'], name: 'index_businesses_on_name', unique: true

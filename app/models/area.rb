@@ -8,6 +8,8 @@ class Area < ApplicationRecord
 
   validates :name, :longitude_latitude, presence: true
 
+  has_many :businesses, dependent: :restrict_with_exception
+
   class << self
     def closest_within(latitude:, longitude:, distance: 1000)
       where(
