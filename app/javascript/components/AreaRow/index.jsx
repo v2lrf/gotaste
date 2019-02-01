@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BusinessCard } from '../BusinessCard'
 import { Row, Col } from '../Grid'
+import Routes from '../../services/Routes'
 
 export function AreaRow({ name, businesses }) {
   return (
