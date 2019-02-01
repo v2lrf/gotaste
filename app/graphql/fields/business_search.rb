@@ -35,11 +35,11 @@ module Fields
     DESCRIPTION = {
       search_field: 'Search for a businesses within a distance
         of a given latitude and longitude.',
-      latitude: 'The WGS84 latitude of the business in decimal
+      latitude:     'The WGS84 latitude of the business in decimal
         degrees. Must be between ­-90 and +90.',
-      longitude: 'The WGS84 longitude of the business in decimal
+      longitude:    'The WGS84 longitude of the business in decimal
         degrees. Must be between ­-90 and +90',
-      distance:  'Distance in meters from the point.'
+      distance:     'Distance in meters from the point.'
     }.freeze
   end
 end

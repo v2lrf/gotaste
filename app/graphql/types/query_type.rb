@@ -12,7 +12,7 @@ module Types
 
     field :viewer, UserType,
           description: 'The signed in user.',
-          null: true
+          null:        true
 
     def business(id:)
       GovinuSchema.object_from_id(id, nil)
