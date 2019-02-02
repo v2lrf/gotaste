@@ -8,7 +8,8 @@ export function BusinessCard({
   streetName,
   streetNumber,
   postalCode,
-  city
+  city,
+  logoId
 }) {
   return (
     <a
@@ -24,7 +25,7 @@ export function BusinessCard({
       </div>
       <div className="p-4">
         <InfoItem
-          imageSrc="https://loremflickr.com/64/64"
+          imageSrc={logoId}
           headline={name}
           tagline={`${streetName} ${streetNumber}, ${postalCode} ${city}`}
         />
@@ -39,7 +40,12 @@ BusinessCard.propTypes = {
   streetName: PropTypes.string.isRequired,
   streetNumber: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired
+  city: PropTypes.string.isRequired,
+  logoId: PropTypes.string
+}
+
+BusinessCard.defaultProps = {
+  logoId: null
 }
 
 export default BusinessCard

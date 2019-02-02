@@ -18,7 +18,7 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
     <InfoItem
       headline="Fine Wines"
       imageAlt=""
-      imageSrc="https://loremflickr.com/64/64"
+      imageSrc={null}
       large={false}
       tagline="Fake Street 123, 6660 New Awesome"
     />

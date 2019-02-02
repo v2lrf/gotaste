@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import { Image } from 'cloudinary-react'
 
 export function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   const figureClasses = classnames(
@@ -22,7 +23,15 @@ export function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   return (
     <div className="flex items-center">
       <figure className={figureClasses}>
-        <img src={imageSrc} className="rounded-full" alt={imageAlt} />
+        <Image
+          cloudName="dkrjpli3y"
+          publicId={imageSrc}
+          width="200"
+          crop="scale"
+          className="rounded-full"
+          alt={imageAlt}
+          secure="true"
+        />
       </figure>
       <div className="flex-grow">
         <div className={headlineClasses}>{headline}</div>
@@ -33,7 +42,7 @@ export function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
 }
 
 InfoItem.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
   headline: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
@@ -41,6 +50,7 @@ InfoItem.propTypes = {
 }
 
 InfoItem.defaultProps = {
+  imageSrc: null,
   imageAlt: '',
   large: false
 }
