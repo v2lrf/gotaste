@@ -38,6 +38,8 @@ module Types
 
     field :slug, String, 'Slug of the business.', null: false
 
+    field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
+
     def events
       Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
     end

@@ -25,6 +25,7 @@ const SEARCH_FOR_BUSINESSES = gql`
         postalCode
         city
         slug
+        logoId
       }
     }
   }

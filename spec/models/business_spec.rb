@@ -49,4 +49,12 @@ RSpec.describe Business, type: :model do
       ).to match_array(closest_business)
     end
   end
+
+  describe '#logo_id' do
+    let(:business) { FactoryBot.create(:business) }
+
+    it 'returns the logo id' do
+      expect(business.logo_id).to eq 'Govinu/logos/default'
+    end
+  end
 end
