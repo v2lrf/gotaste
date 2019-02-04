@@ -3,7 +3,7 @@ const handler = {
   get(target, method) {
     if (target[method] === undefined) {
       // eslint-disable-next-line no-param-reassign
-      target[method] = () => () => `/${method}`
+      target[method] = () => `/${method}`
       return target[method]
     }
     return target[method]

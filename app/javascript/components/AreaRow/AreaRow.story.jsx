@@ -7,11 +7,22 @@ const fakeArea = {
   name: 'Indre By',
   businesses: [
     {
+      id: '1',
       name: 'Test',
       streetName: 'Baggesensgade',
       streetNumber: '13',
       postalCode: '2200',
-      city: 'København N'
+      city: 'København N',
+      slug: 'test'
+    },
+    {
+      id: '2',
+      name: 'Foo',
+      streetName: 'Bar Street',
+      streetNumber: '123',
+      postalCode: '2300',
+      city: 'København S',
+      slug: 'foo'
     }
   ]
 }
