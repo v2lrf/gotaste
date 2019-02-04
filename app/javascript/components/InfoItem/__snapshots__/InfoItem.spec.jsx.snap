@@ -7,10 +7,14 @@ exports[`InfoItem Snapshots should match the large snapshot 1`] = `
   <figure
     className="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-16 h-16"
   >
-    <img
+    <Image
       alt=""
       className="rounded-full"
-      src="https://via.placeholder.com/150"
+      cloudName="dkrjpli3y"
+      crop="scale"
+      publicId="https://via.placeholder.com/150"
+      secure="true"
+      width="200"
     />
   </figure>
   <div
@@ -37,10 +41,14 @@ exports[`InfoItem Snapshots should match the regular snapshot 1`] = `
   <figure
     className="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-12 h-12"
   >
-    <img
+    <Image
       alt=""
       className="rounded-full"
-      src="https://via.placeholder.com/150"
+      cloudName="dkrjpli3y"
+      crop="scale"
+      publicId="https://via.placeholder.com/150"
+      secure="true"
+      width="200"
     />
   </figure>
   <div
