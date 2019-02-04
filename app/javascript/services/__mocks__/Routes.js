@@ -3,7 +3,7 @@ const handler = {
   get(target, method) {
     if (target[method] === undefined) {
       // eslint-disable-next-line no-param-reassign
-      target[method] = jest.fn().mockReturnValue(`/${method}`)
+      target[method] = () => () => `/${method}`
       return target[method]
     }
     return target[method]

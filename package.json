@@ -36,7 +36,8 @@
     "react-apollo": "^2.4.1",
     "react-dom": "^16.6.3",
     "rollbar": "^2.5.2",
-    "tailwindcss": "^0.7.3"
+    "tailwindcss": "^0.7.3",
+    "webpack": "3.12.0"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",
