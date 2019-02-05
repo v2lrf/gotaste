@@ -11,7 +11,9 @@ describe('BusinessCard', () => {
       streetName: 'Fake Street',
       streetNumber: '123',
       postalCode: '6660',
-      city: 'New Awesome'
+      city: 'New Awesome',
+      logoId: 'logoId',
+      heroImageId: 'heroImageId'
     }
 
     component = shallow(<BusinessCard {...props} />)

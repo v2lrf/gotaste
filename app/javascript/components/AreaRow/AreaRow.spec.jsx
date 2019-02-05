@@ -15,7 +15,9 @@ describe('AreaRow', () => {
           streetNumber: '13',
           postalCode: '2200',
           city: 'København N',
-          slug: 'test'
+          slug: 'test',
+          logoId: 'logoId1',
+          heroImageId: 'heroImageId1'
         },
         {
           id: '2',
@@ -24,7 +26,9 @@ describe('AreaRow', () => {
           streetNumber: '123',
           postalCode: '2300',
           city: 'København S',
-          slug: 'foo'
+          slug: 'foo',
+          logoId: 'logoId2',
+          heroImageId: 'heroImageId2'
         }
       ]
     }

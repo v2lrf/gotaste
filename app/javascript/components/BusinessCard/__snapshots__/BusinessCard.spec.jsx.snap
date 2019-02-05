@@ -6,10 +6,12 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
   href="some-path"
 >
   <div>
-    <img
-      alt=""
+    <Image
       className="rounded-t"
-      src="https://loremflickr.com/512/192"
+      cloudName="dkrjpli3y"
+      crop="scale"
+      publicId="heroImageId"
+      secure="true"
     />
   </div>
   <div
@@ -18,7 +20,7 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
     <InfoItem
       headline="Fine Wines"
       imageAlt=""
-      imageSrc={null}
+      imageSrc="logoId"
       large={false}
       tagline="Fake Street 123, 6660 New Awesome"
     />
