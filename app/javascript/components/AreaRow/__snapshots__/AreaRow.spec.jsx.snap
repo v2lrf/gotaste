@@ -39,7 +39,7 @@ Array [
                 <img
                   alt=""
                   class="rounded-full"
-                  src="https://loremflickr.com/64/64"
+                  width="200"
                 />
               </figure>
               <div
@@ -86,7 +86,7 @@ Array [
                 <img
                   alt=""
                   class="rounded-full"
-                  src="https://loremflickr.com/64/64"
+                  width="200"
                 />
               </figure>
               <div
