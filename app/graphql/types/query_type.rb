@@ -5,9 +5,12 @@ module Types
     include Fields::BusinessSearch
     include Fields::AreaSearch
 
-    field :business, BusinessType, "Find a business by it's ID.", null: true do
-      argument :id, ID,
-               description: 'ID of the business',
+    field :business, BusinessType,
+          description: "Find a business by it's slug.",
+          null:        true do
+
+      argument :slug, String,
+               description: 'Slug of the business.',
                required:    true
     end
 
@@ -15,8 +18,8 @@ module Types
           description: 'The signed in user.',
           null:        true
 
-    def business(id:)
-      GovinuSchema.object_from_id(id, nil)
+    def business(slug:)
+      Business.friendly.find(slug)
     end
 
     def viewer
