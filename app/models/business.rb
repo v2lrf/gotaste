@@ -14,6 +14,8 @@ class Business < ApplicationRecord
     restaurant: 2
   }
 
+  belongs_to :area
+
   has_many :events,
            foreign_key: :host_id,
            inverse_of:  :host,

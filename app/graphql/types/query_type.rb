@@ -3,6 +3,7 @@
 module Types
   class QueryType < Types::BaseObject
     include Fields::BusinessSearch
+    include Fields::AreaSearch
 
     field :business, BusinessType, "Find a business by it's ID.", null: true do
       argument :id, ID,
@@ -12,7 +13,7 @@ module Types
 
     field :viewer, UserType,
           description: 'The signed in user.',
-          null: true
+          null:        true
 
     def business(id:)
       GovinuSchema.object_from_id(id, nil)

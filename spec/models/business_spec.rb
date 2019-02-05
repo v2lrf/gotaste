@@ -18,7 +18,7 @@ RSpec.describe Business, type: :model do
     let(:closest_business) do
       FactoryBot.create(
         :business,
-        name:     'Closest business',
+        name:      'Closest business',
         latitude:  55.688932,
         longitude: 12.589698
       )

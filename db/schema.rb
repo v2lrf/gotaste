@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 2019_02_02_135455) do
   enable_extension "plpgsql"
   enable_extension "postgis"
 
+  create_table "areas", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.geography "longitude_latitude", limit: { srid: 4326, type: "st_point", geographic: true }, null: false
+    t.integer "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lft"], name: "index_areas_on_lft"
+    t.index ["longitude_latitude"], name: "index_areas_on_longitude_latitude", using: :gist
+    t.index ["parent_id"], name: "index_areas_on_parent_id"
+    t.index ["rgt"], name: "index_areas_on_rgt"
+    t.index ["slug"], name: "index_areas_on_slug", unique: true
+  end
+
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "street_name", null: false
@@ -30,9 +46,11 @@ ActiveRecord::Schema.define(version: 2019_02_02_135455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "business_type", null: false
-    t.geography "longitude_latitude", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.geography "longitude_latitude", limit: { srid: 4326, type: "st_point", geographic: true }
     t.string "slug", null: false
+    t.integer "area_id"
     t.string "logo_id"
+    t.index ["area_id"], name: "index_businesses_on_area_id"
     t.index ["business_type"], name: "index_businesses_on_business_type"
     t.index ["longitude_latitude"], name: "index_businesses_on_longitude_latitude", using: :gist
     t.index ["name"], name: "index_businesses_on_name", unique: true
