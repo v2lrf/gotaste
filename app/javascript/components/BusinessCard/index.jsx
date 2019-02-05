@@ -23,7 +23,9 @@ export function BusinessCard({
         <Image
           cloudName="dkrjpli3y"
           publicId={heroImageId}
-          crop="scale"
+          height={200}
+          width={600}
+          crop="fill"
           className="rounded-t"
           secure="true"
         />

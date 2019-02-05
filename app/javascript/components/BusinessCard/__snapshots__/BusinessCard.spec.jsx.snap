@@ -9,9 +9,11 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
     <Image
       className="rounded-t"
       cloudName="dkrjpli3y"
-      crop="scale"
+      crop="fill"
+      height={200}
       publicId="heroImageId"
       secure="true"
+      width={600}
     />
   </div>
   <div
