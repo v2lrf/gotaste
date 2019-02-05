@@ -14,7 +14,7 @@ class HeroImage
   attr_reader :hero_image_id
 
   CLOUDINARY_HERO_IMAGES_PATH = 'Govinu/hero_images'
-  DEFAULT_HERO_IMAGE_ID       = 'default'
+  DEFAULT_HERO_IMAGE_ID       = '6229d0ce88881c305df3bcdf60db14e4'
 
   def image_path
     "#{CLOUDINARY_HERO_IMAGES_PATH}/#{image_id}"

@@ -18,7 +18,8 @@ describe HeroImage do
 
     context 'when hero_image_id is nil' do
       it 'returns the id of the default hero image' do
-        expect(hero_image.id).to eq 'Govinu/hero_images/default'
+        expect(hero_image.id)
+          .to eq 'Govinu/hero_images/6229d0ce88881c305df3bcdf60db14e4'
       end
     end
   end

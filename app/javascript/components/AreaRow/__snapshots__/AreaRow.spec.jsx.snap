@@ -23,7 +23,9 @@ Array [
           <div>
             <img
               class="rounded-t"
-              src="https://res.cloudinary.com/dkrjpli3y/image/upload/c_scale/heroImageId1"
+              height="200"
+              src="https://res.cloudinary.com/dkrjpli3y/image/upload/c_fill,h_200,w_600/heroImageId1"
+              width="600"
             />
           </div>
           <div
@@ -70,7 +72,9 @@ Array [
           <div>
             <img
               class="rounded-t"
-              src="https://res.cloudinary.com/dkrjpli3y/image/upload/c_scale/heroImageId2"
+              height="200"
+              src="https://res.cloudinary.com/dkrjpli3y/image/upload/c_fill,h_200,w_600/heroImageId2"
+              width="600"
             />
           </div>
           <div
