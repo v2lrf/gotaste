@@ -1,16 +1,13 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="mx-auto mt-12 max-w-sm">
+  <h2 class="text-center mb-4 text-red-light">Har du glemt din adgangskode?</h2>
+  <div class="bg-white shadow px-4 py-6 rounded mb-6">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="mb-4">
+        <%= f.label :email, class: 'block text-red-darkest text-sm font-bold mb-1' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-mail', class: 'border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+      </div>
+      <%= f.submit "Nulstil min adgangskode", class: 'px-6 h-10 w-full rounded shadow tracking-wide bg-red-light text-white border border-red-light hover:bg-red-dark hover:border-red-dark' %>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
