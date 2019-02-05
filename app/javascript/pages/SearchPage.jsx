@@ -2,6 +2,7 @@ import React, { Component, Fragment, createRef } from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 
+import BusinessInfoFields from '../fragments/BusinessInfoFields'
 import { Container } from '../components/Container'
 import { NavBar } from '../components/NavBar'
 import { Footer } from '../components/Footer'
@@ -16,17 +17,6 @@ const heroImageUrl =
   'https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=600&q=80'
 
 const SEARCH_FOR_AREAS = gql`
-  fragment BusinessNodeFields on Business {
-    id
-    name
-    slug
-    streetName
-    streetNumber
-    postalCode
-    city
-    logoId
-  }
-
   query searchForAreas($latitude: Float!, $longitude: Float!, $distance: Int!) {
     areaSearch(
       latitude: $latitude
@@ -38,12 +28,14 @@ const SEARCH_FOR_AREAS = gql`
         slug
         businesses {
           nodes {
-            ...BusinessNodeFields
+            ...BusinessInfoFields
           }
         }
       }
     }
   }
+
+  ${BusinessInfoFields}
 `
 
 export class SearchPage extends Component {
