@@ -40,6 +40,10 @@ module Types
 
     field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
 
+    field :hero_image_id, String,
+          description: 'Cloudinary ID of the business hero image.',
+          null:        true
+
     def events
       Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
     end

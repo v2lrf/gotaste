@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Image } from 'cloudinary-react'
+
 import { InfoItem } from '../InfoItem'
 
 export function BusinessCard({
@@ -9,7 +11,8 @@ export function BusinessCard({
   streetNumber,
   postalCode,
   city,
-  logoId
+  logoId,
+  heroImageId
 }) {
   return (
     <a
@@ -17,10 +20,12 @@ export function BusinessCard({
       className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4"
     >
       <div>
-        <img
-          src="https://loremflickr.com/512/192"
-          alt=""
+        <Image
+          cloudName="dkrjpli3y"
+          publicId={heroImageId}
+          crop="scale"
           className="rounded-t"
+          secure="true"
         />
       </div>
       <div className="p-4">
@@ -41,11 +46,7 @@ BusinessCard.propTypes = {
   streetNumber: PropTypes.string.isRequired,
   postalCode: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  logoId: PropTypes.string
+  logoId: PropTypes.string.isRequired,
+  heroImageId: PropTypes.string.isRequired
 }
-
-BusinessCard.defaultProps = {
-  logoId: null
-}
-
 export default BusinessCard

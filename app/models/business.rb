@@ -42,6 +42,10 @@ class Business < ApplicationRecord
     Logo.new(business_logo_id: self[:logo_id]).id
   end
 
+  def hero_image_id
+    HeroImage.new(hero_image_id: self[:hero_image_id]).id
+  end
+
   private
 
   def set_longitude_latitude_point
