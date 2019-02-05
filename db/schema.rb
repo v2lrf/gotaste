@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_02_135455) do
+ActiveRecord::Schema.define(version: 2019_02_05_193623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_02_135455) do
   create_table "areas", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
-    t.geography "longitude_latitude", limit: { srid: 4326, type: "st_point", geographic: true }, null: false
+    t.geography "longitude_latitude", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}, null: false
     t.integer "parent_id"
     t.integer "lft", null: false
     t.integer "rgt", null: false
@@ -46,10 +46,11 @@ ActiveRecord::Schema.define(version: 2019_02_02_135455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "business_type", null: false
-    t.geography "longitude_latitude", limit: { srid: 4326, type: "st_point", geographic: true }
+    t.geography "longitude_latitude", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.string "slug", null: false
-    t.integer "area_id"
     t.string "logo_id"
+    t.integer "area_id"
+    t.string "hero_image_id"
     t.index ["area_id"], name: "index_businesses_on_area_id"
     t.index ["business_type"], name: "index_businesses_on_business_type"
     t.index ["longitude_latitude"], name: "index_businesses_on_longitude_latitude", using: :gist

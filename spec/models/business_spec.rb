@@ -57,4 +57,12 @@ RSpec.describe Business, type: :model do
       expect(business.logo_id).to eq 'Govinu/logos/default'
     end
   end
+
+  describe '#hero_image_id' do
+    let(:business) { FactoryBot.create(:business) }
+
+    it 'returns the logo id' do
+      expect(business.hero_image_id).to eq 'Govinu/hero_images/default'
+    end
+  end
 end

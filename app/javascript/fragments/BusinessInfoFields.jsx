@@ -10,6 +10,7 @@ const BusinessInfoFields = gql`
     postalCode
     city
     logoId
+    heroImageId
   }
 `
 
