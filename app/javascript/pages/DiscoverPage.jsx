@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+
+import BusinessInfoFields from '../fragments/BusinessInfoFields'
 import Routes from '../services/Routes'
 import { getParameterByName } from '../helpers'
 import { Container } from '../components/Container'
@@ -18,17 +20,12 @@ const SEARCH_FOR_BUSINESSES = gql`
   query searchForBusinesses($latitude: Float!, $longitude: Float!) {
     search(latitude: $latitude, longitude: $longitude, distance: 2000) {
       nodes {
-        id
-        name
-        streetName
-        streetNumber
-        postalCode
-        city
-        slug
-        logoId
+        ...BusinessInfoFields
       }
     }
   }
+
+  ${BusinessInfoFields}
 `
 
 class DiscoverPage extends Component {
