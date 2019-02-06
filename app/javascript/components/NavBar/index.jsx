@@ -33,6 +33,7 @@ export function NavBar() {
                       <NavItem
                         to={Routes.destroy_user_session_path()}
                         label="Log ud"
+                        dataMethod="delete"
                       />
                     ) : (
                       <Fragment>
