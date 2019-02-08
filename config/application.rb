@@ -40,5 +40,12 @@ module Govinu
 
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i[en da]
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'https://next.govinu.com'
+        resource '*', headers: :any, methods: %i[get post options]
+      end
+    end
   end
 end
