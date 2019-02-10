@@ -1,5 +1,49 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import gql from 'graphql-tag'
+import { Query } from 'react-apollo'
+import Link from 'next/link'
 
-const Home = () => <h1>Home page</h1>
+const SEARCH_FOR_BUSINESSES = gql`
+  query searchForBusinesses($latitude: Float!, $longitude: Float!) {
+    search(latitude: $latitude, longitude: $longitude, distance: 2000) {
+      nodes {
+        id
+        name
+        slug
+        streetName
+        streetNumber
+        postalCode
+        city
+        logoId
+        heroImageId
+      }
+    }
+  }
+`
+
+const DEFAULT_LATITUDE = 55.6753
+const DEFAULT_LONGITUDE = 12.5703
+
+const Home = () => (
+  <Fragment>
+    <h1>Home page</h1>
+    <Link href="/about">
+      <a>about</a>
+    </Link>
+    <Query
+      query={SEARCH_FOR_BUSINESSES}
+      variables={{ latitude: DEFAULT_LATITUDE, longitude: DEFAULT_LONGITUDE }}
+    >
+      {({ loading, error, data }) => {
+        if (loading) return 'Loading...'
+        if (error) return `Error! ${error.message}`
+        return data.search.nodes.map(node => {
+          const { id, slug } = node
+          return <div key={id}>{slug}</div>
+        })
+      }}
+    </Query>
+  </Fragment>
+)
 
 export default Home
