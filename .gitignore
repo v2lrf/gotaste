@@ -33,3 +33,6 @@ yarn-debug.log*
 .storybook/application.css
 
 .env
+
+.next
+styles/styles.css

@@ -2,11 +2,13 @@
   "name": "govinu",
   "private": true,
   "scripts": {
+    "dev": "next ./client",
+    "build": "next build ./client",
+    "start": "next start ./client",
     "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript",
     "prestorybook": "tailwind build ./app/javascript/css/application.css -c ./app/javascript/css/tailwind.js -o ./.storybook/application.css",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "NODE_ENV=test jest",
-    "start": "./bin/webpack-dev-server --watch --colors --progress"
+    "test": "NODE_ENV=test jest"
   },
   "prettier": {
     "semi": false,
@@ -31,6 +33,7 @@
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "moment": "^2.23.0",
+    "next": "^7.0.3",
     "places.js": "^1.15.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
@@ -53,5 +56,16 @@
     "jest": "^23.6.0",
     "prettier": "^1.15.3",
     "webpack-dev-server": "2.11.2"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "@babel/preset-env",
+          "@babel/preset-react",
+          "next/babel"
+        ]
+      }
+    }
   }
 }
