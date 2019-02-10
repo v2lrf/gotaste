@@ -2,7 +2,7 @@
   "name": "govinu",
   "private": true,
   "engines": {
-    "node": "8.15.0"
+    "node": "10.14.1"
   },
   "scripts": {
     "dev": "next ./client",
