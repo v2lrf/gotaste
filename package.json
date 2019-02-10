@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next ./client",
     "build": "next build ./client",
-    "start": "next start ./client",
+    "start": "next start ./client -p $PORT",
+    "heroku-postbuild": "npm run build",
     "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript",
     "prestorybook": "tailwind build ./app/javascript/css/application.css -c ./app/javascript/css/tailwind.js -o ./.storybook/application.css",
     "storybook": "start-storybook -p 9001 -c .storybook",
