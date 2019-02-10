@@ -62,14 +62,8 @@
     "webpack-dev-server": "2.11.2"
   },
   "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          "@babel/preset-env",
-          "@babel/preset-react",
-          "next/babel"
-        ]
-      }
-    }
+    "presets": [
+      "next/babel"
+    ]
   }
 }
