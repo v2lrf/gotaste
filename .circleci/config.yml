@@ -65,6 +65,12 @@ jobs:
           command: |
             ./bin/lint.sh
 
+      # run tests!
+      - run:
+          name: Jest
+          command: |
+            yarn test
+
       - run:
           name: RSpec
           command: |
