@@ -3,8 +3,8 @@ import { ApolloClient } from 'apollo-client'
 import { ApolloLink } from 'apollo-link'
 import { HttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
-import rollbar from '../services/Rollbar'
 import withApollo from 'next-with-apollo'
+import rollbar from '../services/Rollbar'
 
 const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
   if (graphQLErrors) {
