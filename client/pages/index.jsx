@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
-import Link from 'next/link'
+
+import { NavBar } from '../components/NavBar'
 
 const SEARCH_FOR_BUSINESSES = gql`
   query searchForBusinesses($latitude: Float!, $longitude: Float!) {
@@ -26,10 +27,7 @@ const DEFAULT_LONGITUDE = 12.5703
 
 const Home = () => (
   <Fragment>
-    <h1>Home page</h1>
-    <Link href="/about">
-      <a>about</a>
-    </Link>
+    <NavBar />
     <Query
       query={SEARCH_FOR_BUSINESSES}
       variables={{ latitude: DEFAULT_LATITUDE, longitude: DEFAULT_LONGITUDE }}

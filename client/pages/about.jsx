@@ -1,11 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
+import { NavBar } from '../components/NavBar'
 
 export default () => (
   <div>
-    <Link href="/">
-      <a>home!</a>
-    </Link>
+    <NavBar />
     about!
   </div>
 )
