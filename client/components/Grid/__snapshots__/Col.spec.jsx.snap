@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col Snapshots should match the snapshot 1`] = `
+<div
+  class="px-2 w-full sm:w-full"
+>
+  See, I am inside a col!
+</div>
+`;

@@ -9027,6 +9027,10 @@ react-apollo@^2.3.3, react-apollo@^2.4.1:
     lodash.isequal "^4.5.0"
     prop-types "^15.6.0"
 
+react-content-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-4.0.1.tgz#a1e20110d7efecc446fb95d47766d3d792e5ea4c"
+
 react-dev-utils@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.3.tgz#92f97668f03deb09d7fa11ea288832a8c756e35e"
