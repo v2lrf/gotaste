@@ -3,6 +3,7 @@
 class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token
   skip_before_action :require_admin_in_production!
+  before_action :load_session
 
   def execute
     render json: result
@@ -13,6 +14,10 @@ class GraphqlController < ApplicationController
   end
 
   private
+
+  def load_session
+    session['init'] = true
+  end
 
   def result
     GovinuSchema.execute(
@@ -33,8 +38,21 @@ class GraphqlController < ApplicationController
 
   def context
     {
+      session:      session,
       current_user: current_user
     }
+  end
+
+  def current_user
+    # if we want to change the sign-in strategy, this is the place to do it
+    return unless session[:token]
+
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.secret_key_base.byteslice(0..31))
+    token = crypt.decrypt_and_verify session[:token]
+    user_id = token.gsub('user-id:', '').to_i
+    User.find_by id: user_id
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    nil
   end
 
   def operation_name
