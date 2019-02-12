@@ -1,9 +1,4 @@
 import React from 'react'
-import { NavBar } from '../components/NavBar'
+import Layout from '../components/Layout'
 
-export default () => (
-  <div>
-    <NavBar />
-    about!
-  </div>
-)
+export default () => <Layout>about!</Layout>
