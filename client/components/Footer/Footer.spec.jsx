@@ -1,14 +1,10 @@
 import React from 'react'
-import DateDisplay from '.'
+import Footer from '.'
 
-describe('DateDisplay', () => {
+describe('Footer', () => {
   let component
-  let props
   beforeEach(() => {
-    props = {
-      timestamp: 1546627341836
-    }
-    component = shallow(<DateDisplay {...props} />)
+    component = shallow(<Footer />)
   })
 
   describe('Snapshots', () => {

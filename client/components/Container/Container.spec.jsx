@@ -1,14 +1,10 @@
 import React from 'react'
-import DateDisplay from '.'
+import Container from '.'
 
-describe('DateDisplay', () => {
+describe('Container', () => {
   let component
-  let props
   beforeEach(() => {
-    props = {
-      timestamp: 1546627341836
-    }
-    component = shallow(<DateDisplay {...props} />)
+    component = shallow(<Container>I know kung fu.</Container>)
   })
 
   describe('Snapshots', () => {

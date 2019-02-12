@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Snapshots should match the snapshot 1`] = `
+<div
+  className="border-t border-red-lighter"
+>
+  <Container>
+    <div
+      className="flex flex-col sm:flex-row border-b py-10"
+    >
+      <div
+        className="mb-2 sm:mb-0 sm:mr-16"
+      >
+        <div
+          className="mb-2"
+        >
+          <a
+            className="text-black no-underline"
+            href="#forhandlere"
+          >
+            Forhandlere
+          </a>
+        </div>
+        <div>
+          <a
+            className="text-black no-underline"
+            href="#arrangementer"
+          >
+            Arrangementer
+          </a>
+        </div>
+      </div>
+      <div
+        className="mb-2 sm:mb-0 sm:mr-16"
+      >
+        <div
+          className="mb-2"
+        >
+          <a
+            className="text-black no-underline"
+            href="#om-os"
+          >
+            Om Govinu
+          </a>
+        </div>
+        <div>
+          <a
+            className="text-black no-underline"
+            href="#kontakt"
+          >
+            Kontakt
+          </a>
+        </div>
+      </div>
+      <div>
+        <div
+          className="mb-2"
+        >
+          <a
+            className="text-black no-underline"
+            href="#betingelser"
+          >
+            Betingelser
+          </a>
+        </div>
+        <div
+          className="mb-2"
+        >
+          <a
+            className="text-black no-underline"
+            href="#vilkaer"
+          >
+            Privatlivsvilkår
+          </a>
+        </div>
+        <div>
+          <a
+            className="text-black no-underline"
+            href="#cookie"
+          >
+            Cookiepolitik
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="flex flex-col sm:flex-row justify-between my-10"
+    >
+      <div
+        className="mb-2 sm:mb-0"
+      >
+        © 2019 Copyright Govinu. All rights reserved.
+      </div>
+      <div>
+        <span
+          aria-hidden={true}
+          aria-label="Dansk"
+          role="img"
+        >
+          🇩🇰
+        </span>
+        Dansk
+      </div>
+    </div>
+  </Container>
+</div>
+`;
