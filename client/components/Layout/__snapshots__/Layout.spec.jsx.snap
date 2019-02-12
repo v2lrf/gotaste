@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Snapshots should match the snapshot 1`] = `
+<Fragment>
+  <Head>
+    <title>
+      Govinu
+    </title>
+    <meta
+      charSet="utf-8"
+    />
+    <meta
+      content="initial-scale=1.0, width=device-width"
+      name="viewport"
+    />
+  </Head>
+  <NavBar />
+  <Container>
+    Some content!
+  </Container>
+  <Footer />
+</Fragment>
+`;
