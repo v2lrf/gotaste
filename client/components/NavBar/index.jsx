@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 
-import { Container } from '../Container'
-import { NavItem } from './NavItem'
+import Container from '../Container'
+import NavItem from './NavItem'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()
@@ -18,7 +18,7 @@ Router.onRouteChangeError = () => {
   NProgress.done()
 }
 
-export function NavBar() {
+function NavBar() {
   return (
     <div className="bg-white border-b border-grey-light">
       <div className="bg-red-light h-1" />

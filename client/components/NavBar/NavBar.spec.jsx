@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar } from '.'
+import NavBar from '.'
 
 describe('NavBar', () => {
   let component

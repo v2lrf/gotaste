@@ -1,5 +1,5 @@
 import React from 'react'
-import { DateDisplay } from '.'
+import DateDisplay from '.'
 
 describe('DateDisplay', () => {
   let component
