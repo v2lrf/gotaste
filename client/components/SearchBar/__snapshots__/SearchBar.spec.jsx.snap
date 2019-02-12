@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar Snapshots should match the snapshot 1`] = `
+<div>
+  <input
+    placeholder="Indtast addresse"
+    type="text"
+  />
+</div>
+`;

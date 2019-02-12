@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row Snapshots should match the snapshot 1`] = `
+<div
+  class="px-2"
+>
+  <div
+    class="flex flex-wrap -mx-2"
+  >
+    See, I am inside a row!
+  </div>
+</div>
+`;

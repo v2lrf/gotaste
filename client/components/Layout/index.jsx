@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 
 import NavBar from '../NavBar'
-import Container from '../Container'
 import Footer from '../Footer'
 
 function Layout({ children, title }) {
@@ -11,11 +10,9 @@ function Layout({ children, title }) {
     <Fragment>
       <Head>
         <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <NavBar />
-      <Container>{children}</Container>
+      {children}
       <Footer />
     </Fragment>
   )
