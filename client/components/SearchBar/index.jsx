@@ -1,36 +1,28 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Places from 'places.js'
+/**
+ * Please note that eslint is currently disabled for this file,
+ * because dynamic imports is still officially an experimental
+ * feature.
+ * ESlint are not implementing rules for features until they
+ * are officially implemented.
+ * See: https://github.com/eslint/eslint#what-about-experimental-features
+ */
+import dynamic from 'next/dynamic'
+import ContentLoader from 'react-content-loader'
 
-class SearchBar extends Component {
-  componentDidMount() {
-    const { onChange } = this.props
-    const placesAutocomplete = Places({
-      appId: process.env.ALGOLIA_PLACES_APP_ID,
-      apiKey: process.env.ALGOLIA_PLACES_API_KEY,
-      container: this.autoCompletePlace,
-      countries: ['DK']
-    })
-    placesAutocomplete.on('change', event => onChange(event))
-  }
-
-  render() {
-    return (
-      <div>
-        <input
-          type="text"
-          ref={input => {
-            this.autoCompletePlace = input
-          }}
-          placeholder="Indtast addresse"
-        />
-      </div>
-    )
-  }
-}
-
-SearchBar.propTypes = {
-  onChange: PropTypes.func.isRequired
-}
+const SearchBar = dynamic({
+  loader: () => import('./SearchBar'),
+  loading: () => (
+    <ContentLoader
+      height={50}
+      width={464}
+      speed={1}
+      primaryColor="#FFFFFF"
+      secondaryColor="#DAE1E7"
+    >
+      <rect rx="4" ry="4" width="464" height="50" />
+    </ContentLoader>
+  ),
+  ssr: false
+})
 
 export default SearchBar

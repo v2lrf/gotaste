@@ -9,7 +9,7 @@
     "build": "next build ./client",
     "start": "next start ./client -p $PORT",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint -c .eslintrc.json --ext .jsx,.js,.js.erb app/javascript",
+    "lint": "eslint -c .eslintrc.json --ext .jsx,.js client",
     "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest"
