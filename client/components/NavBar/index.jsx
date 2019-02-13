@@ -33,7 +33,9 @@ function NavBar() {
           </div>
           <nav className="pb-4 pt-1 sm:pb-0 sm:pt-0 overflow-hidden max-w-full">
             <ul className="list-reset flex overflow-x-auto flex-row whitespace-no-wrap text-sm sm:text-base">
-              <NavItem to="/about">About</NavItem>
+              <NavItem to="/discover">Gå på opdagelse</NavItem>
+              <NavItem to="#">Begivenheder</NavItem>
+              <NavItem to="#">Forhandlere</NavItem>
             </ul>
           </nav>
         </div>

@@ -31,9 +31,19 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
           className="list-reset flex overflow-x-auto flex-row whitespace-no-wrap text-sm sm:text-base"
         >
           <NavItem
-            to="/about"
+            to="/discover"
           >
-            About
+            Gå på opdagelse
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Begivenheder
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Forhandlere
           </NavItem>
         </ul>
       </nav>
