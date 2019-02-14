@@ -8,12 +8,13 @@ ruby '2.6.0'
 gem 'activerecord-postgis-adapter'
 gem 'apollo-tracing'
 gem 'awesome_nested_set'
+gem 'bcrypt'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise'
 gem 'friendly_id'
 gem 'graphql'
 gem 'graphql-batch'
 gem 'js-routes'
+gem 'jwt'
 gem 'oj'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'postmark-rails'
@@ -24,6 +25,7 @@ gem 'rails-i18n'
 gem 'rollbar'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
+gem 'simple_command'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do

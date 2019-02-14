@@ -2,8 +2,8 @@
 
 module Types
   class UserType < Types::BaseObject
-    field :short_name, String,
+    field :first_name, String,
           null:        false,
-          description: '_First name_ and the initial of the _last name_.'
+          description: '_First name_ of the user.'
   end
 end

@@ -37,6 +37,10 @@ class GraphqlController < ApplicationController
     }
   end
 
+  def current_user
+    AuthorizeUser.new(request.headers).call.result
+  end
+
   def operation_name
     params[:operationName]
   end
