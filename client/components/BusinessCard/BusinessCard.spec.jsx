@@ -6,7 +6,7 @@ describe('BusinessCard', () => {
   let props
   beforeEach(() => {
     props = {
-      href: 'some-path',
+      slug: 'some-path',
       name: 'Fine Wines',
       streetName: 'Fake Street',
       streetNumber: '123',

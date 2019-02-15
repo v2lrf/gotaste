@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MapWithMarker Snapshots should match the snapshot 1`] = `
+<div
+  style="position:relative;width:100%;height:200px"
+>
+  <div
+    class=""
+    style="position:absolute;width:100%;height:100%;overflow:hidden;visibility:inherit"
+  />
+  <div
+    style="overflow:visible;width:0"
+  />
+</div>
+`;

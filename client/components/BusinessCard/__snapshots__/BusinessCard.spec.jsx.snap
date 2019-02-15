@@ -1,31 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BusinessCard Snapshots should match the snapshot 1`] = `
-<a
-  className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4"
-  href="some-path"
+<Link
+  as="/business/some-path"
+  href={
+    Object {
+      "pathname": "/business",
+      "query": Object {
+        "slug": "some-path",
+      },
+    }
+  }
 >
-  <div>
-    <Image
-      className="rounded-t"
-      cloudName="dkrjpli3y"
-      crop="fill"
-      height={200}
-      publicId="heroImageId"
-      secure="true"
-      width={600}
-    />
-  </div>
-  <div
-    className="p-4"
+  <a
+    className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4"
   >
-    <InfoItem
-      headline="Fine Wines"
-      imageAlt=""
-      imageSrc="logoId"
-      large={false}
-      tagline="Fake Street 123, 6660 New Awesome"
-    />
-  </div>
-</a>
+    <div>
+      <Image
+        className="rounded-t"
+        cloudName="dkrjpli3y"
+        crop="fill"
+        height={200}
+        publicId="heroImageId"
+        secure="true"
+        width={600}
+      />
+    </div>
+    <div
+      className="p-4"
+    >
+      <InfoItem
+        headline="Fine Wines"
+        imageAlt=""
+        imageSrc="logoId"
+        large={false}
+        tagline="Fake Street 123, 6660 New Awesome"
+      />
+    </div>
+  </a>
+</Link>
 `;

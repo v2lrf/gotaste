@@ -76,7 +76,7 @@ function Discover({ latitude, longitude }) {
                   const { id } = node
                   return (
                     <Col xs="full" sm="1/2" lg="1/3" key={id}>
-                      <BusinessCard href="#" {...node} />
+                      <BusinessCard {...node} />
                     </Col>
                   )
                 })

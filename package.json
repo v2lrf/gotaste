@@ -5,9 +5,9 @@
     "node": "10.14.1"
   },
   "scripts": {
-    "dev": "next ./client",
+    "dev": "node ./client/server.js",
     "build": "next build ./client",
-    "start": "next start ./client -p $PORT",
+    "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint -c .eslintrc.json --ext .jsx,.js client",
     "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css",
@@ -35,6 +35,7 @@
     "dotenv": "^6.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "express": "^4.16.4",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "isomorphic-unfetch": "^3.0.0",
@@ -48,6 +49,7 @@
     "react-apollo": "^2.4.1",
     "react-content-loader": "^4.0.1",
     "react-dom": "^16.8.1",
+    "react-map-gl": "^4.0.10",
     "rollbar": "^2.5.2",
     "tailwindcss": "^0.7.4"
   },
