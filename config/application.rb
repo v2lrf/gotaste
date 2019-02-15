@@ -47,7 +47,5 @@ module Govinu
         resource '*', headers: :any, methods: %i[get post options]
       end
     end
-
-    config.eager_load_paths << Rails.root.join('lib')
   end
 end
