@@ -43,7 +43,7 @@ module Govinu
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://next.govinu.com'
+        origins Rails.env.production? ? /^(.*\.|)govinu\.com$/ : '*'
         resource '*', headers: :any, methods: %i[get post options]
       end
     end
