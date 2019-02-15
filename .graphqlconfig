@@ -3,10 +3,10 @@
   "extensions": {
     "endpoints": {
       "prod": {
-        "url": "https://govinu.com/graphql"
+        "url": "https://api.govinu.com/graphql"
       },
       "dev": {
-        "url": "http://localhost:3001/graphql"
+        "url": "http://localhost:4000/graphql"
       }
     }
   }

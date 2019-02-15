@@ -5,7 +5,7 @@ module.exports = {
   },
   service: {
     endpoint: {
-      url: 'http://localhost:3000/graphql'
+      url: 'http://localhost:4000/graphql'
     }
   }
 }
