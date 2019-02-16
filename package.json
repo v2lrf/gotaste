@@ -54,6 +54,7 @@
     "tailwindcss": "^0.7.4"
   },
   "devDependencies": {
+    "apollo": "^2.5.1",
     "babel-jest": "^24.1.0",
     "babel-preset-env": "^1.7.0",
     "enzyme-to-json": "^3.3.5",
