@@ -33,6 +33,10 @@ yarn-debug.log*
 .yarn-integrity
 .storybook/application.css
 
+# We only want to ignore these files because they're
+# required to be copied to Storybook during development
+.storybook/nprogress.css
+
 .env
 
 .next
