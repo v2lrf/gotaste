@@ -18,7 +18,7 @@ const DEFAULT_LONGITUDE = '12.5703'
 
 const SEARCH_FOR_BUSINESSES = gql`
   query searchForBusinesses($latitude: Float!, $longitude: Float!) {
-    search(latitude: $latitude, longitude: $longitude, distance: 2000) {
+    businessSearch(latitude: $latitude, longitude: $longitude, distance: 2000) {
       nodes {
         ...BusinessInfoFields
       }
@@ -72,7 +72,7 @@ function Discover({ latitude, longitude }) {
                       </span>
                     </div>
                   )
-                return data.search.nodes.map(node => {
+                return data.businessSearch.nodes.map(node => {
                   const { id } = node
                   return (
                     <Col xs="full" sm="1/2" lg="1/3" key={id}>
