@@ -26,8 +26,8 @@ module Types
     field :latitude, Float, 'Latitude of the business.', null: false
     field :longitude, Float, 'Longitude of the business.', null: false
     field :business_type, BusinessTypeType,
-          description: "Type of the business.
-                           Either a _Shop_, _Bar_ or _Restaurant_",
+          description: 'Type of the business.'\
+                       ' Either a _Shop_, _Bar_ or _Restaurant_',
           null:        false
 
     field :events, [EventType], 'Events hosted by the business', null: true

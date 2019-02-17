@@ -43,8 +43,7 @@ type AreaEdge {
 }
 
 type Business implements Node {
-  # Type of the business.
-  #                            Either a _Shop_, _Bar_ or _Restaurant_
+  # Type of the business. Either a _Shop_, _Bar_ or _Restaurant_
   businessType: BusinessType!
 
   # City the business is located in.
@@ -178,8 +177,7 @@ type PageInfo {
 }
 
 type Query {
-  # Search for a areas within a distance
-  #         of a given latitude and longitude.
+  # Search for areas within a distance of a given latitude and longitude.
   areaSearch(
     # Returns the elements in the list that come after the specified cursor.
     after: String
@@ -196,12 +194,10 @@ type Query {
     # Returns the last _n_ elements from the list.
     last: Int
 
-    # The WGS84 latitude of the area in decimal
-    #         degrees. Must be between ­-90 and +90.
+    # The WGS84 latitude of the area in decimal degress.Must be between ­-90 and +90.
     latitude: Float!
 
-    # The WGS84 longitude of the area in decimal
-    #         degrees. Must be between ­-90 and +90
+    # The WGS84 longitude of the area in decimal degress.Must be between ­-90 and +90.
     longitude: Float!
   ): AreaConnection
 
@@ -211,9 +207,8 @@ type Query {
     slug: String!
   ): Business
 
-  # Search for a businesses within a distance
-  #         of a given latitude and longitude.
-  search(
+  # Search for businesses within a distance of a given latitude and longitude.
+  businessSearch(
     # Returns the elements in the list that come after the specified cursor.
     after: String
 
@@ -229,12 +224,18 @@ type Query {
     # Returns the last _n_ elements from the list.
     last: Int
 
-    # The WGS84 latitude of the business in decimal
-    #         degrees. Must be between ­-90 and +90.
+    # The WGS84 latitude of the business in decimaldegress. Must be between ­-90 and +90.
     latitude: Float!
 
-    # The WGS84 longitude of the business in decimal
-    #         degrees. Must be between ­-90 and +90
+    # The WGS84 longitude of the business in decimaldegress. Must be between ­-90 and +90.
     longitude: Float!
   ): BusinessConnection
+
+  # The signed in user.
+  viewer: User
+}
+
+type User {
+  # _First name_ and the initial of the _last name_.
+  shortName: String!
 }
