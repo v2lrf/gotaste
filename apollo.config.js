@@ -1,7 +1,7 @@
 module.exports = {
   client: {
     service: {
-      name: 'Govinu'
+      name: 'govinu'
     },
     includes: ['client/**/*']
   }

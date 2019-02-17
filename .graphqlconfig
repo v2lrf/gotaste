@@ -4,8 +4,12 @@
       "schemaPath": "./app/graphql/schema.graphql",
       "extensions": {
         "endpoints": {
-          "developent": "http://localhost:4000/graphql"
-          "prod": "https://api.govinu.com/graphql",
+          "dev": {
+            "url": "http://localhost:4000/graphql"
+          },
+          "prod": {
+            "url": "https://api.govinu.com/graphql"
+          }
         }
       }
     }
