@@ -62,7 +62,7 @@ function Discover({ latitude, longitude }) {
               {({ loading, error, data }) => {
                 if (loading) return 'Loading...'
                 if (error) return `Error! ${error.message}`
-                if (data.search.nodes.length === 0)
+                if (data.businessSearch.nodes.length === 0)
                   return (
                     <div className="mx-auto">
                       Vi fandt desværre ikke nogle forhandlere i dit område,
