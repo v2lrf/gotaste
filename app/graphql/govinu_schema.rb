@@ -16,3 +16,9 @@ class GovinuSchema < GraphQL::Schema
     Object.const_get(type_name).find(item_id)
   end
 end
+
+GraphQL::Errors.configure(GovinuSchema) do
+  rescue_from ActiveRecord::RecordNotFound do
+    nil
+  end
+end

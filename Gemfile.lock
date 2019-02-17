@@ -93,6 +93,8 @@ GEM
     graphql-batch (0.3.10)
       graphql (>= 0.8, < 2)
       promise.rb (~> 0.7.2)
+    graphql-errors (0.3.0)
+      graphql (>= 1.6.0, < 2)
     guard (2.15.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -310,6 +312,7 @@ DEPENDENCIES
   graphiql-rails
   graphql
   graphql-batch
+  graphql-errors
   guard-rake
   guard-rspec
   js-routes
