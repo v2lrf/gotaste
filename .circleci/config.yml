@@ -95,11 +95,6 @@ jobs:
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git master --force
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git master --force
-      - run:
-          name: Push GraphQL schema changes to Apollo Engine
-          command: |
-            sudo npm install --global apollo
-            apollo service:push
 
 workflows:
   version: 2
