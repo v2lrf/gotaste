@@ -8,10 +8,4 @@ Rails.application.routes.draw do
   end
 
   post '/graphql', to: 'graphql#execute'
-
-  resource :discover, only: :show
-  resources :businesses, only: %i[index show]
-  resources :events, only: :show
-
-  root 'landing#index'
 end
