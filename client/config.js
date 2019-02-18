@@ -9,7 +9,8 @@ const config = {
     {
       width: 1600,
       height: 600,
-      crop: 'fit'
+      crop: 'fit',
+      secure: true
     }
   ),
   DEFAULT_LATITUDE: 55.6753,
