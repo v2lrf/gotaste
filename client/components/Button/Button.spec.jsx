@@ -1,10 +1,15 @@
 import React from 'react'
-import { NavBar } from '.'
+import Button from '.'
 
-describe('NavBar', () => {
+describe('Button', () => {
   let component
+  let props
   beforeEach(() => {
-    component = shallow(<NavBar />)
+    props = {
+      kind: 'primary'
+    }
+
+    component = shallow(<Button {...props}>I am a button!</Button>)
   })
 
   describe('Snapshots', () => {

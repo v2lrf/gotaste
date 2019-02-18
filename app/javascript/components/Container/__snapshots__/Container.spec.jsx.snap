@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Container Snapshots should match the snapshot 1`] = `
-<div
-  className="container mx-auto px-4"
->
-  I know kung fu.
-</div>
-`;
