@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { Image } from 'cloudinary-react'
 
+import config from '../../config'
+
 import InfoItem from '../InfoItem'
 
 function BusinessCard({
@@ -23,7 +25,7 @@ function BusinessCard({
       <a className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4">
         <div>
           <Image
-            cloudName="dkrjpli3y"
+            cloudName={config.cloudinaryCloudName}
             publicId={heroImageId}
             height={200}
             width={600}

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Image } from 'cloudinary-react'
 
+import config from '../../config'
+
 function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   const figureClasses = classnames(
     'flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full',
@@ -24,7 +26,7 @@ function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
     <div className="flex items-center">
       <figure className={figureClasses}>
         <Image
-          cloudName="dkrjpli3y"
+          cloudName={config.cloudinaryCloudName}
           publicId={imageSrc}
           width="200"
           crop="scale"

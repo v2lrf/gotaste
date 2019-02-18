@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 
+import config from '../config'
+
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
 
 import Layout from '../components/Layout'
@@ -13,12 +15,17 @@ import { Row, Col } from '../components/Grid'
 /* eslint-disable-next-line */
 import SearchBar from '../components/SearchBar'
 
-const DEFAULT_LATITUDE = '55.6753'
-const DEFAULT_LONGITUDE = '12.5703'
-
 const SEARCH_FOR_BUSINESSES = gql`
-  query searchForBusinesses($latitude: Float!, $longitude: Float!) {
-    businessSearch(latitude: $latitude, longitude: $longitude, distance: 2000) {
+  query searchForBusinesses(
+    $latitude: Float!
+    $longitude: Float!
+    $distance: Int!
+  ) {
+    businessSearch(
+      latitude: $latitude
+      longitude: $longitude
+      distance: $distance
+    ) {
       nodes {
         ...BusinessInfoFields
       }
@@ -56,7 +63,8 @@ function Discover({ latitude, longitude }) {
               query={SEARCH_FOR_BUSINESSES}
               variables={{
                 latitude: geoData.latitude,
-                longitude: geoData.longitude
+                longitude: geoData.longitude,
+                distance: config.DEFAULT_DISTANCE
               }}
             >
               {({ loading, error, data }) => {
@@ -90,8 +98,8 @@ function Discover({ latitude, longitude }) {
 }
 
 Discover.getInitialProps = ({ query }) => ({
-  latitude: parseFloat(query.latitude || DEFAULT_LATITUDE),
-  longitude: parseFloat(query.longitude || DEFAULT_LONGITUDE)
+  latitude: parseFloat(query.latitude || config.DEFAULT_LATITUDE),
+  longitude: parseFloat(query.longitude || config.DEFAULT_LONGITUDE)
 })
 
 Discover.propTypes = {

@@ -1,5 +1,11 @@
 import React from 'react'
 import Router from 'next/router'
+import gql from 'graphql-tag'
+import { Query } from 'react-apollo'
+
+import BusinessInfoFields from '../fragments/BusinessInfoFields'
+
+import config from '../config'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container'
@@ -7,9 +13,29 @@ import Spacer from '../components/Spacer'
 import { Row, Col } from '../components/Grid'
 /* eslint-disable-next-line */
 import SearchBar from '../components/SearchBar'
+import AreaRow from '../components/AreaRow'
 
-const HERO_IMAGE_URL =
-  'https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=600&q=80'
+const SEARCH_FOR_AREAS = gql`
+  query searchForAreas($latitude: Float!, $longitude: Float!, $distance: Int!) {
+    areaSearch(
+      latitude: $latitude
+      longitude: $longitude
+      distance: $distance
+    ) {
+      nodes {
+        name
+        slug
+        businesses {
+          nodes {
+            ...BusinessInfoFields
+          }
+        }
+      }
+    }
+  }
+
+  ${BusinessInfoFields}
+`
 
 function handleSearchSubmit(latLng) {
   Router.push({
@@ -24,7 +50,9 @@ function Home() {
       <div
         className="bg-cover bg-no-repeat bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(${HERO_IMAGE_URL})`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(${
+            config.HERO_IMAGE_URL
+          })`
         }}
       >
         <Container>
@@ -44,6 +72,31 @@ function Home() {
           </Spacer>
         </Container>
       </div>
+      <Container>
+        <Spacer top="10" bottom="12">
+          <Query
+            query={SEARCH_FOR_AREAS}
+            variables={{
+              latitude: config.DEFAULT_LATITUDE,
+              longitude: config.DEFAULT_LONGITUDE,
+              distance: config.DEFAULT_DISTANCE
+            }}
+          >
+            {({ loading, error, data }) => {
+              if (loading) return ''
+              if (error) return `Error! ${error.message}`
+
+              return data.areaSearch.nodes.map(node => (
+                <AreaRow
+                  key={node.slug}
+                  name={node.name}
+                  businesses={node.businesses.nodes}
+                />
+              ))
+            }}
+          </Query>
+        </Spacer>
+      </Container>
     </Layout>
   )
 }

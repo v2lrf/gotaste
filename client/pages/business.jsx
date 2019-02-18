@@ -4,6 +4,8 @@ import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { Image } from 'cloudinary-react'
 
+import config from '../config'
+
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
 
 import Layout from '../components/Layout'
@@ -69,7 +71,7 @@ function BusinessPage({ slug }) {
                   <Row>
                     <Col xs="full" sm="2/3">
                       <Image
-                        cloudName="dkrjpli3y"
+                        cloudName={config.cloudinaryCloudName}
                         publicId={heroImageId}
                         height={300}
                         width={800}
