@@ -7,7 +7,9 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
   <div
     className="bg-red-light h-1"
   />
-  <Container>
+  <Container
+    narrow={false}
+  >
     <div
       className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between"
     >

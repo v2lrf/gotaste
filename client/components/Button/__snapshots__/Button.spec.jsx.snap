@@ -2,7 +2,8 @@
 
 exports[`Button Snapshots should match the snapshot 1`] = `
 <button
-  className="px-6 h-10 rounded shadow tracking-wide bg-red-darker text-white border border-red-darker hover:bg-red-darkest hover:border-red-darkest"
+  className="px-4 h-8 rounded shadow bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light"
+  onClick={[Function]}
   type="submit"
 >
   I am a button!

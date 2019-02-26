@@ -11,5 +11,10 @@ describe('Container', () => {
     it('should match the snapshot', () => {
       expect(component).toMatchSnapshot()
     })
+
+    it('should match the narrow snapshot', () => {
+      component.setProps({ narrow: true })
+      expect(component).toMatchSnapshot()
+    })
   })
 })

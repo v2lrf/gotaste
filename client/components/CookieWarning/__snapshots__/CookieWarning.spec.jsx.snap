@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookieWarning Snapshots should match the snapshot 1`] = `
+<div
+  class="fixed pin-b bg-white border-t border-red-lightest w-full py-4"
+>
+  <div
+    class="container mx-auto px-4"
+  >
+    <div
+      class="flex flex-wrap justify-between items-center"
+    >
+      <span
+        class="text-sm mr-4"
+      >
+        For at give dig den bedste oplevelse hos Govinu bruger vi cookies.
+        <a
+          class="ml-1 text-red-darker"
+          href="/cookie-and-privacypolicy"
+        >
+          Læs mere
+        </a>
+      </span>
+      <button
+        class="px-4 h-8 rounded shadow bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest"
+        type="button"
+      >
+        <span
+          class="text-sm"
+        >
+          Helt i orden!
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

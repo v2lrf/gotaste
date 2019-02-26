@@ -1,16 +1,10 @@
 import React from 'react'
-import Button from '.'
+import CookieWarning from './CookieWarning'
 
-describe('Button', () => {
+describe('CookieWarning', () => {
   let component
-  let props
   beforeEach(() => {
-    props = {
-      kind: 'primary',
-      onClick: () => null
-    }
-
-    component = shallow(<Button {...props}>I am a button!</Button>)
+    component = render(<CookieWarning />)
   })
 
   describe('Snapshots', () => {
