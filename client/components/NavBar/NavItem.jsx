@@ -6,7 +6,7 @@ function NavItem({ to, children }) {
   return (
     <li className="mr-6">
       <Link href={to}>
-        <a className="block text-red-dark no-underline hover:underline focus:underline">
+        <a className="block text-red-darkest no-underline hover:underline focus:underline">
           {children}
         </a>
       </Link>

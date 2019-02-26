@@ -87,17 +87,17 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
         <div
           className="mb-2 sm:mb-0"
         >
-          © 2019 Copyright Govinu. All rights reserved.
+          © 2019 Copyright Govinu. All rights reserved
         </div>
         <div>
+          Lavet i
           <span
-            aria-hidden={true}
-            aria-label="Dansk"
+            aria-label="Danmark"
+            className="ml-1"
             role="img"
           >
             🇩🇰
           </span>
-          Dansk
         </div>
       </div>
     </Container>

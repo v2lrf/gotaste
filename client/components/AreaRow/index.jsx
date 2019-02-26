@@ -6,7 +6,7 @@ import { Row, Col } from '../Grid'
 function AreaRow({ name, businesses }) {
   return (
     <Fragment>
-      <h2 className="text-center mb-6 text-red-dark">{name}</h2>
+      <h3 className="text-center mb-4 text-red-darker">{name}</h3>
       <Row>
         {businesses.map(business => (
           <Col xs="full" sm="1/2" lg="1/3" key={business.id}>

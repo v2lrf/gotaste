@@ -5,12 +5,14 @@ import Places from 'places.js'
 class SearchBar extends Component {
   componentDidMount() {
     const { onChange } = this.props
+
     const placesAutocomplete = Places({
       appId: process.env.ALGOLIA_PLACES_APP_ID,
       apiKey: process.env.ALGOLIA_PLACES_API_KEY,
       container: this.autoCompletePlace,
       countries: ['DK']
     })
+
     placesAutocomplete.on('change', event => {
       const {
         suggestion: { latlng }

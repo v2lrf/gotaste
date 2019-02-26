@@ -58,13 +58,13 @@ function Footer() {
             <div className="mb-2 sm:mb-0">
               {`© ${moment().format(
                 'YYYY'
-              )} Copyright Govinu. All rights reserved.`}
+              )} Copyright Govinu. All rights reserved`}
             </div>
             <div>
-              <span role="img" aria-label="Dansk" aria-hidden>
+              Lavet i
+              <span className="ml-1" role="img" aria-label="Danmark">
                 🇩🇰
               </span>
-              Dansk
             </div>
           </div>
         </Container>

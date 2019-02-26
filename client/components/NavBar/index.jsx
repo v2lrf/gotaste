@@ -26,7 +26,7 @@ function NavBar() {
         <div className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between">
           <div className="my-2 sm:my-0">
             <Link href="/">
-              <a className="text-red-light text-2xl font-bold no-underline">
+              <a className="text-red-dark text-2xl font-bold no-underline">
                 govinu
               </a>
             </Link>

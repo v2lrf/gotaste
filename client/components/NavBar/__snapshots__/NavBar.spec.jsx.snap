@@ -20,7 +20,7 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
           href="/"
         >
           <a
-            className="text-red-light text-2xl font-bold no-underline"
+            className="text-red-dark text-2xl font-bold no-underline"
           >
             govinu
           </a>

@@ -25,7 +25,7 @@ const SEARCH_FOR_AREAS = gql`
       nodes {
         name
         slug
-        businesses {
+        businesses(last: 3) {
           nodes {
             ...BusinessInfoFields
           }
@@ -74,6 +74,9 @@ function Home() {
       </div>
       <Container>
         <Spacer top="10" bottom="12">
+          <h2 className="text-center mb-6 text-red-dark">
+            Udvalgte forhandlere og barer
+          </h2>
           <Query
             query={SEARCH_FOR_AREAS}
             variables={{

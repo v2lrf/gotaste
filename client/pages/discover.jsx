@@ -47,7 +47,7 @@ function Discover({ latitude, longitude }) {
           <Spacer top="12" bottom="12" inner>
             <Row>
               <Col xs="full" md="1/2" offset>
-                <h3 className="text-center mb-4">
+                <h3 className="text-center mb-4 text-red-darkest">
                   Hvor vil du gå på opdagelse henne?
                 </h3>
                 <SearchBar onChange={latlng => setGeoData(latlng)} />

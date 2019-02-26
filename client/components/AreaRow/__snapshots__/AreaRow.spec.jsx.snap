@@ -2,11 +2,11 @@
 
 exports[`AreaRow Snapshots should match the snapshot 1`] = `
 Array [
-  <h2
-    class="text-center mb-6 text-red-dark"
+  <h3
+    class="text-center mb-4 text-red-darker"
   >
     Indre By
-  </h2>,
+  </h3>,
   <div
     class="px-2"
   >

@@ -8,10 +8,10 @@ exports[`CookieWarning Snapshots should match the snapshot 1`] = `
     class="container mx-auto px-4"
   >
     <div
-      class="flex flex-wrap justify-between items-center"
+      class="flex justify-between items-center"
     >
-      <span
-        class="text-sm mr-4"
+      <div
+        class="text-sm mr-2 flex-shrink"
       >
         For at give dig den bedste oplevelse hos Govinu bruger vi cookies.
         <a
@@ -20,17 +20,17 @@ exports[`CookieWarning Snapshots should match the snapshot 1`] = `
         >
           Læs mere
         </a>
-      </span>
-      <button
-        class="px-4 h-8 rounded shadow bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest"
-        type="button"
+      </div>
+      <div
+        class="flex-none text-sm"
       >
-        <span
-          class="text-sm"
+        <button
+          class="px-4 h-8 rounded shadow bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest"
+          type="button"
         >
           Helt i orden!
-        </span>
-      </button>
+        </button>
+      </div>
     </div>
   </div>
 </div>
