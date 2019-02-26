@@ -10,9 +10,12 @@ if (!process.browser) {
   global.fetch = fetch
 }
 
+const DEV_ENDPOINT = 'http://localhost:4000/graphql'
+const PROD_ENDPOINT = 'https://api.govinu.com/graphql'
+
 function create(initialState, { getToken }) {
   const httpLink = createHttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri: process.env.NODE_ENV === 'production' ? PROD_ENDPOINT : DEV_ENDPOINT,
     credentials: 'same-origin'
   })
 

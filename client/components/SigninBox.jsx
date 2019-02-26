@@ -1,6 +1,6 @@
 import React from 'react'
 import { Mutation, withApollo } from 'react-apollo'
-import gql from 'graphql-tag'
+import gql from 'apollo-boost'
 import cookie from 'cookie'
 import redirect from '../lib/redirect'
 
