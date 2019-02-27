@@ -7,16 +7,8 @@ import config from '../../config'
 
 import InfoItem from '../InfoItem'
 
-function BusinessCard({
-  name,
-  streetName,
-  streetNumber,
-  postalCode,
-  city,
-  logoId,
-  heroImageId,
-  slug
-}) {
+function BusinessCard({ name, address, logoId, heroImageId, slug }) {
+  const { streetName, streetNumber, postalCode, city } = address
   return (
     <Link
       href={{ pathname: '/business', query: { slug } }}
@@ -48,10 +40,12 @@ function BusinessCard({
 
 BusinessCard.propTypes = {
   name: PropTypes.string.isRequired,
-  streetName: PropTypes.string.isRequired,
-  streetNumber: PropTypes.string.isRequired,
-  postalCode: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
+  address: PropTypes.shape({
+    streetName: PropTypes.string.isRequired,
+    streetNumber: PropTypes.string.isRequired,
+    postalCode: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired
+  }).isRequired,
   logoId: PropTypes.string.isRequired,
   heroImageId: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired

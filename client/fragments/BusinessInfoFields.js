@@ -5,10 +5,12 @@ const BusinessInfoFields = gql`
     id
     name
     slug
-    streetName
-    streetNumber
-    postalCode
-    city
+    address {
+      streetName
+      streetNumber
+      postalCode
+      city
+    }
     logoId
     heroImageId
   }
