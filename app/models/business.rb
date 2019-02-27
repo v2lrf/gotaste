@@ -22,7 +22,10 @@ class Business < ApplicationRecord
            dependent:   :destroy
 
   has_many :opening_hours, dependent: :destroy
-  has_one :address, as: :addressable, dependent: :destroy
+  has_one :address,
+          as:         :addressable,
+          inverse_of: :addressable,
+          dependent:  :destroy
 
   class << self
     def closest_within(latitude:, longitude:, distance: 1000)
