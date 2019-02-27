@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app'
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
+/* eslint-disable-next-line */
 import withApollo from '../lib/withApollo'
 
 import '../styles/styles.css'

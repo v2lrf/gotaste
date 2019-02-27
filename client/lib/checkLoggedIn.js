@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import { gql } from 'apollo-boost'
 
 export default apolloClient =>
   apolloClient
@@ -11,10 +11,5 @@ export default apolloClient =>
         }
       `
     })
-    .then(({ data }) => {
-      return { loggedInUser: data.viewer }
-    })
-    .catch(() => {
-      // Fail gracefully
-      return { loggedInUser: {} }
-    })
+    .then(({ data }) => ({ loggedInUser: data.viewer }))
+    .catch(() => ({ loggedInUser: {} }))

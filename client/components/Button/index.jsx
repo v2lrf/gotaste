@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-function Button({ children, type, kind, onClick }) {
+function Button({ children, type, kind, onClick, fullWidth }) {
   const classNames = classnames('px-4 h-8 rounded shadow', {
     'bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light':
       kind === 'primary',
     'bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest':
-      kind === 'secondary'
+      kind === 'secondary',
+    'w-full': fullWidth
   })
 
   return (
@@ -22,11 +23,14 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   kind: PropTypes.oneOf(['primary', 'secondary']).isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func,
+  fullWidth: PropTypes.bool
 }
 
 Button.defaultProps = {
-  type: 'submit'
+  type: 'submit',
+  onClick: () => null,
+  fullWidth: false
 }
 
 export default Button

@@ -1686,7 +1686,6 @@ anymatch@^2.0.0:
 apollo-boost@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/apollo-boost/-/apollo-boost-0.3.0.tgz#cf063b0c8a363e420d4f0262cc54d3625fab5579"
-  integrity sha512-a4HOgb9Y2X7QSmhr5JCmtHY/YWuX2NRyEYZI/KWJnB1TqMnFIdUOWE/Q2izt8nOJJpeNoYu86E23oyXX9liJvA==
   dependencies:
     apollo-cache "^1.2.0"
     apollo-cache-inmemory "^1.5.0"
@@ -1708,7 +1707,6 @@ apollo-cache-control@0.4.1:
 apollo-cache-inmemory@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.5.0.tgz#90b1a38f744762ab47c415b9d7b2d32fbd803088"
-  integrity sha512-hyg8R7G3XOfZhl8fQLs0vGEwi2rr8PuEIiumCY4qmwviaGsmwjs/Dm63cyeMm3Sfu05vzFQkwMdBf5u7xBg3cQ==
   dependencies:
     apollo-cache "^1.2.0"
     apollo-utilities "^1.2.0"
@@ -1719,7 +1717,6 @@ apollo-cache-inmemory@^1.5.0:
 apollo-cache@1.2.0, apollo-cache@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.2.0.tgz#7ebfc9a53027264e4a5bce9b886471cc77c50784"
-  integrity sha512-aZduG7o75crjWeONq9kVzkqO9hAcEklo3oN6Rd+ANpB+ImRklCFkz88XdXQ2/GHV26jh8VtQJIhiNIow10QzIg==
   dependencies:
     apollo-utilities "^1.2.0"
     tslib "^1.9.3"
@@ -1727,7 +1724,6 @@ apollo-cache@1.2.0, apollo-cache@^1.2.0:
 apollo-client@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.5.0.tgz#8721318ad0d30e364b594f5dc2ee94c3a9dc5f1f"
-  integrity sha512-px2qCsbxrJFy+nkEOmtCMTl7svPMYlmoqKVfJx3ZAdE4mdlQp9BMm47nT7l9pHdez5U/QJmpgz5OICHLfjloGg==
   dependencies:
     "@types/zen-observable" "^0.8.0"
     apollo-cache "1.2.0"
@@ -1863,7 +1859,6 @@ apollo-language-server@1.5.0:
 apollo-link-context@^1.0.14, apollo-link-context@^1.0.9:
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.14.tgz#6265eef49bedadddbbcff4026d04cd351094cd6c"
-  integrity sha512-l6SIN7Fwqhgg5C5eA8xSrt8gulHBmYTE3J4z5/Q2hP/8Kok0rQ/z5q3uy42/hkdYlnaktOvpz+ZIwEFzcXwujQ==
   dependencies:
     apollo-link "^1.2.8"
 
@@ -1886,7 +1881,7 @@ apollo-link-http-common@^0.2.10:
   dependencies:
     apollo-link "^1.2.8"
 
-apollo-link-http@^1.3.1, apollo-link-http@^1.5.5:
+apollo-link-http@^1.3.1, apollo-link-http@^1.5.11, apollo-link-http@^1.5.5:
   version "1.5.11"
   resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.11.tgz#1f72a377d03e874a08bc9eadb1ce7ecb166f1e56"
   dependencies:
@@ -1974,7 +1969,6 @@ apollo-tracing@0.4.1:
 apollo-utilities@1.2.0, apollo-utilities@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.2.0.tgz#ba5a1271c55e0d79069b1919c9d533164a70f9c3"
-  integrity sha512-4+vxCpEuirQjPqLCckBnOMGZxK/c+2eJtYEbh3xhccNM1pYB5Gx/lrfCdZS5MKDykuWZYY08EvidDy21nr049w==
   dependencies:
     fast-json-stable-stringify "^2.0.0"
     ts-invariant "^0.2.1"
@@ -12383,7 +12377,6 @@ trim-right@^1.0.1:
 ts-invariant@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.2.1.tgz#3d587f9d6e3bded97bf9ec17951dd9814d5a9d3f"
-  integrity sha512-Z/JSxzVmhTo50I+LKagEISFJW3pvPCqsMWLamCTX8Kr3N5aMrnGOqcflbe5hLUzwjvgPfnLzQtHZv0yWQ+FIHg==
   dependencies:
     tslib "^1.9.3"
 

@@ -14,7 +14,17 @@ describe('Button', () => {
   })
 
   describe('Snapshots', () => {
-    it('should match the snapshot', () => {
+    it('should match the primary snapshot', () => {
+      expect(component).toMatchSnapshot()
+    })
+
+    it('should match the secondary snapshot', () => {
+      component.setProps({ kind: 'secondary' })
+      expect(component).toMatchSnapshot()
+    })
+
+    it('should match the full width snapshot', () => {
+      component.setProps({ fullWidth: true })
       expect(component).toMatchSnapshot()
     })
   })
