@@ -16,6 +16,22 @@ ActiveRecord::Schema.define(version: 2019_03_06_072202) do
   enable_extension "plpgsql"
   enable_extension "postgis"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "addressable_type"
+    t.bigint "addressable_id"
+    t.string "street_name", null: false
+    t.string "street_number", null: false
+    t.string "postal_code", null: false
+    t.string "city", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.geography "coordinate", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+    t.index ["coordinate"], name: "index_addresses_on_coordinate", using: :gist
+  end
+
   create_table "areas", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false

@@ -22,8 +22,7 @@ class Business < ApplicationRecord
            dependent:   :destroy
 
   has_many :opening_hours, dependent: :destroy
-
-  before_save :set_longitude_latitude_point
+  has_one :address, as: :addressable, dependent: :destroy
 
   class << self
     def closest_within(latitude:, longitude:, distance: 1000)
@@ -44,11 +43,5 @@ class Business < ApplicationRecord
 
   def hero_image_id
     HeroImage.new(hero_image_id: self[:hero_image_id]).id
-  end
-
-  private
-
-  def set_longitude_latitude_point
-    self.longitude_latitude = "POINT(#{longitude} #{latitude})"
   end
 end
