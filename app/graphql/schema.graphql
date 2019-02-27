@@ -1,3 +1,35 @@
+type Address {
+  """
+  City the address is located in.
+  """
+  city: String!
+
+  """
+  Latitude of the address.
+  """
+  latitude: Float!
+
+  """
+  Longitude of the address.
+  """
+  longitude: Float!
+
+  """
+  Postal code.
+  """
+  postalCode: String!
+
+  """
+  Name of the street
+  """
+  streetName: String!
+
+  """
+  Number of the street
+  """
+  streetNumber: String!
+}
+
 type Area {
   """
   Businessses in the area.
@@ -72,14 +104,14 @@ type AreaEdge {
 
 type Business implements Node {
   """
+  Address of the business.
+  """
+  address: Address!
+
+  """
   Type of the business. Either a _Shop_, _Bar_ or _Restaurant_
   """
   businessType: BusinessType!
-
-  """
-  City the business is located in.
-  """
-  city: String!
 
   """
   Events hosted by the business
@@ -93,19 +125,9 @@ type Business implements Node {
   id: ID!
 
   """
-  Latitude of the business.
-  """
-  latitude: Float!
-
-  """
   Cloudinary ID of the business logo.
   """
   logoId: String
-
-  """
-  Longitude of the business.
-  """
-  longitude: Float!
 
   """
   Name of the business.
@@ -118,24 +140,9 @@ type Business implements Node {
   openingHours: [OpeningHour!]
 
   """
-  Postal code for the business.
-  """
-  postalCode: String!
-
-  """
   Slug of the business.
   """
   slug: String!
-
-  """
-  Name of the street where the business is located.
-  """
-  streetName: String!
-
-  """
-  Number of the street where the business is located.
-  """
-  streetNumber: String!
 }
 
 """
