@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import gql from 'graphql-tag'
+import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import { Image } from 'cloudinary-react'
 

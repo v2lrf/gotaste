@@ -1,8 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Snapshots should match the snapshot 1`] = `
+exports[`Button Snapshots should match the full width snapshot 1`] = `
+<button
+  className="px-4 h-8 rounded shadow bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light w-full"
+  onClick={[Function]}
+  type="submit"
+>
+  I am a button!
+</button>
+`;
+
+exports[`Button Snapshots should match the primary snapshot 1`] = `
 <button
   className="px-4 h-8 rounded shadow bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light"
+  onClick={[Function]}
+  type="submit"
+>
+  I am a button!
+</button>
+`;
+
+exports[`Button Snapshots should match the secondary snapshot 1`] = `
+<button
+  className="px-4 h-8 rounded shadow bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest"
   onClick={[Function]}
   type="submit"
 >

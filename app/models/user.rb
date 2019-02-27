@@ -8,9 +8,12 @@ class User < ApplicationRecord
   }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :token_authenticatable
 
   validates :first_name, :last_name, presence: true
+
+  before_save :ensure_authentication_token
 
   def short_name
     "#{first_name} #{last_name[0]}."

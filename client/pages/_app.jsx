@@ -1,26 +1,17 @@
-import React from 'react'
 import App, { Container } from 'next/app'
+import React from 'react'
 import { ApolloProvider } from 'react-apollo'
-import withData from '../lib/withData'
+/* eslint-disable-next-line */
+import withApollo from '../lib/withApollo'
 
 import '../styles/styles.css'
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-    // this exposes the query to the user
-    pageProps.query = ctx.query
-    return { pageProps }
-  }
-
+class GovinuApp extends App {
   render() {
-    const { Component, apollo, pageProps } = this.props
+    const { Component, pageProps, apolloClient } = this.props
     return (
       <Container>
-        <ApolloProvider client={apollo}>
+        <ApolloProvider client={apolloClient}>
           <Component {...pageProps} />
         </ApolloProvider>
       </Container>
@@ -28,4 +19,4 @@ class MyApp extends App {
   }
 }
 
-export default withData(MyApp)
+export default withApollo(GovinuApp)

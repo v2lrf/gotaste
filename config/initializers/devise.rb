@@ -82,4 +82,7 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+
+  config.http_authenticatable = [:token]
+  config.skip_session_storage = %i[http_auth token_auth]
 end
