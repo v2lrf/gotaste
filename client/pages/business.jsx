@@ -19,8 +19,10 @@ const GET_BUSINESS = gql`
   query getBusiness($slug: String!) {
     business(slug: $slug) {
       ...BusinessInfoFields
-      latitude
-      longitude
+      address {
+        latitude
+        longitude
+      }
     }
   }
 
@@ -40,17 +42,7 @@ function BusinessPage({ slug }) {
           if (loading) return 'Loading...'
           if (error) return `Error! ${error.message}`
           const {
-            business: {
-              logoId,
-              name,
-              streetName,
-              streetNumber,
-              postalCode,
-              city,
-              heroImageId,
-              latitude,
-              longitude
-            }
+            business: { logoId, name, address, heroImageId }
           } = data
           return (
             <Fragment>
@@ -60,7 +52,9 @@ function BusinessPage({ slug }) {
                     <InfoItem
                       imageSrc={logoId}
                       headline={name}
-                      tagline={`${streetName} ${streetNumber}, ${postalCode} ${city}`}
+                      tagline={`${address.streetName} ${
+                        address.streetNumber
+                      }, ${address.postalCode} ${address.city}`}
                       large
                     />
                   </Spacer>
@@ -82,8 +76,8 @@ function BusinessPage({ slug }) {
                     </Col>
                     <Col xs="full" sm="1/3">
                       <MapWithMarker
-                        latitude={latitude}
-                        longitude={longitude}
+                        latitude={address.latitude}
+                        longitude={address.longitude}
                         height={200}
                         width="100%"
                       />
