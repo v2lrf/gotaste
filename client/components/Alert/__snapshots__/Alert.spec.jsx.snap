@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Snapshots should match the danger snapshot 1`] = `
+<div
+  className="flex border shadow rounded my-4 py-2 text-sm bg-red-lightest text-red-darkest border-red-light"
+>
+  <span
+    aria-hidden={true}
+    aria-label="ikon"
+    className="pl-2 mr-2"
+    role="img"
+  >
+    🚨
+  </span>
+  <div
+    className="pr-2"
+  >
+    Whoa! I am an alert.
+  </div>
+</div>
+`;
+
+exports[`Alert Snapshots should match the info snapshot 1`] = `
+<div
+  className="flex border shadow rounded my-4 py-2 text-sm bg-white text-red-darkest border-red-lighter"
+>
+  <span
+    aria-hidden={true}
+    aria-label="ikon"
+    className="pl-2 mr-2"
+    role="img"
+  >
+    ⚠️
+  </span>
+  <div
+    className="pr-2"
+  >
+    Whoa! I am an alert.
+  </div>
+</div>
+`;

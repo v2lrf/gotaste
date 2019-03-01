@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Link from 'next/link'
+import { Query } from 'react-apollo'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 
 import Container from '../Container'
 import NavItem from './NavItem'
+
+import { GET_VIEWER } from './queries'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()
@@ -36,6 +39,18 @@ function NavBar() {
               <NavItem to="/discover">Gå på opdagelse</NavItem>
               <NavItem to="#">Begivenheder</NavItem>
               <NavItem to="#">Forhandlere</NavItem>
+              <Query query={GET_VIEWER}>
+                {({ data }) =>
+                  data.viewer ? (
+                    <NavItem to="/sign-out">Log ud</NavItem>
+                  ) : (
+                    <Fragment>
+                      <NavItem to="/sign-up">Opret bruger</NavItem>
+                      <NavItem to="/login">Log ind</NavItem>
+                    </Fragment>
+                  )
+                }
+              </Query>
             </ul>
           </nav>
         </div>

@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import Spacer from '../components/Spacer'
 import { Input } from '../components/Form'
 import Button from '../components/Button'
+import Alert from '../components/Alert'
 
 const SIGN_IN = gql`
   mutation signIn($email: String!, $password: String!) {
@@ -73,7 +74,12 @@ class Login extends Component {
                     })
                   }}
                 >
-                  {error && <p>No user found with that information.</p>}
+                  {error && (
+                    <Alert kind="info">
+                      Vi kunne ikke finde en bruger med de informationer. Prøv
+                      igen.
+                    </Alert>
+                  )}
                   <Input
                     label="E-mail"
                     name="email"
