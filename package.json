@@ -42,7 +42,7 @@
     "next": "^8.0.3",
     "next-with-apollo": "^3.3.2",
     "nprogress": "^0.2.0",
-    "places.js": "^1.15.1",
+    "places.js": "^1.16.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.3",
     "react-apollo": "^2.4.1",

@@ -2286,9 +2286,9 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-autocomplete.js@^0.33.0:
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.33.0.tgz#33d460367e2e7b6c2fe424353d955e022fe4594c"
+autocomplete.js@^0.36.0:
+  version "0.36.0"
+  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.36.0.tgz#94fe775fe64b6cd42e622d076dc7fd26bedd837b"
   dependencies:
     immediate "^3.2.3"
 
@@ -9592,13 +9592,13 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-places.js@^1.15.1:
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.15.1.tgz#bd6e8300281524fd756b9f923ae907c97e2356b7"
+places.js@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.16.1.tgz#5e62a917bb17fb44633adf944dd3cb3497393c7f"
   dependencies:
     algolia-aerial "^1.5.3"
     algoliasearch "^3.31.0"
-    autocomplete.js "^0.33.0"
+    autocomplete.js "^0.36.0"
     events "^3.0.0"
     insert-css "^2.0.0"
 
