@@ -43,7 +43,7 @@
     "next-with-apollo": "^3.3.2",
     "nprogress": "^0.2.0",
     "places.js": "^1.16.1",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-apollo": "^2.5.1",
     "react-content-loader": "^4.0.1",
