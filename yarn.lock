@@ -10482,7 +10482,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-apollo@^2.3.3, react-apollo@^2.4.1:
+react-apollo@^2.3.3:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.4.1.tgz#89db63ebacf01c1603553bb476f089492aaeab2c"
   dependencies:
@@ -10492,6 +10492,17 @@ react-apollo@^2.3.3, react-apollo@^2.4.1:
     lodash.flowright "^3.5.0"
     lodash.isequal "^4.5.0"
     prop-types "^15.6.0"
+
+react-apollo@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.5.1.tgz#85934e1cf41ba88e2e96c921b44588f29d5daad6"
+  dependencies:
+    apollo-utilities "^1.2.1"
+    hoist-non-react-statics "^3.0.0"
+    lodash.isequal "^4.5.0"
+    prop-types "^15.6.0"
+    ts-invariant "^0.2.1"
+    tslib "^1.9.3"
 
 react-content-loader@^4.0.1:
   version "4.0.1"

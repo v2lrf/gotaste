@@ -45,7 +45,7 @@
     "places.js": "^1.16.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.3",
-    "react-apollo": "^2.4.1",
+    "react-apollo": "^2.5.1",
     "react-content-loader": "^4.0.1",
     "react-dom": "^16.8.3",
     "react-map-gl": "^4.0.13",
