@@ -1,5 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
+import Favicons from '../components/Favicons'
 
 class GovinuDocument extends Document {
   static async getInitialProps(ctx) {
@@ -16,6 +17,7 @@ class GovinuDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <Favicons />
           <link
             href="https://fonts.googleapis.com/css?family=Nunito:400,700"
             rel="stylesheet"
