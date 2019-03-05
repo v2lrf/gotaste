@@ -30,6 +30,16 @@ type Address {
   streetNumber: String!
 }
 
+"""
+Types that has an address.
+"""
+interface Addressable {
+  """
+  Address of the object.
+  """
+  address: Address!
+}
+
 type Area {
   """
   Businessses in the area.
@@ -102,9 +112,9 @@ type AreaEdge {
   node: Area
 }
 
-type Business implements Node {
+type Business implements Addressable & Node {
   """
-  Address of the business.
+  Address of the object.
   """
   address: Address!
 
@@ -197,7 +207,12 @@ enum BusinessType {
   SHOP
 }
 
-type Event {
+type Event implements Addressable {
+  """
+  Address of the object.
+  """
+  address: Address!
+
   """
   When the event begins.
   """

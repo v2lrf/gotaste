@@ -2,6 +2,8 @@
 
 module Types
   class EventType < Types::BaseObject
+    implements Addressable
+
     field :name, String, 'Name of the event.', null: false
     field :description, String, 'Description of the event.', null: true
     field :url, String, 'URL of where to buy a tick to the event.', null: true

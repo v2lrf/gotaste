@@ -2,9 +2,10 @@
 
 module Types
   class BusinessType < Types::BaseObject
-    global_id_field :id
-
     implements GraphQL::Relay::Node.interface
+    implements Addressable
+
+    global_id_field :id
 
     field :name, String, 'Name of the business.', null: false
 
@@ -27,24 +28,12 @@ module Types
           description: 'Cloudinary ID of the business hero image.',
           null:        true
 
-    field :address, AddressType,
-          description: 'Address of the business.',
-          null:        false
-
     def events
       Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
     end
 
     def opening_hours
       Loaders::ForeignKeyLoader.for(OpeningHour, :business_id).load([object.id])
-    end
-
-    def address
-      Loaders::RecordLoader.for(
-        Address,
-        column: :addressable_id,
-        where:  { addressable_type: object.class.to_s }
-      ).load(object.id)
     end
   end
 end
