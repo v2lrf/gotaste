@@ -27,19 +27,6 @@ class Business < ApplicationRecord
           inverse_of: :addressable,
           dependent:  :destroy
 
-  class << self
-    def closest_within(latitude:, longitude:, distance: 1000)
-      where(
-        "ST_DWithin(longitude_latitude, 'POINT(? ?)', ?)",
-        longitude, latitude, distance
-      ).order(
-        Arel.sql(
-          "ST_Distance(longitude_latitude, 'POINT(#{longitude} #{latitude})')"
-        )
-      )
-    end
-  end
-
   def logo_id
     Logo.new(business_logo_id: self[:logo_id]).id
   end
