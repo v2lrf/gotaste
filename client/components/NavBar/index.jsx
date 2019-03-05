@@ -29,13 +29,17 @@ function NavBar() {
         <div className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between">
           <div className="my-2 sm:my-0">
             <Link href="/">
-              <a className="text-red-dark text-2xl font-bold no-underline">
-                govinu
+              <a className="flex text-red-dark text-2xl font-bold no-underline">
+                <img
+                  src="/static/govinu-logo.svg"
+                  alt="Govinu"
+                  className="h-8"
+                />
               </a>
             </Link>
           </div>
           <nav className="pb-4 pt-1 sm:pb-0 sm:pt-0 overflow-hidden max-w-full">
-            <ul className="list-reset flex overflow-x-auto flex-row whitespace-no-wrap text-sm sm:text-base">
+            <ul className="list-reset flex overflow-x-scroll scrolling-touch flex-row whitespace-no-wrap text-sm sm:text-base">
               <NavItem to="/discover">Gå på opdagelse</NavItem>
               <NavItem to="#">Begivenheder</NavItem>
               <NavItem to="#">Forhandlere</NavItem>

@@ -20,9 +20,13 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
           href="/"
         >
           <a
-            className="text-red-dark text-2xl font-bold no-underline"
+            className="flex text-red-dark text-2xl font-bold no-underline"
           >
-            govinu
+            <img
+              alt="Govinu"
+              className="h-8"
+              src="/static/govinu-logo.svg"
+            />
           </a>
         </Link>
       </div>
@@ -30,7 +34,7 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
         className="pb-4 pt-1 sm:pb-0 sm:pt-0 overflow-hidden max-w-full"
       >
         <ul
-          className="list-reset flex overflow-x-auto flex-row whitespace-no-wrap text-sm sm:text-base"
+          className="list-reset flex overflow-x-scroll scrolling-touch flex-row whitespace-no-wrap text-sm sm:text-base"
         >
           <NavItem
             to="/discover"
