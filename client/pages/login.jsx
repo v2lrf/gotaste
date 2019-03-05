@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react'
+import Link from 'next/link'
 import { Mutation, withApollo } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import Cookies from 'js-cookie'
@@ -101,6 +102,12 @@ class Login extends Component {
                 </form>
               )}
             </Mutation>
+            <div className="mt-6 text-sm text-center">
+              Eller har du ikke en bruger?
+              <Link href="/sign-up">
+                <a className="text-red-dark ml-1">Opret en nu</a>
+              </Link>
+            </div>
           </div>
         </Spacer>
       </Layout>
