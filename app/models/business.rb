@@ -4,9 +4,7 @@ class Business < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  validates :name, :street_name, :street_number,
-            :postal_code, :city, :latitude, :longitude,
-            :business_type, presence: true
+  validates :name, :business_type, presence: true
 
   enum business_type: {
     shop:       0,

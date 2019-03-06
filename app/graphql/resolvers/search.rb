@@ -32,8 +32,7 @@ module Resolvers
         distance:  distance
       )
 
-      addresses.map(&:addressable)
-      # Loaders::PolymorphicKeyLoader.for(Address, :addressable).load(addresses)
+      addresses&.map(&:addressable)
     end
   end
 end

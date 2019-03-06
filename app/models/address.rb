@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Address < ApplicationRecord
+  validates :street_name, :street_number, :postal_code,
+            :city, :latitude, :longitude, presence: true
+
   belongs_to :addressable, polymorphic: true
 
   before_save :set_coordinate
