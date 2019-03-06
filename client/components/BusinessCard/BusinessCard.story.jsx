@@ -5,10 +5,12 @@ import BusinessCard from '.'
 
 const fakeBusiness = {
   name: 'Vinhanen',
-  streetName: 'Baggesensgade',
-  streetNumber: '13',
-  postalCode: '2200',
-  city: 'København N'
+  address: {
+    streetName: 'Baggesensgade',
+    streetNumber: '13',
+    postalCode: '2200',
+    city: 'København N'
+  }
 }
 
 storiesOf('BusinessCard', module).add('Default', () => (
