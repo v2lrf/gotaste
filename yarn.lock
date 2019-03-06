@@ -10986,9 +10986,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollbar@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/rollbar/-/rollbar-2.5.2.tgz#ebf830b1089146e9010d3fd4eca9ba65622b9c95"
+rollbar@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/rollbar/-/rollbar-2.5.3.tgz#cc6e468dbb6334da856a0936672b7acdf7063b89"
   dependencies:
     async "~1.2.1"
     console-polyfill "0.3.0"
