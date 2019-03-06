@@ -212,9 +212,9 @@ type Event {
   host: Business!
 
   """
-  Title of the event.
+  Name of the event.
   """
-  title: String!
+  name: String!
 
   """
   URL of where to buy a tick to the event.
