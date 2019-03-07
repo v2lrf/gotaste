@@ -358,6 +358,16 @@ type Query {
   ): Business
 
   """
+  Find an event by it's slug.
+  """
+  event(
+    """
+    Slug of the event.
+    """
+    slug: String!
+  ): Event
+
+  """
   Search for businesses and events within a distance of a given latitude and longitude.
   """
   search(
