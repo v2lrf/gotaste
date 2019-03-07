@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Resolvers
-  class BusinessSearch < Resolvers::Base
-    description 'Search for businesses within'\
+  class Search < Resolvers::Base
+    description 'Search for businesses and events within'\
                 ' a distance of a given latitude and longitude.'
 
-    type Types::BusinessType.connection_type, null: true
+    type Types::SearchType.connection_type, null: true
 
     DEFALULT_DISTANCE_IN_METERS = 1000
 
@@ -26,11 +26,13 @@ module Resolvers
              required:    false
 
     def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_METERS)
-      Business.closest_within(
+      addresses = Address.closest_within(
         latitude:  latitude,
         longitude: longitude,
         distance:  distance
       )
+
+      addresses&.map(&:addressable)
     end
   end
 end

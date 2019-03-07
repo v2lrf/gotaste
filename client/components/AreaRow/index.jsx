@@ -24,10 +24,12 @@ AreaRow.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      streetName: PropTypes.string.isRequired,
-      streetNumber: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
-      city: PropTypes.string.isRequired,
+      address: PropTypes.shape({
+        streetName: PropTypes.string.isRequired,
+        streetNumber: PropTypes.string.isRequired,
+        postalCode: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired
+      }).isRequired,
       slug: PropTypes.string.isRequired
     })
   )

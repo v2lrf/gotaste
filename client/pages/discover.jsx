@@ -21,13 +21,11 @@ const SEARCH_FOR_BUSINESSES = gql`
     $longitude: Float!
     $distance: Int!
   ) {
-    businessSearch(
-      latitude: $latitude
-      longitude: $longitude
-      distance: $distance
-    ) {
+    search(latitude: $latitude, longitude: $longitude, distance: $distance) {
       nodes {
-        ...BusinessInfoFields
+        ... on Business {
+          ...BusinessInfoFields
+        }
       }
     }
   }
@@ -70,7 +68,7 @@ function Discover({ latitude, longitude }) {
               {({ loading, error, data }) => {
                 if (loading) return 'Loading...'
                 if (error) return `Error! ${error.message}`
-                if (data.businessSearch.nodes.length === 0)
+                if (data.search.nodes.length === 0)
                   return (
                     <div className="mx-auto">
                       Vi fandt desværre ikke nogle forhandlere i dit område,
@@ -80,14 +78,16 @@ function Discover({ latitude, longitude }) {
                       </span>
                     </div>
                   )
-                return data.businessSearch.nodes.map(node => {
-                  const { id } = node
-                  return (
-                    <Col xs="full" sm="1/2" lg="1/3" key={id}>
-                      <BusinessCard {...node} />
-                    </Col>
-                  )
-                })
+                return data.search.nodes
+                  .filter(node => Boolean(node.id))
+                  .map(node => {
+                    const { id } = node
+                    return (
+                      <Col xs="full" sm="1/2" lg="1/3" key={id}>
+                        <BusinessCard {...node} />
+                      </Col>
+                    )
+                  })
               }}
             </Query>
           </Row>

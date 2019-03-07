@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Resolvers::BusinessSearch do
+describe Resolvers::Search do
   subject(:klass) do
     described_class.new(
       object:  nil,
@@ -21,7 +21,7 @@ describe Resolvers::BusinessSearch do
       end
 
       it 'calls the closest_within with arguments and explicit distance' do
-        expect(Business).to receive(:closest_within).with(
+        expect(Address).to receive(:closest_within).with(
           latitude:  args[:latitude],
           longitude: args[:longitude],
           distance:  args[:distance]
@@ -40,10 +40,10 @@ describe Resolvers::BusinessSearch do
       end
 
       it 'calls the closest_within with arguments and default distance' do
-        expect(Business).to receive(:closest_within).with(
+        expect(Address).to receive(:closest_within).with(
           latitude:  args[:latitude],
           longitude: args[:longitude],
-          distance:  Resolvers::BusinessSearch::DEFALULT_DISTANCE_IN_METERS
+          distance:  Resolvers::Search::DEFALULT_DISTANCE_IN_METERS
         )
 
         klass.resolve(args)

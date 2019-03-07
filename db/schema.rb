@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_072202) do
+ActiveRecord::Schema.define(version: 2019_03_06_195603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "addressable_type"
+    t.bigint "addressable_id"
+    t.string "street_name", null: false
+    t.string "street_number", null: false
+    t.string "postal_code", null: false
+    t.string "city", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.geography "coordinate", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+    t.index ["coordinate"], name: "index_addresses_on_coordinate", using: :gist
+  end
 
   create_table "areas", force: :cascade do |t|
     t.string "name", null: false
@@ -34,26 +50,18 @@ ActiveRecord::Schema.define(version: 2019_03_06_072202) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
-    t.string "street_name", null: false
-    t.string "street_number", null: false
-    t.string "postal_code", null: false
-    t.string "city", null: false
     t.string "website"
     t.string "phone_number"
     t.string "description"
-    t.float "latitude", null: false
-    t.float "longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "business_type", null: false
-    t.geography "longitude_latitude", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.string "slug", null: false
     t.integer "area_id"
     t.string "logo_id"
     t.string "hero_image_id"
     t.index ["area_id"], name: "index_businesses_on_area_id"
     t.index ["business_type"], name: "index_businesses_on_business_type"
-    t.index ["longitude_latitude"], name: "index_businesses_on_longitude_latitude", using: :gist
     t.index ["name"], name: "index_businesses_on_name", unique: true
     t.index ["slug"], name: "index_businesses_on_slug", unique: true
   end

@@ -1,3 +1,45 @@
+type Address {
+  """
+  City the address is located in.
+  """
+  city: String!
+
+  """
+  Latitude of the address.
+  """
+  latitude: Float!
+
+  """
+  Longitude of the address.
+  """
+  longitude: Float!
+
+  """
+  Postal code.
+  """
+  postalCode: String!
+
+  """
+  Name of the street
+  """
+  streetName: String!
+
+  """
+  Number of the street
+  """
+  streetNumber: String!
+}
+
+"""
+Types that has an address.
+"""
+interface Addressable {
+  """
+  Address of the object.
+  """
+  address: Address!
+}
+
 type Area {
   """
   Businessses in the area.
@@ -70,16 +112,16 @@ type AreaEdge {
   node: Area
 }
 
-type Business implements Node {
+type Business implements Addressable & Node {
+  """
+  Address of the object.
+  """
+  address: Address!
+
   """
   Type of the business. Either a _Shop_, _Bar_ or _Restaurant_
   """
   businessType: BusinessType!
-
-  """
-  City the business is located in.
-  """
-  city: String!
 
   """
   Events hosted by the business
@@ -93,19 +135,9 @@ type Business implements Node {
   id: ID!
 
   """
-  Latitude of the business.
-  """
-  latitude: Float!
-
-  """
   Cloudinary ID of the business logo.
   """
   logoId: String
-
-  """
-  Longitude of the business.
-  """
-  longitude: Float!
 
   """
   Name of the business.
@@ -118,24 +150,9 @@ type Business implements Node {
   openingHours: [OpeningHour!]
 
   """
-  Postal code for the business.
-  """
-  postalCode: String!
-
-  """
   Slug of the business.
   """
   slug: String!
-
-  """
-  Name of the street where the business is located.
-  """
-  streetName: String!
-
-  """
-  Number of the street where the business is located.
-  """
-  streetNumber: String!
 }
 
 """
@@ -190,7 +207,12 @@ enum BusinessType {
   SHOP
 }
 
-type Event {
+type Event implements Addressable {
+  """
+  Address of the object.
+  """
+  address: Address!
+
   """
   When the event begins.
   """
@@ -336,9 +358,9 @@ type Query {
   ): Business
 
   """
-  Search for businesses within a distance of a given latitude and longitude.
+  Search for businesses and events within a distance of a given latitude and longitude.
   """
-  businessSearch(
+  search(
     """
     Returns the elements in the list that come after the specified cursor.
     """
@@ -373,12 +395,52 @@ type Query {
     The WGS84 longitude of the business in decimaldegress. Must be between ­-90 and +90.
     """
     longitude: Float!
-  ): BusinessConnection
+  ): SearchConnection
 
   """
   The signed in user.
   """
   viewer: User
+}
+
+"""
+Objects which may be found by search.
+"""
+union Search = Business | Event
+
+"""
+The connection type for Search.
+"""
+type SearchConnection {
+  """
+  A list of edges.
+  """
+  edges: [SearchEdge]
+
+  """
+  A list of nodes.
+  """
+  nodes: [Search]
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+}
+
+"""
+An edge in a connection.
+"""
+type SearchEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: String!
+
+  """
+  The item at the end of the edge.
+  """
+  node: Search
 }
 
 """

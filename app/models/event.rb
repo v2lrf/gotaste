@@ -7,6 +7,10 @@ class Event < ApplicationRecord
   validates :name, :begins_at, presence: true
 
   belongs_to :host, class_name: 'Business', inverse_of: :events
+  has_one :address,
+          as:         :addressable,
+          inverse_of: :addressable,
+          dependent:  :destroy
 
   private
 
