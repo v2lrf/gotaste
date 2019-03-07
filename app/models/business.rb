@@ -2,6 +2,8 @@
 
 class Business < ApplicationRecord
   extend FriendlyId
+  include Addressable
+
   friendly_id :name, use: :slugged
 
   validates :name, :business_type, presence: true
@@ -20,10 +22,6 @@ class Business < ApplicationRecord
            dependent:   :destroy
 
   has_many :opening_hours, dependent: :destroy
-  has_one :address,
-          as:         :addressable,
-          inverse_of: :addressable,
-          dependent:  :destroy
 
   def logo_id
     Logo.new(business_logo_id: self[:logo_id]).id
