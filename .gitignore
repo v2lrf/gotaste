@@ -41,3 +41,5 @@ yarn-debug.log*
 
 .next
 styles/styles.css
+
+client/static/rss.xml
