@@ -3,6 +3,7 @@
 module Types
   class EventType < Types::BaseObject
     implements Addressable
+    implements Slugable
 
     field :name, String, 'Name of the event.', null: false
     field :description, String, 'Description of the event.', null: true

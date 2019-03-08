@@ -4,6 +4,7 @@ module Types
   class BusinessType < Types::BaseObject
     implements GraphQL::Relay::Node.interface
     implements Addressable
+    implements Slugable
 
     global_id_field :id
 
@@ -19,8 +20,6 @@ module Types
     field :opening_hours, [OpeningHourType],
           description: 'Opening hours of the business',
           null:        true
-
-    field :slug, String, 'Slug of the business.', null: false
 
     field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
 
