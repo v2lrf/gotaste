@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticMap } from 'react-map-gl'
+import { StaticMap, Marker } from 'react-map-gl'
 
-// import MapPin from './MapPin'
+import MapPin from './MapPin'
 
 function MapWithMarker({ latitude, longitude, height, width }) {
   return (
@@ -15,9 +15,9 @@ function MapWithMarker({ latitude, longitude, height, width }) {
       longitude={longitude}
       zoom={13}
     >
-      {/* <Marker latitude={latitude} longitude={longitude}>
+      <Marker latitude={latitude} longitude={longitude}>
         <MapPin />
-      </Marker> */}
+      </Marker>
     </StaticMap>
   )
 }
