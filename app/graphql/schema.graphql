@@ -40,7 +40,7 @@ interface Addressable {
   address: Address!
 }
 
-type Area {
+type Area implements Slugable {
   """
   Businessses in the area.
   """
@@ -72,7 +72,7 @@ type Area {
   name: String!
 
   """
-  A _unique_ slug of the area.
+  A unique slug of the object.
   """
   slug: String!
 }
@@ -112,7 +112,7 @@ type AreaEdge {
   node: Area
 }
 
-type Business implements Addressable & Node {
+type Business implements Addressable & Node & Slugable {
   """
   Address of the object.
   """
@@ -150,7 +150,7 @@ type Business implements Addressable & Node {
   openingHours: [OpeningHour!]
 
   """
-  Slug of the business.
+  A unique slug of the object.
   """
   slug: String!
 }
@@ -207,7 +207,7 @@ enum BusinessType {
   SHOP
 }
 
-type Event implements Addressable {
+type Event implements Addressable & Slugable {
   """
   Address of the object.
   """
@@ -237,6 +237,11 @@ type Event implements Addressable {
   Name of the event.
   """
   name: String!
+
+  """
+  A unique slug of the object.
+  """
+  slug: String!
 
   """
   URL of where to buy a tick to the event.
@@ -525,6 +530,16 @@ type SignUpPayload {
   The user who is signed up.
   """
   user: User
+}
+
+"""
+Types that a slug.
+"""
+interface Slugable {
+  """
+  A unique slug of the object.
+  """
+  slug: String!
 }
 
 type User {
