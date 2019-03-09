@@ -15,10 +15,12 @@ module Types
                        ' Either a _Shop_, _Bar_ or _Restaurant_',
           null:        false
 
-    field :events, [EventType], 'Events hosted by the business', null: true
+    field :events, EventType.connection_type,
+          description: 'Events hosted by the business.',
+          null:        true
 
     field :opening_hours, [OpeningHourType],
-          description: 'Opening hours of the business',
+          description: 'Opening hours of the business.',
           null:        true
 
     field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
