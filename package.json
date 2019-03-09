@@ -14,11 +14,19 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest"
   },
+  "graphql-inspector": {
+    "diff": true,
+    "schema": {
+      "ref": "head/master",
+      "path": "app/graphql/schema.graphql"
+    }
+  },
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
   "dependencies": {
+    "@graphql-inspector/cli": "^0.13.3",
     "@storybook/react": "^3.4.11",
     "@zeit/next-css": "1.0.2-canary.2",
     "apollo-boost": "^0.3.1",
