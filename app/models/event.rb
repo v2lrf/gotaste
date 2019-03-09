@@ -10,6 +10,9 @@ class Event < ApplicationRecord
 
   belongs_to :host, class_name: 'Business', inverse_of: :events
 
+  scope :upcoming, -> { where('begins_at > ?', Time.current) }
+  scope :past,     -> { where('begins_at <= ?', Time.current) }
+
   private
 
   def generate_slug

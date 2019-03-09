@@ -15,9 +15,15 @@ module Types
                        ' Either a _Shop_, _Bar_ or _Restaurant_',
           null:        false
 
-    field :events, EventType.connection_type,
+    field :events, EventConnectionType,
           description: 'Events hosted by the business.',
-          null:        true
+          null:        true,
+          connection:  true do
+
+      argument :when_event_begins, EventBeginsEnumType,
+               description: 'When the event begins.',
+               required:    true
+    end
 
     field :opening_hours, [OpeningHourType],
           description: 'Opening hours of the business.',
@@ -29,8 +35,10 @@ module Types
           description: 'Cloudinary ID of the business hero image.',
           null:        true
 
-    def events
-      Loaders::ForeignKeyLoader.for(Event, :host_id).load([object.id])
+    def events(when_event_begins:)
+      scope = when_event_begins == 'PAST' ? Event.past : Event.upcoming
+
+      Loaders::ForeignKeyLoader.for(scope, :host_id).load([object.id])
     end
 
     def opening_hours
