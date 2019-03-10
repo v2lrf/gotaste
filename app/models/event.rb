@@ -13,6 +13,10 @@ class Event < ApplicationRecord
   scope :upcoming, -> { where('begins_at > ?', Time.current) }
   scope :past,     -> { where('begins_at <= ?', Time.current) }
 
+  def date
+    begins_at.to_date
+  end
+
   private
 
   def generate_slug

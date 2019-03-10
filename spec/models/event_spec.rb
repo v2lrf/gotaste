@@ -8,7 +8,9 @@ RSpec.describe Event, type: :model do
     expect(event).to be_valid
   end
 
-  describe 'upcoming/past events scopes' do
+  it 'generates a slug from the event date and name' do
+    event = FactoryBot.create(:event)
+    expect(event.slug)
   end
 
   describe 'scopes' do
@@ -40,6 +42,14 @@ RSpec.describe Event, type: :model do
         expect(Event.past)
           .to match_array([past_event_1, past_event_2])
       end
+    end
+  end
+
+  describe '#date' do
+    let(:event) { FactoryBot.build(:event) }
+
+    it 'returns the date from the begins_at' do
+      expect(event.date).to eq event.begins_at.to_date
     end
   end
 end
