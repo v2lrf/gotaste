@@ -1,7 +1,14 @@
-import { ApolloClient, InMemoryCache } from 'apollo-boost'
+import {
+  ApolloClient,
+  InMemoryCache,
+  IntrospectionFragmentMatcher
+} from 'apollo-boost'
 import { createHttpLink } from 'apollo-link-http'
 import { setContext } from 'apollo-link-context'
 import fetch from 'isomorphic-unfetch'
+
+/* eslint-disable-next-line */
+import introspectionQueryResultData from './fragmentTypes.json'
 
 let apolloClient = null
 
@@ -12,6 +19,10 @@ if (!process.browser) {
 
 const DEV_ENDPOINT = 'http://localhost:4000/graphql'
 const PROD_ENDPOINT = 'https://api.govinu.com/graphql'
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+})
 
 function create(initialState, { getToken }) {
   const httpLink = createHttpLink({
@@ -33,7 +44,7 @@ function create(initialState, { getToken }) {
     connectToDevTools: process.browser,
     ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache().restore(initialState || {})
+    cache: new InMemoryCache({ fragmentMatcher }).restore(initialState || {})
   })
 }
 

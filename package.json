@@ -5,8 +5,10 @@
     "node": "10.14.1"
   },
   "scripts": {
+    "predev": "node client/lib/getFragmentTypes.js",
     "dev": "node ./client/server.js",
-    "build": "NODE_ENV=production node client/build-rss-feed.js && next build ./client",
+    "prebuild": "NODE_ENV=production node client/lib/getFragmentTypes.js && node client/build-rss-feed.js",
+    "build": " next build ./client",
     "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint -c .eslintrc.json --ext .jsx,.js client",
