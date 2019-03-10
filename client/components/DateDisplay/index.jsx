@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import classNames from 'classnames'
 
-function DateDisplay({ timestamp }) {
+function DateDisplay({ timestamp, className }) {
   const momentTime = moment(timestamp)
+  const wrapperClasses = classNames([
+    'inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow',
+    className
+  ])
   return (
-    <time
-      dateTime={timestamp}
-      className="inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow"
-    >
+    <time dateTime={timestamp} className={wrapperClasses}>
       <span className="block text-red-darker font-bold text-2xl">
         {momentTime.format('D')}
       </span>
@@ -20,7 +22,13 @@ function DateDisplay({ timestamp }) {
 }
 
 DateDisplay.propTypes = {
-  timestamp: PropTypes.number.isRequired
+  timestamp: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+    .isRequired,
+  className: PropTypes.string
+}
+
+DateDisplay.defaultProps = {
+  className: ''
 }
 
 export default DateDisplay

@@ -13,6 +13,10 @@ app.prepare().then(() => {
     app.render(req, res, '/business', { slug: req.params.slug })
   )
 
+  server.get('/event/:slug', (req, res) =>
+    app.render(req, res, '/event', { slug: req.params.slug })
+  )
+
   server.get('*', (req, res) => handle(req, res))
 
   server.listen(port, err => {

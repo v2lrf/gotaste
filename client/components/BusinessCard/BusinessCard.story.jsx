@@ -4,12 +4,15 @@ import { storiesOf } from '@storybook/react'
 import BusinessCard from '.'
 
 const fakeBusiness = {
-  name: 'Vinhanen',
+  name: 'Erik Sørensen Vin',
+  slug: 'erik-sorensen-vin',
+  heroImageId: 'Govinu/hero_images/6c2543d032ac10028fc849e2b97cb1f7',
+  logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
   address: {
-    streetName: 'Baggesensgade',
-    streetNumber: '13',
-    postalCode: '2200',
-    city: 'København N'
+    streetName: 'Store Kongensgade',
+    streetNumber: '124',
+    postalCode: '1264',
+    city: 'København K'
   }
 }
 

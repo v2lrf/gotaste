@@ -13,6 +13,7 @@ import Container from '../components/Container'
 import Spacer from '../components/Spacer'
 import { Row, Col } from '../components/Grid'
 import InfoItem from '../components/InfoItem'
+import EventCard from '../components/EventCard'
 import { MapWithMarker } from '../components/Map'
 
 const GET_BUSINESS = gql`
@@ -22,6 +23,23 @@ const GET_BUSINESS = gql`
       address {
         latitude
         longitude
+      }
+      events(whenEventBegins: UPCOMING, first: 1) {
+        nodes {
+          name
+          beginsAt
+          slug
+          host {
+            logoId
+            name
+            address {
+              streetName
+              streetNumber
+              postalCode
+              city
+            }
+          }
+        }
       }
     }
   }
@@ -42,7 +60,13 @@ function BusinessPage({ slug }) {
           if (loading) return 'Loading...'
           if (error) return `Error! ${error.message}`
           const {
-            business: { logoId, name, address, heroImageId }
+            business: {
+              logoId,
+              name,
+              address,
+              heroImageId,
+              events: { nodes: eventNodes }
+            }
           } = data
           return (
             <Fragment>
@@ -67,7 +91,7 @@ function BusinessPage({ slug }) {
                       <Image
                         cloudName={config.cloudinaryCloudName}
                         publicId={heroImageId}
-                        height={300}
+                        height={500}
                         width={800}
                         crop="fill"
                         className="rounded"
@@ -75,12 +99,25 @@ function BusinessPage({ slug }) {
                       />
                     </Col>
                     <Col xs="full" sm="1/3">
-                      <MapWithMarker
-                        latitude={address.latitude}
-                        longitude={address.longitude}
-                        height={200}
-                        width="100%"
-                      />
+                      {eventNodes.length > 0 && (
+                        <Fragment>
+                          <h3 className="mb-2 text-red-darker">
+                            Kommende begivenhed
+                          </h3>
+                          <EventCard {...eventNodes[0]} />
+                        </Fragment>
+                      )}
+
+                      <h3 className="mb-2 text-red-darker">Information</h3>
+                      <div className="rounded shadow bg-white">
+                        <MapWithMarker
+                          latitude={address.latitude}
+                          longitude={address.longitude}
+                          height={200}
+                          width="100%"
+                          className="rounded-b"
+                        />
+                      </div>
                     </Col>
                   </Row>
                 </Spacer>

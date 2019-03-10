@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventCard Snapshots should match the snapshot 1`] = `
+<Link
+  as="/event/2018-03-07-blindsmagningsaften"
+  href={
+    Object {
+      "pathname": "/event",
+      "query": Object {
+        "slug": "2018-03-07-blindsmagningsaften",
+      },
+    }
+  }
+>
+  <a
+    className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4"
+  >
+    <div
+      className="relative"
+    >
+      <Image
+        className="rounded-t"
+        cloudName="dkrjpli3y"
+        crop="fill"
+        height={200}
+        publicId="Govinu/hero_images/6c2543d032ac10028fc849e2b97cb1f7"
+        secure="true"
+        width={600}
+      />
+      <DateDisplay
+        className="absolute pin-t pin-l ml-2 mt-2"
+        timestamp="2019-03-07T16:15:00Z"
+      />
+    </div>
+    <div
+      className="p-4"
+    >
+      <time
+        className="text-grey-darker text-sm"
+        dateTime="2019-03-07T16:15:00Z"
+      >
+        torsdag d. 7. marts 2019 kl. 17:15
+      </time>
+      <h2
+        className="mb-4 text-red-darker text-lg"
+      >
+        Blindsmagningsaften
+      </h2>
+      <InfoItem
+        headline="Erik Sørensen Vin"
+        imageAlt=""
+        imageSrc="Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ"
+        large={false}
+        tagline="Store Kongensgade 124, 1264 København K"
+      />
+    </div>
+  </a>
+</Link>
+`;
