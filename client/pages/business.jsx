@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import { Image } from 'cloudinary-react'
+import ReactMarkdown from 'react-markdown'
 
 import config from '../config'
 
@@ -20,6 +21,7 @@ const GET_BUSINESS = gql`
   query getBusiness($slug: String!) {
     business(slug: $slug) {
       ...BusinessInfoFields
+      description
       address {
         latitude
         longitude
@@ -65,6 +67,7 @@ function BusinessPage({ slug }) {
               name,
               address,
               heroImageId,
+              description,
               events: { nodes: eventNodes }
             }
           } = data
@@ -97,6 +100,9 @@ function BusinessPage({ slug }) {
                         className="rounded"
                         secure="true"
                       />
+                      <div className="py-4 leading-normal rich-text">
+                        <ReactMarkdown source={description} />
+                      </div>
                     </Col>
                     <Col xs="full" sm="1/3">
                       {eventNodes.length > 0 && (

@@ -5,6 +5,7 @@ import moment from 'moment'
 import { Image } from 'cloudinary-react'
 
 import config from '../../config'
+import { capitalizeFirstLetter } from '../../helpers/textHelpers'
 
 import DateDisplay from '../DateDisplay'
 import InfoItem from '../InfoItem'
@@ -35,9 +36,11 @@ function EventCard({ name, beginsAt, slug, host }) {
         </div>
         <div className="p-4">
           <time dateTime={beginsAt} className="text-grey-darker text-sm">
-            {moment(beginsAt)
-              .locale('da')
-              .format('LLLL')}
+            {capitalizeFirstLetter(
+              moment(beginsAt)
+                .locale('da')
+                .format('LLLL')
+            )}
           </time>
           <h2 className="mb-4 text-red-darker text-lg">{name}</h2>
           <InfoItem

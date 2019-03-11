@@ -75,6 +75,9 @@ type Business implements Node & Addressable & Slugable {
   # Type of the business. Either a _Shop_, _Bar_ or _Restaurant_
   businessType: BusinessType!
 
+  # Description of the business.
+  description: String
+
   # Events hosted by the business.
   events(
     # Returns the elements in the list that come after the specified cursor.

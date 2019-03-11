@@ -31,6 +31,8 @@ module Types
 
     field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
 
+    field :description, String, 'Description of the business.', null: true
+
     field :hero_image_id, String,
           description: 'Cloudinary ID of the business hero image.',
           null:        true
