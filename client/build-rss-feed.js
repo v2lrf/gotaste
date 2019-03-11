@@ -21,19 +21,25 @@ function buildFeed(data) {
     pubDate: new Date()
   })
 
-  data.forEach(business => {
-    if (!business.address) {
-      return
-    }
-
-    const { name, slug, id } = business
-
-    feed.item({
-      title: name,
-      url: `${config.GOVINU_DOMAIN}/business/${slug}`,
-      guid: id
+  data.businesses
+    .filter(business => Boolean(business.name))
+    .forEach(business => {
+      const { name, slug } = business
+      feed.item({
+        title: name,
+        url: `${config.GOVINU_DOMAIN}/business/${slug}`
+      })
     })
-  })
+
+  data.events
+    .filter(event => Boolean(event.name))
+    .forEach(event => {
+      const { name, slug } = event
+      feed.item({
+        title: name,
+        url: `${config.GOVINU_DOMAIN}/events/${slug}`
+      })
+    })
 
   return feed.xml({ indent: true })
 }
@@ -48,15 +54,20 @@ fetch(ENDPOINT, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     query: `
-        query getAllBusinesses {
+        query getAllBusinessesAndEvents {
           search(latitude: ${config.DEFAULT_LATITUDE}, longitude: ${
       config.DEFAULT_LONGITUDE
     }, distance: 600000) {
-            nodes {
+            businesses: nodes {
               ... on Business {
-                id
-                slug
                 name
+                slug
+              }
+            }
+            events: nodes {
+              ... on Event {
+                name
+                slug
               }
             }
           }
@@ -66,6 +77,6 @@ fetch(ENDPOINT, {
 })
   .then(result => result.json())
   .then(result => {
-    const feed = buildFeed(result.data.search.nodes)
+    const feed = buildFeed(result.data.search)
     saveFeed(feed)
   })
