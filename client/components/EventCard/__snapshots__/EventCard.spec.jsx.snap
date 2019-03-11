@@ -29,7 +29,7 @@ exports[`EventCard Snapshots should match the snapshot 1`] = `
       />
       <DateDisplay
         className="absolute pin-t pin-l ml-2 mt-2"
-        timestamp="2019-03-07T16:15:00Z"
+        timestamp="2019-03-07T18:15:00Z"
       />
     </div>
     <div
@@ -37,9 +37,9 @@ exports[`EventCard Snapshots should match the snapshot 1`] = `
     >
       <time
         className="text-grey-darker text-sm"
-        dateTime="2019-03-07T16:15:00Z"
+        dateTime="2019-03-07T18:15:00Z"
       >
-        torsdag d. 7. marts 2019 kl. 17:15
+        Torsdag d. 7. marts 2019 kl. 19:15
       </time>
       <h2
         className="mb-4 text-red-darker text-lg"

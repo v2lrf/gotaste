@@ -1,8 +1,8 @@
 import React from 'react'
-// import moment from 'moment'
+import moment from 'moment-timezone'
 import EventCard from '.'
 
-// moment.zone(0)
+moment.tz.setDefault('Europe/Copenhagen')
 
 describe('EventCard', () => {
   let component
@@ -27,7 +27,7 @@ describe('EventCard', () => {
   })
 
   describe('Snapshots', () => {
-    xit('should match the snapshot', () => {
+    it('should match the snapshot', () => {
       expect(component).toMatchSnapshot()
     })
   })
