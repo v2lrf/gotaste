@@ -2,11 +2,8 @@
 
 exports[`NavBar Snapshots should match the snapshot 1`] = `
 <div
-  className="bg-white border-b border-grey-light"
+  className="bg-white"
 >
-  <div
-    className="bg-red-light h-1"
-  />
   <Container
     narrow={false}
   >
@@ -20,13 +17,14 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
           href="/"
         >
           <a
-            className="flex text-red-dark text-2xl font-bold no-underline"
+            className="flex text-red-light text-xl font-semibold no-underline"
           >
             <img
               alt="Govinu"
-              className="h-8"
-              src="/static/govinu-logo.svg"
+              className="h-6 pr-2"
+              src="/static/govinu-120.png"
             />
+            Govinu
           </a>
         </Link>
       </div>
@@ -51,6 +49,9 @@ exports[`NavBar Snapshots should match the snapshot 1`] = `
           >
             Forhandlere
           </NavItem>
+          <div
+            className="mx-2 my-1 border border-red-lightest"
+          />
           <Query
             query={
               Object {

@@ -23,18 +23,18 @@ Router.onRouteChangeError = () => {
 
 function NavBar() {
   return (
-    <div className="bg-white border-b border-grey-light">
-      <div className="bg-red-light h-1" />
+    <div className="bg-white">
       <Container>
         <div className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between">
           <div className="my-2 sm:my-0">
             <Link href="/">
-              <a className="flex text-red-dark text-2xl font-bold no-underline">
+              <a className="flex text-red-light text-xl font-semibold no-underline">
                 <img
-                  src="/static/govinu-logo.svg"
+                  src="/static/govinu-120.png"
                   alt="Govinu"
-                  className="h-8"
+                  className="h-6 pr-2"
                 />
+                Govinu
               </a>
             </Link>
           </div>
@@ -43,13 +43,13 @@ function NavBar() {
               <NavItem to="/discover">Gå på opdagelse</NavItem>
               <NavItem to="#">Begivenheder</NavItem>
               <NavItem to="#">Forhandlere</NavItem>
+              <div className="mx-2 my-1 border border-red-lightest" />
               <Query query={GET_VIEWER}>
                 {({ data }) =>
                   data.viewer ? (
                     <NavItem to="/sign-out">Log ud</NavItem>
                   ) : (
                     <Fragment>
-                      <NavItem to="/sign-up">Opret bruger</NavItem>
                       <NavItem to="/login">Log ind</NavItem>
                     </Fragment>
                   )

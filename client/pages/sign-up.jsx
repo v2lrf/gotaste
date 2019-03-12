@@ -57,9 +57,11 @@ class SignUp extends Component {
     const { client } = this.props
     return (
       <Layout>
-        <Spacer top="12" bottom="12">
+        <Spacer top="20" bottom="20">
           <div className="max-w-xs px-4 mx-auto">
-            <h2 className="mb-6 text-center text-red-darker">Opret bruger</h2>
+            <h2 className="mb-6 text-center text-5xl font-bold text-black">
+              Opret bruger
+            </h2>
             <Mutation
               mutation={SIGN_UP}
               onCompleted={data => {
@@ -104,6 +106,7 @@ class SignUp extends Component {
                     label="E-mail"
                     name="email"
                     type="email"
+                    placeholder="Din e-mail adresse"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.email = el)}
                   />
@@ -112,6 +115,7 @@ class SignUp extends Component {
                     name="password"
                     type="password"
                     autoComplete="current-password"
+                    placeholder="Vælg en adgangskode"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.password = el)}
                   />
@@ -119,6 +123,7 @@ class SignUp extends Component {
                     label="Fornavn"
                     name="first_name"
                     type="text"
+                    placeholder="Dit fornavn"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.firstName = el)}
                   />
@@ -126,6 +131,7 @@ class SignUp extends Component {
                     label="Efternavn"
                     name="last_name"
                     type="text"
+                    placeholder="Dit efternavn"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.lastName = el)}
                   />
