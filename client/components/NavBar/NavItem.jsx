@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 function NavItem({ to, children }) {
   return (
-    <li className="mr-6">
+    <li>
       <Link prefetch href={to}>
-        <a className="block text-red-darkest no-underline hover:underline focus:underline">
+        <a className="block py-1 px-2 text-red-light font-semibold no-underline hover:bg-red-lightest rounded">
           {children}
         </a>
       </Link>

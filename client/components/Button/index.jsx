@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 function Button({ children, type, kind, onClick, fullWidth }) {
   const classNames = classnames('px-4 h-8 rounded shadow', {
-    'bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light':
+    'bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter':
       kind === 'primary',
     'bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest':
       kind === 'secondary',

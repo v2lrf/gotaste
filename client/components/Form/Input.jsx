@@ -1,18 +1,19 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-function Input({ label, type, name, autoComplete, inputRef }) {
+function Input({ label, type, name, autoComplete, inputRef, placeholder }) {
   return (
     <Fragment>
       {/* eslint-disable-next-line */}
-      <label className="block text-red-darkest mb-6 text-sm uppercase">
+      <label className="block text-grey-darker mb-6 text-sm uppercase">
         {label}
         <input
           type={type}
           name={name}
           autoComplete={autoComplete}
-          className="block shadow w-full rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
+          className="block w-full rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
           ref={inputRef}
+          placeholder={placeholder}
         />
       </label>
     </Fragment>
@@ -24,12 +25,14 @@ Input.propTypes = {
   type: PropTypes.oneOf(['text', 'email', 'password', 'tel']).isRequired,
   name: PropTypes.string.isRequired,
   autoComplete: PropTypes.string,
-  inputRef: PropTypes.func
+  inputRef: PropTypes.func,
+  placeholder: PropTypes.string
 }
 
 Input.defaultProps = {
   autoComplete: '',
-  inputRef: () => null
+  inputRef: () => null,
+  placeholder: ''
 }
 
 export default Input

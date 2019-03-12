@@ -2,7 +2,7 @@
 
 exports[`Button Snapshots should match the full width snapshot 1`] = `
 <button
-  className="px-4 h-8 rounded shadow bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light w-full"
+  className="px-4 h-8 rounded shadow bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter w-full"
   onClick={[Function]}
   type="submit"
 >
@@ -12,7 +12,7 @@ exports[`Button Snapshots should match the full width snapshot 1`] = `
 
 exports[`Button Snapshots should match the primary snapshot 1`] = `
 <button
-  className="px-4 h-8 rounded shadow bg-red-lightest text-red-darkest border border-red-light hover:bg-red-lighter hover:border-red-light"
+  className="px-4 h-8 rounded shadow bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter"
   onClick={[Function]}
   type="submit"
 >

@@ -43,9 +43,11 @@ class Login extends Component {
     const { client } = this.props
     return (
       <Layout>
-        <Spacer top="12" bottom="12">
+        <Spacer top="20" bottom="20">
           <div className="max-w-xs px-4 mx-auto">
-            <h2 className="mb-6 text-center text-red-darker">Log ind</h2>
+            <h2 className="mb-6 text-center text-5xl font-bold text-black">
+              Log ind
+            </h2>
             <Mutation
               mutation={SIGN_IN}
               onCompleted={data => {
@@ -85,6 +87,7 @@ class Login extends Component {
                     label="E-mail"
                     name="email"
                     type="email"
+                    placeholder="Din e-mail adresse"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.email = el)}
                   />
@@ -93,6 +96,7 @@ class Login extends Component {
                     name="password"
                     type="password"
                     autoComplete="current-password"
+                    placeholder="Din adgangskode"
                     /* eslint-disable-next-line */
                     inputRef={el => (this.password = el)}
                   />
