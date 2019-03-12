@@ -18,10 +18,6 @@ class GovinuDocument extends Document {
             content="initial-scale=1.0, width=device-width"
           />
           <Favicons />
-          <link
-            href="https://fonts.googleapis.com/css?family=Nunito:400,700"
-            rel="stylesheet"
-          />
         </Head>
         <body className="font-sans antialiased">
           <Main />
