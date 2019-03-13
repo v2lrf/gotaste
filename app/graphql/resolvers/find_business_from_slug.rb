@@ -8,7 +8,7 @@ module Resolvers
     argument :slug, String, 'Slug of the business.', required: true
 
     def resolve(slug:)
-      Business.friendly.find(slug)
+      ::Business.friendly.find(slug)
     end
   end
 end

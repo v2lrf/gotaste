@@ -26,7 +26,7 @@ module Resolvers
              required:    false
 
     def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_METERS)
-      addresses = Address.closest_within(
+      addresses = ::Address.closest_within(
         latitude:  latitude,
         longitude: longitude,
         distance:  distance

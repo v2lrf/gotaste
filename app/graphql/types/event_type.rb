@@ -22,7 +22,7 @@ module Types
           null:        true
 
     def host
-      Loaders::RecordLoader.for(Business).load(object.host_id)
+      Loaders::RecordLoader.for(::Business).load(object.host_id)
     end
   end
 end

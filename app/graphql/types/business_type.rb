@@ -38,13 +38,14 @@ module Types
           null:        true
 
     def events(when_event_begins:)
-      scope = when_event_begins == 'PAST' ? Event.past : Event.upcoming
+      scope = when_event_begins == 'PAST' ? ::Event.past : ::Event.upcoming
 
       Loaders::ForeignKeyLoader.for(scope, :host_id).load([object.id])
     end
 
     def opening_hours
-      Loaders::ForeignKeyLoader.for(OpeningHour, :business_id).load([object.id])
+      Loaders::ForeignKeyLoader
+        .for(::OpeningHour, :business_id).load([object.id])
     end
   end
 end
