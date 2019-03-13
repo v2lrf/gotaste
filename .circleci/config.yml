@@ -91,9 +91,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy Master to Heroku
+          name: Deploy back-end
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git master --force
+      - run:
+          name: Deploy client
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git master --force
 
 workflows:
   version: 2
