@@ -3,8 +3,8 @@
 module Types
   class BusinessType < Types::BaseObject
     implements GraphQL::Relay::Node.interface
-    implements Addressable
-    implements Slugable
+    implements Types::Addressable
+    implements Types::Slugable
 
     global_id_field :id
 

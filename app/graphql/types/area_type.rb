@@ -2,7 +2,7 @@
 
 module Types
   class AreaType < Types::BaseObject
-    implements Slugable
+    implements Types::Slugable
 
     field :name, String,
           null:        false,
