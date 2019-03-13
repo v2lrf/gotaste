@@ -21,7 +21,8 @@ class EventDashboard < Administrate::BaseDashboard
     created_at:  Field::DateTime,
     updated_at:  Field::DateTime,
     slug:        Field::String,
-    address:     Field::HasOne
+    address:     Field::HasOne,
+    price:       Field::Number
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -48,6 +49,7 @@ class EventDashboard < Administrate::BaseDashboard
     created_at
     updated_at
     slug
+    price
     address
   ].freeze
 
@@ -62,6 +64,7 @@ class EventDashboard < Administrate::BaseDashboard
     description
     url
     slug
+    price
     address
   ].freeze
 

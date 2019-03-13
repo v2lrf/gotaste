@@ -164,6 +164,9 @@ type Event implements Addressable & Slugable {
   # Name of the event.
   name: String!
 
+  # How much it costs to participate in the event. In DKK.
+  price: Float!
+
   # A unique slug of the object.
   slug: String!
 
