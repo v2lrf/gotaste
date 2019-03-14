@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   friendly_id :generate_slug, use: :slugged
 
   validates :name, :begins_at, presence: true
+  validates :price, presence: true, numericality: true
 
   belongs_to :host, class_name: 'Business', inverse_of: :events
 
