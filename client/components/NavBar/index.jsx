@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
@@ -33,6 +33,23 @@ const GET_VIEWER = gql`
 
 function NavBar() {
   const [showMobileNav, setShowMobileNav] = useState(false)
+
+  useEffect(() => {
+    function handleNavToggle() {
+      setShowMobileNav(!showMobileNav)
+    }
+
+    if (showMobileNav) {
+      document.addEventListener('click', handleNavToggle)
+    } else {
+      document.removeEventListener('click', handleNavToggle)
+    }
+
+    return () => {
+      document.removeEventListener('click', handleNavToggle)
+    }
+  })
+
   const navListClasses = classNames(
     'list-reset sm:flex flex-col sm:flex-row absolute sm:static bg-white pin-t pin-r mt-10 sm:mt-0 rounded shadow-lg sm:shadow-none whitespace-no-wrap z-10',
     {
