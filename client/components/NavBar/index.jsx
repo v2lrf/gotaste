@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { Query } from 'react-apollo'
+import { gql } from 'apollo-boost'
 import Router from 'next/router'
 import NProgress from 'nprogress'
+import classNames from 'classnames'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/pro-light-svg-icons'
 
 import Container from '../Container'
 import NavItem from './NavItem'
-
-import { GET_VIEWER } from './queries'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()
@@ -21,12 +23,28 @@ Router.onRouteChangeError = () => {
   NProgress.done()
 }
 
+const GET_VIEWER = gql`
+  query Viewer {
+    viewer {
+      shortName
+    }
+  }
+`
+
 function NavBar() {
+  const [showMobileNav, setShowMobileNav] = useState(false)
+  const navListClasses = classNames(
+    'list-reset sm:flex flex-col sm:flex-row absolute sm:static bg-white pin-t pin-r mt-10 sm:mt-0 rounded shadow-lg sm:shadow-none whitespace-no-wrap z-10',
+    {
+      hidden: !showMobileNav
+    }
+  )
+
   return (
     <div className="bg-white">
       <Container>
-        <div className="h-auto sm:h-16 flex flex-col sm:flex-row items-center sm:justify-between">
-          <div className="my-2 sm:my-0">
+        <div className="h-auto sm:h-16 flex items-center justify-between">
+          <div className="my-4 sm:my-0">
             <Link href="/">
               <a className="flex text-red-light text-xl font-semibold no-underline">
                 <img
@@ -38,8 +56,15 @@ function NavBar() {
               </a>
             </Link>
           </div>
-          <nav className="pb-4 pt-1 sm:pb-0 sm:pt-0 overflow-hidden max-w-full">
-            <ul className="list-reset flex overflow-x-scroll scrolling-touch flex-row whitespace-no-wrap text-sm sm:text-base">
+          <nav className="max-w-full relative">
+            <button
+              type="button"
+              className="sm:hidden"
+              onClick={() => setShowMobileNav(!showMobileNav)}
+            >
+              <FontAwesomeIcon icon={faBars} className="text-red-light" />
+            </button>
+            <ul className={navListClasses}>
               <NavItem to="/discover">Gå på opdagelse</NavItem>
               <NavItem to="#">Begivenheder</NavItem>
               <NavItem to="#">Forhandlere</NavItem>
@@ -49,9 +74,7 @@ function NavBar() {
                   data.viewer ? (
                     <NavItem to="/sign-out">Log ud</NavItem>
                   ) : (
-                    <Fragment>
-                      <NavItem to="/login">Log ind</NavItem>
-                    </Fragment>
+                    <NavItem to="/login">Log ind</NavItem>
                   )
                 }
               </Query>
