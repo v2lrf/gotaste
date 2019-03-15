@@ -5,11 +5,16 @@ import { Query } from 'react-apollo'
 import moment from 'moment'
 import { Image } from 'cloudinary-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt, faMapMarkerAlt } from '@fortawesome/pro-light-svg-icons'
+import {
+  faCalendarAlt,
+  faMapMarkerAlt,
+  faUsdCircle
+} from '@fortawesome/pro-light-svg-icons'
 import ReactMarkdown from 'react-markdown'
 
 import config from '../config'
 import { capitalizeFirstLetter } from '../helpers/textHelpers'
+import { simpleFormat } from '../helpers/currencyHelpers'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container'
@@ -39,6 +44,7 @@ const GET_EVENT = gql`
       endsAt
       description
       url
+      price
     }
   }
 `
@@ -61,6 +67,7 @@ function EventPage({ slug }) {
               name,
               url,
               description,
+              price,
               host: {
                 name: hostName,
                 address: {
@@ -148,6 +155,16 @@ function EventPage({ slug }) {
                               {capitalizeFirstLetter(
                                 moment(beginsAt).format('LLLL')
                               )}
+                            </div>
+                          </div>
+
+                          <div className="flex items-center py-2">
+                            <FontAwesomeIcon
+                              icon={faUsdCircle}
+                              className="text-grey-darkest"
+                            />
+                            <div className="flex-grow ml-2">
+                              {simpleFormat(price)}
                             </div>
                           </div>
 
