@@ -67,7 +67,6 @@ class EventDashboard < Administrate::BaseDashboard
     ends_at
     description
     url
-    slug
     price
     same_address_as_host
     address
