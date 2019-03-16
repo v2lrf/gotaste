@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_200506) do
+ActiveRecord::Schema.define(version: 2019_03_16_124802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_200506) do
     t.datetime "updated_at", null: false
     t.string "slug", null: false
     t.decimal "price", precision: 8, scale: 2, default: "0.0", null: false
+    t.boolean "same_address_as_host", default: true, null: false
     t.index ["host_id"], name: "index_events_on_host_id"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
