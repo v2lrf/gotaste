@@ -23,11 +23,11 @@ class Business < ApplicationRecord
 
   has_many :opening_hours, dependent: :destroy
 
-  def logo_id
+  def full_logo_id
     Logo.new(business_logo_id: self[:logo_id]).id
   end
 
-  def hero_image_id
+  def full_hero_image_id
     HeroImage.new(hero_image_id: self[:hero_image_id]).id
   end
 end
