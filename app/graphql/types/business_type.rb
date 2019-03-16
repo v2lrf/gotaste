@@ -29,13 +29,17 @@ module Types
           description: 'Opening hours of the business.',
           null:        true
 
-    field :logo_id, String, 'Cloudinary ID of the business logo.', null: true
+    field :logo_id, String,
+          description: 'Cloudinary ID of the business logo.',
+          null:        true,
+          method:      :full_logo_id
 
     field :description, String, 'Description of the business.', null: true
 
     field :hero_image_id, String,
           description: 'Cloudinary ID of the business hero image.',
-          null:        true
+          null:        true,
+          method:      :full_hero_image_id
 
     def events(when_event_begins:)
       scope = when_event_begins == 'PAST' ? ::Event.past : ::Event.upcoming
