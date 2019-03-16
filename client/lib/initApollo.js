@@ -17,16 +17,13 @@ if (!process.browser) {
   global.fetch = fetch
 }
 
-const DEV_ENDPOINT = 'http://localhost:4000/graphql'
-const PROD_ENDPOINT = 'https://api.govinu.com/graphql'
-
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData
 })
 
 function create(initialState, { getToken }) {
   const httpLink = createHttpLink({
-    uri: process.env.NODE_ENV === 'production' ? PROD_ENDPOINT : DEV_ENDPOINT,
+    uri: process.env.GRAPHQL_URI,
     credentials: 'same-origin'
   })
 
