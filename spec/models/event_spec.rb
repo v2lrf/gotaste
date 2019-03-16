@@ -13,34 +13,35 @@ RSpec.describe Event, type: :model do
     expect(event.slug)
   end
 
-  describe 'scopes' do
-    let!(:upcoming_event_1) do
-      FactoryBot.create(:event, begins_at: Time.current + 1.second)
+  describe 'prefill_address callback' do
+    let(:host)     { FactoryBot.create(:business) }
+    let!(:address) { FactoryBot.create(:address, addressable: host) }
+
+    let(:same_address_as_host) { true }
+
+    let(:event) do
+      FactoryBot.build(
+        :event,
+        host:                 host,
+        same_address_as_host: same_address_as_host
+      )
     end
 
-    let!(:upcoming_event_2) do
-      FactoryBot.create(:event, begins_at: Time.current + 1.day)
-    end
+    context 'when `same_address_as_host` is true' do
+      let(:same_address_as_host) { true }
 
-    let!(:past_event_1) do
-      FactoryBot.create(:event, begins_at: Time.current - 1.second)
-    end
-
-    let!(:past_event_2) do
-      FactoryBot.create(:event, begins_at: Time.current - 1.day)
-    end
-
-    describe 'upcoming scope' do
-      it 'only return upcoming events' do
-        expect(Event.upcoming)
-          .to match_array([upcoming_event_1, upcoming_event_2])
+      it 'prefills address from host' do
+        event.save
+        expect(event.address).not_to be_nil
       end
     end
 
-    describe 'past scope' do
-      it 'only returns event that has already taken place' do
-        expect(Event.past)
-          .to match_array([past_event_1, past_event_2])
+    context 'when `same_address_as_host` is false' do
+      let(:same_address_as_host) { false }
+
+      it 'does not prefill address from host' do
+        event.save
+        expect(event.address).to be_nil
       end
     end
   end

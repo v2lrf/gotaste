@@ -10,19 +10,23 @@ class EventDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    host:        Field::BelongsTo.with_options(class_name: 'Business'),
-    id:          Field::Number,
-    name:        Field::String,
-    host_id:     Field::Number,
-    begins_at:   Field::DateTime,
-    ends_at:     Field::DateTime,
-    description: Field::Text,
-    url:         Field::String,
-    created_at:  Field::DateTime,
-    updated_at:  Field::DateTime,
-    slug:        Field::String,
-    address:     Field::HasOne,
-    price:       Field::Number
+    host:                 Field::BelongsTo.with_options(
+      class_name:       'Business',
+      searchable:       true,
+      searchable_field: 'name'
+    ),
+    id:                   Field::Number,
+    name:                 Field::String,
+    begins_at:            Field::DateTime,
+    ends_at:              Field::DateTime,
+    description:          Field::Text,
+    url:                  Field::String,
+    created_at:           Field::DateTime,
+    updated_at:           Field::DateTime,
+    slug:                 Field::String,
+    address:              Field::HasOne,
+    price:                Field::Number,
+    same_address_as_host: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -63,8 +67,8 @@ class EventDashboard < Administrate::BaseDashboard
     ends_at
     description
     url
-    slug
     price
+    same_address_as_host
     address
   ].freeze
 
