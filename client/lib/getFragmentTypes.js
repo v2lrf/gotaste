@@ -31,7 +31,6 @@ fetch(ENDPOINT, {
   .then(result => result.json())
   .then(result => {
     // Filter out any type information unrelated to unions or interfaces
-    /* eslint-disable-next-line */
     const filteredData = result.data.__schema.types.filter(
       type => type.possibleTypes !== null
     )

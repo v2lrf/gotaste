@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import config from '../config'
 
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
+import EventInfoFields from '../fragments/EventInfoFields'
 
 import Layout from '../components/Layout'
 import Container from '../components/Container'
@@ -28,25 +29,14 @@ const GET_BUSINESS = gql`
       }
       events(whenEventBegins: UPCOMING, first: 1) {
         nodes {
-          name
-          beginsAt
-          slug
-          host {
-            logoId
-            name
-            address {
-              streetName
-              streetNumber
-              postalCode
-              city
-            }
-          }
+          ...EventInfoFields
         }
       }
     }
   }
 
   ${BusinessInfoFields}
+  ${EventInfoFields}
 `
 
 function BusinessPage({ slug }) {
