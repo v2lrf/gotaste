@@ -16,6 +16,8 @@ app.prepare().then(() => {
     const apollo = new ApolloServer({
       schema,
       tracing: true,
+      introspection: true,
+      playground: true,
       context: ({ req }) => ({
         token: req.headers.authorization || ''
       })
