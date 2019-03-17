@@ -40,6 +40,7 @@
     "apollo-link": "^1.2.9",
     "apollo-link-context": "^1.0.17",
     "apollo-link-http": "^1.5.12",
+    "apollo-link-persisted-queries": "^0.2.2",
     "apollo-server-express": "^2.4.8",
     "autoprefixer": "^9.4.10",
     "babel-plugin-transform-class-properties": "6.24.1",
