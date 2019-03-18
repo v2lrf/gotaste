@@ -8,7 +8,7 @@
             "url": "http://localhost:3000/graphql"
           },
           "prod": {
-            "url": "https://api.govinu.com/graphql"
+            "url": "https://govinu.com/graphql"
           }
         }
       }
