@@ -40,7 +40,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'graphiql-rails'
   gem 'guard-rake'
   gem 'guard-rspec', require: false
   gem 'letter_opener'
