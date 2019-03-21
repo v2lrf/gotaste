@@ -12,6 +12,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise-token_authenticatable'
 gem 'friendly_id'
+gem 'geocoder'
 gem 'graphql'
 gem 'graphql-batch'
 gem 'graphql-errors'
