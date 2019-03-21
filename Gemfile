@@ -8,7 +8,6 @@ ruby '2.6.0'
 gem 'activerecord-postgis-adapter'
 gem 'administrate'
 gem 'apollo-tracing'
-gem 'awesome_nested_set'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'devise-token_authenticatable'
