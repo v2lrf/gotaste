@@ -7,6 +7,7 @@ import config from '../config'
 
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
 
+import DiscoverPageLoader from '../loaders/discover'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Spacer from '../components/Spacer'
@@ -65,9 +66,8 @@ function Discover({ latitude, longitude }) {
                 distance: config.DEFAULT_DISTANCE
               }}
             >
-              {({ loading, error, data }) => {
-                if (loading) return 'Loading...'
-                if (error) return `Error! ${error.message}`
+              {({ loading, data }) => {
+                if (loading) return <DiscoverPageLoader />
                 if (data.search.nodes.length === 0)
                   return (
                     <div className="mx-auto">

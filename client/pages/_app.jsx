@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app'
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
 import moment from 'moment'
 /* eslint-disable-next-line */
 import withApollo from '../lib/withApollo'
@@ -15,7 +16,9 @@ class GovinuApp extends App {
     return (
       <Container>
         <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
+          <ApolloHooksProvider client={apolloClient}>
+            <Component {...pageProps} />
+          </ApolloHooksProvider>
         </ApolloProvider>
       </Container>
     )

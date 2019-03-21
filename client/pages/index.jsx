@@ -7,6 +7,7 @@ import BusinessInfoFields from '../fragments/BusinessInfoFields'
 
 import config from '../config'
 
+import IndexPageLoader from '../loaders/index'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Spacer from '../components/Spacer'
@@ -85,9 +86,8 @@ function Home() {
               distance: config.DEFAULT_DISTANCE
             }}
           >
-            {({ loading, error, data }) => {
-              if (loading) return ''
-              if (error) return `Error! ${error.message}`
+            {({ loading, data }) => {
+              if (loading) return <IndexPageLoader />
 
               return data.areaSearch.nodes.map(node => (
                 <AreaRow

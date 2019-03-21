@@ -1,0 +1,25 @@
+.shimmer {
+  background: #f8fafc;
+  background-image: linear-gradient(
+    to right,
+    #f8fafc 0%,
+    #f1f5f8 20%,
+    #f8fafc 40%,
+    #f8fafc 100%
+  );
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+
+  animation: shimmer 2.5s infinite linear forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+
+  100% {
+    background-position: 1200px 0;
+  }
+}

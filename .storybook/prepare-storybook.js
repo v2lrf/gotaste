@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const FILES_TO_IMPORT_TO_STORYBOOK = ['nprogress.css']
+const FILES_TO_IMPORT_TO_STORYBOOK = ['nprogress.css', 'shimmer.css']
 
 const storybookFolderFiles = fs.readdirSync(__dirname)
 

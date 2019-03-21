@@ -1,11 +1,11 @@
 import React from 'react'
 
-import GhostCard from '.'
+import GhostCard from './GhostCard'
 
 describe('GhostCard', () => {
   let component
   beforeEach(() => {
-    component = shallow(<GhostCard width={500} height={200} />)
+    component = shallow(<GhostCard height={200} />)
   })
 
   describe('Snapshots', () => {

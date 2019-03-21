@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'nprogress.css';
+@import 'shimmer.css';
 
 .rich-text a {
   color: #cc1f1a;
