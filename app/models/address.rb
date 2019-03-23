@@ -6,24 +6,10 @@ class Address < ApplicationRecord
   validates :addressable, :street_name, :street_number, :postal_code,
             :city, :latitude, :longitude, presence: true
 
-  before_save :set_coordinate
+  geocoded_by :full_address
+  after_validation :geocode
 
-  class << self
-    def closest_within(latitude:, longitude:, distance: 1000)
-      where(
-        "ST_DWithin(coordinate, 'POINT(? ?)', ?)",
-        longitude, latitude, distance
-      ).order(
-        Arel.sql(
-          "ST_Distance(coordinate, 'POINT(#{longitude} #{latitude})')"
-        )
-      )
-    end
-  end
-
-  private
-
-  def set_coordinate
-    self.coordinate = "POINT(#{longitude} #{latitude})"
+  def full_address
+    [street_name, street_number, postal_code, city].compact.join(', ')
   end
 end

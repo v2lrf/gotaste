@@ -3,6 +3,7 @@
 FactoryBot.define do
   factory :area do
     name { 'København' }
-    longitude_latitude { 'POINT(12.56553 55.67594)' }
+    latitude { 55.67594 }
+    longitude { 12.56553 }
   end
 end

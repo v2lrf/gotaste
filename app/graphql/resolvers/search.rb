@@ -7,7 +7,7 @@ module Resolvers
 
     type Types::SearchType.connection_type, null: true
 
-    DEFALULT_DISTANCE_IN_METERS = 1000
+    DEFALULT_DISTANCE_IN_KM = 1
 
     argument :latitude, Float,
              description: 'The WGS84 latitude of the business in decimal'\
@@ -22,15 +22,11 @@ module Resolvers
 
     argument :distance,
              Integer,
-             description: 'Distance in meters from the point.',
+             description: 'Distance in kilometers from the point.',
              required:    false
 
-    def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_METERS)
-      addresses = ::Address.closest_within(
-        latitude:  latitude,
-        longitude: longitude,
-        distance:  distance
-      )
+    def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_KM)
+      addresses = ::Address.near([latitude, longitude], distance)
 
       addresses&.map(&:addressable)
     end
