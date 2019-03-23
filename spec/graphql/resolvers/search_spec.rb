@@ -16,16 +16,15 @@ describe Resolvers::Search do
         {
           latitude:  55.6761,
           longitude: 12.5683,
-          distance:  2000
+          distance:  2
         }
       end
 
       it 'calls the closest_within with arguments and explicit distance' do
-        expect(Address).to receive(:closest_within).with(
-          latitude:  args[:latitude],
-          longitude: args[:longitude],
-          distance:  args[:distance]
-        )
+        expect(Address)
+          .to receive(:near).with(
+            [args[:latitude], args[:longitude]], args[:distance]
+          )
 
         klass.resolve(args)
       end
@@ -40,11 +39,11 @@ describe Resolvers::Search do
       end
 
       it 'calls the closest_within with arguments and default distance' do
-        expect(Address).to receive(:closest_within).with(
-          latitude:  args[:latitude],
-          longitude: args[:longitude],
-          distance:  Resolvers::Search::DEFALULT_DISTANCE_IN_METERS
-        )
+        expect(Address)
+          .to receive(:near).with(
+            [args[:latitude], args[:longitude]],
+            Resolvers::Search::DEFALULT_DISTANCE_IN_KM
+          )
 
         klass.resolve(args)
       end
