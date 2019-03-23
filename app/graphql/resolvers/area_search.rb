@@ -7,7 +7,7 @@ module Resolvers
 
     type Types::AreaType.connection_type, null: true
 
-    DEFALULT_DISTANCE_IN_METERS = 1000
+    DEFALULT_DISTANCE_IN_KM = 1
 
     argument :latitude, Float,
              description: 'The WGS84 latitude of the area in decimal degress.'\
@@ -22,15 +22,11 @@ module Resolvers
 
     argument :distance,
              Integer,
-             description: 'Distance in meters from the point.',
+             description: 'Distance in kilometers from the point.',
              required:    false
 
-    def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_METERS)
-      ::Area.closest_within(
-        latitude:  latitude,
-        longitude: longitude,
-        distance:  distance
-      )
+    def resolve(latitude:, longitude:, distance: DEFALULT_DISTANCE_IN_KM)
+      ::Area.near([latitude, longitude], distance)
     end
   end
 end

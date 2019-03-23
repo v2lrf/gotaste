@@ -4,7 +4,7 @@ class Area < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  validates :name, :longitude_latitude, presence: true
+  validates :name, presence: true
 
   belongs_to :parent, class_name: 'Area', optional: true
   has_many :children,
@@ -15,16 +15,6 @@ class Area < ApplicationRecord
 
   has_many :businesses, dependent: :restrict_with_exception
 
-  class << self
-    def closest_within(latitude:, longitude:, distance: 1000)
-      where(
-        "ST_DWithin(longitude_latitude, 'POINT(? ?)', ?)",
-        longitude, latitude, distance
-      ).order(
-        Arel.sql(
-          "ST_Distance(longitude_latitude, 'POINT(#{longitude} #{latitude})')"
-        )
-      )
-    end
-  end
+  geocoded_by :name
+  after_validation :geocode
 end

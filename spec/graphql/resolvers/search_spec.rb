@@ -20,7 +20,7 @@ describe Resolvers::Search do
         }
       end
 
-      it 'calls the closest_within with arguments and explicit distance' do
+      it 'calls the near with arguments and explicit distance' do
         expect(Address)
           .to receive(:near).with(
             [args[:latitude], args[:longitude]], args[:distance]
@@ -38,7 +38,7 @@ describe Resolvers::Search do
         }
       end
 
-      it 'calls the closest_within with arguments and default distance' do
+      it 'calls the near with arguments and default distance' do
         expect(Address)
           .to receive(:near).with(
             [args[:latitude], args[:longitude]],

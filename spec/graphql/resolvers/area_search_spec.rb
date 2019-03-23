@@ -20,12 +20,11 @@ describe Resolvers::AreaSearch do
         }
       end
 
-      it 'calls the closest_within with arguments and explicit distance' do
-        expect(Area).to receive(:closest_within).with(
-          latitude:  args[:latitude],
-          longitude: args[:longitude],
-          distance:  args[:distance]
-        )
+      it 'calls the near with arguments and explicit distance' do
+        expect(Area)
+          .to receive(:near).with(
+            [args[:latitude], args[:longitude]], args[:distance]
+          )
 
         klass.resolve(args)
       end
@@ -39,12 +38,12 @@ describe Resolvers::AreaSearch do
         }
       end
 
-      it 'calls the closest_within with arguments and default distance' do
-        expect(Area).to receive(:closest_within).with(
-          latitude:  args[:latitude],
-          longitude: args[:longitude],
-          distance:  Resolvers::AreaSearch::DEFALULT_DISTANCE_IN_METERS
-        )
+      it 'calls the near with arguments and default distance' do
+        expect(Area)
+          .to receive(:near).with(
+            [args[:latitude], args[:longitude]],
+            Resolvers::AreaSearch::DEFALULT_DISTANCE_IN_KM
+          )
 
         klass.resolve(args)
       end
