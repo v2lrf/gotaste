@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgis
+  adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  url:  <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
+  url:  <%= ENV.fetch('DATABASE_URL', '') %>
   database: govinu_production
   username: govinu
   password: <%= ENV['WINEGRAPH_DATABASE_PASSWORD'] %>

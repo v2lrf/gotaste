@@ -13,7 +13,7 @@ defaults: &defaults
         PGUSER: govinu-test
         RAILS_ENV: test
 
-    - image: mdillon/postgis:9.5
+    - image: postgres:10.6
       environment:
         POSTGRES_USER: govinu-test
         POSTGRES_DB: govinu_test

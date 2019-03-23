@@ -5,7 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
-gem 'activerecord-postgis-adapter'
 gem 'administrate'
 gem 'apollo-tracing'
 gem 'bootsnap', '>= 1.1.0', require: false
