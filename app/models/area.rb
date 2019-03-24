@@ -16,5 +16,6 @@ class Area < ApplicationRecord
   has_many :businesses, dependent: :restrict_with_exception
 
   geocoded_by :name
-  after_validation :geocode
+
+  after_validation :geocode, if: -> { name_changed? } unless Rails.env.test?
 end
