@@ -15,8 +15,7 @@
     "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest",
-    "graphql:dump": "graphql-inspector introspect http://localhost:3000/graphql --write schema.graphql",
-    "precommit": "yarn graphql:dump && git add schema.graphql"
+    "graphql:dump": "graphql-inspector introspect http://localhost:3000/graphql --write schema.graphql"
   },
   "graphql-inspector": {
     "diff": true,
