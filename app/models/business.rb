@@ -23,11 +23,16 @@ class Business < ApplicationRecord
 
   has_many :opening_hours, dependent: :destroy
 
+  has_one_attached :logo
+  has_one_attached :hero_image
+
   def full_logo_id
-    Logo.new(business_logo_id: self[:logo_id]).id
+    key = logo.attached? ? logo.key : nil
+    Logo.new(business_logo_id: key).id
   end
 
   def full_hero_image_id
-    HeroImage.new(hero_image_id: self[:hero_image_id]).id
+    key = hero_image.attached? ? hero_image.key : nil
+    HeroImage.new(hero_image_id: key).id
   end
 end
