@@ -63,7 +63,7 @@
     "places.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-apollo": "^2.5.1",
+    "react-apollo": "^2.5.2",
     "react-apollo-hooks": "^0.4.3",
     "react-dom": "^16.8.4",
     "react-map-gl": "^4.0.14",
