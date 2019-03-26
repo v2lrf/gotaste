@@ -58,7 +58,6 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "next": "^8.0.3",
-    "next-with-apollo": "^3.3.2",
     "nprogress": "^0.2.0",
     "places.js": "^1.16.1",
     "prop-types": "^15.7.2",
