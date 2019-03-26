@@ -1716,6 +1716,13 @@ agentkeepalive@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-2.2.0.tgz#c5d1bd4b129008f1163f236f86e5faea2026e2ef"
 
+ahoy.js@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/ahoy.js/-/ahoy.js-0.3.4.tgz#1810b34cbeba3ce371fb0947f9ef6d710390f4cd"
+  integrity sha512-PbJcMYNy4f+WbaJhXziPqgaR0oBT0vX63h50UUHf4Y0Q1VLgQS/1obhjzEGy6IXEvKPI+XpdzQMAMsgIOSJGMw==
+  dependencies:
+    object-to-formdata "^1.3.0"
+
 "airbnb-js-shims@^1 || ^2":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/airbnb-js-shims/-/airbnb-js-shims-2.1.1.tgz#a509611480db7e6d9db62fe2acfaeb473b6842ac"
@@ -9256,6 +9263,11 @@ object-keys@^1.0.11, object-keys@^1.0.12, object-keys@~1.0.0:
 object-path@^0.11.4:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
+
+object-to-formdata@^1.3.0:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/object-to-formdata/-/object-to-formdata-1.6.4.tgz#ee2c3693ae6829ce8847f77eff7a3d8289c843e1"
+  integrity sha512-1XZmRyR6yBhDxogp+9Vi00FFDtCah8x8FGc98lgvBzZlGeQGxj00pKmWHtzl7vrSpqPx5zXVb/XbiP5ZS2karg==
 
 object-visit@^1.0.0:
   version "1.0.1"
