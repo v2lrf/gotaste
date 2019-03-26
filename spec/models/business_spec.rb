@@ -12,7 +12,7 @@ RSpec.describe Business, type: :model do
     let(:business) { FactoryBot.create(:business) }
 
     it 'returns the logo id' do
-      expect(business.full_logo_id).to eq 'Govinu/logos/default'
+      expect(business.full_logo_id).to eq 'default'
     end
   end
 
@@ -21,7 +21,7 @@ RSpec.describe Business, type: :model do
 
     it 'returns the logo id' do
       expect(business.full_hero_image_id)
-        .to eq 'Govinu/hero_images/6229d0ce88881c305df3bcdf60db14e4'
+        .to eq 'default'
     end
   end
 end

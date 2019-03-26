@@ -12,13 +12,13 @@ describe Logo do
       let(:business_logo_id) { 'logo_id' }
 
       it 'returns the id of the business logo' do
-        expect(logo.id).to eq "Govinu/logos/#{business_logo_id}"
+        expect(logo.id).to eq business_logo_id
       end
     end
 
     context 'when business_logo_id is nil' do
       it 'returns the id of the default logo' do
-        expect(logo.id).to eq 'Govinu/logos/default'
+        expect(logo.id).to eq 'default'
       end
     end
   end

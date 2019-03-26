@@ -24,8 +24,8 @@ class BusinessDashboard < Administrate::BaseDashboard
       choices: Business.business_types.keys
     ),
     slug:          Field::String,
-    logo_id:       Field::String,
-    hero_image_id: Field::String,
+    logo:          Field::ActiveStorage,
+    hero_image:    Field::ActiveStorage,
     address:       Field::HasOne
   }.freeze
 
@@ -49,8 +49,8 @@ class BusinessDashboard < Administrate::BaseDashboard
     phone_number
     business_type
     slug
-    logo_id
-    hero_image_id
+    logo
+    hero_image
     created_at
     updated_at
     description
@@ -67,8 +67,8 @@ class BusinessDashboard < Administrate::BaseDashboard
     website
     phone_number
     business_type
-    logo_id
-    hero_image_id
+    logo
+    hero_image
     description
     address
     events

@@ -13,11 +13,10 @@ class Logo
 
   attr_reader :business_logo_id
 
-  CLOUDINARY_LOGOS_PATH = 'Govinu/logos'
-  DEFAULT_LOGO_ID       = 'default'
+  DEFAULT_LOGO_ID = 'default'
 
   def logo_path
-    "#{CLOUDINARY_LOGOS_PATH}/#{logo_id}"
+    logo_id.to_s
   end
 
   def logo_id

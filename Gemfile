@@ -5,9 +5,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+gem 'activestorage-cloudinary-service'
 gem 'administrate'
+gem 'administrate-field-active_storage'
 gem 'apollo-tracing'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'cloudinary', require: false
 gem 'devise'
 gem 'devise-token_authenticatable'
 gem 'friendly_id'
