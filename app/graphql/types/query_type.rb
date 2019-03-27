@@ -4,6 +4,7 @@ module Types
   class QueryType < Types::BaseObject
     field :area_search, resolver: Resolvers::AreaSearch
     field :business,    resolver: Resolvers::FindBusinessFromSlug
+    field :businesses,  resolver: Resolvers::Businesses
     field :event,       resolver: Resolvers::FindEventFromSlug
     field :events,      resolver: Resolvers::FindEvents
     field :search,      resolver: Resolvers::Search
