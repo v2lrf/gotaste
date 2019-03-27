@@ -6,6 +6,8 @@ const cl = cloudinary.Cloudinary.new({ cloud_name: CLOUDINARY_CLOUD_NAME })
 const config = {
   DEV_ENDPOINT: 'http://localhost:4000/graphql',
   PROD_ENDPOINT: 'https://api.govinu.com/graphql',
+  DEV_ID_ENDPOINT: 'http://localhost:4000',
+  PROD_ID_ENDPOINT: 'https://id.govinu.com',
   GOVINU_DOMAIN: 'https://govinu.com',
   HERO_IMAGE_URL: cl.url(
     '/Govinu/hero_images/f0f02c8573be5de9dd53c49f3cd28656',
