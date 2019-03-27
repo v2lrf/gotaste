@@ -13,7 +13,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev, dir: 'client' })
 const handle = app.getRequestHandler()
 
-const proxyIdURL = dev ? config.DEV_ID_ENDPOINT : config.PROD_ID_ENDPOINT
+const proxyIdURL = dev ? config.DEV_API_ENDPOINT : config.PROD_API_ENDPOINT
 
 app.prepare().then(() => {
   createRemoteSchema({
