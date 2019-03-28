@@ -128,7 +128,6 @@ function EventPage({ slug }) {
             <Col xs="full" sm="2/3">
               <Image
                 cloudName={config.cloudinaryCloudName}
-                // TODO: Implement the actual Event image
                 publicId={heroImageId}
                 height={300}
                 width={800}
