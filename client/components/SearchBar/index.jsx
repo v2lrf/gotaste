@@ -11,7 +11,7 @@ import { GhostCard } from '../Ghost'
 
 const SearchBar = dynamic({
   loader: () => import('./SearchBar'),
-  loading: () => <GhostCard height={40} />,
+  loading: () => <GhostCard height={50} />,
   ssr: false
 })
 

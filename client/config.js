@@ -11,7 +11,7 @@ const config = {
     '/Govinu/hero_images/f0f02c8573be5de9dd53c49f3cd28656',
     {
       width: 1600,
-      height: 600,
+      height: 540,
       crop: 'fit',
       secure: true
     }

@@ -5,7 +5,7 @@ exports[`Row Snapshots should match the snapshot 1`] = `
   class="px-2"
 >
   <div
-    class="flex flex-wrap -mx-2"
+    class="flex -mx-2 flex-wrap"
   >
     See, I am inside a row!
   </div>

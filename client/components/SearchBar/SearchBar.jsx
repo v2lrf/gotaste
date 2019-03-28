@@ -33,6 +33,7 @@ class SearchBar extends Component {
             this.autoCompletePlace = input
           }}
           placeholder="Indtast addresse"
+          className="h-12 rounded"
         />
       </div>
     )

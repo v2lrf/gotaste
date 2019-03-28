@@ -18,7 +18,7 @@ const widths = [
   false
 ]
 
-function Col({ xs, sm, md, lg, xl, offset, children }) {
+function Col({ xs, sm, md, lg, xl, offset, noShrink, children }) {
   const colClasses = classnames('px-2', {
     'w-full': !xs,
     [`w-${xs}`]: xs,
@@ -26,6 +26,7 @@ function Col({ xs, sm, md, lg, xl, offset, children }) {
     [`md:w-${md}`]: md,
     [`lg:w-${lg}`]: lg,
     [`xl:w-${xl}`]: xl,
+    'flex-no-shrink': noShrink,
     'ml-auto': offset,
     'mr-auto': offset
   })
@@ -40,6 +41,7 @@ Col.propTypes = {
   lg: PropTypes.oneOf(widths),
   xl: PropTypes.oneOf(widths),
   offset: PropTypes.bool,
+  noShrink: PropTypes.bool,
   children: PropTypes.node.isRequired
 }
 
@@ -49,6 +51,7 @@ Col.defaultProps = {
   md: false,
   lg: false,
   xl: false,
+  noShrink: false,
   offset: false
 }
 

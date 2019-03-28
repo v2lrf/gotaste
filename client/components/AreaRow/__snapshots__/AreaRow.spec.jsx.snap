@@ -11,7 +11,7 @@ Array [
     class="px-2"
   >
     <div
-      class="flex flex-wrap -mx-2"
+      class="flex -mx-2 flex-wrap"
     >
       <div
         class="px-2 w-full sm:w-1/2 lg:w-1/3"
