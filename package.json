@@ -33,7 +33,7 @@
     "@fortawesome/pro-light-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@graphql-inspector/cli": "^0.13.3",
-    "@storybook/react": "^3.4.11",
+    "@storybook/react": "^3.4.12",
     "@zeit/next-css": "1.0.2-canary.2",
     "apollo": "^2.6.2",
     "apollo-boost": "^0.3.1",
