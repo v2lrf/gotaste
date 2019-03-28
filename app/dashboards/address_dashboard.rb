@@ -15,8 +15,6 @@ class AddressDashboard < Administrate::BaseDashboard
     street_number: Field::String,
     postal_code:   Field::String,
     city:          Field::String,
-    latitude:      Field::Number.with_options(decimals: 2),
-    longitude:     Field::Number.with_options(decimals: 2),
     created_at:    Field::DateTime,
     updated_at:    Field::DateTime
   }.freeze
@@ -53,8 +51,6 @@ class AddressDashboard < Administrate::BaseDashboard
     street_number
     postal_code
     city
-    latitude
-    longitude
   ].freeze
 
   # Overwrite this method to customize how addresses are displayed

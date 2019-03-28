@@ -4,7 +4,7 @@ class Address < ApplicationRecord
   belongs_to :addressable, polymorphic: true
 
   validates :addressable, :street_name, :street_number, :postal_code,
-            :city, :latitude, :longitude, presence: true
+            :city, presence: true
 
   geocoded_by :full_address
 
