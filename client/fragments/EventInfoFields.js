@@ -8,6 +8,7 @@ const EventInfoFields = gql`
     host {
       logoId
       name
+      heroImageId
       address {
         streetName
         streetNumber

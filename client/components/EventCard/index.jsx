@@ -14,7 +14,8 @@ function EventCard({ name, beginsAt, slug, host }) {
   const {
     logoId,
     name: hostName,
-    address: { streetName, streetNumber, postalCode, city }
+    address: { streetName, streetNumber, postalCode, city },
+    heroImageId
   } = host
   return (
     <Link href={{ pathname: '/event', query: { slug } }} as={`/event/${slug}`}>
@@ -22,7 +23,7 @@ function EventCard({ name, beginsAt, slug, host }) {
         <div className="relative">
           <Image
             cloudName={config.cloudinaryCloudName}
-            publicId="Govinu/hero_images/6c2543d032ac10028fc849e2b97cb1f7"
+            publicId={heroImageId}
             height={200}
             width={600}
             crop="fill"

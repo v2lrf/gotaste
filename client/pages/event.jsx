@@ -31,6 +31,7 @@ const GET_EVENT = gql`
       host {
         name
         logoId
+        heroImageId
         address {
           streetName
           streetNumber
@@ -67,6 +68,7 @@ function EventPage({ slug }) {
       price,
       host: {
         name: hostName,
+        heroImageId,
         address: {
           streetName,
           streetNumber,
@@ -127,7 +129,7 @@ function EventPage({ slug }) {
               <Image
                 cloudName={config.cloudinaryCloudName}
                 // TODO: Implement the actual Event image
-                publicId="Govinu/hero_images/6c2543d032ac10028fc849e2b97cb1f7"
+                publicId={heroImageId}
                 height={300}
                 width={800}
                 crop="fill"
