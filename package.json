@@ -67,7 +67,7 @@
     "react-dom": "^16.8.5",
     "react-map-gl": "^4.0.14",
     "react-markdown": "^4.0.6",
-    "rollbar": "^2.5.3",
+    "rollbar": "^2.5.4",
     "rss": "^1.2.2",
     "tailwindcss": "^0.7.4"
   },
