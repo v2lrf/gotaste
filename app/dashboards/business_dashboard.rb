@@ -17,7 +17,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     name:          Field::String,
     website:       Field::String,
     phone_number:  Field::String,
-    description:   Field::String,
+    description:   Field::Text,
     created_at:    Field::DateTime,
     updated_at:    Field::DateTime,
     business_type: SelectField.with_options(
