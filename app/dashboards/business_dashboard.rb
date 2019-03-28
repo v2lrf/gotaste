@@ -3,6 +3,10 @@
 require 'administrate/base_dashboard'
 
 class BusinessDashboard < Administrate::BaseDashboard
+  def display_resource(business)
+    business.name
+  end
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -17,7 +21,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     name:          Field::String,
     website:       Field::String,
     phone_number:  Field::String,
-    description:   Field::String,
+    description:   Field::Text,
     created_at:    Field::DateTime,
     updated_at:    Field::DateTime,
     business_type: SelectField.with_options(

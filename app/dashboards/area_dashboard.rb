@@ -3,6 +3,10 @@
 require 'administrate/base_dashboard'
 
 class AreaDashboard < Administrate::BaseDashboard
+  def display_resource(area)
+    area.name
+  end
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
