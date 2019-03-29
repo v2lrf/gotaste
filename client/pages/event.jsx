@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 import moment from 'moment'
@@ -8,7 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCalendarAlt,
   faMapMarkerAlt,
-  faUsdCircle
+  faUsdCircle,
+  faHomeLgAlt
 } from '@fortawesome/pro-light-svg-icons'
 import ReactMarkdown from 'react-markdown'
 
@@ -32,6 +34,7 @@ const GET_EVENT = gql`
         name
         logoId
         heroImageId
+        slug
         address {
           streetName
           streetNumber
@@ -69,6 +72,7 @@ function EventPage({ slug }) {
       host: {
         name: hostName,
         heroImageId,
+        slug: hostSlug,
         address: {
           streetName,
           streetNumber,
@@ -124,7 +128,7 @@ function EventPage({ slug }) {
       </div>
       <Container>
         <Spacer top="12" bottom="12" inner>
-          <Row>
+          <Row className="flex-col-reverse sm:flex-row">
             <Col xs="full" sm="2/3">
               <Image
                 cloudName={config.cloudinaryCloudName}
@@ -141,7 +145,7 @@ function EventPage({ slug }) {
             </Col>
             <Col xs="full" sm="1/3">
               <h2 className="mb-2 text-red-darker">Information</h2>
-              <div className="rounded shadow bg-white border border-grey-light">
+              <div className="rounded shadow bg-white border border-grey-light mb-8 sm:mb-0">
                 <div className="p-4">
                   <div className="flex items-center py-2">
                     <FontAwesomeIcon
@@ -169,6 +173,26 @@ function EventPage({ slug }) {
                     <div className="flex-grow ml-2">
                       <div className="font-bold">{hostName}</div>
                       <div className="text-sm text-grey-darkest">{`${streetName} ${streetNumber}, ${postalCode} ${city}`}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center py-2">
+                    <FontAwesomeIcon
+                      icon={faHomeLgAlt}
+                      className="text-grey-darkest"
+                    />
+                    <div className="flex-grow ml-2">
+                      <Link
+                        href={{
+                          pathname: '/business',
+                          query: { slug: hostSlug }
+                        }}
+                        as={`/business/${hostSlug}`}
+                      >
+                        <a className="text-red-dark no-underline hover:underline focus:underline">
+                          {`Gå til ${hostName}`}
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

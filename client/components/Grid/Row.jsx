@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-function Row({ children, noWrap }) {
+function Row({ children, noWrap, className }) {
   const rowClasses = classNames('flex -mx-2', {
     'flex-no-wrap': noWrap,
-    'flex-wrap': !noWrap
+    'flex-wrap': !noWrap,
+    [className]: className
   })
 
   return (
@@ -17,11 +18,13 @@ function Row({ children, noWrap }) {
 
 Row.propTypes = {
   children: PropTypes.node.isRequired,
-  noWrap: PropTypes.bool
+  noWrap: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Row.defaultProps = {
-  noWrap: false
+  noWrap: false,
+  className: null
 }
 
 export default Row
