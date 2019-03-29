@@ -65,7 +65,7 @@
     "react-apollo": "^2.5.3",
     "react-apollo-hooks": "^0.4.4",
     "react-dom": "^16.8.6",
-    "react-map-gl": "^4.0.14",
+    "react-map-gl": "^4.1.1",
     "react-markdown": "^4.0.6",
     "rollbar": "^2.5.4",
     "rss": "^1.2.2",
