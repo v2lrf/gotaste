@@ -5,6 +5,7 @@ const EventInfoFields = gql`
     name
     beginsAt
     slug
+    eventHeroImageId: heroImageId
     host {
       logoId
       name

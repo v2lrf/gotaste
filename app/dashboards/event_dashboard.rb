@@ -21,6 +21,7 @@ class EventDashboard < Administrate::BaseDashboard
     ends_at:              Field::DateTime,
     description:          Field::Text,
     url:                  Field::String,
+    hero_image:           Field::ActiveStorage,
     created_at:           Field::DateTime,
     updated_at:           Field::DateTime,
     slug:                 Field::String,
@@ -54,6 +55,7 @@ class EventDashboard < Administrate::BaseDashboard
     updated_at
     slug
     price
+    hero_image
     address
   ].freeze
 
@@ -68,6 +70,7 @@ class EventDashboard < Administrate::BaseDashboard
     description
     url
     price
+    hero_image
     same_address_as_host
     address
   ].freeze

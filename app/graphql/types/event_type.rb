@@ -24,6 +24,10 @@ module Types
           description: 'When the event ends.',
           null:        true
 
+    field :hero_image_id, String,
+          description: 'Cloudinary ID of the event hero image.',
+          null:        true
+
     def host
       Loaders::RecordLoader.for(::Business).load(object.host_id)
     end

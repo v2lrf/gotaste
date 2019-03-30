@@ -50,6 +50,7 @@ const GET_EVENT = gql`
       description
       url
       price
+      eventHeroImageId: heroImageId
     }
   }
 `
@@ -69,9 +70,10 @@ function EventPage({ slug }) {
       url,
       description,
       price,
+      eventHeroImageId,
       host: {
         name: hostName,
-        heroImageId,
+        heroImageId: hostHeroImageId,
         slug: hostSlug,
         address: {
           streetName,
@@ -132,7 +134,7 @@ function EventPage({ slug }) {
             <Col xs="full" sm="2/3">
               <Image
                 cloudName={config.cloudinaryCloudName}
-                publicId={heroImageId}
+                publicId={eventHeroImageId || hostHeroImageId}
                 height={300}
                 width={800}
                 crop="fill"

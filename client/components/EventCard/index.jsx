@@ -10,12 +10,12 @@ import { capitalizeFirstLetter } from '../../helpers/textHelpers'
 import DateDisplay from '../DateDisplay'
 import InfoItem from '../InfoItem'
 
-function EventCard({ name, beginsAt, slug, host }) {
+function EventCard({ name, beginsAt, slug, eventHeroImageId, host }) {
   const {
     logoId,
     name: hostName,
     address: { streetName, streetNumber, postalCode, city },
-    heroImageId
+    heroImageId: hostHeroImageId
   } = host
   return (
     <Link href={{ pathname: '/event', query: { slug } }} as={`/event/${slug}`}>
@@ -23,7 +23,7 @@ function EventCard({ name, beginsAt, slug, host }) {
         <div className="relative">
           <Image
             cloudName={config.cloudinaryCloudName}
-            publicId={heroImageId}
+            publicId={eventHeroImageId || hostHeroImageId}
             height={200}
             width={600}
             crop="fill"
@@ -59,6 +59,7 @@ EventCard.propTypes = {
   name: PropTypes.string.isRequired,
   beginsAt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
+  eventHeroImageId: PropTypes.string,
   host: PropTypes.shape({
     logoId: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -69,6 +70,10 @@ EventCard.propTypes = {
       city: PropTypes.string.isRequired
     }).isRequired
   }).isRequired
+}
+
+EventCard.defaultProps = {
+  eventHeroImageId: null
 }
 
 export default EventCard

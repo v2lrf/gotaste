@@ -12,9 +12,11 @@ describe('EventCard', () => {
       name: 'Blindsmagningsaften',
       beginsAt: '2019-03-07T18:15:00Z',
       slug: '2018-03-07-blindsmagningsaften',
+      eventHeroImageId: 'eventHeroImageId',
       host: {
         logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
         name: 'Erik Sørensen Vin',
+        heroImageId: 'hostHeroImageId',
         address: {
           streetName: 'Store Kongensgade',
           streetNumber: '124',
