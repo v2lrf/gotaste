@@ -12,9 +12,14 @@ class Event < ApplicationRecord
   validates :price, presence: true, numericality: true
 
   belongs_to :host, class_name: 'Business', inverse_of: :events
+  has_one_attached :hero_image
 
   scope :upcoming, -> { where('begins_at > ?', Time.current) }
   scope :past,     -> { where('begins_at <= ?', Time.current) }
+
+  def hero_image_id
+    hero_image.attached? ? hero_image.key : nil
+  end
 
   def date
     begins_at.to_date

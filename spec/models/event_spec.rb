@@ -46,6 +46,24 @@ RSpec.describe Event, type: :model do
     end
   end
 
+  describe '#hero_image_id' do
+    context 'when hero image exists' do
+      let(:event) { FactoryBot.create(:event, :with_hero_image) }
+
+      it 'returns the hero image id' do
+        expect(event.hero_image_id).to eq event.hero_image.key
+      end
+    end
+
+    context 'when hero image does not exist' do
+      let(:event) { FactoryBot.create(:event) }
+
+      it 'returns nil' do
+        expect(event.hero_image_id).to be_nil
+      end
+    end
+  end
+
   describe '#date' do
     let(:event) { FactoryBot.build(:event) }
 

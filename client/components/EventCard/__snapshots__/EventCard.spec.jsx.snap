@@ -23,6 +23,7 @@ exports[`EventCard Snapshots should match the snapshot 1`] = `
         cloudName="dkrjpli3y"
         crop="fill"
         height={200}
+        publicId="eventHeroImageId"
         secure="true"
         width={600}
       />

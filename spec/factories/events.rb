@@ -6,5 +6,14 @@ FactoryBot.define do
     association :host, factory: :business
     begins_at   { Date.tomorrow.in_time_zone.change(hour: 20) }
     price       { 150.00 }
+
+    trait :with_hero_image do
+      after(:create) do |event, _|
+        event.hero_image.attach(
+          io:       File.open('spec/support/images/govinu.png'),
+          filename: 'govinu'
+        )
+      end
+    end
   end
 end

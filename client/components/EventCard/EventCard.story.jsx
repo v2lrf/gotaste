@@ -7,6 +7,7 @@ const fakeEvent = {
   name: 'Blindsmagningsaften',
   beginsAt: '2019-03-07T18:15:00Z',
   slug: '2018-03-07-blindsmagningsaften',
+  eventHeroImageId: '5236SxUSokqXQeUdmD9gQFgR',
   host: {
     logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
     name: 'Erik Sørensen Vin',

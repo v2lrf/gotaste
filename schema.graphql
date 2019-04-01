@@ -166,6 +166,9 @@ type Event implements Addressable & Slugable {
   # When the event ends.
   endsAt: ISO8601DateTime
 
+  # Cloudinary ID of the event hero image.
+  heroImageId: String
+
   # Host of the event.
   host: Business!
 
