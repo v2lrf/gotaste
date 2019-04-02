@@ -35,7 +35,7 @@ Array [
               class="flex items-center"
             >
               <figure
-                class="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-12 h-12"
+                class="flex flex-no-shrink self-start bg-white shadow rounded-full mr-2 w-12 h-12"
               >
                 <img
                   alt=""
@@ -84,7 +84,7 @@ Array [
               class="flex items-center"
             >
               <figure
-                class="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-12 h-12"
+                class="flex flex-no-shrink self-start bg-white shadow rounded-full mr-2 w-12 h-12"
               >
                 <img
                   alt=""

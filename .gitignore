@@ -43,5 +43,5 @@ yarn-debug.log*
 .next
 styles/styles.css
 
-client/static/rss.xml
+client/static/sitemap.xml
 client/lib/fragmentTypes.json

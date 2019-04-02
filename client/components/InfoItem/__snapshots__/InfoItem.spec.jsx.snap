@@ -5,7 +5,7 @@ exports[`InfoItem Snapshots should match the large snapshot 1`] = `
   className="flex items-center"
 >
   <figure
-    className="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-16 h-16"
+    className="flex flex-no-shrink self-start bg-white shadow rounded-full mr-4 w-16 h-16"
   >
     <Image
       alt=""
@@ -39,7 +39,7 @@ exports[`InfoItem Snapshots should match the regular snapshot 1`] = `
   className="flex items-center"
 >
   <figure
-    className="flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full w-12 h-12"
+    className="flex flex-no-shrink self-start bg-white shadow rounded-full mr-2 w-12 h-12"
   >
     <Image
       alt=""

@@ -1,6 +1,7 @@
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const next = require('next')
+const path = require('path')
 const createRemoteSchema = require('./remote-schema')
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -33,6 +34,14 @@ app.prepare().then(() => {
     server.get('/event/:slug', (req, res) =>
       app.render(req, res, '/event', { slug: req.params.slug })
     )
+
+    server.get('/robots.txt', (req, res) => {
+      res.sendFile(path.join(__dirname, 'static', 'robots.txt'))
+    })
+
+    server.get('/sitemap.xml', (req, res) => {
+      res.sendFile(path.join(__dirname, 'static', 'sitemap.xml'))
+    })
 
     server.get('*', (req, res) => handle(req, res))
 

@@ -88,7 +88,7 @@ function EventPage({ slug }) {
   } = data
 
   return (
-    <Layout>
+    <Layout title={name} metaDescription={description}>
       <div className="bg-grey-lighter shadow">
         <Container>
           <Spacer top="12" bottom="12" inner>

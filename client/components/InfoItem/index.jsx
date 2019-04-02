@@ -7,10 +7,10 @@ import config from '../../config'
 
 function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   const figureClasses = classnames(
-    'flex flex-no-shrink self-start mr-2 bg-white shadow rounded-full',
+    'flex flex-no-shrink self-start bg-white shadow rounded-full',
     {
-      'w-12 h-12': !large,
-      'w-16 h-16': large
+      'mr-2 w-12 h-12': !large,
+      'mr-4 w-16 h-16': large
     }
   )
   const headlineClasses = classnames('text-black font-bold', {
@@ -46,7 +46,7 @@ function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
 InfoItem.propTypes = {
   imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
-  headline: PropTypes.string.isRequired,
+  headline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   tagline: PropTypes.string.isRequired,
   large: PropTypes.bool
 }

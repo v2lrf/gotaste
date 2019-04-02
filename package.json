@@ -7,7 +7,7 @@
   "scripts": {
     "predev": "node client/lib/getFragmentTypes.js",
     "dev": "node ./client/server.js",
-    "prebuild": "NODE_ENV=production node client/lib/getFragmentTypes.js && node client/build-rss-feed.js",
+    "prebuild": "NODE_ENV=production node client/lib/getFragmentTypes.js && node client/build-sitemap.js",
     "build": " next build ./client",
     "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
@@ -67,7 +67,7 @@
     "react-map-gl": "^4.1.1",
     "react-markdown": "^4.0.6",
     "rollbar": "^2.5.4",
-    "rss": "^1.2.2",
+    "sitemap": "^2.1.0",
     "tailwindcss": "^0.7.4"
   },
   "devDependencies": {

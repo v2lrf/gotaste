@@ -5,11 +5,12 @@ import Head from 'next/head'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
 
-function Layout({ children, title }) {
+function Layout({ children, title, metaDescription }) {
   return (
     <Fragment>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={metaDescription} />
       </Head>
       <NavBar />
       {children}
@@ -20,11 +21,14 @@ function Layout({ children, title }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string,
+  metaDescription: PropTypes.string
 }
 
 Layout.defaultProps = {
-  title: 'Govinu'
+  title: 'Govinu - Smag, og gå på opdagelse i vinens verden',
+  metaDescription:
+    'Find, og følg din lokale vinforhandler eller vinbar. Gå på opdagelse i vinens verden, find nye smagninger eller arrangementer, og meget mere.'
 }
 
 export default Layout

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+User-agent: SearchmetricsBot
+Allow: /
+
+User-agent: Zookabot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+Sitemap: https://govinu.com/sitemap.xml

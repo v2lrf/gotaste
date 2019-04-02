@@ -59,14 +59,14 @@ function BusinessPage({ slug }) {
     }
   } = data
   return (
-    <Layout>
+    <Layout title={name} metaDescription={description}>
       <Fragment>
         <div className="bg-grey-lighter shadow">
           <Container>
             <Spacer top="12" bottom="12" inner>
               <InfoItem
                 imageSrc={logoId}
-                headline={name}
+                headline={<h1 className="text-3xl text-red-dark">{name}</h1>}
                 tagline={`${address.streetName} ${address.streetNumber}, ${
                   address.postalCode
                 } ${address.city}`}
