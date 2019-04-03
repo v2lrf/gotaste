@@ -14,23 +14,24 @@ class BusinessDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    area:          Field::BelongsTo,
-    events:        Field::HasMany,
-    opening_hours: Field::HasMany,
-    id:            Field::Number,
-    name:          Field::String,
-    website:       Field::String,
-    phone_number:  Field::String,
-    description:   Field::Text,
-    created_at:    Field::DateTime,
-    updated_at:    Field::DateTime,
-    business_type: SelectField.with_options(
+    area:              Field::BelongsTo,
+    events:            Field::HasMany,
+    opening_hours:     Field::HasMany,
+    id:                Field::Number,
+    name:              Field::String,
+    website:           Field::String,
+    phone_number:      Field::String,
+    description:       Field::Text,
+    short_description: Field::Text,
+    created_at:        Field::DateTime,
+    updated_at:        Field::DateTime,
+    business_type:     SelectField.with_options(
       choices: Business.business_types.keys
     ),
-    slug:          Field::String,
-    logo:          Field::ActiveStorage,
-    hero_image:    Field::ActiveStorage,
-    address:       Field::HasOne
+    slug:              Field::String,
+    logo:              Field::ActiveStorage,
+    hero_image:        Field::ActiveStorage,
+    address:           Field::HasOne
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -74,6 +75,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     logo
     hero_image
     description
+    short_description
     address
     events
   ].freeze
