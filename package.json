@@ -35,7 +35,7 @@
     "@graphql-inspector/cli": "^1.14.0",
     "@storybook/react": "^3.4.12",
     "@zeit/next-css": "1.0.2-canary.2",
-    "apollo": "^2.6.2",
+    "apollo": "^2.7.0",
     "apollo-boost": "^0.3.1",
     "apollo-link": "^1.2.11",
     "apollo-link-context": "^1.0.17",
