@@ -84,7 +84,7 @@ function NavBar() {
             <ul className={navListClasses}>
               <NavItem to="/discover">Gå på opdagelse</NavItem>
               <NavItem to="/events">Begivenheder</NavItem>
-              <NavItem to="#">Forhandlere</NavItem>
+              <NavItem to="/businesses">Forhandlere</NavItem>
               <div className="mx-2 my-1 border border-red-lightest" />
               <Query query={GET_VIEWER}>
                 {({ data }) =>

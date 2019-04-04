@@ -2,26 +2,21 @@ import React from 'react'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 
-import EventsPageLoader from '../loaders/events'
+import BusinessesPageLoader from '../loaders/businesses'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Spacer from '../components/Spacer'
 import { Row, Col } from '../components/Grid'
-import EventCard from '../components/EventCard'
+import BusinessCard from '../components/BusinessCard'
 import Button from '../components/Button'
 
-import EventInfoFields from '../fragments/EventInfoFields'
+import BusinessInfoFields from '../fragments/BusinessInfoFields'
 
-const GET_UPCOMING_EVENTS = gql`
-  query getUpcomingEvents($cursor: String) {
-    events(
-      whenEventBegins: UPCOMING
-      orderBy: BEGINS_AT_ASC
-      first: 9
-      after: $cursor
-    ) {
+const GET_BUSINESSES = gql`
+  query getBusinesses($cursor: String) {
+    businesses(orderBy: NAME_ASC, first: 9, after: $cursor) {
       nodes {
-        ...EventInfoFields
+        ...BusinessInfoFields
       }
       pageInfo {
         endCursor
@@ -30,43 +25,43 @@ const GET_UPCOMING_EVENTS = gql`
     }
   }
 
-  ${EventInfoFields}
+  ${BusinessInfoFields}
 `
 
 function handlePagination(previousResult, fetchMoreResult) {
-  const newPageInfo = fetchMoreResult.events.pageInfo
-  const newNodes = fetchMoreResult.events.nodes
+  const newPageInfo = fetchMoreResult.businesses.pageInfo
+  const newNodes = fetchMoreResult.businesses.nodes
   return {
-    events: {
-      __typename: previousResult.events.__typename,
-      nodes: [...previousResult.events.nodes, ...newNodes],
+    businesses: {
+      __typename: previousResult.businesses.__typename,
+      nodes: [...previousResult.businesses.nodes, ...newNodes],
       pageInfo: {
         ...newPageInfo,
-        __typename: previousResult.events.pageInfo.__typename
+        __typename: previousResult.businesses.pageInfo.__typename
       }
     }
   }
 }
 
-function EventsPage() {
-  const { data, loading, fetchMore } = useQuery(GET_UPCOMING_EVENTS)
+function BusinessesPage() {
+  const { data, loading, fetchMore } = useQuery(GET_BUSINESSES)
 
-  if (loading) return <EventsPageLoader />
+  if (loading) return <BusinessesPageLoader />
   const {
-    events,
-    events: { pageInfo }
+    businesses,
+    businesses: { pageInfo }
   } = data
   return (
     <Layout>
       <Container>
         <Spacer top="10" bottom="12">
           <h2 className="text-center mb-6 text-red-dark">
-            Kommende begivenheder
+            Forhandlere og vinbarer
           </h2>
           <Row>
-            {events.nodes.map(event => (
-              <Col xs="full" sm="1/2" lg="1/3" key={event.slug}>
-                <EventCard {...event} />
+            {businesses.nodes.map(business => (
+              <Col xs="full" sm="1/2" lg="1/3" key={business.slug}>
+                <BusinessCard {...business} />
               </Col>
             ))}
           </Row>
@@ -85,7 +80,7 @@ function EventsPage() {
                   })
                 }
               >
-                Vis flere begivenheder
+                Vis flere forhandlere
               </Button>
             )}
           </div>
@@ -95,4 +90,4 @@ function EventsPage() {
   )
 }
 
-export default EventsPage
+export default BusinessesPage
