@@ -109,6 +109,9 @@ type Business implements Node & Addressable & Slugable {
   # Opening hours of the business.
   openingHours: [OpeningHour!]
 
+  # Short description of the business.
+  shortDescription: String
+
   # A unique slug of the object.
   slug: String!
 }

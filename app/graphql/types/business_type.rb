@@ -36,6 +36,10 @@ module Types
 
     field :description, String, 'Description of the business.', null: true
 
+    field :short_description, String,
+          description: 'Short description of the business.',
+          null:        true
+
     field :hero_image_id, String,
           description: 'Cloudinary ID of the business hero image.',
           null:        true,
