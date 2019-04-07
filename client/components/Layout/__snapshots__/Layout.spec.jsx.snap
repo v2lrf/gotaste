@@ -10,6 +10,10 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
       content="Find, og følg din lokale vinforhandler eller vinbar. Gå på opdagelse i vinens verden, find nye smagninger eller arrangementer, og meget mere."
       name="description"
     />
+    <meta
+      content="govinu,vin,god vin,vinsmagning,blindsmagning,"
+      name="keywords"
+    />
   </Head>
   <NavBar />
   Some content!

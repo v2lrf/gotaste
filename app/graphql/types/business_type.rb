@@ -15,6 +15,10 @@ module Types
                        ' Either a _Shop_, _Bar_ or _Restaurant_',
           null:        false
 
+    field :area, AreaType,
+          description: 'The Area that the business belongs to',
+          null:        false
+
     field :events, EventConnectionType,
           description: 'Events hosted by the business.',
           null:        true,
@@ -44,6 +48,10 @@ module Types
           description: 'Cloudinary ID of the business hero image.',
           null:        true,
           method:      :full_hero_image_id
+
+    def area
+      Loaders::RecordLoader.for(::Area).load(object.area_id)
+    end
 
     def events(when_event_begins:)
       scope = when_event_begins == 'PAST' ? ::Event.past : ::Event.upcoming

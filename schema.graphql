@@ -72,6 +72,9 @@ type Business implements Node & Addressable & Slugable {
   # Address of the object.
   address: Address!
 
+  # The Area that the business belongs to
+  area: Area!
+
   # Type of the business. Either a _Shop_, _Bar_ or _Restaurant_
   businessType: BusinessType!
 

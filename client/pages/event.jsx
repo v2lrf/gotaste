@@ -140,6 +140,7 @@ function EventPage({ slug }) {
                 crop="fill"
                 className="rounded"
                 secure="true"
+                alt={name}
               />
               <div className="py-4 leading-normal rich-text">
                 <ReactMarkdown source={description} />

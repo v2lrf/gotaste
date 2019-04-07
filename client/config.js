@@ -21,7 +21,14 @@ const config = {
   DEFAULT_LATITUDE: 55.6753,
   DEFAULT_LONGITUDE: 12.5703,
   DEFAULT_DISTANCE: 6000,
-  cloudinaryCloudName: CLOUDINARY_CLOUD_NAME
+  cloudinaryCloudName: CLOUDINARY_CLOUD_NAME,
+  DEFAULT_META_KEYWORDS: [
+    'govinu',
+    'vin',
+    'god vin',
+    'vinsmagning',
+    'blindsmagning'
+  ]
 }
 
 module.exports = config

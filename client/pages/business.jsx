@@ -24,9 +24,13 @@ const GET_BUSINESS = gql`
     business(slug: $slug) {
       ...BusinessInfoFields
       description
+      shortDescription
       address {
         latitude
         longitude
+      }
+      area {
+        name
       }
       events(whenEventBegins: UPCOMING, first: 1) {
         nodes {
@@ -55,17 +59,24 @@ function BusinessPage({ slug }) {
       address,
       heroImageId,
       description,
+      shortDescription,
+      area: { name: areaName },
       events: { nodes: eventNodes }
     }
   } = data
   return (
-    <Layout title={name} metaDescription={description}>
+    <Layout
+      title={name}
+      metaDescription={shortDescription}
+      metaKeywords={['vinbar', 'vinforhandler', areaName, name, address.city]}
+    >
       <Fragment>
         <div className="bg-grey-lighter shadow">
           <Container>
             <Spacer top="12" bottom="12" inner>
               <InfoItem
                 imageSrc={logoId}
+                imageAlt={name}
                 headline={<h1 className="text-3xl text-red-dark">{name}</h1>}
                 tagline={`${address.streetName} ${address.streetNumber}, ${
                   address.postalCode
@@ -87,6 +98,7 @@ function BusinessPage({ slug }) {
                   crop="fill"
                   className="rounded"
                   secure="true"
+                  alt=""
                 />
                 <div className="py-4 leading-normal rich-text">
                   <ReactMarkdown source={description} />
