@@ -5,12 +5,17 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks'
 import moment from 'moment'
 /* eslint-disable-next-line */
 import withApollo from '../lib/withApollo'
+import ahoy from '../lib/ahoy'
 
 import '../styles/styles.css'
 
 moment.locale('da')
 
 class GovinuApp extends App {
+  componentDidMount() {
+    ahoy.trackAll()
+  }
+
   render() {
     const { Component, pageProps, apolloClient } = this.props
     return (
