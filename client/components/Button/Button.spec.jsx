@@ -27,5 +27,10 @@ describe('Button', () => {
       component.setProps({ fullWidth: true })
       expect(component).toMatchSnapshot()
     })
+
+    it('should match the laoding snapshot', () => {
+      component.setProps({ loading: true })
+      expect(component).toMatchSnapshot()
+    })
   })
 })

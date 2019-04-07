@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 
@@ -33,9 +33,10 @@ const GET_UPCOMING_EVENTS = gql`
   ${EventInfoFields}
 `
 
-function handlePagination(previousResult, fetchMoreResult) {
+function handlePagination(previousResult, fetchMoreResult, setButtonLoading) {
   const newPageInfo = fetchMoreResult.events.pageInfo
   const newNodes = fetchMoreResult.events.nodes
+  setButtonLoading(false)
   return {
     events: {
       __typename: previousResult.events.__typename,
@@ -50,6 +51,7 @@ function handlePagination(previousResult, fetchMoreResult) {
 
 function EventsPage() {
   const { data, loading, fetchMore } = useQuery(GET_UPCOMING_EVENTS)
+  const [buttonLoading, setButtonLoading] = useState(false)
 
   if (loading) return <EventsPageLoader />
   const {
@@ -75,15 +77,21 @@ function EventsPage() {
               <Button
                 kind="secondary"
                 type="button"
-                onClick={() =>
+                loading={buttonLoading}
+                onClick={() => {
+                  setButtonLoading(true)
                   fetchMore({
                     variables: {
                       cursor: pageInfo.endCursor
                     },
                     updateQuery: (previousResult, { fetchMoreResult }) =>
-                      handlePagination(previousResult, fetchMoreResult)
+                      handlePagination(
+                        previousResult,
+                        fetchMoreResult,
+                        setButtonLoading
+                      )
                   })
-                }
+                }}
               >
                 Vis flere begivenheder
               </Button>

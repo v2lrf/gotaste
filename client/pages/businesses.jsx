@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 
@@ -28,9 +28,10 @@ const GET_BUSINESSES = gql`
   ${BusinessInfoFields}
 `
 
-function handlePagination(previousResult, fetchMoreResult) {
+function handlePagination(previousResult, fetchMoreResult, setButtonLoading) {
   const newPageInfo = fetchMoreResult.businesses.pageInfo
   const newNodes = fetchMoreResult.businesses.nodes
+  setButtonLoading(false)
   return {
     businesses: {
       __typename: previousResult.businesses.__typename,
@@ -45,6 +46,7 @@ function handlePagination(previousResult, fetchMoreResult) {
 
 function BusinessesPage() {
   const { data, loading, fetchMore } = useQuery(GET_BUSINESSES)
+  const [buttonLoading, setButtonLoading] = useState(false)
 
   if (loading) return <BusinessesPageLoader />
   const {
@@ -70,15 +72,21 @@ function BusinessesPage() {
               <Button
                 kind="secondary"
                 type="button"
-                onClick={() =>
+                loading={buttonLoading}
+                onClick={() => {
+                  setButtonLoading(true)
                   fetchMore({
                     variables: {
                       cursor: pageInfo.endCursor
                     },
                     updateQuery: (previousResult, { fetchMoreResult }) =>
-                      handlePagination(previousResult, fetchMoreResult)
+                      handlePagination(
+                        previousResult,
+                        fetchMoreResult,
+                        setButtonLoading
+                      )
                   })
-                }
+                }}
               >
                 Vis flere forhandlere
               </Button>
