@@ -13,39 +13,6 @@ RSpec.describe Event, type: :model do
     expect(event.slug)
   end
 
-  describe 'prefill_address callback' do
-    let(:host)     { FactoryBot.create(:business) }
-    let!(:address) { FactoryBot.create(:address, addressable: host) }
-
-    let(:same_address_as_host) { true }
-
-    let(:event) do
-      FactoryBot.build(
-        :event,
-        host:                 host,
-        same_address_as_host: same_address_as_host
-      )
-    end
-
-    context 'when `same_address_as_host` is true' do
-      let(:same_address_as_host) { true }
-
-      it 'prefills address from host' do
-        event.save
-        expect(event.address).not_to be_nil
-      end
-    end
-
-    context 'when `same_address_as_host` is false' do
-      let(:same_address_as_host) { false }
-
-      it 'does not prefill address from host' do
-        event.save
-        expect(event.address).to be_nil
-      end
-    end
-  end
-
   describe '#hero_image_id' do
     context 'when hero image exists' do
       let(:event) { FactoryBot.create(:event, :with_hero_image) }
