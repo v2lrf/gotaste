@@ -2,7 +2,6 @@
 
 class Business < ApplicationRecord
   extend FriendlyId
-  include Addressable
 
   friendly_id :name, use: :slugged
 
@@ -16,15 +15,21 @@ class Business < ApplicationRecord
 
   belongs_to :area
 
+  has_one :address,
+          as:         :addressable,
+          inverse_of: :addressable,
+          dependent:  :destroy
+
   has_many :events,
            foreign_key: :host_id,
            inverse_of:  :host,
            dependent:   :destroy
 
   has_many :opening_hours, dependent: :destroy
-
   has_one_attached :logo
   has_one_attached :hero_image
+
+  accepts_nested_attributes_for :address
 
   def full_logo_id
     key = logo.attached? ? logo.key : nil
