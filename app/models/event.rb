@@ -2,7 +2,6 @@
 
 class Event < ApplicationRecord
   extend FriendlyId
-  include Addressable
 
   friendly_id :generate_slug, use: :slugged
 
@@ -10,7 +9,15 @@ class Event < ApplicationRecord
   validates :price, presence: true, numericality: true
 
   belongs_to :host, class_name: 'Business', inverse_of: :events
+
+  has_one :address,
+          as:         :addressable,
+          inverse_of: :addressable,
+          dependent:  :destroy
+
   has_one_attached :hero_image
+
+  accepts_nested_attributes_for :address
 
   scope :upcoming, -> { where('begins_at > ?', Time.current) }
   scope :past,     -> { where('begins_at <= ?', Time.current) }
@@ -20,7 +27,7 @@ class Event < ApplicationRecord
   end
 
   def date
-    begins_at.to_date
+    begins_at&.to_date
   end
 
   private

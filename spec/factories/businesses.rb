@@ -8,5 +8,9 @@ FactoryBot.define do
 
     business_type { :shop }
     area
+
+    after(:create) do |business|
+      create(:address, addressable: business)
+    end
   end
 end
