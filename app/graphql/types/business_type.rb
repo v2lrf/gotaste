@@ -33,6 +33,11 @@ module Types
           description: 'Opening hours of the business.',
           null:        true
 
+    field :is_open_now, Boolean,
+          description: 'Whether or not the business is open right now.',
+          null:        false,
+          method:      :open_now?
+
     field :logo_id, String,
           description: 'Cloudinary ID of the business logo.',
           null:        true,

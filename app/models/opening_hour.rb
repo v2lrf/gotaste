@@ -8,22 +8,24 @@ class OpeningHour < ApplicationRecord
   # Order by day_of_week: Monday, tuesday, wednesday, thursdag, friday, etc..
   default_scope do
     order(
-      'CASE day_of_week WHEN 1 THEN 1 WHEN 2 THEN 2 WHEN 3 THEN 3 WHEN 4 THEN 4
-      WHEN 5 THEN 5 WHEN 6 THEN 6 WHEN 0 THEN 7 END'
+      Arel.sql(
+        'CASE day_of_week WHEN 1 THEN 1 WHEN 2 THEN 2 WHEN 3 THEN 3
+        WHEN 4 THEN 4 WHEN 5 THEN 5 WHEN 6 THEN 6 WHEN 0 THEN 7 END'
+      )
     )
   end
 
-  def open
-    format_time(self[:open])
-  end
+  # def open
+  #   format_time(self[:open])
+  # end
 
-  def close
-    format_time(self[:close])
-  end
+  # def close
+  #   format_time(self[:close])
+  # end
 
-  private
+  # private
 
-  def format_time(time)
-    time&.strftime('%H:%M')
-  end
+  # def format_time(time)
+  #   time&.strftime('%H:%M')
+  # end
 end

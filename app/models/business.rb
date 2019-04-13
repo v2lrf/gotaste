@@ -40,4 +40,10 @@ class Business < ApplicationRecord
     key = hero_image.attached? ? hero_image.key : nil
     HeroImage.new(hero_image_id: key).id
   end
+
+  def open_now?
+    opening_hours
+      .where(day_of_week: Time.zone.now.wday)
+      .where('? BETWEEN open AND close', Time.zone.now).any?
+  end
 end

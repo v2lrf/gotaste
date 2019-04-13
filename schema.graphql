@@ -103,6 +103,9 @@ type Business implements Node & Addressable & Slugable {
   heroImageId: String
   id: ID!
 
+  # Whether or not the business is open right now.
+  isOpenNow: Boolean!
+
   # Cloudinary ID of the business logo.
   logoId: String
 
