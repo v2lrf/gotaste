@@ -59,6 +59,9 @@ GEM
     administrate-field-active_storage (0.1.6)
       administrate (>= 0.2.0.rc1)
       rails (>= 5.2)
+    administrate-field-nested_has_many (1.1.0)
+      administrate (> 0.8, < 1)
+      cocoon (~> 1.2, >= 1.2.11)
     ahoy_matey (2.2.0)
       addressable
       browser (~> 2.0)
@@ -86,6 +89,7 @@ GEM
     cloudinary (1.11.1)
       aws_cf_signer
       rest-client
+    cocoon (1.2.12)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
@@ -365,6 +369,7 @@ DEPENDENCIES
   activestorage-cloudinary-service
   administrate
   administrate-field-active_storage
+  administrate-field-nested_has_many
   ahoy_matey
   apollo-tracing
   bootsnap (>= 1.1.0)

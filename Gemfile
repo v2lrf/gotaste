@@ -8,6 +8,7 @@ ruby '2.6.2'
 gem 'activestorage-cloudinary-service'
 gem 'administrate'
 gem 'administrate-field-active_storage'
+gem 'administrate-field-nested_has_many'
 gem 'ahoy_matey'
 gem 'apollo-tracing'
 gem 'bootsnap', '>= 1.1.0', require: false

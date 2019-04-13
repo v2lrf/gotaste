@@ -29,7 +29,7 @@ class Business < ApplicationRecord
   has_one_attached :logo
   has_one_attached :hero_image
 
-  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :address, :opening_hours
 
   def full_logo_id
     key = logo.attached? ? logo.key : nil
