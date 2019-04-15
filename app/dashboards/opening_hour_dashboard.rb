@@ -12,8 +12,8 @@ class OpeningHourDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     business:    Field::BelongsTo,
     day_of_week: Field::String,
-    open:        Field::String,
-    close:       Field::String
+    open:        Field::Time,
+    close:       Field::Time
   }.freeze
 
   # COLLECTION_ATTRIBUTES
