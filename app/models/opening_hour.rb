@@ -14,18 +14,4 @@ class OpeningHour < ApplicationRecord
       )
     )
   end
-
-  # def open
-  #   format_time(self[:open])
-  # end
-
-  # def close
-  #   format_time(self[:close])
-  # end
-
-  # private
-
-  # def format_time(time)
-  #   time&.strftime('%H:%M')
-  # end
 end
