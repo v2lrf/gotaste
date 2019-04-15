@@ -19,7 +19,7 @@ function EventCard({ name, beginsAt, slug, eventHeroImageId, host }) {
   } = host
   return (
     <Link href={{ pathname: '/event', query: { slug } }} as={`/event/${slug}`}>
-      <a className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4">
+      <a className="inline-flex flex-col rounded shadow-lg no-underline mb-4 hover-scale">
         <div className="relative">
           <Image
             cloudName={config.cloudinaryCloudName}

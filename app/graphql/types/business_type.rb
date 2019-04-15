@@ -49,6 +49,14 @@ module Types
           null:        true,
           method:      :full_hero_image_id
 
+    field :website, String,
+          description: 'URL to the website of the business.',
+          null:        true
+
+    field :phone_number, String,
+          description: 'Phone number of the business.',
+          null:        true
+
     def area
       Loaders::RecordLoader.for(::Area).load(object.area_id)
     end

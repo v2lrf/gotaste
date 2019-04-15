@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleItem Snapshots should match the snapshot 1`] = `
+<div
+  className="flex items-center py-2"
+>
+  <FontAwesomeIcon
+    border={false}
+    className="text-grey-darkest"
+    fixedWidth={false}
+    flip={null}
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f37e",
+          "M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM32 80c0-8.8 7.2-16 16-16h48v64H32V80zm448 352c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V160h448v272zm0-304H128V64h336c8.8 0 16 7.2 16 16v48z",
+        ],
+        "iconName": "browser",
+        "prefix": "fal",
+      }
+    }
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    symbol={false}
+    title=""
+    transform={null}
+  />
+  <div
+    className="flex-grow ml-2"
+  >
+    I am content with in a SimpleItem
+  </div>
+</div>
+`;

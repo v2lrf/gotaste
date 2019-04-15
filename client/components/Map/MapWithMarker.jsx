@@ -13,7 +13,7 @@ function MapWithMarker({ latitude, longitude, height, width, className }) {
       height={height}
       latitude={latitude}
       longitude={longitude}
-      zoom={13}
+      zoom={14}
       className={className}
     >
       <Marker latitude={latitude} longitude={longitude}>

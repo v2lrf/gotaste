@@ -14,7 +14,7 @@ function BusinessCard({ name, address, logoId, heroImageId, slug }) {
       href={{ pathname: '/business', query: { slug } }}
       as={`/business/${slug}`}
     >
-      <a className="inline-flex flex-col rounded shadow no-underline hover:shadow-md mb-4">
+      <a className="inline-flex flex-col rounded shadow-lg no-underline mb-4 hover-scale">
         <div>
           <Image
             cloudName={config.cloudinaryCloudName}

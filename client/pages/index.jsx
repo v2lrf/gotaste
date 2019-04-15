@@ -83,41 +83,32 @@ function Home() {
       <Container>
         <Spacer top="10" bottom="12">
           <h2 className="text-red-dark mb-4 ml-2">Kommende begivenheder</h2>
-          <div className="overflow-x-scroll scrolling-touch">
-            <Row noWrap>
-              <Query query={GET_UPCOMING_EVENTS}>
-                {({ loading, data: { events } }) => {
-                  if (loading) return <IndexPageLoader />
-                  return events.nodes.map(event => (
-                    <Col xs="5/6" sm="2/5" lg="1/3" key={event.slug} noShrink>
-                      <EventCard {...event} />
-                    </Col>
-                  ))
-                }}
-              </Query>
-            </Row>
-          </div>
+          <Row>
+            <Query query={GET_UPCOMING_EVENTS}>
+              {({ loading, data: { events } }) => {
+                if (loading) return <IndexPageLoader />
+                return events.nodes.map(event => (
+                  <Col xs="full" sm="1/2" lg="1/3" key={event.slug}>
+                    <EventCard {...event} />
+                  </Col>
+                ))
+              }}
+            </Query>
+          </Row>
           <h2 className="text-red-dark my-4 ml-2">Udvalgte forhandlere</h2>
-          <div className="overflow-x-scroll scrolling-touch">
-            <Row noWrap>
-              <Query query={GET_SELECTED_BUSINESESS}>
-                {({ loading, data: { businesses } }) => {
-                  if (loading) return <IndexPageLoader />
-                  return businesses.nodes.map(business => (
-                    <Col
-                      xs="5/6"
-                      sm="2/5"
-                      lg="1/3"
-                      key={business.slug}
-                      noShrink
-                    >
-                      <BusinessCard {...business} />
-                    </Col>
-                  ))
-                }}
-              </Query>
-            </Row>
-          </div>
+          <Row>
+            <Query query={GET_SELECTED_BUSINESESS}>
+              {({ loading, data: { businesses } }) => {
+                if (loading) return <IndexPageLoader />
+                return businesses.nodes.map(business => (
+                  <Col xs="full" sm="1/2" lg="1/3" key={business.slug}>
+                    <BusinessCard {...business} />
+                  </Col>
+                ))
+              }}
+            </Query>
+          </Row>
+
           <div className="flex-col-reverse md:flex-row my-24 flex mx-0 md:mx-20 lg:mx-32 mx-auto shadow-lg rounded">
             <div className="flex-1 self-center p-4 md:p-8">
               <h3 className="text-red-darker text-2xl">Govinu?</h3>

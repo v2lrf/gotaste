@@ -5,7 +5,6 @@ import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 import moment from 'moment'
 import { Image } from 'cloudinary-react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCalendarAlt,
   faMapMarkerAlt,
@@ -26,6 +25,7 @@ import { Row, Col } from '../components/Grid'
 import DateDisplay from '../components/DateDisplay'
 import Button from '../components/Button'
 import { MapWithMarker } from '../components/Map'
+import SimpleItem from '../components/SimpleItem'
 
 const GET_EVENT = gql`
   query getEvent($slug: String!) {
@@ -150,54 +150,29 @@ function EventPage({ slug }) {
               <h2 className="mb-2 text-red-darker">Information</h2>
               <div className="rounded shadow bg-white border border-grey-light mb-8 sm:mb-0">
                 <div className="p-4">
-                  <div className="flex items-center py-2">
-                    <FontAwesomeIcon
-                      icon={faCalendarAlt}
-                      className="text-grey-darkest"
-                    />
-                    <div className="flex-grow ml-2">
-                      {capitalizeFirstLetter(moment(beginsAt).format('LLLL'))}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center py-2">
-                    <FontAwesomeIcon
-                      icon={faUsdCircle}
-                      className="text-grey-darkest"
-                    />
-                    <div className="flex-grow ml-2">{simpleFormat(price)}</div>
-                  </div>
-
-                  <div className="flex items-center py-2">
-                    <FontAwesomeIcon
-                      icon={faMapMarkerAlt}
-                      className="text-grey-darkest"
-                    />
-                    <div className="flex-grow ml-2">
-                      <div className="font-bold">{hostName}</div>
-                      <div className="text-sm text-grey-darkest">{`${streetName} ${streetNumber}, ${postalCode} ${city}`}</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center py-2">
-                    <FontAwesomeIcon
-                      icon={faHomeLgAlt}
-                      className="text-grey-darkest"
-                    />
-                    <div className="flex-grow ml-2">
-                      <Link
-                        href={{
-                          pathname: '/business',
-                          query: { slug: hostSlug }
-                        }}
-                        as={`/business/${hostSlug}`}
-                      >
-                        <a className="text-red-dark no-underline hover:underline focus:underline">
-                          {`Gå til ${hostName}`}
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
+                  <SimpleItem icon={faCalendarAlt}>
+                    {capitalizeFirstLetter(moment(beginsAt).format('LLLL'))}
+                  </SimpleItem>
+                  <SimpleItem icon={faUsdCircle}>
+                    {simpleFormat(price)}
+                  </SimpleItem>
+                  <SimpleItem icon={faMapMarkerAlt}>
+                    <div className="font-bold">{hostName}</div>
+                    <div className="text-sm text-grey-darkest">{`${streetName} ${streetNumber}, ${postalCode} ${city}`}</div>
+                  </SimpleItem>
+                  <SimpleItem icon={faHomeLgAlt}>
+                    <Link
+                      href={{
+                        pathname: '/business',
+                        query: { slug: hostSlug }
+                      }}
+                      as={`/business/${hostSlug}`}
+                    >
+                      <a className="text-red-dark no-underline hover:underline focus:underline">
+                        {`Gå til ${hostName}`}
+                      </a>
+                    </Link>
+                  </SimpleItem>
                 </div>
                 <MapWithMarker
                   latitude={latitude}
