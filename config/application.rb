@@ -30,7 +30,7 @@ module Govinu
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.time_zone = 'Copenhagen'
-    config.active_record.default_timezone = :local
+    config.active_record.default_timezone = :utc
 
     # Don't generate system test files.
     config.generators.system_tests = nil
