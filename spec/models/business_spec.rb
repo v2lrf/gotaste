@@ -42,8 +42,8 @@ RSpec.describe Business, type: :model do
           :opening_hour,
           business:    business,
           day_of_week: 'Monday',
-          open:        '10:00',
-          close:       '18:00'
+          open:        Time.zone.now.beginning_of_week + 10.hours,
+          close:       Time.zone.now.beginning_of_week + 18.hours
         )
       end
 
