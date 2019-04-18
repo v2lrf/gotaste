@@ -18,9 +18,9 @@ module Mutations
       UsersMailer.welcome(user: user).deliver_later
 
       { user: user, authentication_token: user.authentication_token }
-    rescue ActiveRecord::RecordInvalid => exception
+    rescue ActiveRecord::RecordInvalid => e
       GraphQL::ExecutionError.new(
-        exception.record.errors.full_messages.join(', ')
+        e.record.errors.full_messages.join(', ')
       )
     end
   end
