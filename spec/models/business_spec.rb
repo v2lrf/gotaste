@@ -24,4 +24,54 @@ RSpec.describe Business, type: :model do
         .to eq 'default'
     end
   end
+
+  describe '#open_now?' do
+    let(:business) { create(:business) }
+
+    before do
+      travel_to time
+    end
+
+    after do
+      travel_back
+    end
+
+    context 'when business is open today' do
+      let!(:opening_hour) do
+        create(
+          :opening_hour,
+          business:    business,
+          day_of_week: 'Monday',
+          open:        Time.zone.now.beginning_of_week + 10.hours,
+          close:       Time.zone.now.beginning_of_week + 18.hours
+        )
+      end
+
+      context 'when time right now is in the opening hours' do
+        let(:time) { Time.zone.now.beginning_of_week + 10.hours }
+
+        it 'returns true' do
+          expect(business.open_now?).to be true
+        end
+      end
+
+      context 'when time right now is outside the opening hours' do
+        let(:time) { Time.zone.now.beginning_of_week + 19.hours }
+
+        it 'returns false' do
+          expect(business.open_now?).to be false
+        end
+      end
+    end
+
+    context 'when business is closed today' do
+      let(:time) { Time.zone.now.beginning_of_week + 10.hours }
+
+      let!(:opening_hour) { create(:opening_hour, :closed, business: business) }
+
+      it 'returns false' do
+        expect(business.open_now?).to be false
+      end
+    end
+  end
 end

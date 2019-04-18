@@ -16,7 +16,10 @@ class BusinessDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     area:              Field::BelongsTo,
     events:            Field::HasMany,
-    opening_hours:     Field::HasMany,
+    opening_hours:     Field::NestedHasMany.with_options(
+      skip:  :business,
+      limit: 7
+    ),
     id:                Field::Number,
     name:              Field::String,
     website:           Field::String,
@@ -60,6 +63,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     updated_at
     description
     address
+    opening_hours
     events
   ].freeze
 
@@ -77,7 +81,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     description
     short_description
     address
-    events
+    opening_hours
   ].freeze
 
   # Overwrite this method to customize how businesses are displayed

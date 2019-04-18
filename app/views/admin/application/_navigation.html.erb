@@ -5,7 +5,8 @@
     <% end %>
   </div>
 
-  <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
+  <% resources =  AdminPages.routes(Administrate::Namespace.new(namespace)) %>
+  <% resources.each do |resource| %>
     <%= link_to(
       display_resource_name(resource),
       [namespace, resource_index_route_key(resource)],

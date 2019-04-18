@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :areas
     resources :businesses
     resources :events
+    resources :opening_hours
     resources :users, only: %i[index show edit update destroy]
 
     root to: 'users#index'

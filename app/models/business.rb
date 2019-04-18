@@ -29,7 +29,7 @@ class Business < ApplicationRecord
   has_one_attached :logo
   has_one_attached :hero_image
 
-  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :address, :opening_hours
 
   def full_logo_id
     key = logo.attached? ? logo.key : nil
@@ -39,5 +39,11 @@ class Business < ApplicationRecord
   def full_hero_image_id
     key = hero_image.attached? ? hero_image.key : nil
     HeroImage.new(hero_image_id: key).id
+  end
+
+  def open_now?
+    opening_hours
+      .where(day_of_week: Time.zone.now.wday)
+      .where('? BETWEEN open AND close', Time.zone.now).any?
   end
 end
