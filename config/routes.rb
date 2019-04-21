@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     root to: 'users#index'
   end
 
+  namespace :private, module: 'private_room', as: 'private_room' do
+    root to: 'dashboards#index'
+  end
+
   devise_for :users, controllers: { registrations: 'registrations' }
 
   post '/graphql', to: 'graphql#execute'
