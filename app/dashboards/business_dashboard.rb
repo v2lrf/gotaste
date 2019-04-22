@@ -16,6 +16,7 @@ class BusinessDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     area:              Field::BelongsTo,
     events:            Field::HasMany,
+    employees:         Field::HasMany,
     opening_hours:     Field::NestedHasMany.with_options(
       skip:  :business,
       limit: 7
@@ -65,6 +66,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     address
     opening_hours
     events
+    employees
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -82,6 +84,7 @@ class BusinessDashboard < Administrate::BaseDashboard
     short_description
     address
     opening_hours
+    employees
   ].freeze
 
   # Overwrite this method to customize how businesses are displayed

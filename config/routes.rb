@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :addresses
     resources :areas
     resources :businesses
+    resources :employees
     resources :events
     resources :opening_hours
     resources :users, only: %i[index show edit update destroy]

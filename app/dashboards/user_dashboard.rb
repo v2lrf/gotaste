@@ -3,6 +3,10 @@
 require 'administrate/base_dashboard'
 
 class UserDashboard < Administrate::BaseDashboard
+  def display_resource(user)
+    user.email
+  end
+
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
