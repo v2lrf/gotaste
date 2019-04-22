@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
+  has_many :employees, dependent: :nullify
+  has_many :businesses, through: :employees
+
   before_save :ensure_authentication_token
 
   def short_name

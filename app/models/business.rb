@@ -26,6 +26,8 @@ class Business < ApplicationRecord
            dependent:   :destroy
 
   has_many :opening_hours, dependent: :destroy
+  has_many :employees, dependent: :nullify
+  has_many :users, through: :employees
   has_one_attached :logo
   has_one_attached :hero_image
 
