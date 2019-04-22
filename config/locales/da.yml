@@ -26,4 +26,13 @@ da:
     email_changed:
       headline: "Kære %{first_name},"
       body: "Vi kontakter dig, for at fortælle dig at din e-mail er blevet ændret til %{email}."
-
+  private_room:
+    navigation:
+      dashboard: Overblik
+      hello: Hej, %{name}
+      profile: Profil for %{name}
+    dashboards:
+      index:
+        interactions: Interaktioner
+        page_views: Sidevisninger
+        visitors: Besøgende
