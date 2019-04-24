@@ -21,6 +21,7 @@ function buildSitemap(data) {
   })
   const staticPages = [
     '/',
+    '/about',
     '/discover',
     '/events',
     '/sign-up',
