@@ -7,11 +7,17 @@ import ReactMarkdown from 'react-markdown'
 import {
   faMapMarkerAlt,
   faPhone,
-  faBrowser
+  faBrowser,
+  faDoorOpen
 } from '@fortawesome/pro-light-svg-icons'
 
 import config from '../config'
-import { displayPhoneNumber, displayURL } from '../helpers/textHelpers'
+import {
+  displayPhoneNumber,
+  displayURL,
+  formatOpeningHours,
+  translateWeekDay
+} from '../helpers/textHelpers'
 
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
 import EventInfoFields from '../fragments/EventInfoFields'
@@ -39,6 +45,12 @@ const GET_BUSINESS = gql`
       }
       area {
         name
+      }
+      isOpenNow
+      openingHours {
+        dayOfWeek
+        open
+        close
       }
       events(whenEventBegins: UPCOMING, first: 2) {
         nodes {
@@ -71,7 +83,9 @@ function BusinessPage({ slug }) {
       phoneNumber,
       website,
       area: { name: areaName },
-      events: { nodes: eventNodes }
+      events: { nodes: eventNodes },
+      openingHours,
+      isOpenNow
     }
   } = data
   return (
@@ -121,6 +135,8 @@ function BusinessPage({ slug }) {
           } ${address.city}`}
         </SimpleItem>
 
+        {isOpenNow && <SimpleItem icon={faDoorOpen}>Åben nu</SimpleItem>}
+
         <div className="py-4 sm:py-8 leading-loose rich-text">
           <ReactMarkdown source={description} />
         </div>
@@ -139,6 +155,22 @@ function BusinessPage({ slug }) {
             </Row>
           </Fragment>
         )}
+        <h2 className="mt-8 mb-2 text-red-dark">Åbningstider</h2>
+        {openingHours.map(openingHoursForDay => (
+          <Row key={openingHoursForDay.dayOfWeek} className="-mx-4 mb-2">
+            <Col xs="1/2" sm="1/6">
+              {translateWeekDay(openingHoursForDay.dayOfWeek)}
+            </Col>
+            <Col xs="1/2" sm="1/6">
+              <div className="text-right">
+                {formatOpeningHours(
+                  openingHoursForDay.open,
+                  openingHoursForDay.close
+                )}
+              </div>
+            </Col>
+          </Row>
+        ))}
         <h2 className="mt-8 mb-2 text-red-dark">Lokation</h2>
         <div className="flex justify-between mb-4 text-sm sm:text-base">
           <span>

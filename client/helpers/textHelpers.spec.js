@@ -1,7 +1,9 @@
 import {
   displayPhoneNumber,
   displayURL,
-  capitalizeFirstLetter
+  capitalizeFirstLetter,
+  formatOpeningHours,
+  translateWeekDay
 } from './textHelpers'
 
 describe('textHelpers', () => {
@@ -59,6 +61,32 @@ describe('textHelpers', () => {
 
     it('should return the same string if the first letter is already capitalized', () => {
       expect(capitalizeFirstLetter(outputString)).toEqual(outputString)
+    })
+  })
+
+  describe('translateWeekDay', () => {
+    const correctWeekDay = 'Monday'
+    const fakeWeekday = 'Foo'
+
+    it('should translate a correct weekday', () => {
+      expect(translateWeekDay(correctWeekDay)).toEqual('Mandag')
+    })
+
+    it('should not translate a fake weekday', () => {
+      expect(translateWeekDay(fakeWeekday)).toEqual(null)
+    })
+  })
+
+  describe('formatOpeningHours', () => {
+    const opens = '2019-04-24 08:00:00 UTC'
+    const closes = '2019-04-24 20:00:00 UTC'
+
+    xit('should format opening hours correct', () => {
+      expect(formatOpeningHours(opens, closes)).toEqual('09:00 - 21:00')
+    })
+
+    xit('should return closed if no opening or closing hours is given', () => {
+      expect(formatOpeningHours(null, null)).toEqual('Lukket')
     })
   })
 })
