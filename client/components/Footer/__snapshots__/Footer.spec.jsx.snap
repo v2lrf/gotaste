@@ -39,12 +39,15 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
           <div
             className="mb-2"
           >
-            <a
-              className="text-black no-underline"
-              href="#om-os"
+            <Link
+              href="/about"
             >
-              Om Govinu
-            </a>
+              <a
+                className="text-black no-underline"
+              >
+                Om Govinu
+              </a>
+            </Link>
           </div>
           <div>
             <a

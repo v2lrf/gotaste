@@ -4,10 +4,10 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
 <Fragment>
   <Head>
     <title>
-      Govinu - Smag, og gå på opdagelse i vinens verden
+      Govinu - Smag og gå på opdagelse i vinens verden
     </title>
     <meta
-      content="Find, og følg din lokale vinforhandler eller vinbar. Gå på opdagelse i vinens verden, find nye smagninger eller arrangementer, og meget mere."
+      content="Find og følg din lokale vinforhandler eller vinbar. Gå på opdagelse i vinens verden, find nye smagninger eller arrangementer og meget mere."
       name="description"
     />
     <meta
