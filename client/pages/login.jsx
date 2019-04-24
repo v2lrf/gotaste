@@ -110,7 +110,8 @@ class Login extends Component {
               Har du ikke en bruger?
               <Link href="/sign-up">
                 <a className="text-red-dark ml-1">Opret en nu</a>
-              </Link>.
+              </Link>
+              .
             </div>
           </div>
         </Spacer>
