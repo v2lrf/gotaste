@@ -107,10 +107,10 @@ class Login extends Component {
               )}
             </Mutation>
             <div className="mt-6 text-sm text-center">
-              Eller har du ikke en bruger?
+              Har du ikke en bruger?
               <Link href="/sign-up">
                 <a className="text-red-dark ml-1">Opret en nu</a>
-              </Link>
+              </Link>.
             </div>
           </div>
         </Spacer>
