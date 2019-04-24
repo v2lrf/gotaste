@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons'
 
 import config from '../config'
+import ahoy from '../lib/ahoy'
 import {
   displayPhoneNumber,
   displayURL,
@@ -71,6 +72,10 @@ function BusinessPage({ slug }) {
     }
   })
 
+  useEffect(() => {
+    ahoy.track('business_page_view', { slug })
+  }, [])
+
   if (loading) return <BusinessPageLoader />
   const {
     business: {
@@ -88,6 +93,7 @@ function BusinessPage({ slug }) {
       isOpenNow
     }
   } = data
+
   return (
     <Layout
       title={name}

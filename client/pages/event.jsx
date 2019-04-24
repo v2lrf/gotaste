@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { gql } from 'apollo-boost'
@@ -14,6 +14,7 @@ import {
 import ReactMarkdown from 'react-markdown'
 
 import config from '../config'
+import ahoy from '../lib/ahoy'
 import { capitalizeFirstLetter } from '../helpers/textHelpers'
 import { simpleFormat } from '../helpers/currencyHelpers'
 
@@ -61,6 +62,10 @@ function EventPage({ slug }) {
       slug
     }
   })
+
+  useEffect(() => {
+    ahoy.track('event_page_view', { slug })
+  }, [])
 
   if (loading) return <EventPageLoader />
   const {
