@@ -66,7 +66,7 @@ function Home() {
         <Container>
           <Spacer top="16" bottom="24" inner>
             <h1 className="text-3xl sm:text-5xl text-white text-center mb-4">
-              Smag, og gå på opdagelse i vinens verden
+              Smag og gå på opdagelse i vinens verden
             </h1>
             <p className="text-white text-center text-lg mb-4 ">
               Indtast en adresse nedenfor, så finder vi smagninger og
@@ -116,8 +116,8 @@ function Home() {
                 God vin, nu = Govinu
               </h2>
               <p className="leading-normal">
-                Find, og følg din lokale forhandler eller bar. Eller gå på
-                opdagelse, og find nye smagninger eller arrangementer.
+                Find og følg din lokale forhandler eller bar. Eller gå på
+                opdagelse og find nye smagninger eller arrangementer.
               </p>
             </div>
             <div className="flex-1">
@@ -139,7 +139,7 @@ function Home() {
           <h2 className="text-red mb-4">Vinsmagninger er for alle</h2>
           <p className="leading-normal">
             Du behøver ikke være feinschmecker, ønolog eller sommelier for at gå
-            til vinsmagning. Vinsmagninger er for alle, og er nemt at finde med
+            til vinsmagning. Vinsmagninger er for alle og er nemt at finde med
             Govinu.
           </p>
         </Container>
@@ -162,7 +162,7 @@ function Home() {
               <h2 className="text-red mb-4">Bliv en del af Govinu</h2>
               <p className="leading-normal mb-4">
                 Som medlem af Govinu får du adgang til en masse funktioner på
-                hjemmesiden, samt (snart) adgang til en masse fordele.
+                hjemmesiden samt (snart) adgang til en masse fordele.
               </p>
               <Link href="/sign-up">
                 <Button type="button" kind="primary">

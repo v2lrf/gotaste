@@ -27,9 +27,9 @@ function Footer() {
 
             <div className="mb-2 sm:mb-0 sm:mr-16">
               <div className="mb-2">
-                <a href="#om-os" className="text-black no-underline">
-                  Om Govinu
-                </a>
+                <Link href="/about">
+                  <a className="text-black no-underline">Om Govinu</a>
+                </Link>
               </div>
               <div>
                 <a href="#kontakt" className="text-black no-underline">
