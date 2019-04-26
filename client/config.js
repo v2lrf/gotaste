@@ -18,6 +18,7 @@ const config = {
       secure: true
     }
   ),
+  CL: cl,
   DEFAULT_LATITUDE: 55.6753,
   DEFAULT_LONGITUDE: 12.5703,
   DEFAULT_DISTANCE: 6000,
