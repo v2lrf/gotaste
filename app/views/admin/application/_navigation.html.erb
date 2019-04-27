@@ -13,4 +13,6 @@
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) %>
   <% end %>
+  <hr>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navigation__link navigation__link" %>
 </nav>

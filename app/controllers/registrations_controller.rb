@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
-  before_action :configure_permitted_parameters
+  # before_action :configure_permitted_parameters
 
   def create
     super
