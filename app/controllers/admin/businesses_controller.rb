@@ -2,6 +2,12 @@
 
 module Admin
   class BusinessesController < Admin::ApplicationController
+    before_action :set_default_params, only: :index
+
+    def index
+      super
+    end
+
     def new
       resource = resource_class.new
       resource.opening_hours.build(opening_hour_days)
@@ -17,6 +23,16 @@ module Admin
     end
 
     private
+
+    def set_default_params
+      resource_params = params.fetch(resource_name, {})
+      order = resource_params.fetch(:order, 'name')
+      direction = resource_params.fetch(:direction, 'asc')
+      params[resource_name] = resource_params.merge(
+        order:     order,
+        direction: direction
+      )
+    end
 
     def opening_hour_days
       [
