@@ -7,7 +7,7 @@ AllCops:
     - bin/**/*
     - config/environments/*
   DisplayCopNames: true
-  TargetRailsVersion: 6.0
+  TargetRailsVersion: 5.0
 
 Rails:
   Enabled: true
