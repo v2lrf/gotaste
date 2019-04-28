@@ -27,53 +27,66 @@ jobs:
       - run:
           name: Configure Bundler
           command: |
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            echo 'export BUNDLER_VERSION=$(cat backend/Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
 
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
-          name: Install dependencies
+          name: Install back-end dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle && yarn --ignore-engines
+            cd backend
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           name: Cache gems
           paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - ~/backend/vendor/bundle
+          key: v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
+
+      - run:
+          name: Install front-end dependencies
+          command: |
+            cd client
+            yarn --ignore-engines
 
       - save_cache:
           name: Cache yarn
           paths:
-            - ~/.yarn-cache
-          key: govinu-yarn-{{ checksum "yarn.lock" }}
+            - ~/client/.yarn-cache
+          key: govinu-yarn-{{ checksum "client/yarn.lock" }}
 
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
-
-      # Linting
       - run:
-          name: Runt lint
+          name: Setup database
           command: |
-            ./bin/lint.sh
+            cd backend
+            bundle exec rake db:create
+            bundle exec rake db:schema:load
+
+      # # Linting
+      # - run:
+      #     name: Runt lint
+      #     command: |
+      #       ./bin/lint.sh
 
       # run tests!
       - run:
           name: Jest
           command: |
+            cd client
             yarn test
 
       - run:
           name: RSpec
           command: |
+            cd backend
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
             bundle exec rspec --format progress \
@@ -82,9 +95,9 @@ jobs:
                             $TEST_FILES
       # collect reports
       - store_test_results:
-          path: /tmp/test-results
+          path: /backend/tmp/test-results
       - store_artifacts:
-          path: /tmp/test-results
+          path: /backend/tmp/test-results
           destination: test-results
   deploy:
     <<: *defaults
