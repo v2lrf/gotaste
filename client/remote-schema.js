@@ -6,9 +6,7 @@ const {
   introspectSchema
 } = require('apollo-server-express')
 
-async function createRemoteSchema({ uri, name }) {
-  console.log(`Stitching schema for ${name} from ${uri}`)
-
+async function createRemoteSchema({ uri }) {
   const httpLink = new HttpLink({ uri, fetch })
   const schema = await introspectSchema(httpLink)
 

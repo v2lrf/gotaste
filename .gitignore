@@ -5,42 +5,46 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+/backend/.bundle
 .DS_Store
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/backend/log/*
+/backend/tmp/*
+!/backend/log/.keep
+!/backend/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+/backend/storage/*
+!/backend/storage/.keep
 
-/node_modules
+/backend/node_modules
+/client/node_modules
 /yarn-error.log
 
-/public/assets
+/backend/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
-/public/packs
-/public/packs-test
-/node_modules
-yarn-debug.log*
+/backend/config/master.key
+/backend/public/packs
+/backend/public/packs-test
+
+/client/yarn-debug.log*
+
 .yarn-integrity
-.storybook/application.css
+
+/client/.storybook/application.css
 
 # We only want to ignore these files because they're
 # required to be copied to Storybook during development
-.storybook/nprogress.css
-.storybook/shimmer.css
+/client/.storybook/nprogress.css
+/client/.storybook/shimmer.css
 
 .env
 
-.next
+/client/node_modules
+/client/.next
 styles/styles.css
 
 client/static/sitemap.xml

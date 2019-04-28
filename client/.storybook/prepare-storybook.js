@@ -15,7 +15,7 @@ storybookFolderFiles.forEach(function(file) {
 
 FILES_TO_IMPORT_TO_STORYBOOK.forEach(function(file) {
   fs.copyFileSync(
-    path.join(__dirname, '..', 'client', 'styles', file),
+    path.join(__dirname, '..', 'styles', file),
     path.join(__dirname, file)
   )
 })
