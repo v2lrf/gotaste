@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_URL_HOST']
+Rails.application.routes.default_url_options[:host] = AppConfig.main_front_page
