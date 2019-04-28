@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
       user:               user,
       admin_path:         admin_root_path,
       business_user_path: private_room_root_path,
-      user_path:          root_path
+      user_path:          AppConfig.main_front_page
     ).call
   end
 
