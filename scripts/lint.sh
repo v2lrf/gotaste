@@ -11,8 +11,10 @@ trap 'at_exit' 0
   [ -d "tmp" ] || mkdir tmp
 
   echo RuboCop...
+  cd backend
   bundle exec rubocop --parallel
 
+  cd ../client
   echo ESLint...
   yarn run lint
 )
