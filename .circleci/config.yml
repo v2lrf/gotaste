@@ -106,11 +106,11 @@ jobs:
       - run:
           name: Deploy back-end
           command: |
-            git subtree push --prefix backend https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git master --force
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git `git subtree split --prefix backend master`:master --force
       - run:
           name: Deploy client
           command: |
-            git subtree push --prefix client https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git master --force
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git `git subtree split --prefix client master`:master --force
       - run:
           name: Apollo Engine Schema push
           command: |
