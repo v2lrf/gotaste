@@ -1,0 +1,12 @@
+common: &common
+  main_front_page: http://localhost:3000
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
+  main_front_page: https://govinu.com
