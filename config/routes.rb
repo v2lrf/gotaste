@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     root to: 'users#index'
   end
 
+  namespace :administration, module: 'administration', as: 'administration' do
+    root to: 'dashboards#index'
+  end
+
   namespace :private, module: 'private_room', as: 'private_room' do
     root to: 'dashboards#index'
   end
