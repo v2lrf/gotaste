@@ -106,14 +106,15 @@ jobs:
       - run:
           name: Deploy back-end
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git master --force
+            git subtree push --prefix backend https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_API.git master --force
       - run:
           name: Deploy client
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git master --force
+            git subtree push --prefix client https://heroku:$HEROKU_API_KEY@git.heroku.com/$GOVINU_CLIENT.git master --force
       - run:
           name: Apollo Engine Schema push
           command: |
+            cd client
             yarn --ignore-engines
             yarn run apollo service:push --endpoint=https://govinu.com/graphql
 
