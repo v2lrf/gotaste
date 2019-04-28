@@ -1,0 +1,12 @@
+da:
+  administration:
+    navigation:
+      dashboard: Overblik
+      businesses: Forretninger
+      hello: Hej, %{name}
+      profile: Profil for %{name}
+    dashboards:
+      index:
+        interactions: Interaktioner
+        page_views: Sidevisninger
+        visitors: Besøgende

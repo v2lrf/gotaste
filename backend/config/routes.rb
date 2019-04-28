@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   namespace :administration, module: 'administration', as: 'administration' do
+    resources :businesses, only: :index
+
     root to: 'dashboards#index'
   end
 
