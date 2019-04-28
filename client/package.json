@@ -5,14 +5,14 @@
     "node": "10.14.1"
   },
   "scripts": {
-    "predev": "node client/lib/getFragmentTypes.js",
-    "dev": "node ./client/server.js",
-    "prebuild": "NODE_ENV=production node client/lib/getFragmentTypes.js && node client/build-sitemap.js",
-    "build": " next build ./client",
-    "start": "NODE_ENV=production node ./client/server.js",
+    "predev": "node ./lib/getFragmentTypes.js",
+    "dev": "node ./server.js",
+    "prebuild": "NODE_ENV=production node ./lib/getFragmentTypes.js && node build-sitemap.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node ./server.js",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint -c .eslintrc.json --ext .jsx,.js client",
-    "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
+    "lint": "eslint -c .eslintrc.json --ext .jsx,.js",
+    "prestorybook": "tailwind build ./styles/styles.css -c ./tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest",
     "graphql:dump": "graphql-inspector introspect http://localhost:3000/graphql --write schema.graphql"
@@ -90,13 +90,13 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/client/jest.setup.js"
+      "<rootDir>/jest.setup.js"
     ],
     "roots": [
-      "<rootDir>/client"
+      "<rootDir>"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/client/.next/",
+      "<rootDir>/.next/",
       "<rootDir>/node_modules/"
     ],
     "snapshotSerializers": [

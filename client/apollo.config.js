@@ -3,6 +3,6 @@ module.exports = {
     service: {
       name: 'govinu'
     },
-    includes: ['client/**/*']
+    includes: ['pages/**/*', 'components/**/*', 'fragments/**/*']
   }
 }
