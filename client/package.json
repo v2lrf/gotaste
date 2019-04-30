@@ -1,5 +1,5 @@
 {
-  "name": "govinu",
+  "name": "govinu-client",
   "private": true,
   "engines": {
     "node": "10.14.1"
@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node ./server.js",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint -c .eslintrc.json --ext .jsx,.js .",
+    "lint": "eslint -c .eslintrc.js --ext .jsx,.js .",
     "prestorybook": "tailwind build ./styles/styles.css -c ./tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_ENV=test jest",

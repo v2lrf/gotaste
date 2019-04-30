@@ -17,7 +17,7 @@ defaults: &defaults
       environment:
         POSTGRES_USER: govinu-test
         POSTGRES_DB: govinu_test
-        POSTGRES_PASSWORD: ''
+        POSTGRES_PASSWORD: ""
 
 jobs:
   build:
@@ -43,11 +43,13 @@ jobs:
           command: |
             cd backend
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            yarn --ignore-engines
 
       - save_cache:
           name: Cache gems
           paths:
-            - ~/backend/vendor/bundle
+            - ~/backend/vendor/
+            - ~.yarn-cache
           key: v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
 
       - run:
