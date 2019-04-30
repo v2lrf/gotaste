@@ -36,7 +36,7 @@
     "@storybook/react": "^3.4.12",
     "@zeit/next-css": "1.0.2-canary.2",
     "ahoy.js": "^0.3.4",
-    "apollo": "^2.8.3",
+    "apollo": "^2.9.0",
     "apollo-boost": "^0.3.1",
     "apollo-link": "^1.2.11",
     "apollo-link-context": "^1.0.17",
