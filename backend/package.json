@@ -5,7 +5,7 @@
     "node": "10.14.1"
   },
   "scripts": {
-    "lint": "eslint -c ../client/.eslintrc.js --ext .jsx,.js ./app/javascript"
+    "lint": "eslint -c .eslintrc.js --ext .jsx,.js ./app/javascript"
   },
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
