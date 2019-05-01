@@ -390,6 +390,17 @@ type Query {
   viewer: User
 }
 
+enum Role {
+  # Regular user.
+  USER
+
+  # Wine bar/wine shop owner. 
+  OWNER
+
+  # Admin user.
+  ADMIN
+}
+
 # Objects which may be found by search.
 union Search = Business | Event
 
@@ -468,6 +479,9 @@ interface Slugable {
 }
 
 type User {
+  # The role of the user.
+  role: Role!
+
   # _First name_ and the initial of the _last name_.
   shortName: String!
 }
