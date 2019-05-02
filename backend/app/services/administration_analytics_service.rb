@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class AdministrationAnalyticsService
+  def initialize(date_interval: nil)
+    @date_interval = date_interval
+  end
+
   def page_views
     page_view_scope.count
   end
@@ -23,6 +27,8 @@ class AdministrationAnalyticsService
 
   private
 
+  attr_reader :date_interval
+
   def page_view_scope
     @page_view_scope ||= base_scope.where(name: '$view')
   end
@@ -32,6 +38,10 @@ class AdministrationAnalyticsService
   end
 
   def base_scope
-    Ahoy::Event
+    if date_interval.present?
+      Ahoy::Event.where(time: date_interval)
+    else
+      Ahoy::Event
+    end
   end
 end

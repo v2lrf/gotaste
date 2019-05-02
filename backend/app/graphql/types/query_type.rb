@@ -5,6 +5,7 @@ module Types
     field :area_search, resolver: Resolvers::AreaSearch
     field :business,    resolver: Resolvers::FindBusinessFromSlug
     field :businesses,  resolver: Resolvers::Businesses
+    field :dashboard,   resolver: Resolvers::Admin::Dashboard
     field :event,       resolver: Resolvers::FindEventFromSlug
     field :events,      resolver: Resolvers::FindEvents
     field :search,      resolver: Resolvers::Search

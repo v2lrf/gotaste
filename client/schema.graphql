@@ -168,6 +168,17 @@ enum BusinessType {
   RESTAURANT
 }
 
+enum DateInterval {
+  # Get results from the last day.
+  TODAY
+
+  # Get results from the last week.
+  LAST_WEEK
+
+  # Get results from the last month.
+  LAST_MONTH
+}
+
 type Event implements Addressable & Slugable {
   # Address of the object.
   address: Address!

@@ -6,6 +6,7 @@ AllCops:
     - vendor/**/*
     - bin/**/*
     - config/environments/*
+    - spec/support/graphql_helpers.rb
   DisplayCopNames: true
   TargetRailsVersion: 5.0
 
