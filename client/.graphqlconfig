@@ -1,7 +1,7 @@
 {
   "projects": {
     "Govinu": {
-      "schemaPath": "./schema.graphql",
+      "schemaPath": "../backend/graphql/schema.graphql",
       "extensions": {
         "endpoints": {
           "dev": {
