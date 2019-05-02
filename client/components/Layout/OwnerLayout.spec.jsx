@@ -1,10 +1,10 @@
 import React from 'react'
-import Layout from '.'
+import OwnerLayout from './OwnerLayout'
 
-describe('Layout', () => {
+describe('OwnerLayout', () => {
   let component
   beforeEach(() => {
-    component = shallow(<Layout>Some content!</Layout>)
+    component = shallow(<OwnerLayout>Some content!</OwnerLayout>)
   })
 
   describe('Snapshots', () => {

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkGroup Snapshots should match a snapshot with a label 1`] = `
+<div
+  className="text-right mb-4"
+>
+  <span
+    className="mr-2 text-grey-dark text-sm font-bold uppercase"
+  >
+    Some label
+  </span>
+  Some content!
+</div>
+`;
+
+exports[`LinkGroup Snapshots should match the default snapshot 1`] = `
+<div
+  className="text-right mb-4"
+>
+  Some content!
+</div>
+`;

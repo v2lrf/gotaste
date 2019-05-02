@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Snapshots should match the default snapshot 1`] = `
+<a
+  className="text-red-dark no-underline hover:underline"
+  href="#"
+  onClick={null}
+>
+  Some content!
+</a>
+`;
+
+exports[`Link Snapshots should match the snapshot with custom className 1`] = `
+<a
+  className="text-red-dark no-underline hover:underline foo bar"
+  href="#"
+  onClick={null}
+>
+  Some content!
+</a>
+`;
+
+exports[`Link Snapshots should match the snapshot with custom href 1`] = `
+<a
+  className="text-red-dark no-underline hover:underline"
+  href="/some-path"
+  onClick={null}
+>
+  Some content!
+</a>
+`;

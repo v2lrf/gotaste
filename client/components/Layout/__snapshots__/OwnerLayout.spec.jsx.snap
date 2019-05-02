@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
+<Fragment>
+  <Head>
+    <title>
+      Govinu Cellar
+    </title>
+  </Head>
+  <div
+    className="bg-white shadow-lg"
+  >
+    <Container
+      narrow={false}
+    >
+      <div
+        className="h-auto sm:h-16 flex items-center justify-between"
+      >
+        <div
+          className="my-4 sm:my-0"
+        >
+          <Link
+            href="/"
+          >
+            <a
+              className="flex text-red-light text-xl font-semibold no-underline"
+            >
+              <img
+                alt="Govinu"
+                className="h-6 pr-2"
+                src="/static/govinu-120.png"
+              />
+              Govinu Cellar
+            </a>
+          </Link>
+        </div>
+        <ul
+          className="list-reset flex flex-row"
+        >
+          <NavItem
+            to="#"
+          >
+            Overblik
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Analytics
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Begivenheder
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Anmeldelser
+          </NavItem>
+          <NavItem
+            to="#"
+          >
+            Profil
+          </NavItem>
+          <div
+            className="mx-2 my-1 border border-red-lightest"
+          />
+          <NavItem
+            to="/sign-out"
+          >
+            Log ud
+          </NavItem>
+        </ul>
+      </div>
+    </Container>
+  </div>
+  Some content!
+</Fragment>
+`;
