@@ -9,7 +9,7 @@ const fakeEvent = {
   slug: '2018-03-07-blindsmagningsaften',
   eventHeroImageId: '5236SxUSokqXQeUdmD9gQFgR',
   host: {
-    logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
+    logoId: 'GoTaste/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
     name: 'Erik Sørensen Vin',
     address: {
       streetName: 'Store Kongensgade',

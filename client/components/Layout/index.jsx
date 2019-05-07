@@ -31,7 +31,7 @@ Layout.propTypes = {
 }
 
 Layout.defaultProps = {
-  title: 'Govinu - Smag og gå på opdagelse i vinens verden',
+  title: 'GoTaste - Smag og gå på opdagelse i vinens verden',
   metaDescription:
     'Find og følg din lokale vinforhandler eller vinbar. Gå på opdagelse i vinens verden, find nye smagninger eller arrangementer og meget mere.',
   metaKeywords: ['']

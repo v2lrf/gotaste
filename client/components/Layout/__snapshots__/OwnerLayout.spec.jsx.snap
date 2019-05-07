@@ -4,7 +4,7 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
 <Fragment>
   <Head>
     <title>
-      Govinu Cellar
+      GoTaste Cellar
     </title>
   </Head>
   <div
@@ -26,11 +26,11 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
               className="flex text-red-light text-xl font-semibold no-underline"
             >
               <img
-                alt="Govinu"
+                alt="GoTaste"
                 className="h-6 pr-2"
-                src="/static/govinu-120.png"
+                src="/static/gotaste-120.png"
               />
-              Govinu Cellar
+              GoTaste Cellar
             </a>
           </Link>
         </div>

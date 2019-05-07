@@ -65,11 +65,11 @@ function NavBar() {
             <Link href="/">
               <a className="flex text-red-light text-xl font-semibold no-underline">
                 <img
-                  src="/static/govinu-120.png"
-                  alt="Govinu"
+                  src="/static/gotaste-120.png"
+                  alt="GoTaste"
                   className="h-6 pr-2"
                 />
-                Govinu
+                GoTaste
               </a>
             </Link>
           </div>

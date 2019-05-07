@@ -111,9 +111,9 @@ function Home() {
 
           <div className="flex-col-reverse md:flex-row my-24 flex mx-0 md:mx-20 lg:mx-32 mx-auto shadow-lg rounded">
             <div className="flex-1 self-center p-4 md:p-8">
-              <h3 className="text-red-darker text-2xl">Govinu?</h3>
+              <h3 className="text-red-darker text-2xl">GoTaste?</h3>
               <h2 className="my-4 text-red text-3xl lg:text-5xl">
-                God vin, nu = Govinu
+                God vin, nu = GoTaste
               </h2>
               <p className="leading-normal">
                 Find og følg din lokale forhandler eller bar. Eller gå på
@@ -123,7 +123,7 @@ function Home() {
             <div className="flex-1">
               <Image
                 cloudName={config.cloudinaryCloudName}
-                publicId="/Govinu/hero_images/b35c0641c0f571d3e6fca4a0fd3ebcaa"
+                publicId="/GoTaste/hero_images/b35c0641c0f571d3e6fca4a0fd3ebcaa"
                 height={500}
                 width={460}
                 crop="fill"
@@ -140,7 +140,7 @@ function Home() {
           <p className="leading-normal">
             Du behøver ikke være feinschmecker, ønolog eller sommelier for at gå
             til vinsmagning. Vinsmagninger er for alle og er nemt at finde med
-            Govinu.
+            GoTaste.
           </p>
         </Container>
       </div>
@@ -150,7 +150,7 @@ function Home() {
             <div className="flex-1">
               <Image
                 cloudName={config.cloudinaryCloudName}
-                publicId="/Govinu/hero_images/e5b634a75f0f6e4266f5aacf255a221b"
+                publicId="/GoTaste/hero_images/e5b634a75f0f6e4266f5aacf255a221b"
                 height={500}
                 width={460}
                 crop="fill"
@@ -159,9 +159,9 @@ function Home() {
               />
             </div>
             <div className="flex-1 text-center self-center px-4 py-8 md:p-8">
-              <h2 className="text-red mb-4">Bliv en del af Govinu</h2>
+              <h2 className="text-red mb-4">Bliv en del af GoTaste</h2>
               <p className="leading-normal mb-4">
-                Som medlem af Govinu får du adgang til en masse funktioner på
+                Som medlem af GoTaste får du adgang til en masse funktioner på
                 hjemmesiden samt (snart) adgang til en masse fordele.
               </p>
               <Link href="/sign-up">

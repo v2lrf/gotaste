@@ -107,7 +107,7 @@ export default () => (
           anvendes. Du kan også tilbagekalde dit samtykke til, at der bliver
           behandlet oplysninger om dig. Hvis de oplysninger, der behandles om
           dig, er forkerte har du ret til at de bliver rettet eller slettet.
-          Henvendelse herom kan ske til: kontakt@govinu.com. Hvis du vil klage
+          Henvendelse herom kan ske til: kontakt@gotaste.dk. Hvis du vil klage
           over vores behandling af dine personoplysninger, har du også mulighed
           for at tage kontakt til Datatilsynet.
         </p>

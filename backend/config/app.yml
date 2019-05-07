@@ -9,4 +9,4 @@ test:
 
 production:
   <<: *common
-  main_front_page: https://govinu.com
+  main_front_page: https://gotaste.dk

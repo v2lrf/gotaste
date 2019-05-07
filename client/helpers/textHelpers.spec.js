@@ -33,10 +33,10 @@ describe('textHelpers', () => {
   })
 
   describe('displayURL', () => {
-    const secureURL = 'https://govinu.com'
-    const nonSecureURL = 'http://govinu.com'
-    const trailingSpaceUrl = 'https://govinu.com/'
-    const expectedURL = 'govinu.com'
+    const secureURL = 'https://gotaste.dk'
+    const nonSecureURL = 'http://gotaste.dk'
+    const trailingSpaceUrl = 'https://gotaste.dk/'
+    const expectedURL = 'gotaste.dk'
 
     it('formats a secure url correctly to display', () => {
       expect(displayURL(secureURL)).toEqual(expectedURL)

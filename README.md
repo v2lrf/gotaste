@@ -1,21 +1,21 @@
-# 🍷 Govinu
+# 🍷 GoTaste
 
-[![CircleCI](https://circleci.com/gh/govinu/govinu/tree/master.svg?style=svg)](https://circleci.com/gh/govinu/govinu/tree/master)
+[![CircleCI](https://circleci.com/gh/gotaste/gotaste/tree/master.svg?style=svg)](https://circleci.com/gh/gotaste/gotaste/tree/master)
 
-Govinu is a platform connection businesses with wine enthusiasts.
+GoTaste is a platform connection businesses with wine enthusiasts.
 
-Check out the site at [govinu.com](https://govinu.com).
+Check out the site at [gotaste.dk](https://gotaste.dk).
 
 ## Developer setup
-In order for Govinu to work, you'll need the following dependencies:
+In order for GoTaste to work, you'll need the following dependencies:
 
-* Ruby ([version](https://github.com/govinu/govinu/blob/master/.ruby-version))
+* Ruby ([version](https://github.com/gotaste/gotaste/blob/master/.ruby-version))
 * PostgreSQL 10
 * Yarn
 * Node (10.14.1)
 
 ## Copyright
 
-© 2019 Govinu
+© 2019 GoTaste
 
-Govinu is source-available software. ([license](https://github.com/govinu/govinu/blob/master/LICENSE.txt))
+GoTaste is source-available software. ([license](https://github.com/gotaste/gotaste/blob/master/LICENSE.txt))

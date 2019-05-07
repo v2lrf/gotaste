@@ -6,8 +6,8 @@ import BusinessCard from '.'
 const fakeBusiness = {
   name: 'Erik Sørensen Vin',
   slug: 'erik-sorensen-vin',
-  heroImageId: 'Govinu/hero_images/6c2543d032ac10028fc849e2b97cb1f7',
-  logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
+  heroImageId: 'GoTaste/hero_images/6c2543d032ac10028fc849e2b97cb1f7',
+  logoId: 'GoTaste/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
   address: {
     streetName: 'Store Kongensgade',
     streetNumber: '124',

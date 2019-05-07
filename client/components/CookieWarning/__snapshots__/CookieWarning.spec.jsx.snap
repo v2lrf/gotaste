@@ -13,7 +13,7 @@ exports[`CookieWarning Snapshots should match the snapshot 1`] = `
       <div
         class="text-sm mr-2 flex-shrink"
       >
-        For at give dig den bedste oplevelse hos Govinu bruger vi cookies.
+        For at give dig den bedste oplevelse hos GoTaste bruger vi cookies.
         <a
           class="ml-1 text-red-darker"
           href="/cookie-and-privacypolicy"

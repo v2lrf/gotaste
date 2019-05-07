@@ -11,9 +11,9 @@ da:
         password_confirmation: Bekræft adgangskode
   users_mailer:
     welcome:
-      subject: "Velkommen til Govinu"
+      subject: "Velkommen til GoTaste"
       headline: "Kære %{first_name},"
-      body: "Velkommen til Govinu! Du kan nu logge ind og få adgang til alle de fordele der er ved at være medlem."
+      body: "Velkommen til GoTaste! Du kan nu logge ind og få adgang til alle de fordele der er ved at være medlem."
   devise_mailer:
     reset_password_instructions:
       headline: "Nulstil din adgangskode"

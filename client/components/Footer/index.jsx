@@ -28,7 +28,7 @@ function Footer() {
             <div className="mb-2 sm:mb-0 sm:mr-16">
               <div className="mb-2">
                 <Link href="/about">
-                  <a className="text-black no-underline">Om Govinu</a>
+                  <a className="text-black no-underline">Om GoTaste</a>
                 </Link>
               </div>
               <div>
@@ -58,7 +58,7 @@ function Footer() {
             <div className="mb-2 sm:mb-0">
               {`© ${moment().format(
                 'YYYY'
-              )} Copyright Govinu. All rights reserved`}
+              )} Copyright GoTaste. All rights reserved`}
             </div>
             <div>
               Lavet i

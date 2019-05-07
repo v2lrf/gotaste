@@ -10,4 +10,4 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
-Sitemap: https://govinu.com/sitemap.xml
+Sitemap: https://gotaste.dk/sitemap.xml

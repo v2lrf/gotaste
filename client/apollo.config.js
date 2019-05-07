@@ -1,7 +1,7 @@
 module.exports = {
   client: {
     service: {
-      name: 'govinu'
+      name: 'gotaste'
     },
     includes: ['pages/**/*', 'components/**/*', 'fragments/**/*']
   }
