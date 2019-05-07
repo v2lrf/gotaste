@@ -18,7 +18,7 @@ const proxyIdURL = dev ? config.DEV_API_ENDPOINT : config.PROD_API_ENDPOINT
 app.prepare().then(() => {
   createRemoteSchema({
     uri: process.env.GRAPHQL_REMOTE_URL,
-    name: 'Govinu API'
+    name: 'GoTaste API'
   }).then(schema => {
     const apollo = new ApolloServer({
       schema,

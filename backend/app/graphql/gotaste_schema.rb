@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GovinuSchema < GraphQL::Schema
+class GotasteSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
@@ -19,7 +19,7 @@ class GovinuSchema < GraphQL::Schema
   end
 end
 
-GraphQL::Errors.configure(GovinuSchema) do
+GraphQL::Errors.configure(GotasteSchema) do
   rescue_from ActiveRecord::RecordNotFound do
     nil
   end

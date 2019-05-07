@@ -29,7 +29,7 @@ describe 'Welcome page', type: :request do
   context 'when signed in as a regular user' do
     let(:user) { create(:user) }
 
-    it 'redirects to the main Govinu page' do
+    it 'redirects to the main GoTaste page' do
       get root_path
       expect(response).to redirect_to(AppConfig.main_front_page)
     end

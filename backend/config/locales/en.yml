@@ -11,9 +11,9 @@ en:
         password_confirmation: Confirm password
   users_mailer:
     welcome:
-      subject: "Welcome to Govinu"
+      subject: "Welcome to GoTaste"
       headline: "Dear %{first_name},"
-      body: "Welcome to Govinu!"
+      body: "Welcome to GoTaste!"
   devise_mailer:
     reset_password_instructions:
       headline: "Reset your password"

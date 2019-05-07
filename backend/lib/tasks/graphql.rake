@@ -6,7 +6,7 @@ namespace :graphql do
   desc 'Dumps the IDL schema into ./app/graphql/schema.graphql'
   task dump: :environment do
     target = Rails.root.join('app', 'graphql', 'schema.graphql')
-    schema = GraphQL::Schema::Printer.print_schema(GovinuSchema)
+    schema = GraphQL::Schema::Printer.print_schema(GotasteSchema)
     File.open(target, 'w+') do |f|
       f.write(schema)
     end

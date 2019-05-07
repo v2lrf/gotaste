@@ -2,7 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import Favicons from '../components/Favicons'
 
-class GovinuDocument extends Document {
+class GoTasteDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
@@ -28,4 +28,4 @@ class GovinuDocument extends Document {
   }
 }
 
-export default GovinuDocument
+export default GoTasteDocument

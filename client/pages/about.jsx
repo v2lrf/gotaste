@@ -8,12 +8,12 @@ import Spacer from '../components/Spacer'
 function AboutPage() {
   return (
     <Layout
-      title="Om Govinu"
+      title="Om GoTaste"
       description="Vi er to glade vinentusiaster, som brænder for vinens verden og at udbrede viden om vin til flere på en tilgængelig måde."
     >
       <Container narrow>
         <Spacer top="20" bottom="20">
-          <h1 className="mb-4 text-red-darker">Om Govinu</h1>
+          <h1 className="mb-4 text-red-darker">Om GoTaste</h1>
 
           <Row>
             <Col xs="full" sm="1/3">
@@ -22,7 +22,7 @@ function AboutPage() {
                 alt="Anders"
                 className="img rounded-lg shadow-lg mb-4 "
               />
-              Anders, medstifer af Govinu
+              Anders, medstifer af GoTaste
             </Col>
             <Col xs="full" sm="1/3">
               <img
@@ -30,13 +30,13 @@ function AboutPage() {
                 alt="Anders"
                 className="img rounded-lg shadow-lg mb-4 "
               />
-              Mads, medstifer af Govinu
+              Mads, medstifer af GoTaste
             </Col>
           </Row>
           <div className="leading-normal mt-8">
             <p className="my-4">
-              Velkommen til Govinu - din adgang til de bedste vinbarer og vine i
-              København!
+              Velkommen til GoTaste - din adgang til de bedste vinbarer og vine
+              i København!
             </p>
             <p className="my-4">
               Vi er to glade vinentusiaster, som brænder for vinens verden og at
@@ -53,7 +53,7 @@ function AboutPage() {
               gode vinbarer, før man går ud.
             </p>
             <p className="my-4">
-              Derfor har vi lavet Govinu. Stedet til dig, der vil kende til de
+              Derfor har vi lavet GoTaste. Stedet til dig, der vil kende til de
               bedste vinbarer i København, finde gode vinsmagninger og lære mere
               om vin sammen med andre vinentusiaster. Alt sammen samlet på ét
               sted - på en overskuelig måde.
@@ -62,14 +62,14 @@ function AboutPage() {
               Vi er her for at lære sammen med jer, og vi glæder os.
             </p>
             <p className="my-4">
-              Vi håber, at du bliver glad for Govinu, og du er altid velkommen
+              Vi håber, at du bliver glad for GoTaste, og du er altid velkommen
               til at skrive til os for ris og ros eller gode idéer på:
             </p>
             <a
               className="text-red-dark no-underline hover:underline"
-              href="mailto:info@govinu.com"
+              href="mailto:info@gotaste.dk"
             >
-              info@govinu.com
+              info@gotaste.dk
             </a>
           </div>
         </Spacer>

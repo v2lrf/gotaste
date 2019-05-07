@@ -14,7 +14,7 @@ describe('EventCard', () => {
       slug: '2018-03-07-blindsmagningsaften',
       eventHeroImageId: 'eventHeroImageId',
       host: {
-        logoId: 'Govinu/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
+        logoId: 'GoTaste/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ',
         name: 'Erik Sørensen Vin',
         heroImageId: 'hostHeroImageId',
         address: {

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe GovinuSchema do
+describe GotasteSchema do
   it 'dumped schema should be up to date' do
     actual_schema = GraphQL::Schema::Printer.print_schema(described_class)
     dumped_schema = File.read(

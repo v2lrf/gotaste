@@ -49,7 +49,7 @@ module GraphqlHelpers
   def graphql_mutation(name, input, fields = nil)
     mutation_name = GraphqlHelpers.fieldnamerize(name)
     input_variable_name = "$#{input_variable_name_for_mutation(name)}"
-    mutation_field = GovinuSchema.mutation.fields[mutation_name]
+    mutation_field = GotasteSchema.mutation.fields[mutation_name]
     fields ||= all_graphql_fields_for(mutation_field.type)
 
     query = <<~MUTATION
@@ -78,7 +78,7 @@ module GraphqlHelpers
 
   def input_variable_name_for_mutation(mutation_name)
     mutation_name = GraphqlHelpers.fieldnamerize(mutation_name)
-    mutation_field = GovinuSchema.mutation.fields[mutation_name]
+    mutation_field = GotasteSchema.mutation.fields[mutation_name]
     input_type = field_type(mutation_field.arguments['input'])
 
     GraphqlHelpers.fieldnamerize(input_type)
@@ -106,7 +106,7 @@ module GraphqlHelpers
   end
 
   def all_graphql_fields_for(class_name, parent_types = Set.new)
-    type = GovinuSchema.types[class_name.to_s]
+    type = GotasteSchema.types[class_name.to_s]
     return '' unless type
 
     type.fields.map do |name, field|

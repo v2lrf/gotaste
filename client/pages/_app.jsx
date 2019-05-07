@@ -18,7 +18,7 @@ Router.events.on('routeChangeComplete', () => {
   }, 2000)
 })
 
-class GovinuApp extends App {
+class GoTasteApp extends App {
   componentDidMount() {
     ahoy.trackAll()
   }
@@ -37,4 +37,4 @@ class GovinuApp extends App {
   }
 }
 
-export default withApollo(GovinuApp)
+export default withApollo(GoTasteApp)

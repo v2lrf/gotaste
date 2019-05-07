@@ -19,11 +19,11 @@ function OwnerLayout({ title, children }) {
               <Link href="/">
                 <a className="flex text-red-light text-xl font-semibold no-underline">
                   <img
-                    src="/static/govinu-120.png"
-                    alt="Govinu"
+                    src="/static/gotaste-120.png"
+                    alt="GoTaste"
                     className="h-6 pr-2"
                   />
-                  Govinu Cellar
+                  GoTaste Cellar
                 </a>
               </Link>
             </div>
@@ -50,7 +50,7 @@ OwnerLayout.propTypes = {
 }
 
 OwnerLayout.defaultProps = {
-  title: 'Govinu Cellar'
+  title: 'GoTaste Cellar'
 }
 
 export default OwnerLayout

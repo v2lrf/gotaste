@@ -10,8 +10,8 @@ FactoryBot.define do
     trait :with_hero_image do
       after(:create) do |event, _|
         event.hero_image.attach(
-          io:       File.open('spec/support/images/govinu.png'),
-          filename: 'govinu'
+          io:       File.open('spec/support/images/gotaste.png'),
+          filename: 'gotaste'
         )
       end
     end

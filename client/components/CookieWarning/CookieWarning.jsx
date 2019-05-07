@@ -19,7 +19,7 @@ function CookieWarning() {
       <Container>
         <div className="flex justify-between items-center">
           <div className="text-sm mr-2 flex-shrink">
-            For at give dig den bedste oplevelse hos Govinu bruger vi cookies.
+            For at give dig den bedste oplevelse hos GoTaste bruger vi cookies.
             <Link href="/cookie-and-privacypolicy">
               <a className="ml-1 text-red-darker">Læs mere</a>
             </Link>

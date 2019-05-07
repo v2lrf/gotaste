@@ -15,7 +15,7 @@ class GraphqlController < ApplicationController
   private
 
   def result
-    GovinuSchema.execute(
+    GotasteSchema.execute(
       query,
       variables:      variables,
       context:        context,

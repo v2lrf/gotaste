@@ -1,6 +1,6 @@
 {
   "projects": {
-    "Govinu": {
+    "GoTaste": {
       "schemaPath": "../backend/graphql/schema.graphql",
       "extensions": {
         "endpoints": {
@@ -8,7 +8,7 @@
             "url": "http://localhost:3000/graphql"
           },
           "prod": {
-            "url": "https://govinu.com/graphql"
+            "url": "https://gotaste.dk/graphql"
           }
         }
       }

@@ -13,6 +13,6 @@ class UsersMailer < ApplicationMailer
   private
 
   def client_root_url
-    Rails.env.production? ? 'https://govinu.com' : 'http://localhost:3000'
+    Rails.env.production? ? 'https://gotaste.dk' : 'http://localhost:3000'
   end
 end

@@ -45,7 +45,7 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
               <a
                 className="text-black no-underline"
               >
-                Om Govinu
+                Om GoTaste
               </a>
             </Link>
           </div>
@@ -90,7 +90,7 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
         <div
           className="mb-2 sm:mb-0"
         >
-          © 2019 Copyright Govinu. All rights reserved
+          © 2019 Copyright GoTaste. All rights reserved
         </div>
         <div>
           Lavet i
