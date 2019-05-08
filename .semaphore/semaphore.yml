@@ -63,6 +63,8 @@ blocks:
 
   - name: Back-end tests
     task:
+      secrets:
+        - name: backend-secrets
       jobs:
         - name: RSpec
           commands:
