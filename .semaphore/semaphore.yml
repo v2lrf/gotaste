@@ -63,6 +63,12 @@ blocks:
 
   - name: Back-end tests
     task:
+      env_vars:
+        # Matches the configuration used in sem-service
+        - name: DATABASE_URL
+          value: postgresql://postgres@localhost/test?encoding=utf8
+        - name: RAILS_ENV
+          value: test
       secrets:
         - name: backend-secrets
       jobs:
@@ -73,6 +79,7 @@ blocks:
             - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
             # Start Postgres database service.
             - sem-service start postgres
+            - cat /dev/null > config/database.yml
             - sem-version ruby 2.6.2
             - nvm use
             - bundle install --deployment --path vendor/bundle
