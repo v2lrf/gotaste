@@ -132,3 +132,11 @@ blocks:
             - nvm use
             - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - yarn test
+
+promotions:
+  - name: Deploy to Heroku
+    pipeline_file: heroku.yml
+    auto_promote_on:
+      - result: passed
+        branch:
+          - master
