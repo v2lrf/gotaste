@@ -41,3 +41,16 @@ blocks:
           - git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/
           - git remote add heroku $HEROKU_REMOTE
           - git push heroku `git subtree split --prefix client master`:master --force
+
+  - name: Apollo Engine
+    task:
+      secrets:
+        - name: frontend-secrets
+      jobs:
+      - name: Push schema
+        commands:
+        - checkout --use-cache
+        - cd client
+        - nvm use
+        - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+        - yarn run apollo service:push --endpoint=https://gotaste.dk/graphql
