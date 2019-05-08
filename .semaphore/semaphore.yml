@@ -60,3 +60,19 @@ blocks:
             - sem-version ruby 2.6.2
             - bundle install --deployment --path vendor/bundle
             - bundle exec rubocop
+
+  - name: Back-end tests
+    task:
+      jobs:
+        - name: RSpec
+          commands:
+            - checkout
+            - cd backend
+            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+            # Start Postgres database service.
+            - sem-service start postgres
+            - sem-version ruby 2.6.2
+            - bundle install --deployment --path vendor/bundle
+            - yarn install
+            - bundle exec rails db:setup
+            - bundle exec rspec
