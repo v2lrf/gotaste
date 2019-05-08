@@ -25,8 +25,16 @@ agent:
 blocks:
   - name: Setup
     task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      secrets:
+        - name: frontend-secrets
+
       jobs:
-        - name: bundle
+        - name: Bundle
           commands:
           # Checkout code from Git repository. This step is mandatory if the
           # job is to work with your code.
@@ -44,6 +52,15 @@ blocks:
           # Store the latest version of dependencies in cache,
           # to be used in next blocks and future workflows:
           - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
+
+        - name: Yarn front-end
+          commands:
+          - checkout
+          - cd client
+          - nvm use
+          - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+          - yarn install
+          - cache store client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
 
   - name: Linting
     task:
