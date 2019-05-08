@@ -44,3 +44,19 @@ blocks:
           # Store the latest version of dependencies in cache,
           # to be used in next blocks and future workflows:
           - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
+
+  - name: Linting
+    task:
+      jobs:
+        - name: Check style
+          commands:
+            - checkout
+            - cd backend
+            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+            # Bundler requires `install` to run even though cache has been
+            # restored, but generally this is not the case with other package
+            # managers. Installation will not actually run and command will
+            # finish quickly:
+            - sem-version ruby 2.6.2
+            - bundle install --deployment --path vendor/bundle
+            - bundle exec rubocop
