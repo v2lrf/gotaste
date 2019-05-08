@@ -1,0 +1,142 @@
+# Use the latest stable version of Semaphore 2.0 YML syntax:
+version: v1.0
+
+# Name your pipeline. In case you connect multiple pipelines with promotions,
+# the name will help you differentiate between, for example, a CI build phase
+# and delivery phases.
+name: GoTaste
+
+# An agent defines the environment in which your code runs.
+# It is a combination of one of available machine types and operating
+# system images.
+# See https://docs.semaphoreci.com/article/20-machine-types
+# and https://docs.semaphoreci.com/article/32-ubuntu-1804-image
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+# Blocks are the heart of a pipeline and are executed sequentially.
+# Each block has a task that defines one or more jobs. Jobs define the
+# commands to execute.
+# See https://docs.semaphoreci.com/article/62-concepts
+
+
+blocks:
+  - name: Setup
+    task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      secrets:
+        - name: frontend-secrets
+
+      jobs:
+        - name: Bundle
+          commands:
+          # Checkout code from Git repository. This step is mandatory if the
+          # job is to work with your code.
+          # Optionally you may use --use-cache flag to avoid roundtrip to
+          # remote repository.
+          # See https://docs.semaphoreci.com/article/54-toolbox-reference#libcheckout
+          - checkout
+          - cd backend
+          # Restore dependencies from cache.
+          # Read about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+          # Set Ruby version:
+          - sem-version ruby 2.6.2
+          - bundle install --deployment -j 4 --path vendor/bundle
+          # Store the latest version of dependencies in cache,
+          # to be used in next blocks and future workflows:
+          - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
+
+        - name: Yarn front-end
+          commands:
+          - checkout
+          - cd client
+          - nvm use
+          - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+          - yarn install
+          - cache store client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
+
+  - name: Linting
+    task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      secrets:
+        - name: frontend-secrets
+
+      jobs:
+        - name: RuboCop
+          commands:
+            - checkout
+            - cd backend
+            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+            # Bundler requires `install` to run even though cache has been
+            # restored, but generally this is not the case with other package
+            # managers. Installation will not actually run and command will
+            # finish quickly:
+            - sem-version ruby 2.6.2
+            - bundle install --deployment --path vendor/bundle
+            - bundle exec rubocop
+
+        - name: ESLint
+          commands:
+            - checkout
+            - cd client
+            - nvm use
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+            - yarn lint
+
+
+  - name: Tests
+    task:
+      env_vars:
+        # Matches the configuration used in sem-service
+        - name: DATABASE_URL
+          value: postgresql://postgres@localhost/test?encoding=utf8
+        - name: RAILS_ENV
+          value: test
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      secrets:
+        - name: backend-secrets
+        - name: frontend-secrets
+      jobs:
+        - name: RSpec
+          commands:
+            - checkout
+            - cd backend
+            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+            # Start Postgres database service.
+            - sem-service start postgres
+            - cat /dev/null > config/database.yml
+            - sem-version ruby 2.6.2
+            - nvm use
+            - bundle install --deployment --path vendor/bundle
+            - yarn install
+            - bundle exec rails db:setup
+            - bundle exec rspec
+        - name: Jest
+          commands:
+            - checkout
+            - cd client
+            - nvm use
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+            - yarn test
+
+promotions:
+  - name: Deploy to Heroku
+    pipeline_file: heroku.yml
+    auto_promote_on:
+      - result: passed
+        branch:
+          - master
