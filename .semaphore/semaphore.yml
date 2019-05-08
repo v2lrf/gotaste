@@ -64,8 +64,16 @@ blocks:
 
   - name: Linting
     task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
+      secrets:
+        - name: frontend-secrets
+
       jobs:
-        - name: Check style
+        - name: RuboCop
           commands:
             - checkout
             - cd backend
@@ -77,6 +85,15 @@ blocks:
             - sem-version ruby 2.6.2
             - bundle install --deployment --path vendor/bundle
             - bundle exec rubocop
+
+        - name: ESLint
+          commands:
+            - checkout
+            - cd client
+            - nvm use
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+            - yarn lint
+
 
   - name: Back-end tests
     task:
