@@ -95,7 +95,7 @@ blocks:
             - yarn lint
 
 
-  - name: Back-end tests
+  - name: Tests
     task:
       env_vars:
         # Matches the configuration used in sem-service
@@ -103,8 +103,13 @@ blocks:
           value: postgresql://postgres@localhost/test?encoding=utf8
         - name: RAILS_ENV
           value: test
+        - name: NODE_ENV
+          value: test
+        - name: CI
+          value: 'true'
       secrets:
         - name: backend-secrets
+        - name: frontend-secrets
       jobs:
         - name: RSpec
           commands:
@@ -120,3 +125,10 @@ blocks:
             - yarn install
             - bundle exec rails db:setup
             - bundle exec rspec
+        - name: Jest
+          commands:
+            - checkout
+            - cd client
+            - nvm use
+            - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
+            - yarn test
