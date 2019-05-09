@@ -38,7 +38,7 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
           className="list-reset flex flex-row"
         >
           <NavItem
-            to="#"
+            to="/cellar"
           >
             Overblik
           </NavItem>
@@ -58,7 +58,7 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
             Anmeldelser
           </NavItem>
           <NavItem
-            to="#"
+            to="/cellar/profile"
           >
             Profil
           </NavItem>

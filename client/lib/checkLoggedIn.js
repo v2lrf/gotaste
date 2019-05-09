@@ -9,6 +9,14 @@ export function checkOwnerLogin(loggedInUser) {
   return false
 }
 
+export function getOwnerSlug(loggedInUser) {
+  const {
+    businesses: { nodes }
+  } = loggedInUser
+  // What if an employee works at multiple businesses ?
+  return nodes[0].slug
+}
+
 export default apolloClient =>
   apolloClient
     .query({
@@ -17,6 +25,11 @@ export default apolloClient =>
           viewer {
             shortName
             role
+            businesses {
+              nodes {
+                slug
+              }
+            }
           }
         }
       `

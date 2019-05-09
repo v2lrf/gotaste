@@ -1,15 +1,15 @@
 import React from 'react'
 import { withApollo } from 'react-apollo'
 
-import checkLoggedIn, { checkOwnerLogin } from '../lib/checkLoggedIn'
-import redirect from '../lib/redirect'
+import checkLoggedIn, { checkOwnerLogin } from '../../lib/checkLoggedIn'
+import redirect from '../../lib/redirect'
 
-import OwnerLayout from '../components/Layout/OwnerLayout'
-import Container from '../components/Container'
-import Spacer from '../components/Spacer'
-import { Row, Col } from '../components/Grid'
-import Link, { LinkGroup } from '../components/Link'
-import Card from '../components/Card'
+import OwnerLayout from '../../components/Layout/OwnerLayout'
+import Container from '../../components/Container'
+import Spacer from '../../components/Spacer'
+import { Row, Col } from '../../components/Grid'
+import Link, { LinkGroup } from '../../components/Link'
+import Card from '../../components/Card'
 
 function CellarPage() {
   return (

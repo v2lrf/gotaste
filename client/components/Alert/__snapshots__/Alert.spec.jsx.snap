@@ -2,7 +2,7 @@
 
 exports[`Alert Snapshots should match the danger snapshot 1`] = `
 <div
-  className="flex items-center border shadow rounded my-4 py-2 text-sm bg-red-lightest text-red-darkest border-red-light"
+  className="flex items-center border shadow-lg rounded my-4 py-2 text-sm bg-red-lightest text-red-darkest border-red-light"
 >
   <span
     aria-hidden={true}
@@ -51,7 +51,7 @@ exports[`Alert Snapshots should match the danger snapshot 1`] = `
 
 exports[`Alert Snapshots should match the info snapshot 1`] = `
 <div
-  className="flex items-center border shadow rounded my-4 py-2 text-sm bg-white text-red-darkest border-red-lighter"
+  className="flex items-center border shadow-lg rounded my-4 py-2 text-sm bg-white text-red-darkest border-red-lighter"
 >
   <span
     aria-hidden={true}

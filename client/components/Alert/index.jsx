@@ -9,7 +9,7 @@ import {
 
 function Alert({ kind, children }) {
   const alertClasses = classNames(
-    'flex items-center border shadow rounded my-4 py-2 text-sm',
+    'flex items-center border shadow-lg rounded my-4 py-2 text-sm',
     {
       'bg-red-lightest text-red-darkest border-red-light': kind === 'danger',
       'bg-white text-red-darkest border-red-lighter': kind === 'info'
