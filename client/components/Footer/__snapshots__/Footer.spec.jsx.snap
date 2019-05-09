@@ -2,35 +2,48 @@
 
 exports[`Footer Snapshots should match the snapshot 1`] = `
 <Fragment>
-  <div
-    className="border-t border-red-lighter"
-  >
+  <div>
     <Container
-      narrow={false}
+      narrow={true}
     >
       <div
-        className="flex flex-col sm:flex-row border-b py-10"
+        className="flex flex-col sm:flex-row border-t pt-8 pb-16"
       >
+        <div
+          className="mb-2 sm:mb-0 sm:mr-16"
+        >
+          <div
+            className="mb-2 text-sm text-grey-dark"
+          >
+            © 2019 GoTaste
+          </div>
+        </div>
         <div
           className="mb-2 sm:mb-0 sm:mr-16"
         >
           <div
             className="mb-2"
           >
-            <a
-              className="text-black no-underline"
-              href="#forhandlere"
+            <Link
+              href="/businesses"
             >
-              Forhandlere
-            </a>
+              <a
+                className="text-black no-underline"
+              >
+                Forhandlere
+              </a>
+            </Link>
           </div>
           <div>
-            <a
-              className="text-black no-underline"
-              href="#arrangementer"
+            <Link
+              href="/events"
             >
-              Arrangementer
-            </a>
+              <a
+                className="text-black no-underline"
+              >
+                Begivenheder
+              </a>
+            </Link>
           </div>
         </div>
         <div
@@ -52,7 +65,7 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
           <div>
             <a
               className="text-black no-underline"
-              href="#kontakt"
+              href="mailto:info@gotaste.dk"
             >
               Kontakt
             </a>
@@ -84,27 +97,7 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
           </div>
         </div>
       </div>
-      <div
-        className="flex flex-col sm:flex-row justify-between my-10"
-      >
-        <div
-          className="mb-2 sm:mb-0"
-        >
-          © 2019 Copyright GoTaste. All rights reserved
-        </div>
-        <div>
-          Lavet i
-          <span
-            aria-label="Danmark"
-            className="ml-1"
-            role="img"
-          >
-            🇩🇰
-          </span>
-        </div>
-      </div>
     </Container>
   </div>
-  <LoadableComponent />
 </Fragment>
 `;
