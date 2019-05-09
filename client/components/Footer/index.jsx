@@ -9,19 +9,25 @@ import CookieWarning from '../CookieWarning'
 function Footer() {
   return (
     <Fragment>
-      <div className="border-t border-red-lighter">
-        <Container>
-          <div className="flex flex-col sm:flex-row border-b py-10">
+      <div>
+        <Container narrow>
+          <div className="flex flex-col sm:flex-row border-t pt-8 pb-16">
+            <div className="mb-2 sm:mb-0 sm:mr-16">
+              <div className="mb-2 text-sm text-grey-dark">
+                {`© ${moment().format('YYYY')} GoTaste`}
+              </div>
+            </div>
+
             <div className="mb-2 sm:mb-0 sm:mr-16">
               <div className="mb-2">
-                <a href="#forhandlere" className="text-black no-underline">
-                  Forhandlere
-                </a>
+                <Link href="/businesses">
+                  <a className="text-black no-underline">Forhandlere</a>
+                </Link>
               </div>
               <div>
-                <a href="#arrangementer" className="text-black no-underline">
-                  Arrangementer
-                </a>
+                <Link href="/events">
+                  <a className="text-black no-underline">Begivenheder</a>
+                </Link>
               </div>
             </div>
 
@@ -32,7 +38,10 @@ function Footer() {
                 </Link>
               </div>
               <div>
-                <a href="#kontakt" className="text-black no-underline">
+                <a
+                  href="mailto:info@gotaste.dk"
+                  className="text-black no-underline"
+                >
                   Kontakt
                 </a>
               </div>
@@ -51,20 +60,6 @@ function Footer() {
                   </a>
                 </Link>
               </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between my-10">
-            <div className="mb-2 sm:mb-0">
-              {`© ${moment().format(
-                'YYYY'
-              )} Copyright GoTaste. All rights reserved`}
-            </div>
-            <div>
-              Lavet i
-              <span className="ml-1" role="img" aria-label="Danmark">
-                🇩🇰
-              </span>
             </div>
           </div>
         </Container>
