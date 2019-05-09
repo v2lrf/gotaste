@@ -8,6 +8,10 @@ module Mutations
              description: 'The attributes that can be updated.',
              required:    true
 
+    argument :address, Types::AddressInputType,
+             description: 'The address of the business.',
+             required:    true
+
     field :business, Types::BusinessType,
           description: 'The updated business.',
           null:        false
@@ -24,7 +28,9 @@ module Mutations
 
     def resolve(**args)
       business = Business.find_by!(slug: args[:business_slug])
-      business.update(args[:attributes])
+      business.update(
+        args[:attributes].merge(address_attributes: args[:address])
+      )
 
       { business: business }
     end

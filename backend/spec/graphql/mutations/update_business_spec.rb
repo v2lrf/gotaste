@@ -40,8 +40,21 @@ describe Mutations::UpdateBusiness do
       }
     end
 
+    let(:address) do
+      {
+        street_name:   'Street Name',
+        street_number: '1',
+        postal_code:   '1000',
+        city:          'Copenhagen'
+      }
+    end
+
     it 'updates the business' do
-      mutation.resolve(business_slug: business.slug, attributes: attributes)
+      mutation.resolve(
+        business_slug: business.slug,
+        attributes:    attributes,
+        address:       address
+      )
 
       expect(business.reload.name).to eq attributes[:name]
     end
