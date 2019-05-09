@@ -3,8 +3,6 @@ import Link from 'next/link'
 import moment from 'moment'
 
 import Container from '../Container'
-/* eslint-disable-next-line */
-import CookieWarning from '../CookieWarning'
 
 function Footer() {
   return (
@@ -64,7 +62,6 @@ function Footer() {
           </div>
         </Container>
       </div>
-      <CookieWarning />
     </Fragment>
   )
 }

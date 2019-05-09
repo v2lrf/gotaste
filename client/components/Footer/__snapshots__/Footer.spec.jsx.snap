@@ -99,6 +99,5 @@ exports[`Footer Snapshots should match the snapshot 1`] = `
       </div>
     </Container>
   </div>
-  <LoadableComponent />
 </Fragment>
 `;
