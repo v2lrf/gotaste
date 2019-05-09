@@ -1,7 +1,5 @@
 # 🍷 GoTaste
 
-[![CircleCI](https://circleci.com/gh/gotaste/gotaste/tree/master.svg?style=svg)](https://circleci.com/gh/gotaste/gotaste/tree/master)
-
 GoTaste is a platform connection businesses with wine enthusiasts.
 
 Check out the site at [gotaste.dk](https://gotaste.dk).
