@@ -5,7 +5,3 @@
   <%= render 'analytics_card', text: t('.total_business_page_views'), number: total_business_page_views, icon: 'fa-store-alt', color: 'blue-dark'%>
   <%= render 'analytics_card', text: t('.total_event_page_views'), number: total_event_page_views, icon: 'fa-calendar-minus', color: 'blue-dark'%>
 </div>
-
-<% content_for :scripts do %>
-  <%= javascript_pack_tag 'hello_react' %>
-<% end %>
