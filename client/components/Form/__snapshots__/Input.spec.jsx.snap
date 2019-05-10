@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Snapshots should match the default snapshot 1`] = `
+<Fragment>
+  <label
+    className="block text-grey-darker mb-6 text-sm uppercase"
+  >
+    Email
+    <input
+      autoComplete=""
+      className="block w-full rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
+      name="email"
+      onChange={[MockFunction]}
+      placeholder=""
+      type="email"
+      value="I am an initial value"
+    />
+  </label>
+</Fragment>
+`;
+
+exports[`Input Snapshots should match the snapshot with a placeholder 1`] = `
+<Fragment>
+  <label
+    className="block text-grey-darker mb-6 text-sm uppercase"
+  >
+    Email
+    <input
+      autoComplete=""
+      className="block w-full rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
+      name="email"
+      onChange={[MockFunction]}
+      placeholder="Enter some value in me"
+      type="email"
+      value="I am an initial value"
+    />
+  </label>
+</Fragment>
+`;
+
+exports[`Input Snapshots should match the snapshot with custom autoComplete 1`] = `
+<Fragment>
+  <label
+    className="block text-grey-darker mb-6 text-sm uppercase"
+  >
+    Email
+    <input
+      autoComplete="current-password"
+      className="block w-full rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
+      name="email"
+      onChange={[MockFunction]}
+      placeholder=""
+      type="email"
+      value="I am an initial value"
+    />
+  </label>
+</Fragment>
+`;

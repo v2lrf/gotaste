@@ -9,7 +9,12 @@ describe('GhostCard', () => {
   })
 
   describe('Snapshots', () => {
-    it('should match the snapshot', () => {
+    it('should match the default snapshot', () => {
+      expect(component).toMatchSnapshot()
+    })
+
+    it('should match the snapshot with a custom width', () => {
+      component.setProps({ width: 50 })
       expect(component).toMatchSnapshot()
     })
   })

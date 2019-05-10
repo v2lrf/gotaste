@@ -3,7 +3,7 @@
 exports[`Button Snapshots should match the full width snapshot 1`] = `
 <button
   className="px-4 h-8 rounded shadow bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter w-full"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="submit"
 >
   I am a button!
@@ -13,7 +13,7 @@ exports[`Button Snapshots should match the full width snapshot 1`] = `
 exports[`Button Snapshots should match the laoding snapshot 1`] = `
 <button
   className="px-4 h-8 rounded shadow bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="submit"
 >
   <FontAwesomeIcon
@@ -52,7 +52,7 @@ exports[`Button Snapshots should match the laoding snapshot 1`] = `
 exports[`Button Snapshots should match the primary snapshot 1`] = `
 <button
   className="px-4 h-8 rounded shadow bg-red-lightest text-red-dark font-semibold border border-red-lighter hover:bg-red-lighter"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="submit"
 >
   I am a button!
@@ -62,7 +62,7 @@ exports[`Button Snapshots should match the primary snapshot 1`] = `
 exports[`Button Snapshots should match the secondary snapshot 1`] = `
 <button
   className="px-4 h-8 rounded shadow bg-white text-red-darkest border border-red-lighter hover:bg-red-lightest"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="submit"
 >
   I am a button!

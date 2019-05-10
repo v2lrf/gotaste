@@ -13,6 +13,11 @@ export function getOwnerSlug(loggedInUser) {
   const {
     businesses: { nodes }
   } = loggedInUser
+
+  if (!checkOwnerLogin(loggedInUser)) {
+    return null
+  }
+
   // What if an employee works at multiple businesses ?
   return nodes[0].slug
 }

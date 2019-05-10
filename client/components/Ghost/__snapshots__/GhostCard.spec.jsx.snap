@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GhostCard Snapshots should match the snapshot 1`] = `
+exports[`GhostCard Snapshots should match the default snapshot 1`] = `
 <div
   aria-disabled={true}
   aria-label="Henter data"
@@ -9,6 +9,20 @@ exports[`GhostCard Snapshots should match the snapshot 1`] = `
     Object {
       "height": "200px",
       "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`GhostCard Snapshots should match the snapshot with a custom width 1`] = `
+<div
+  aria-disabled={true}
+  aria-label="Henter data"
+  className="rounded shimmer"
+  style={
+    Object {
+      "height": "200px",
+      "width": "50%",
     }
   }
 />
