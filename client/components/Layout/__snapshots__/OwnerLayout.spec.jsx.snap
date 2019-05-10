@@ -8,7 +8,7 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
     </title>
   </Head>
   <div
-    className="bg-white shadow-lg"
+    className="bg-white"
   >
     <Container
       narrow={false}

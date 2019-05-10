@@ -12,7 +12,7 @@ function OwnerLayout({ title, children }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="bg-white shadow-lg">
+      <div className="bg-white">
         <Container>
           <div className="h-auto sm:h-16 flex items-center justify-between">
             <div className="my-4 sm:my-0">
