@@ -42,7 +42,6 @@ blocks:
           # remote repository.
           # See https://docs.semaphoreci.com/article/54-toolbox-reference#libcheckout
           - checkout
-          - cd backend
           # Restore dependencies from cache.
           # Read about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
@@ -56,7 +55,6 @@ blocks:
         - name: Yarn front-end
           commands:
           - checkout
-          - cd client
           - nvm use
           - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
           - yarn install
@@ -76,7 +74,6 @@ blocks:
         - name: RuboCop
           commands:
             - checkout
-            - cd backend
             - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
             # Bundler requires `install` to run even though cache has been
             # restored, but generally this is not the case with other package
@@ -89,7 +86,6 @@ blocks:
         - name: ESLint
           commands:
             - checkout
-            - cd client
             - nvm use
             - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - yarn lint
@@ -114,7 +110,6 @@ blocks:
         - name: RSpec
           commands:
             - checkout
-            - cd backend
             - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
             # Start Postgres database service.
             - sem-service start postgres
@@ -128,7 +123,6 @@ blocks:
         - name: Jest
           commands:
             - checkout
-            - cd client
             - nvm use
             - cache restore client-node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),client-node-modules-$SEMAPHORE_GIT_BRANCH,client-node-modules-master
             - yarn test
