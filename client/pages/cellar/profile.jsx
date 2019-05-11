@@ -29,6 +29,12 @@ const GET_BUSINESS = gql`
       name
       website
       phoneNumber
+      address {
+        streetName
+        streetNumber
+        postalCode
+        city
+      }
       description
     }
   }
@@ -40,11 +46,21 @@ const UPDATE_BUSINESS = gql`
     $name: String!
     $website: String!
     $phoneNumber: String!
+    $streetName: String!
+    $streetNumber: String!
+    $postalCode: String!
+    $city: String!
     $description: String!
   ) {
     updateBusiness(
       input: {
         businessSlug: $slug
+        address: {
+          streetName: $streetName
+          streetNumber: $streetNumber
+          postalCode: $postalCode
+          city: $city
+        }
         attributes: {
           name: $name
           website: $website
@@ -70,6 +86,10 @@ function CellarProfilePage({ slug }) {
     name: '',
     website: '',
     phoneNumber: '',
+    streetName: '',
+    streetNumber: '',
+    postalCode: '',
+    city: '',
     description: ''
   })
   const [editorState, setEditorState] = useState('')
@@ -84,6 +104,10 @@ function CellarProfilePage({ slug }) {
       name: values.name,
       website: values.website,
       phoneNumber: values.phoneNumber,
+      streetName: values.streetName,
+      streetNumber: values.streetNumber,
+      postalCode: values.postalCode,
+      city: values.city,
       description: editorState
     }
   })
@@ -91,12 +115,22 @@ function CellarProfilePage({ slug }) {
   useEffect(() => {
     if (!loading) {
       const {
-        business: { name, website, phoneNumber, description }
+        business: {
+          name,
+          website,
+          phoneNumber,
+          address: { streetName, streetNumber, postalCode, city },
+          description
+        }
       } = data
       setValues({
         name,
         website,
-        phoneNumber
+        phoneNumber,
+        streetName,
+        streetNumber,
+        postalCode,
+        city
       })
       setEditorState(description)
     }
@@ -106,6 +140,11 @@ function CellarProfilePage({ slug }) {
 
   return (
     <OwnerLayout>
+      {updateBusinessAlert && (
+        <Alert fixed kind="info">
+          {updateBusinessAlert}
+        </Alert>
+      )}
       <Container>
         <Spacer top="12" bottom="20">
           <Card title="Opdater profil">
@@ -146,6 +185,41 @@ function CellarProfilePage({ slug }) {
               </Row>
               <Row className="border-b mb-6 pb-4">
                 <Col xs="full" md="1/3">
+                  <span className="text-grey-darker">Adresse</span>
+                </Col>
+                <Col xs="full" md="2/3">
+                  <Input
+                    label="Gadenavn"
+                    name="streetName"
+                    type="text"
+                    value={values.streetName}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    label="Gadenummer"
+                    name="streetNumber"
+                    type="text"
+                    value={values.streetNumber}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    label="Postnummer"
+                    name="postalCode"
+                    type="tel"
+                    value={values.postalCode}
+                    onChange={handleChange}
+                  />
+                  <Input
+                    label="By"
+                    name="city"
+                    type="text"
+                    value={values.city}
+                    onChange={handleChange}
+                  />
+                </Col>
+              </Row>
+              <Row className="border-b mb-6 pb-4">
+                <Col xs="full" md="1/3">
                   <span className="text-grey-darker">Beskrivelse</span>
                 </Col>
                 <Col xs="full" md="2/3">
@@ -160,9 +234,6 @@ function CellarProfilePage({ slug }) {
               </div>
             </form>
           </Card>
-          {updateBusinessAlert && (
-            <Alert kind="info">{updateBusinessAlert}</Alert>
-          )}
         </Spacer>
       </Container>
     </OwnerLayout>
