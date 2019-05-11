@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**/*
+    - config/environments/*
+    - spec/support/graphql_helpers.rb
+  DisplayCopNames: true
+  TargetRailsVersion: 5.0
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/graphql/fields/**/*'
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table

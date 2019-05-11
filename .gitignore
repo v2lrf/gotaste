@@ -5,32 +5,31 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/backend/.bundle
+/.bundle
 .DS_Store
 
 # Ignore all logfiles and tempfiles.
-/backend/log/*
-/backend/tmp/*
-!/backend/log/.keep
-!/backend/tmp/.keep
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # Ignore uploaded files in development
-/backend/storage/*
-!/backend/storage/.keep
+/storage/*
+!/storage/.keep
 
-/backend/node_modules
-/client/node_modules
+/node_modules
 /yarn-error.log
 
-/backend/public/assets
+/public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/backend/config/master.key
-/backend/public/packs
-/backend/public/packs-test
+/config/master.key
+/public/packs
+/public/packs-test
 
-/client/yarn-debug.log*
+/yarn-debug.log*
 
 .yarn-integrity
 
@@ -43,7 +42,6 @@
 
 .env
 
-/client/node_modules
 /client/.next
 styles/styles.css
 
