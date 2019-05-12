@@ -12,7 +12,7 @@
     "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint -c .eslintrc.js --ext .jsx,.js client",
-    "prestorybook": "tailwind build ./client/styles/styles.css -c ./tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
+    "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
     "storybook": "start-storybook -p 9001 -c ./client/.storybook",
     "test": "NODE_ENV=test jest"
   },
