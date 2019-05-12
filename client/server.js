@@ -10,7 +10,7 @@ const config = require('./config')
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 
-const app = next({ dev })
+const app = next({ dev, dir: 'client' })
 const handle = app.getRequestHandler()
 
 const proxyIdURL = dev ? config.DEV_API_ENDPOINT : config.PROD_API_ENDPOINT

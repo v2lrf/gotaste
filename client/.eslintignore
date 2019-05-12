@@ -1,6 +1,0 @@
-tailwind.config.js
-postcss.config.js
-lib/withApollo.js
-components/SearchBar/index.jsx
-components/Editor/index.jsx
-components/CookieWarning/index.jsx

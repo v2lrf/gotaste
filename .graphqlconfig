@@ -1,14 +1,17 @@
 {
   "projects": {
-    "Govinu": {
-      "schemaPath": "./schema.graphql",
+    "GoTaste": {
+      "schemaPath": "./graphql/schema.graphql",
       "extensions": {
         "endpoints": {
-          "dev": {
-            "url": "http://localhost:3000/graphql"
+          "Development (Apollo)": {
+            "url": "http://gotaste.test:3000/graphql"
           },
-          "prod": {
-            "url": "https://govinu.com/graphql"
+          "Development (Rails)": {
+            "url": "http://gotaste.test:4000/graphql"
+          },
+          "Production": {
+            "url": "https://gotaste.dk/graphql"
           }
         }
       }

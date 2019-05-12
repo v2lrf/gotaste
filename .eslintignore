@@ -1,0 +1,6 @@
+client/tailwind.config.js
+client/postcss.config.js
+client/lib/withApollo.js
+client/components/SearchBar/index.jsx
+client/components/Editor/index.jsx
+client/components/CookieWarning/index.jsx

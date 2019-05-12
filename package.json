@@ -5,24 +5,16 @@
     "node": "10.14.1"
   },
   "scripts": {
-    "predev": "node ./lib/getFragmentTypes.js",
-    "dev": "node ./server.js",
-    "prebuild": "NODE_ENV=production node ./lib/getFragmentTypes.js && node build-sitemap.js",
-    "build": "next build",
-    "start": "NODE_ENV=production node ./server.js",
+    "predev": "node ./client/lib/getFragmentTypes.js",
+    "dev": "node ./client/server.js",
+    "prebuild": "NODE_ENV=production node ./client/lib/getFragmentTypes.js && node build-sitemap.js",
+    "build": "next build ./client",
+    "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
-    "lint": "eslint -c .eslintrc.js --ext .jsx,.js .",
-    "prestorybook": "tailwind build ./styles/styles.css -c ./tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "NODE_ENV=test jest",
-    "graphql:dump": "graphql-inspector introspect http://localhost:3000/graphql --write schema.graphql"
-  },
-  "graphql-inspector": {
-    "diff": true,
-    "schema": {
-      "ref": "master",
-      "path": "schema.graphql"
-    }
+    "lint": "eslint -c .eslintrc.js --ext .jsx,.js client",
+    "prestorybook": "tailwind build ./client/styles/styles.css -c ./client/tailwind.config.js -o ./.storybook/application.css && node ./.storybook/prepare-storybook.js",
+    "storybook": "start-storybook -p 9001 -c ./client/.storybook",
+    "test": "NODE_ENV=test jest"
   },
   "prettier": {
     "semi": false,
@@ -91,13 +83,13 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/jest.setup.js"
+      "<rootDir>/client/jest.setup.js"
     ],
     "roots": [
-      "<rootDir>"
+      "<rootDir>/client"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
+      "<rootDir>/client/.next/",
       "<rootDir>/node_modules/"
     ],
     "snapshotSerializers": [
