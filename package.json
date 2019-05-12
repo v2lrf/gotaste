@@ -7,7 +7,7 @@
   "scripts": {
     "predev": "node ./client/lib/getFragmentTypes.js",
     "dev": "node ./client/server.js",
-    "prebuild": "NODE_ENV=production node ./client/lib/getFragmentTypes.js && node build-sitemap.js",
+    "prebuild": "NODE_ENV=production node ./client/lib/getFragmentTypes.js && node ./client/build-sitemap.js",
     "build": "next build ./client",
     "start": "NODE_ENV=production node ./client/server.js",
     "heroku-postbuild": "npm run build",
