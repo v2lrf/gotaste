@@ -3,6 +3,6 @@ module.exports = {
     service: {
       name: 'gotaste'
     },
-    includes: ['pages/**/*', 'components/**/*', 'fragments/**/*']
+    includes: ['client/**/*']
   }
 }
