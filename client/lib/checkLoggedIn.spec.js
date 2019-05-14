@@ -1,4 +1,4 @@
-import { checkOwnerLogin, getOwnerSlug } from './checkLoggedIn'
+import { checkOwnerLogin, checkAdminLogin, getOwnerSlug } from './checkLoggedIn'
 
 const userMock = {
   shortName: 'Jane D.',
@@ -30,6 +30,26 @@ const adminUserMock = {
     nodes: []
   }
 }
+
+describe('checkAdminLogin', () => {
+  describe('when the user is a regular user', () => {
+    it('returns false', () => {
+      expect(checkAdminLogin(userMock)).toEqual(false)
+    })
+  })
+
+  describe('when the user is a business owner', () => {
+    it('returns false ', () => {
+      expect(checkAdminLogin(ownerUserMock)).toEqual(false)
+    })
+  })
+
+  describe('when the user is an admin', () => {
+    it('returns true', () => {
+      expect(checkAdminLogin(adminUserMock)).toEqual(true)
+    })
+  })
+})
 
 describe('checkOwnerLogin', () => {
   describe('when the user is a regular user', () => {
