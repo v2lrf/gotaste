@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
+exports[`CellarLayout Snapshots should match the snapshot 1`] = `
 <Fragment>
   <Head>
     <title>
@@ -37,39 +37,44 @@ exports[`OwnerLayout Snapshots should match the snapshot 1`] = `
         <ul
           className="list-reset flex flex-row"
         >
-          <NavItem
+          <withRouter(NavItem)
+            asActive={true}
             to="/cellar"
           >
             Overblik
-          </NavItem>
-          <NavItem
+          </withRouter(NavItem)>
+          <withRouter(NavItem)
+            asActive={true}
             to="#"
           >
             Analytics
-          </NavItem>
-          <NavItem
+          </withRouter(NavItem)>
+          <withRouter(NavItem)
+            asActive={true}
             to="#"
           >
             Begivenheder
-          </NavItem>
-          <NavItem
+          </withRouter(NavItem)>
+          <withRouter(NavItem)
+            asActive={true}
             to="#"
           >
             Anmeldelser
-          </NavItem>
-          <NavItem
+          </withRouter(NavItem)>
+          <withRouter(NavItem)
+            asActive={true}
             to="/cellar/profile"
           >
             Profil
-          </NavItem>
+          </withRouter(NavItem)>
           <div
             className="mx-2 my-1 border border-red-lightest"
           />
-          <NavItem
+          <withRouter(NavItem)
             to="/sign-out"
           >
             Log ud
-          </NavItem>
+          </withRouter(NavItem)>
         </ul>
       </div>
     </Container>

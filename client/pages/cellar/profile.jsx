@@ -12,7 +12,7 @@ import redirect from '../../lib/redirect'
 
 import useForm from '../../hooks/useForm'
 
-import OwnerLayout from '../../components/Layout/OwnerLayout'
+import CellarLayout from '../../components/Layout/CellarLayout'
 import Container from '../../components/Container'
 import Spacer from '../../components/Spacer'
 import { Row, Col } from '../../components/Grid'
@@ -139,7 +139,7 @@ function CellarProfilePage({ slug }) {
   if (loading) return 'loading..'
 
   return (
-    <OwnerLayout>
+    <CellarLayout>
       {updateBusinessAlert && (
         <Alert fixed kind="info">
           {updateBusinessAlert}
@@ -236,7 +236,7 @@ function CellarProfilePage({ slug }) {
           </Card>
         </Spacer>
       </Container>
-    </OwnerLayout>
+    </CellarLayout>
   )
 }
 

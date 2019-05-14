@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem Snapshots should match the active snapshot 1`] = `
+<NavItem
+  asActive={true}
+  router={
+    Object {
+      "pathname": "/some-path",
+    }
+  }
+  to="/some-path"
+>
+  Some content
+</NavItem>
+`;
+
+exports[`NavItem Snapshots should match the default snapshot 1`] = `
+<NavItem
+  asActive={false}
+  to="/some-path"
+>
+  Some content
+</NavItem>
+`;

@@ -4,7 +4,7 @@ import { withApollo } from 'react-apollo'
 import checkLoggedIn, { checkOwnerLogin } from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
 
-import OwnerLayout from '../../components/Layout/OwnerLayout'
+import CellarLayout from '../../components/Layout/CellarLayout'
 import Container from '../../components/Container'
 import Spacer from '../../components/Spacer'
 import { Row, Col } from '../../components/Grid'
@@ -13,7 +13,7 @@ import Card from '../../components/Card'
 
 function CellarPage() {
   return (
-    <OwnerLayout>
+    <CellarLayout>
       <Container>
         <Spacer top="12" bottom="20">
           <Row>
@@ -48,7 +48,7 @@ function CellarPage() {
           </Spacer>
         </Spacer>
       </Container>
-    </OwnerLayout>
+    </CellarLayout>
   )
 }
 

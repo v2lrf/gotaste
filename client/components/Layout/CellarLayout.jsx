@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Container from '../Container'
 import NavItem from '../NavBar/NavItem'
 
-function OwnerLayout({ title, children }) {
+function CellarLayout({ title, children }) {
   return (
     <Fragment>
       <Head>
@@ -28,11 +28,21 @@ function OwnerLayout({ title, children }) {
               </Link>
             </div>
             <ul className="list-reset flex flex-row">
-              <NavItem to="/cellar">Overblik</NavItem>
-              <NavItem to="#">Analytics</NavItem>
-              <NavItem to="#">Begivenheder</NavItem>
-              <NavItem to="#">Anmeldelser</NavItem>
-              <NavItem to="/cellar/profile">Profil</NavItem>
+              <NavItem asActive to="/cellar">
+                Overblik
+              </NavItem>
+              <NavItem asActive to="#">
+                Analytics
+              </NavItem>
+              <NavItem asActive to="#">
+                Begivenheder
+              </NavItem>
+              <NavItem asActive to="#">
+                Anmeldelser
+              </NavItem>
+              <NavItem asActive to="/cellar/profile">
+                Profil
+              </NavItem>
               <div className="mx-2 my-1 border border-red-lightest" />
               <NavItem to="/sign-out">Log ud</NavItem>
             </ul>
@@ -44,13 +54,13 @@ function OwnerLayout({ title, children }) {
   )
 }
 
-OwnerLayout.propTypes = {
+CellarLayout.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node.isRequired
 }
 
-OwnerLayout.defaultProps = {
+CellarLayout.defaultProps = {
   title: 'GoTaste Cellar'
 }
 
-export default OwnerLayout
+export default CellarLayout

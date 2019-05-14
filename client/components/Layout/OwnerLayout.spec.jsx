@@ -1,10 +1,10 @@
 import React from 'react'
-import OwnerLayout from './OwnerLayout'
+import CellarLayout from './CellarLayout'
 
-describe('OwnerLayout', () => {
+describe('CellarLayout', () => {
   let component
   beforeEach(() => {
-    component = shallow(<OwnerLayout>Some content!</OwnerLayout>)
+    component = shallow(<CellarLayout>Some content!</CellarLayout>)
   })
 
   describe('Snapshots', () => {
