@@ -11,7 +11,7 @@ import { Row, Col } from '../../components/Grid'
 import Link, { LinkGroup } from '../../components/Link'
 import Card from '../../components/Card'
 
-function CellarPage() {
+function AdminOverviewPage() {
   return (
     <AdminLayout>
       <Container>
@@ -52,7 +52,7 @@ function CellarPage() {
   )
 }
 
-CellarPage.getInitialProps = async context => {
+AdminOverviewPage.getInitialProps = async context => {
   const { loggedInUser } = await checkLoggedIn(context.apolloClient)
   if (!checkAdminLogin(loggedInUser)) {
     redirect(context, '/')
@@ -61,4 +61,4 @@ CellarPage.getInitialProps = async context => {
   return {}
 }
 
-export default withApollo(CellarPage)
+export default withApollo(AdminOverviewPage)
