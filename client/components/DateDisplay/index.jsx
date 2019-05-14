@@ -6,12 +6,12 @@ import classNames from 'classnames'
 function DateDisplay({ timestamp, className }) {
   const momentTime = moment(timestamp)
   const wrapperClasses = classNames([
-    'inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow',
+    'inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow-md',
     className
   ])
   return (
     <time dateTime={timestamp} className={wrapperClasses}>
-      <span className="block text-red-darker font-bold text-2xl">
+      <span className="block text-red-dark font-bold text-2xl">
         {momentTime.format('D')}
       </span>
       <span className="block text-grey-darker text-xs font-bold uppercase">

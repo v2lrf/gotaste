@@ -34,7 +34,7 @@ function CellarLayout({ title, children }) {
               <NavItem asActive to="#">
                 Analytics
               </NavItem>
-              <NavItem asActive to="#">
+              <NavItem asActive to="/cellar/events">
                 Begivenheder
               </NavItem>
               <NavItem asActive to="#">

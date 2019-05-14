@@ -2,11 +2,11 @@
 
 exports[`DateDisplay Snapshots should match the snapshot 1`] = `
 <time
-  className="inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow"
+  className="inline-block bg-white text-center px-2 py-3 h-16 w-16 rounded shadow-md"
   dateTime={1546627341836}
 >
   <span
-    className="block text-red-darker font-bold text-2xl"
+    className="block text-red-dark font-bold text-2xl"
   >
     4
   </span>
