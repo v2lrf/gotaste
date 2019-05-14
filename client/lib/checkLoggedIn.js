@@ -1,6 +1,14 @@
 import { gql } from 'apollo-boost'
 
-const OWNER_LOGIN_ROLES = ['OWNER', 'ADMIN']
+const ADMIN_ROLE = 'ADMIN'
+const OWNER_LOGIN_ROLES = ['OWNER', ADMIN_ROLE]
+
+export function checkAdminLogin(loggedInUser) {
+  if (loggedInUser && loggedInUser.role === ADMIN_ROLE) {
+    return true
+  }
+  return false
+}
 
 export function checkOwnerLogin(loggedInUser) {
   if (loggedInUser && OWNER_LOGIN_ROLES.includes(loggedInUser.role)) {
