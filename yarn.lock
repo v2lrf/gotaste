@@ -920,9 +920,9 @@
     debug "^4.1.1"
     semver "^5.6.0"
 
-"@oclif/config@1.12.12":
-  version "1.12.12"
-  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.12.12.tgz#09e6628fe454214bbd7630ae18d2bee0db6bd533"
+"@oclif/config@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@oclif/config/-/config-1.13.0.tgz#fc2bd82a9cb30a73faf7d2aa5ae937c719492bd1"
   dependencies:
     debug "^4.1.1"
     tslib "^1.9.3"
@@ -2002,58 +2002,58 @@ apollo-client@^2.5.1:
     tslib "^1.9.3"
     zen-observable "^0.8.0"
 
-apollo-codegen-core@0.33.8:
-  version "0.33.8"
-  resolved "https://registry.yarnpkg.com/apollo-codegen-core/-/apollo-codegen-core-0.33.8.tgz#58232e7c694107707e96a837a85b1fdc839419c6"
+apollo-codegen-core@0.33.9:
+  version "0.33.9"
+  resolved "https://registry.yarnpkg.com/apollo-codegen-core/-/apollo-codegen-core-0.33.9.tgz#0026fe8235c7cdbe61910d0cacc03c8eeb20d3ed"
   dependencies:
     "@babel/generator" "7.4.4"
     "@babel/parser" "^7.1.3"
     "@babel/types" "7.4.4"
     apollo-env "0.5.0"
-    apollo-language-server "1.8.0"
+    apollo-language-server "1.8.1"
     ast-types "^0.12.0"
     common-tags "^1.5.1"
     recast "^0.17.0"
 
-apollo-codegen-flow@0.33.8:
-  version "0.33.8"
-  resolved "https://registry.yarnpkg.com/apollo-codegen-flow/-/apollo-codegen-flow-0.33.8.tgz#a1d59e70e4f9e357e72f8c0d92cf3a4cef9bf3c4"
+apollo-codegen-flow@0.33.9:
+  version "0.33.9"
+  resolved "https://registry.yarnpkg.com/apollo-codegen-flow/-/apollo-codegen-flow-0.33.9.tgz#feb9165d3a3d1184a6947579bb591c8e37f7dc5e"
   dependencies:
     "@babel/generator" "7.4.4"
     "@babel/types" "7.4.4"
-    apollo-codegen-core "0.33.8"
+    apollo-codegen-core "0.33.9"
     apollo-env "0.5.0"
     change-case "^3.0.1"
     common-tags "^1.5.1"
     inflected "^2.0.3"
 
-apollo-codegen-scala@0.34.8:
-  version "0.34.8"
-  resolved "https://registry.yarnpkg.com/apollo-codegen-scala/-/apollo-codegen-scala-0.34.8.tgz#abfadb387e5c7658d053aa793bee2e1211fc41c5"
+apollo-codegen-scala@0.34.9:
+  version "0.34.9"
+  resolved "https://registry.yarnpkg.com/apollo-codegen-scala/-/apollo-codegen-scala-0.34.9.tgz#7b9a9040b447eb4056aea5786d55d3623f995c0e"
   dependencies:
-    apollo-codegen-core "0.33.8"
+    apollo-codegen-core "0.33.9"
     apollo-env "0.5.0"
     change-case "^3.0.1"
     common-tags "^1.5.1"
     inflected "^2.0.3"
 
-apollo-codegen-swift@0.33.8:
-  version "0.33.8"
-  resolved "https://registry.yarnpkg.com/apollo-codegen-swift/-/apollo-codegen-swift-0.33.8.tgz#d222fde0b8acbec41f359fd7c0549ac8c98cecb3"
+apollo-codegen-swift@0.33.9:
+  version "0.33.9"
+  resolved "https://registry.yarnpkg.com/apollo-codegen-swift/-/apollo-codegen-swift-0.33.9.tgz#b5ebdc648477ce2c28b4efeac8bf3bac976d2edf"
   dependencies:
-    apollo-codegen-core "0.33.8"
+    apollo-codegen-core "0.33.9"
     apollo-env "0.5.0"
     change-case "^3.0.1"
     common-tags "^1.5.1"
     inflected "^2.0.3"
 
-apollo-codegen-typescript@0.33.8:
-  version "0.33.8"
-  resolved "https://registry.yarnpkg.com/apollo-codegen-typescript/-/apollo-codegen-typescript-0.33.8.tgz#32096e56fe6539cb1f663e15975bd998bec2f001"
+apollo-codegen-typescript@0.33.9:
+  version "0.33.9"
+  resolved "https://registry.yarnpkg.com/apollo-codegen-typescript/-/apollo-codegen-typescript-0.33.9.tgz#2c89231354e616d51e6203ea9270dde390b75ab4"
   dependencies:
     "@babel/generator" "7.4.4"
     "@babel/types" "7.4.4"
-    apollo-codegen-core "0.33.8"
+    apollo-codegen-core "0.33.9"
     apollo-env "0.5.0"
     change-case "^3.0.1"
     common-tags "^1.5.1"
@@ -2152,9 +2152,9 @@ apollo-graphql@^0.2.1-alpha.1:
     apollo-env "0.4.1-alpha.1"
     lodash.sortby "^4.7.0"
 
-apollo-language-server@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/apollo-language-server/-/apollo-language-server-1.8.0.tgz#67660606576d5af6baf02d453bdf1523edf2ff7e"
+apollo-language-server@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/apollo-language-server/-/apollo-language-server-1.8.1.tgz#38f4f0e7a7eda7b8c8a40ad987c2a3b21e3f3223"
   dependencies:
     "@apollographql/apollo-tools" "0.3.6"
     "@apollographql/graphql-language-service-interface" "^2.0.2"
@@ -2451,34 +2451,34 @@ apollo-utilities@^1.0.1:
     fast-json-stable-stringify "^2.0.0"
     tslib "^1.9.3"
 
-apollo@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/apollo/-/apollo-2.11.0.tgz#da9561c3b3d46d0c87325979444911bffa8077ba"
+apollo@^2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/apollo/-/apollo-2.11.1.tgz#ec49d8bbf729c31c34c719cd959b224267c6b4cb"
   dependencies:
     "@apollographql/apollo-tools" "0.3.6"
     "@oclif/command" "1.5.13"
-    "@oclif/config" "1.12.12"
+    "@oclif/config" "1.13.0"
     "@oclif/errors" "1.2.2"
     "@oclif/plugin-autocomplete" "0.1.0"
     "@oclif/plugin-help" "2.1.6"
     "@oclif/plugin-not-found" "1.2.2"
     "@oclif/plugin-plugins" "1.7.8"
     "@oclif/plugin-warn-if-update-available" "1.7.0"
-    apollo-codegen-core "0.33.8"
-    apollo-codegen-flow "0.33.8"
-    apollo-codegen-scala "0.34.8"
-    apollo-codegen-swift "0.33.8"
-    apollo-codegen-typescript "0.33.8"
+    apollo-codegen-core "0.33.9"
+    apollo-codegen-flow "0.33.9"
+    apollo-codegen-scala "0.34.9"
+    apollo-codegen-swift "0.33.9"
+    apollo-codegen-typescript "0.33.9"
     apollo-env "0.5.0"
     apollo-graphql "0.3.0"
-    apollo-language-server "1.8.0"
+    apollo-language-server "1.8.1"
     chalk "2.4.2"
     cli-ux "4.9.3"
     env-ci "3.2.0"
     gaze "1.1.3"
     git-parse "1.0.3"
     git-rev-sync "1.12.0"
-    glob "7.1.3"
+    glob "7.1.4"
     graphql "^14.2.1"
     graphql-tag "2.10.1"
     heroku-cli-util "8.0.11"
@@ -6730,6 +6730,17 @@ glob-parent@^3.1.0:
 glob@7.1.3, glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@~7.1.1:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@7.1.4:
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
