@@ -2,7 +2,8 @@ import React, { Component, createRef } from 'react'
 import Link from 'next/link'
 import { Mutation, withApollo } from 'react-apollo'
 import { gql } from 'apollo-boost'
-import Cookies from 'js-cookie'
+import Cookies from 'universal-cookie'
+import moment from 'moment'
 
 import redirect from '../lib/redirect'
 import checkLoggedIn from '../lib/checkLoggedIn'
@@ -55,6 +56,7 @@ class SignUp extends Component {
   render() {
     /* eslint-disable-next-line */
     const { client } = this.props
+    const cookies = new Cookies()
     return (
       <Layout>
         <Spacer top="20" bottom="20">
@@ -65,8 +67,10 @@ class SignUp extends Component {
             <Mutation
               mutation={SIGN_UP}
               onCompleted={data => {
-                Cookies.set('token', data.signUp.authenticationToken, {
-                  expires: 30
+                cookies.set('token', data.signUp.authenticationToken, {
+                  expires: moment()
+                    .add(30, 'days')
+                    .toDate()
                 })
                 client.cache.reset().then(() => {
                   redirect({}, '/')

@@ -1,10 +1,11 @@
 import { withApollo } from 'react-apollo'
-import Cookies from 'js-cookie'
+import Cookies from 'universal-cookie'
 
 import redirect from '../lib/redirect'
 
 function SignOut({ client }) {
-  Cookies.remove('token')
+  const cookies = new Cookies()
+  cookies.remove('token')
   client.cache.reset().then(() => {
     redirect({}, '/')
   })

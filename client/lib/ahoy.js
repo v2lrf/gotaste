@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie'
+import Cookies from 'universal-cookie'
 
 const isServerSide = typeof window === 'undefined'
 
@@ -6,10 +6,11 @@ const isServerSide = typeof window === 'undefined'
 let ahoy = null
 
 if (!isServerSide) {
+  const cookies = new Cookies()
   // eslint-disable-next-line global-require
   ahoy = require('ahoy.js').default
   ahoy.configure({
-    headers: { Authorization: `Bearer ${Cookies.get('token')}` },
+    headers: { Authorization: `Bearer ${cookies.get('token')}` },
     withCredentials: true
   })
 }

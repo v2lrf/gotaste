@@ -1,4 +1,5 @@
 import { gql } from 'apollo-boost'
+import Cookies from 'universal-cookie'
 
 const ADMIN_ROLE = 'ADMIN'
 const OWNER_LOGIN_ROLES = ['OWNER', ADMIN_ROLE]
@@ -8,6 +9,17 @@ export function checkAdminLogin(loggedInUser) {
     return true
   }
   return false
+}
+
+export function getAdminBusinessSlug(context) {
+  const isServerSide = typeof window === 'undefined'
+  let cookies
+  if (isServerSide) {
+    cookies = new Cookies(context.req.headers.cookie)
+  } else {
+    cookies = new Cookies()
+  }
+  return cookies.get('business_slug')
 }
 
 export function checkOwnerLogin(loggedInUser) {

@@ -6,7 +6,9 @@ import { useQuery, useMutation } from 'react-apollo-hooks'
 
 import checkLoggedIn, {
   checkOwnerLogin,
-  getOwnerSlug
+  getOwnerSlug,
+  checkAdminLogin,
+  getAdminBusinessSlug
 } from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
 
@@ -245,9 +247,15 @@ CellarProfilePage.getInitialProps = async context => {
   if (!checkOwnerLogin(loggedInUser)) {
     redirect(context, '/')
   }
+  let slug = getOwnerSlug(loggedInUser)
+
+  if (checkAdminLogin(loggedInUser)) {
+    const adminSlug = getAdminBusinessSlug(context)
+    slug = adminSlug || slug
+  }
 
   return {
-    slug: getOwnerSlug(loggedInUser)
+    slug
   }
 }
 

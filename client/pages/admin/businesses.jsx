@@ -2,6 +2,7 @@ import React from 'react'
 import { withApollo } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
+import Cookies from 'universal-cookie'
 
 import checkLoggedIn, { checkAdminLogin } from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
@@ -9,6 +10,7 @@ import redirect from '../../lib/redirect'
 import AdminLayout from '../../components/Layout/AdminLayout'
 import Container from '../../components/Container'
 import Spacer from '../../components/Spacer'
+import Button from '../../components/Button'
 
 const GET_BUSINESSESES = gql`
   query getBusinessesForAdmin {
@@ -23,33 +25,37 @@ const GET_BUSINESSESES = gql`
 
 function BusinessesPage() {
   const { data, loading } = useQuery(GET_BUSINESSESES)
-
   if (loading) return 'loading..'
 
-  const { businesses } = data
+  function impersonateBusiness(slug) {
+    const cookies = new Cookies()
+    cookies.set('business_slug', slug)
+    redirect({}, '/cellar')
+  }
 
+  const { businesses } = data
   return (
     <AdminLayout title="Forretninger | GoTaste Admin">
       <Container>
         <Spacer top="12" bottom="20">
-          <div className="bg-white border rounded shadow">
-            <table className="w-full p-5 text-grey-darker text-left">
+          <div className="bg-white rounded shadow-lg">
+            <table className="w-full p-4 text-left">
               <thead>
                 <tr>
-                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey border-b border-grey-light">
+                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey-darker border-b border-grey-light">
                     Navn
                   </th>
-                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey border-b border-grey-light">
+                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey-darker border-b border-grey-light">
                     Slug
                   </th>
-                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey border-b border-grey-light">
+                  <th className="py-4 px-6 bg-grey-lighter uppercase text-sm text-grey-darker border-b border-grey-light">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {businesses.nodes.map(business => (
-                  <tr className="hover:bg-blue-lightest">
+                  <tr className="hover:bg-grey-lightest" key={business.slug}>
                     <td className="py-4 px-6 border-b border-grey-light">
                       {business.name}
                     </td>
@@ -57,7 +63,13 @@ function BusinessesPage() {
                       {business.slug}
                     </td>
                     <td className="py-4 px-6 border-b border-grey-light">
-                      Cellar
+                      <Button
+                        type="button"
+                        kind="secondary"
+                        onClick={() => impersonateBusiness(business.slug)}
+                      >
+                        Impersonate
+                      </Button>
                     </td>
                   </tr>
                 ))}

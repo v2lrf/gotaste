@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Cookies from 'js-cookie'
+import Cookies from 'universal-cookie'
 
 import Container from '../Container'
 import Button from '../Button'
 
 function CookieWarning() {
   const [show, setShow] = useState(true)
+  const cookies = new Cookies()
 
   useEffect(() => {
     if (!show) {
-      Cookies.set('cookies_accept', true)
+      cookies.set('cookies_accept', true)
     }
   })
 
-  return Cookies.get('cookies_accept') || !show ? null : (
+  return cookies.get('cookies_accept') || !show ? null : (
     <div className="fixed pin-b bg-white border-t border-red-lightest w-full py-4">
       <Container>
         <div className="flex justify-between items-center">

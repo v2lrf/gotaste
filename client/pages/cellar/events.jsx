@@ -8,7 +8,9 @@ import moment from 'moment'
 
 import checkLoggedIn, {
   checkOwnerLogin,
-  getOwnerSlug
+  getOwnerSlug,
+  checkAdminLogin,
+  getAdminBusinessSlug
 } from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
 import { capitalizeFirstLetter } from '../../helpers/textHelpers'
@@ -92,8 +94,15 @@ CellarEventsPage.getInitialProps = async context => {
     redirect(context, '/')
   }
 
+  let slug = getOwnerSlug(loggedInUser)
+
+  if (checkAdminLogin(loggedInUser)) {
+    const adminSlug = getAdminBusinessSlug(context)
+    slug = adminSlug || slug
+  }
+
   return {
-    slug: getOwnerSlug(loggedInUser),
+    slug,
     whenEventBegins: context.query.whenEventBegins
   }
 }
