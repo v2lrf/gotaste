@@ -62,6 +62,8 @@ module Types
           description: 'Phone number of the business.',
           null:        true
 
+    field :statistics, resolver: Resolvers::Business::Statistics
+
     def area
       Loaders::RecordLoader.for(::Area).load(object.area_id)
     end

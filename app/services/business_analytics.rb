@@ -1,23 +1,35 @@
 # frozen_string_literal: true
 
 class BusinessAnalytics
-  def initialize(business:)
-    @business = business
+  BUSINESS_PAGE_VIEW = 'business_page_view'
+
+  def initialize(business_slug:, date_interval:)
+    @business_slug = business_slug
+    @date_interval = date_interval
   end
 
   def page_views
-    Ahoy::Event.where_props(page: business_path).count
+    scope
   end
 
-  def page_visitors
-    Ahoy::Event.where_props(page: business_path).distinct.pluck(:visit_id).count
+  def page_visits
+    scope.distinct.pluck(:visit_id)
   end
 
   private
 
-  attr_reader :business
+  attr_reader :business_slug, :date_interval
 
-  def business_path
-    @business_path ||= "/business/#{business.slug}"
+  def scope
+    if date_interval.present?
+      base_scope.where(time: date_interval)
+    else
+      base_scope
+    end
+  end
+
+  def base_scope
+    @base_scope ||= Ahoy::Event.where(name: BUSINESS_PAGE_VIEW)
+                               .where_props(slug: business_slug)
   end
 end
