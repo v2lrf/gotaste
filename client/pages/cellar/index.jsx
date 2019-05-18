@@ -1,7 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { gql } from 'apollo-boost'
+import { useQuery } from 'react-apollo-hooks'
 import { withApollo } from 'react-apollo'
 
-import checkLoggedIn, { checkOwnerLogin } from '../../lib/checkLoggedIn'
+import checkLoggedIn, {
+  checkOwnerLogin,
+  getOwnerSlug,
+  checkAdminLogin,
+  getAdminBusinessSlug
+} from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
 
 import CellarLayout from '../../components/Layout/CellarLayout'
@@ -11,7 +19,34 @@ import { Row, Col } from '../../components/Grid'
 import Link, { LinkGroup } from '../../components/Link'
 import Card from '../../components/Card'
 
-function CellarPage() {
+const GET_BUSINESS_STATISTICS = gql`
+  query getBusinessStatistics($slug: String!) {
+    business(slug: $slug) {
+      statistics {
+        pageViews {
+          totalCount
+        }
+        pageVisits {
+          totalCount
+        }
+      }
+    }
+  }
+`
+
+function CellarPage({ slug }) {
+  const { data, loading } = useQuery(GET_BUSINESS_STATISTICS, {
+    variables: {
+      slug
+    }
+  })
+
+  if (loading) return 'loading..'
+
+  const {
+    business: { statistics }
+  } = data
+
   return (
     <CellarLayout>
       <Container>
@@ -27,10 +62,12 @@ function CellarPage() {
           </Row>
           <Row>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Besøgende">xxx</Card>
+              <Card title="Besøgende">{statistics.pageVisits.totalCount}</Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Sidevisninger">xxx</Card>
+              <Card title="Sidevisninger">
+                {statistics.pageViews.totalCount}
+              </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
               <Card title="Interaktioner">xxx</Card>
@@ -54,11 +91,24 @@ function CellarPage() {
 
 CellarPage.getInitialProps = async context => {
   const { loggedInUser } = await checkLoggedIn(context.apolloClient)
+
   if (!checkOwnerLogin(loggedInUser)) {
     redirect(context, '/')
   }
+  let slug = getOwnerSlug(loggedInUser)
 
-  return {}
+  if (checkAdminLogin(loggedInUser)) {
+    const adminSlug = getAdminBusinessSlug(context)
+    slug = adminSlug || slug
+  }
+
+  return {
+    slug
+  }
+}
+
+CellarPage.propTypes = {
+  slug: PropTypes.string.isRequired
 }
 
 export default withApollo(CellarPage)
