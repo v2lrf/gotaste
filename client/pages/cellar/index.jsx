@@ -62,24 +62,38 @@ function CellarPage({ slug }) {
           </Row>
           <Row>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Besøgende">{statistics.pageVisits.totalCount}</Card>
-            </Col>
-            <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Sidevisninger">
-                {statistics.pageViews.totalCount}
+              <Card title="Besøgende">
+                <div className="text-4xl font-semibold b">
+                  {statistics.pageVisits.totalCount}
+                </div>
               </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Interaktioner">xxx</Card>
+              <Card title="Sidevisninger">
+                <div className="text-4xl font-semibold">
+                  {statistics.pageViews.totalCount}
+                </div>
+              </Card>
+            </Col>
+            <Col xs="full" sm="1/2" lg="1/3">
+              <Card title="Interaktioner">
+                <div className="text-4xl font-semibold">
+                  {statistics.pageViews.totalCount}
+                </div>
+              </Card>
             </Col>
           </Row>
           <Spacer vertical="12">
             <Row>
               <Col xs="full" sm="1/2">
-                <Card title="Begivenheder">xxx</Card>
+                <Card title="Begivenheder">
+                  <div className="text-4xl font-semibold">xxx</div>
+                </Card>
               </Col>
               <Col xs="full" sm="1/2">
-                <Card title="Anmeldelser">xxx</Card>
+                <Card title="Anmeldelser">
+                  <div className="text-4xl font-semibold">xxx</div>
+                </Card>
               </Col>
             </Row>
           </Spacer>

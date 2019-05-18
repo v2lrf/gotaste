@@ -3,15 +3,11 @@ import PropTypes from 'prop-types'
 
 function Card({ title, children }) {
   return (
-    <div className="bg-white rounded shadow-lg">
+    <div className="bg-white rounded shadow-lg text-center">
       <div className="flex flex-row items-center">
         <div className="flex-1">
-          {title && (
-            <h4 className="uppercase text-red-darker p-4 mb-2 border-b">
-              {title}
-            </h4>
-          )}
-          <div className="p-4 mb-4">{children}</div>
+          {title && <h4 className="p-4 uppercase text-red-light">{title}</h4>}
+          <div className="pb-4">{children}</div>
         </div>
       </div>
     </div>
