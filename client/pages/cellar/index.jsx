@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { gql } from 'apollo-boost'
 import { useQuery } from 'react-apollo-hooks'
 import { withApollo } from 'react-apollo'
+import NextLink from 'next/link'
 
 import checkLoggedIn, {
   checkOwnerLogin,
@@ -20,9 +21,9 @@ import Link, { LinkGroup } from '../../components/Link'
 import Card from '../../components/Card'
 
 const GET_BUSINESS_STATISTICS = gql`
-  query getBusinessStatistics($slug: String!) {
+  query getBusinessStatistics($slug: String!, $dateInterval: DateInterval!) {
     business(slug: $slug) {
-      statistics {
+      statistics(dateInterval: $dateInterval) {
         pageViews {
           totalCount
         }
@@ -34,10 +35,11 @@ const GET_BUSINESS_STATISTICS = gql`
   }
 `
 
-function CellarPage({ slug }) {
+function CellarPage({ slug, dateInterval }) {
   const { data, loading } = useQuery(GET_BUSINESS_STATISTICS, {
     variables: {
-      slug
+      slug,
+      dateInterval
     }
   })
 
@@ -54,9 +56,15 @@ function CellarPage({ slug }) {
           <Row>
             <Col>
               <LinkGroup label="Seneste:">
-                <Link className="mr-4">1 dag</Link>
-                <Link className="mr-4">7 dage</Link>
-                <Link>30 dage</Link>
+                <NextLink href={{ query: { dateInterval: 'TODAY' } }}>
+                  <Link className="mr-4">1 dag</Link>
+                </NextLink>
+                <NextLink href={{ query: { dateInterval: 'LAST_WEEK' } }}>
+                  <Link className="mr-4">7 dage</Link>
+                </NextLink>
+                <NextLink href={{ query: { dateInterval: 'LAST_MONTH' } }}>
+                  <Link className="mr-4">30 dage</Link>
+                </NextLink>
               </LinkGroup>
             </Col>
           </Row>
@@ -117,12 +125,18 @@ CellarPage.getInitialProps = async context => {
   }
 
   return {
-    slug
+    slug,
+    dateInterval: context.query.dateInterval
   }
 }
 
 CellarPage.propTypes = {
-  slug: PropTypes.string.isRequired
+  slug: PropTypes.string.isRequired,
+  dateInterval: PropTypes.string
+}
+
+CellarPage.defaultProps = {
+  dateInterval: 'LAST_MONTH'
 }
 
 export default withApollo(CellarPage)
