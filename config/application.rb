@@ -48,9 +48,5 @@ module Gotaste
         resource '*', headers: :any, methods: %i[get post options]
       end
     end
-
-    Raven.configure do |config|
-      config.dsn = ENV['SENTRY_DSN']
-    end
   end
 end
