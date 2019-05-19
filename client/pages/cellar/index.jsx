@@ -1,7 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { gql } from 'apollo-boost'
+import { useQuery } from 'react-apollo-hooks'
 import { withApollo } from 'react-apollo'
+import NextLink from 'next/link'
 
-import checkLoggedIn, { checkOwnerLogin } from '../../lib/checkLoggedIn'
+import checkLoggedIn, {
+  checkOwnerLogin,
+  getOwnerSlug,
+  checkAdminLogin,
+  getAdminBusinessSlug
+} from '../../lib/checkLoggedIn'
 import redirect from '../../lib/redirect'
 
 import CellarLayout from '../../components/Layout/CellarLayout'
@@ -11,7 +20,35 @@ import { Row, Col } from '../../components/Grid'
 import Link, { LinkGroup } from '../../components/Link'
 import Card from '../../components/Card'
 
-function CellarPage() {
+const GET_BUSINESS_STATISTICS = gql`
+  query getBusinessStatistics($slug: String!, $dateInterval: DateInterval!) {
+    business(slug: $slug) {
+      statistics(dateInterval: $dateInterval) {
+        pageViews {
+          totalCount
+        }
+        pageVisits {
+          totalCount
+        }
+      }
+    }
+  }
+`
+
+function CellarPage({ slug, dateInterval }) {
+  const { data, loading } = useQuery(GET_BUSINESS_STATISTICS, {
+    variables: {
+      slug,
+      dateInterval
+    }
+  })
+
+  if (loading) return 'loading..'
+
+  const {
+    business: { statistics }
+  } = data
+
   return (
     <CellarLayout>
       <Container>
@@ -19,30 +56,52 @@ function CellarPage() {
           <Row>
             <Col>
               <LinkGroup label="Seneste:">
-                <Link className="mr-4">1 dag</Link>
-                <Link className="mr-4">7 dage</Link>
-                <Link>30 dage</Link>
+                <NextLink href={{ query: { dateInterval: 'TODAY' } }}>
+                  <Link className="mr-4">1 dag</Link>
+                </NextLink>
+                <NextLink href={{ query: { dateInterval: 'LAST_WEEK' } }}>
+                  <Link className="mr-4">7 dage</Link>
+                </NextLink>
+                <NextLink href={{ query: { dateInterval: 'LAST_MONTH' } }}>
+                  <Link className="mr-4">30 dage</Link>
+                </NextLink>
               </LinkGroup>
             </Col>
           </Row>
           <Row>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Besøgende">xxx</Card>
+              <Card title="Besøgende" textCenter>
+                <div className="text-4xl font-semibold b">
+                  {statistics.pageVisits.totalCount}
+                </div>
+              </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Sidevisninger">xxx</Card>
+              <Card title="Sidevisninger" textCenter>
+                <div className="text-4xl font-semibold">
+                  {statistics.pageViews.totalCount}
+                </div>
+              </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Interaktioner">xxx</Card>
+              <Card title="Interaktioner" textCenter>
+                <div className="text-4xl font-semibold">
+                  {statistics.pageViews.totalCount}
+                </div>
+              </Card>
             </Col>
           </Row>
           <Spacer vertical="12">
             <Row>
               <Col xs="full" sm="1/2">
-                <Card title="Begivenheder">xxx</Card>
+                <Card title="Begivenheder" textCenter>
+                  <div className="text-4xl font-semibold">xxx</div>
+                </Card>
               </Col>
               <Col xs="full" sm="1/2">
-                <Card title="Anmeldelser">xxx</Card>
+                <Card title="Anmeldelser" textCenter>
+                  <div className="text-4xl font-semibold">xxx</div>
+                </Card>
               </Col>
             </Row>
           </Spacer>
@@ -54,11 +113,30 @@ function CellarPage() {
 
 CellarPage.getInitialProps = async context => {
   const { loggedInUser } = await checkLoggedIn(context.apolloClient)
+
   if (!checkOwnerLogin(loggedInUser)) {
     redirect(context, '/')
   }
+  let slug = getOwnerSlug(loggedInUser)
 
-  return {}
+  if (checkAdminLogin(loggedInUser)) {
+    const adminSlug = getAdminBusinessSlug(context)
+    slug = adminSlug || slug
+  }
+
+  return {
+    slug,
+    dateInterval: context.query.dateInterval
+  }
+}
+
+CellarPage.propTypes = {
+  slug: PropTypes.string.isRequired,
+  dateInterval: PropTypes.string
+}
+
+CellarPage.defaultProps = {
+  dateInterval: 'LAST_MONTH'
 }
 
 export default withApollo(CellarPage)

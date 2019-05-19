@@ -230,6 +230,16 @@ type Business implements Addressable & Node & Slugable {
   slug: String!
 
   """
+  Statistics for the businesses.
+  """
+  statistics(
+    """
+    Filter results on a date interval.
+    """
+    dateInterval: DateInterval
+  ): Statistics
+
+  """
   URL to the website of the business.
   """
   website: String
@@ -962,6 +972,25 @@ interface Slugable {
   A unique slug of the object.
   """
   slug: String!
+}
+
+type Statistics {
+  """
+  Page views in the given time period.
+  """
+  pageViews: StatsResult!
+
+  """
+  Page visits in the given time period.
+  """
+  pageVisits: StatsResult!
+}
+
+type StatsResult {
+  """
+  Total number of results.
+  """
+  totalCount: Int!
 }
 
 """

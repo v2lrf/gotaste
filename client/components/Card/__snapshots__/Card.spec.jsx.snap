@@ -11,12 +11,12 @@ exports[`Card Snapshots should match a snapshot with a title 1`] = `
       className="flex-1"
     >
       <h4
-        className="uppercase text-red-darker p-4 mb-2 border-b"
+        className="p-4 uppercase text-red-light"
       >
         Some title
       </h4>
       <div
-        className="p-4 mb-4"
+        className="px-4 pb-4"
       >
         Some content!
       </div>
@@ -36,7 +36,7 @@ exports[`Card Snapshots should match the default snapshot 1`] = `
       className="flex-1"
     >
       <div
-        className="p-4 mb-4"
+        className="px-4 pb-4"
       >
         Some content!
       </div>
