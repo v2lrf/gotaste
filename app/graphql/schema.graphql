@@ -465,6 +465,11 @@ type Event implements Addressable & Slugable {
   slug: String!
 
   """
+  Statistics for the event.
+  """
+  statistics: Statistics
+
+  """
   URL of where to buy a tick to the event.
   """
   url: String

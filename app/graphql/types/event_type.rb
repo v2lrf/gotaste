@@ -28,6 +28,8 @@ module Types
           description: 'Cloudinary ID of the event hero image.',
           null:        true
 
+    field :statistics, resolver: Resolvers::Event::Statistics
+
     def host
       Loaders::RecordLoader.for(::Business).load(object.host_id)
     end

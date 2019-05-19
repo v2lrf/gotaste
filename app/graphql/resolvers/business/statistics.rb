@@ -5,7 +5,7 @@ module Resolvers
     class Statistics < Resolvers::Base
       description 'Statistics for the businesses.'
 
-      type Types::Business::StatisticsType, null: true
+      type Types::StatisticsType, null: true
 
       argument :date_interval, Types::DateIntervalType,
                description: 'Filter results on a date interval.',
