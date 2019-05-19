@@ -70,21 +70,21 @@ function CellarPage({ slug, dateInterval }) {
           </Row>
           <Row>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Besøgende">
+              <Card title="Besøgende" textCenter>
                 <div className="text-4xl font-semibold b">
                   {statistics.pageVisits.totalCount}
                 </div>
               </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Sidevisninger">
+              <Card title="Sidevisninger" textCenter>
                 <div className="text-4xl font-semibold">
                   {statistics.pageViews.totalCount}
                 </div>
               </Card>
             </Col>
             <Col xs="full" sm="1/2" lg="1/3">
-              <Card title="Interaktioner">
+              <Card title="Interaktioner" textCenter>
                 <div className="text-4xl font-semibold">
                   {statistics.pageViews.totalCount}
                 </div>
@@ -94,12 +94,12 @@ function CellarPage({ slug, dateInterval }) {
           <Spacer vertical="12">
             <Row>
               <Col xs="full" sm="1/2">
-                <Card title="Begivenheder">
+                <Card title="Begivenheder" textCenter>
                   <div className="text-4xl font-semibold">xxx</div>
                 </Card>
               </Col>
               <Col xs="full" sm="1/2">
-                <Card title="Anmeldelser">
+                <Card title="Anmeldelser" textCenter>
                   <div className="text-4xl font-semibold">xxx</div>
                 </Card>
               </Col>

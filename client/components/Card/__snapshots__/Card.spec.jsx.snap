@@ -2,7 +2,7 @@
 
 exports[`Card Snapshots should match a snapshot with a title 1`] = `
 <div
-  className="bg-white rounded shadow-lg text-center"
+  className="bg-white rounded shadow-lg"
 >
   <div
     className="flex flex-row items-center"
@@ -16,7 +16,7 @@ exports[`Card Snapshots should match a snapshot with a title 1`] = `
         Some title
       </h4>
       <div
-        className="pb-4"
+        className="px-4 pb-4"
       >
         Some content!
       </div>
@@ -27,7 +27,7 @@ exports[`Card Snapshots should match a snapshot with a title 1`] = `
 
 exports[`Card Snapshots should match the default snapshot 1`] = `
 <div
-  className="bg-white rounded shadow-lg text-center"
+  className="bg-white rounded shadow-lg"
 >
   <div
     className="flex flex-row items-center"
@@ -36,7 +36,7 @@ exports[`Card Snapshots should match the default snapshot 1`] = `
       className="flex-1"
     >
       <div
-        className="pb-4"
+        className="px-4 pb-4"
       >
         Some content!
       </div>
