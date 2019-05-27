@@ -27,7 +27,7 @@ gem 'postmark-rails'
 gem 'puma', '~> 3.11'
 gem 'pundit'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.0.0.rc1'
 gem 'rails-i18n'
 gem 'rollbar'
 gem 'rubocop', require: false
