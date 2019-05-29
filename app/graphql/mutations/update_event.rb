@@ -34,7 +34,7 @@ module Mutations
       event = Event.find_by!(slug: args[:event_slug])
 
       event.update(
-        args[:attributes].merge(address_attributes: args[:address])
+        args[:attributes].to_h.merge(address_attributes: args[:address].to_h)
       )
 
       { event: event }
