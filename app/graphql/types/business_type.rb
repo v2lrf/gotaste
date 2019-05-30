@@ -64,6 +64,9 @@ module Types
 
     field :statistics, resolver: Resolvers::Business::Statistics
 
+    field :viewer_has_favourited,
+          resolver: Resolvers::Business::ViewerHasFavourited
+
     def area
       Loaders::RecordLoader.for(::Area).load(object.area_id)
     end

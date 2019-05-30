@@ -240,6 +240,11 @@ type Business implements Addressable & Node & Slugable {
   ): Statistics
 
   """
+  Returns a boolean indicating whether the viewing user has favourited the business.
+  """
+  viewerHasFavourited: Boolean!
+
+  """
   URL to the website of the business.
   """
   website: String

@@ -2,5 +2,8 @@
 
 module Resolvers
   class Base < GraphQL::Schema::Resolver
+    def current_user
+      @current_user ||= context[:current_user]
+    end
   end
 end
