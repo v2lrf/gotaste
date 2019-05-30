@@ -6,6 +6,7 @@ module Types
     field :favourite_business, mutation: Mutations::FavouriteBusiness
     field :sign_in, mutation: Mutations::SignIn
     field :sign_up, mutation: Mutations::SignUp
+    field :unfavourite_business, mutation: Mutations::UnfavouriteBusiness
     field :update_business, mutation: Mutations::UpdateBusiness
     field :update_event, mutation: Mutations::UpdateEvent
   end
