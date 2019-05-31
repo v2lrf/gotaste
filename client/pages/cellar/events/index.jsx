@@ -11,16 +11,17 @@ import checkLoggedIn, {
   getOwnerSlug,
   checkAdminLogin,
   getAdminBusinessSlug
-} from '../../lib/checkLoggedIn'
-import redirect from '../../lib/redirect'
-import { capitalizeFirstLetter } from '../../helpers/textHelpers'
+} from '../../../lib/checkLoggedIn'
+import redirect from '../../../lib/redirect'
+import { capitalizeFirstLetter } from '../../../helpers/textHelpers'
 
-import CellarLayout from '../../components/Layout/CellarLayout'
-import Container from '../../components/Container'
-import Spacer from '../../components/Spacer'
-import { Row, Col } from '../../components/Grid'
-import Link, { LinkGroup } from '../../components/Link'
-import DateDisplay from '../../components/DateDisplay'
+import CellarLayout from '../../../components/Layout/CellarLayout'
+import Container from '../../../components/Container'
+import Spacer from '../../../components/Spacer'
+import Button from '../../../components/Button'
+import Link, { LinkGroup } from '../../../components/Link'
+import DateDisplay from '../../../components/DateDisplay'
+import { Row, Col } from '../../../components/Grid'
 
 const GET_EVENTS = gql`
   query getEvents($slug: String!, $whenEventBegins: EventBeginsEnum!) {
@@ -50,11 +51,18 @@ function CellarEventsPage({ slug, whenEventBegins }) {
     }
   } = data
   return (
-    <CellarLayout>
+    <CellarLayout title="GoTaste Cellar - Begivenheder">
       <Container>
         <Spacer top="12" bottom="20">
-          <Row>
-            <Col>
+          <Row className="mb-6">
+            <Col xs="full" sm="1/2">
+              <NextLink href="/cellar/events/new">
+                <Button type="button" kind="primary">
+                  Opret ny begivenhed
+                </Button>
+              </NextLink>
+            </Col>
+            <Col xs="full" sm="1/2">
               <LinkGroup label="Begivenheder fra:">
                 <NextLink href={{ query: { whenEventBegins: 'UPCOMING' } }}>
                   <Link className="mr-4">Kommende</Link>
@@ -65,23 +73,28 @@ function CellarEventsPage({ slug, whenEventBegins }) {
               </LinkGroup>
             </Col>
           </Row>
-          {nodes.map(event => (
-            <Row key={event.slug}>
-              <Col>
-                <div className="flex items-center p-4 shadow-md rounded mb-6 hover:bg-grey-lightest hover:shadow-lg">
-                  <DateDisplay timestamp={event.beginsAt} />
-                  <div className="flex-grow ml-4">
-                    <span className="text-grey-dark text-sm">
-                      {capitalizeFirstLetter(
-                        moment(event.beginsAt).format('LLLL')
-                      )}
-                    </span>
-                    <h2 className="text-red-darker">{event.name}</h2>
-                  </div>
+          {nodes.length ? (
+            nodes.map(event => (
+              <div
+                className="flex items-center p-4 shadow-md rounded mb-6 hover:bg-grey-lightest hover:shadow-lg"
+                key={event.slug}
+              >
+                <DateDisplay timestamp={event.beginsAt} />
+                <div className="flex-grow ml-4">
+                  <span className="text-grey-dark text-sm">
+                    {capitalizeFirstLetter(
+                      moment(event.beginsAt).format('LLLL')
+                    )}
+                  </span>
+                  <h2 className="text-red-darker">{event.name}</h2>
                 </div>
-              </Col>
-            </Row>
-          ))}
+              </div>
+            ))
+          ) : (
+            <h3 className="text-red-dark text-center mt-12">
+              Der er desværre ikke nogle begivenheder endnu.
+            </h3>
+          )}
         </Spacer>
       </Container>
     </CellarLayout>

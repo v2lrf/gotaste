@@ -26,3 +26,8 @@
 .hover-scale:hover {
   transform: scale(1.05);
 }
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  display: block !important;
+}
