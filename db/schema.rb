@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_103158) do
+ActiveRecord::Schema.define(version: 2019_05_30_121414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,6 +145,16 @@ ActiveRecord::Schema.define(version: 2019_04_22_103158) do
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "business_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_favourites_on_business_id"
+    t.index ["user_id", "business_id"], name: "index_favourites_on_user_id_and_business_id", unique: true
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
   create_table "opening_hours", force: :cascade do |t|
     t.bigint "business_id"
     t.integer "day_of_week", null: false
@@ -177,5 +187,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_103158) do
   add_foreign_key "employees", "businesses"
   add_foreign_key "employees", "users"
   add_foreign_key "events", "businesses", column: "host_id"
+  add_foreign_key "favourites", "businesses"
+  add_foreign_key "favourites", "users"
   add_foreign_key "opening_hours", "businesses"
 end

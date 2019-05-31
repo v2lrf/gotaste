@@ -23,10 +23,10 @@ module GraphqlHelpers
   # Runs a block inside a BatchLoader::Executor wrapper
   def batch(max_queries: nil)
     wrapper = proc do
-      BatchLoader::Executor.ensure_current
+      GraphQL::Batch::Executor.current = GraphQL::Batch::Executor.new
       yield
     ensure
-      BatchLoader::Executor.clear_current
+      GraphQL::Batch::Executor.current = GraphQL::Batch::Executor.current
     end
 
     if max_queries
