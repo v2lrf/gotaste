@@ -62,16 +62,11 @@ GEM
     administrate-field-nested_has_many (1.1.0)
       administrate (> 0.8, < 1)
       cocoon (~> 1.2, >= 1.2.11)
-    ahoy_matey (2.2.1)
-      addressable
-      browser (~> 2.0)
+    ahoy_matey (3.0.0)
+      activesupport (>= 5)
       device_detector
       geocoder (>= 1.4.5)
-      railties (>= 4.2)
-      referer-parser (>= 0.3)
-      request_store
       safely_block (>= 0.2.1)
-      user_agent_parser
     apollo-tracing (1.6.0)
       graphql (>= 1.7.0, < 2)
     arel (9.0.0)
@@ -83,7 +78,6 @@ GEM
     bindex (0.5.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
-    browser (2.5.3)
     builder (3.2.3)
     byebug (11.0.1)
     cloudinary (1.11.1)
@@ -272,9 +266,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    referer-parser (0.3.0)
-    request_store (1.4.1)
-      rack (>= 1.4)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -352,7 +343,6 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.6.0)
-    user_agent_parser (2.5.1)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
