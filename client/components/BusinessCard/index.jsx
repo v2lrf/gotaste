@@ -5,6 +5,7 @@ import { Image } from 'cloudinary-react'
 
 import config from '../../config'
 
+import FavouriteButton from '../FavouriteButton'
 import InfoItem from '../InfoItem'
 
 function BusinessCard({ name, address, logoId, heroImageId, slug }) {
@@ -15,7 +16,7 @@ function BusinessCard({ name, address, logoId, heroImageId, slug }) {
       as={`/business/${slug}`}
     >
       <a className="inline-flex flex-col rounded shadow-lg no-underline mb-4 hover-scale">
-        <div>
+        <div className="relative">
           <Image
             cloudName={config.cloudinaryCloudName}
             publicId={heroImageId}
@@ -25,6 +26,9 @@ function BusinessCard({ name, address, logoId, heroImageId, slug }) {
             className="rounded-t"
             secure="true"
           />
+          <div className="absolute pin-t pin-r mr-4 mt-4">
+            <FavouriteButton businessSlug={slug} />
+          </div>
         </div>
         <div className="p-4">
           <InfoItem
