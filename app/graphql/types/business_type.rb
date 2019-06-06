@@ -23,7 +23,6 @@ module Types
           description: 'Events hosted by the business.',
           null:        true,
           connection:  true do
-
       argument :when_event_begins, EventBeginsEnumType,
                description: 'When the event begins.',
                required:    true
