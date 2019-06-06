@@ -29,7 +29,7 @@ module Mutations
     def resolve(**args)
       business = Business.find_by!(slug: args[:business_slug])
       business.update(
-        args[:attributes].merge(address_attributes: args[:address])
+        args[:attributes].to_h.merge(address_attributes: args[:address].to_h)
       )
 
       { business: business }
