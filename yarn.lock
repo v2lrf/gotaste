@@ -11186,9 +11186,9 @@ react-apollo@^2.5.6:
     ts-invariant "^0.4.2"
     tslib "^1.9.3"
 
-react-datepicker@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.5.0.tgz#67c68b3ffef2eb69b4400913d3cfcfef870be2b3"
+react-datepicker@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-2.7.0.tgz#5084556e997781d620b50ae953a4017cb8e3a8f2"
   dependencies:
     classnames "^2.2.5"
     date-fns "^2.0.0-alpha.23"
