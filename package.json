@@ -40,7 +40,7 @@
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.6",
     "cloudinary-core": "^2.6.3",
-    "cloudinary-react": "^1.1.0",
+    "cloudinary-react": "^1.1.1",
     "dotenv": "^8.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.14.0",
