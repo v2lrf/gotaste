@@ -4521,19 +4521,15 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
 
-cloudinary-core@^2.3.0:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.6.2.tgz#e034877e65bab554e23e5ef215f091f27630e507"
-
-cloudinary-core@^2.6.3:
+cloudinary-core@^2.6.2, cloudinary-core@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.6.3.tgz#6a5c773a8c48cbf5686dfcdd577445ab8efe8d85"
 
-cloudinary-react@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/cloudinary-react/-/cloudinary-react-1.1.0.tgz#fc31c678c26bafb46b1967563aee5dbf9d915d41"
+cloudinary-react@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cloudinary-react/-/cloudinary-react-1.1.1.tgz#95197c8a77d98a200805294ceb82e95c2dfa3792"
   dependencies:
-    cloudinary-core "^2.3.0"
+    cloudinary-core "^2.6.2"
     prop-types "^15.6.2"
 
 co@^4.6.0:
