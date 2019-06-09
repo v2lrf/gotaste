@@ -112,9 +112,7 @@ function Home() {
           <div className="flex-col-reverse md:flex-row my-24 flex mx-0 md:mx-20 lg:mx-32 mx-auto shadow-lg rounded">
             <div className="flex-1 self-center p-4 md:p-8">
               <h3 className="text-red-darker text-2xl">GoTaste?</h3>
-              <h2 className="my-4 text-red text-3xl lg:text-5xl">
-                God vin, nu = GoTaste
-              </h2>
+              <h2 className="my-4 text-red text-3xl lg:text-5xl">God vin</h2>
               <p className="leading-normal">
                 Find og følg din lokale forhandler eller bar. Eller gå på
                 opdagelse og find nye smagninger eller arrangementer.
@@ -123,7 +121,7 @@ function Home() {
             <div className="flex-1">
               <Image
                 cloudName={config.cloudinaryCloudName}
-                publicId="/GoTaste/hero_images/b35c0641c0f571d3e6fca4a0fd3ebcaa"
+                publicId="/GoTaste/landing/wine-bottles"
                 height={500}
                 width={460}
                 crop="fill"

@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :employees, dependent: :nullify
   has_many :businesses, through: :employees
+  has_many :favourites, dependent: :destroy
 
   before_save :ensure_authentication_token
 

@@ -10,6 +10,7 @@ import checkLoggedIn from '../lib/checkLoggedIn'
 
 import Layout from '../components/Layout'
 import Spacer from '../components/Spacer'
+// eslint-disable-next-line import/named
 import { Input } from '../components/Form'
 import Button from '../components/Button'
 import Alert from '../components/Alert'

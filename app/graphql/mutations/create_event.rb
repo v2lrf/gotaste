@@ -33,9 +33,8 @@ module Mutations
 
     def resolve(**args)
       business = Business.find_by!(slug: args[:business_slug])
-
       event = business.events.create(
-        args[:attributes].merge(address_attributes: args[:address])
+        args[:attributes].to_h.merge(address_attributes: args[:address].to_h)
       )
 
       { event: event }

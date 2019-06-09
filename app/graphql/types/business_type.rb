@@ -23,7 +23,6 @@ module Types
           description: 'Events hosted by the business.',
           null:        true,
           connection:  true do
-
       argument :when_event_begins, EventBeginsEnumType,
                description: 'When the event begins.',
                required:    true
@@ -63,6 +62,9 @@ module Types
           null:        true
 
     field :statistics, resolver: Resolvers::Business::Statistics
+
+    field :viewer_has_favourited,
+          resolver: Resolvers::Business::ViewerHasFavourited
 
     def area
       Loaders::RecordLoader.for(::Area).load(object.area_id)

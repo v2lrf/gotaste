@@ -25,8 +25,12 @@ function Editor({ initialState, onChange }) {
 }
 
 Editor.propTypes = {
-  initialState: PropTypes.string.isRequired,
+  initialState: PropTypes.string,
   onChange: PropTypes.func.isRequired
+}
+
+Editor.defaultProps = {
+  initialState: ''
 }
 
 export default Editor

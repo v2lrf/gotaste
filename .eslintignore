@@ -4,3 +4,4 @@ client/lib/withApollo.js
 client/components/SearchBar/index.jsx
 client/components/Editor/index.jsx
 client/components/CookieWarning/index.jsx
+client/components/Form/index.jsx
