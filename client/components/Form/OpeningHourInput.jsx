@@ -7,8 +7,8 @@ import { translateWeekDay } from '../../helpers/textHelpers'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-function OpeningHourInput({ openingHour }) {
-  const { dayOfWeek, open, close } = openingHour
+function OpeningHourInput({ openingHour, onOpeningHourChange }) {
+  const { id, dayOfWeek, open, close } = openingHour
 
   const [isOpenOnDay, setIsOpenOnDay] = useState(open && close)
 
@@ -34,6 +34,7 @@ function OpeningHourInput({ openingHour }) {
                   showTimeSelect
                   showTimeSelectOnly
                   selected={Date.parse(open)}
+                  onChange={value => onOpeningHourChange(id, value)}
                   timeIntervals={15}
                   dateFormat="HH:mm"
                   timeFormat="HH:mm"
@@ -49,6 +50,7 @@ function OpeningHourInput({ openingHour }) {
                   showTimeSelect
                   showTimeSelectOnly
                   selected={Date.parse(close)}
+                  // onChange={onChange}
                   timeIntervals={15}
                   dateFormat="HH:mm"
                   timeFormat="HH:mm"

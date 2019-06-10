@@ -61,7 +61,16 @@ function OpeningHoursPage({ slug }) {
     }
   })
 
-  if (loading) return 'loading..'
+  const [openingHoursState, setOpeningHoursState] = useState([])
+
+  useEffect(() => {
+    if (!loading) {
+      const {
+        business: { openingHours }
+      } = data
+      setOpeningHoursState(openingHours)
+    }
+  }, [data])
 
   const [updateOpeningHoursAlert, setupdateOpeningHoursAlert] = useState('')
 
@@ -72,11 +81,36 @@ function OpeningHoursPage({ slug }) {
     },
     variables: {
       slug,
-      openingHours: data.business.openingHours.map(
+      openingHours: openingHoursState.map(
         ({ dayOfWeek, __typename, ...keepAttrs }) => keepAttrs
       )
     }
   })
+
+  const handleOpeningHourChange = (selectedOpeningHourId, updatedTime) => {
+    const objIndex = openingHoursState.findIndex(
+      obj => obj.id === selectedOpeningHourId
+    )
+
+    const updatedObj = {
+      ...openingHoursState[objIndex],
+      open: updatedTime
+    }
+
+    const updatedOpeningHours = [
+      ...openingHoursState.slice(0, objIndex),
+      updatedObj,
+      ...openingHoursState.slice(objIndex + 1)
+    ]
+
+    console.log(updatedTime)
+
+    setOpeningHoursState(updatedOpeningHours)
+
+    console.log(openingHoursState)
+  }
+
+  if (loading) return 'loading..'
 
   return (
     <CellarLayout title="Åbningstider – GoTaste Cellar">
@@ -106,6 +140,7 @@ function OpeningHoursPage({ slug }) {
                     <OpeningHourInput
                       openingHour={openingHour}
                       key={openingHour.id}
+                      onOpeningHourChange={handleOpeningHourChange}
                     />
                   ))}
                 </Col>
