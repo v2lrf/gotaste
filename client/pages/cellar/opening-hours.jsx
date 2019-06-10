@@ -27,6 +27,7 @@ const GET_BUSINESS_OPENING_HOURS = gql`
   query getBusinessOpeningHours($slug: String!) {
     business(slug: $slug) {
       openingHours {
+        id
         dayOfWeek
         open
         close
@@ -65,7 +66,7 @@ function OpeningHoursPage({ slug }) {
                   {data.business.openingHours.map(openingHour => (
                     <OpeningHourInput
                       openingHour={openingHour}
-                      key={openingHour.dayOfWeek}
+                      key={openingHour.id}
                     />
                   ))}
                 </Col>
