@@ -36,6 +36,24 @@ const GET_BUSINESS_OPENING_HOURS = gql`
   }
 `
 
+const UPDATE_OPENING_HOURS = gql`
+  mutation updateOpeningHours(
+    $slug: String!
+    $openingHours: [OpeningHourInput!]!
+  ) {
+    updateOpeningHours(
+      input: { businessSlug: $slug, openingHours: $openingHours }
+    ) {
+      openingHours {
+        id
+        dayOfWeek
+        open
+        close
+      }
+    }
+  }
+`
+
 function OpeningHoursPage({ slug }) {
   const { data, loading, refetch } = useQuery(GET_BUSINESS_OPENING_HOURS, {
     variables: {
@@ -45,8 +63,28 @@ function OpeningHoursPage({ slug }) {
 
   if (loading) return 'loading..'
 
+  const [updateOpeningHoursAlert, setupdateOpeningHoursAlert] = useState('')
+
+  const updateOpeningHours = useMutation(UPDATE_OPENING_HOURS, {
+    update: () => {
+      setupdateOpeningHoursAlert('Åbningtider opdateret!')
+      refetch()
+    },
+    variables: {
+      slug,
+      openingHours: data.business.openingHours.map(
+        ({ dayOfWeek, __typename, ...keepAttrs }) => keepAttrs
+      )
+    }
+  })
+
   return (
     <CellarLayout title="Åbningstider – GoTaste Cellar">
+      {updateOpeningHoursAlert && (
+        <Alert fixed kind="info">
+          {updateOpeningHoursAlert}
+        </Alert>
+      )}
       <Container>
         <Spacer top="12" bottom="20">
           <Card title="Opdater åbningstider">
@@ -54,6 +92,7 @@ function OpeningHoursPage({ slug }) {
               onSubmit={e => {
                 e.preventDefault()
                 e.stopPropagation()
+                updateOpeningHours()
               }}
             >
               <Row className="border-b mb-6 pb-4">
