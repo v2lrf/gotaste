@@ -23,6 +23,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/pro-light-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@graphql-inspector/cli": "^1.18.1",
     "@storybook/react": "^3.4.12",

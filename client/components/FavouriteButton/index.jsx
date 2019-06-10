@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { gql } from 'apollo-boost'
 import { useQuery, useMutation } from 'react-apollo-hooks'
 import { faHeart } from '@fortawesome/pro-light-svg-icons'
+import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import ahoy from '../../lib/ahoy'
@@ -68,20 +70,33 @@ function FavouriteButton({ businessSlug }) {
     <div>
       {isFavoruite ? (
         <FontAwesomeIcon
-          icon={faHeart}
+          icon={faSolidHeart}
           className="text-red text-2xl hover-scale-xl"
-          onClick={unfavouriteBusiness}
+          onClick={e => {
+            e.preventDefault()
+            e.stopPropagation()
+            unfavouriteBusiness()
+          }}
           title="Fjern fra favoritter"
         />
       ) : (
         <FontAwesomeIcon
           icon={faHeart}
           className="text-white text-2xl hover-scale-xl"
-          onClick={favouriteBusiness}
+          onClick={e => {
+            e.preventDefault()
+            e.stopPropagation()
+            favouriteBusiness()
+          }}
           title="Tilføj til favoritter"
         />
       )}
     </div>
   )
 }
+
+FavouriteButton.propTypes = {
+  businessSlug: PropTypes.string.isRequired
+}
+
 export default FavouriteButton
