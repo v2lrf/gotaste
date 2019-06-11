@@ -23,7 +23,7 @@ const ADD_FAVOURITE = gql`
 `
 
 const REMOVE_FAVOURITE = gql`
-  mutation favouriteBusiness($businessSlug: String!) {
+  mutation unfavouriteBusiness($businessSlug: String!) {
     unfavouriteBusiness(input: { businessSlug: $businessSlug }) {
       success
     }
@@ -59,12 +59,12 @@ function FavouriteButton({ businessSlug }) {
     return <FontAwesomeIcon icon={faHeart} className="text-black text-2xl" />
 
   const {
-    business: { viewerHasFavourited: isFavoruite }
+    business: { viewerHasFavourited: isFavourite }
   } = data
 
   return (
     <div>
-      {isFavoruite ? (
+      {isFavourite ? (
         <FontAwesomeIcon
           icon={faSolidHeart}
           className="text-red text-2xl hover-scale-xl"
