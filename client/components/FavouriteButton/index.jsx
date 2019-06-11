@@ -6,8 +6,6 @@ import { faHeart } from '@fortawesome/pro-light-svg-icons'
 import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import ahoy from '../../lib/ahoy'
-
 const IS_BUSINESS_FAVOURITED = gql`
   query isBusinessFavoruited($slug: String!) {
     business(slug: $slug) {
@@ -41,7 +39,6 @@ function FavouriteButton({ businessSlug }) {
 
   const favouriteBusiness = useMutation(ADD_FAVOURITE, {
     update: () => {
-      ahoy.track('favourite_business', { slug: businessSlug })
       refetch()
     },
     variables: {
@@ -51,7 +48,6 @@ function FavouriteButton({ businessSlug }) {
 
   const unfavouriteBusiness = useMutation(REMOVE_FAVOURITE, {
     update: () => {
-      ahoy.track('unfavourite_business', { slug: businessSlug })
       refetch()
     },
     variables: {
