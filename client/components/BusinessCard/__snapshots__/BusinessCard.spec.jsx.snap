@@ -15,7 +15,9 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
   <a
     className="inline-flex flex-col rounded shadow-lg no-underline mb-4 hover-scale"
   >
-    <div>
+    <div
+      className="relative"
+    >
       <Image
         className="rounded-t"
         cloudName="dkrjpli3y"
@@ -25,6 +27,13 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
         secure="true"
         width={600}
       />
+      <div
+        className="absolute pin-t pin-r mr-4 mt-4"
+      >
+        <FavouriteButton
+          businessSlug="some-path"
+        />
+      </div>
     </div>
     <div
       className="p-4"

@@ -27,6 +27,14 @@
   transform: scale(1.05);
 }
 
+.hover-scale-xl {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale-xl:hover {
+  transform: scale(1.2);
+}
+
 .react-datepicker-wrapper,
 .react-datepicker__input-container {
   display: block !important;
