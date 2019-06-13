@@ -18,7 +18,8 @@ import Spacer from '../../components/Spacer'
 import { Row, Col } from '../../components/Grid'
 import Card from '../../components/Card'
 
-import OpeningHourInput from '../../components/Form/OpeningHourInput'
+// eslint-disable-next-line import/named
+import { OpeningHourInput } from '../../components/Form'
 
 import Button from '../../components/Button'
 import Alert from '../../components/Alert'
@@ -136,7 +137,7 @@ function OpeningHoursPage({ slug }) {
                   </span>
                 </Col>
                 <Col xs="full" md="2/3">
-                  {data.business.openingHours.map(openingHour => (
+                  {openingHoursState.map(openingHour => (
                     <OpeningHourInput
                       openingHour={openingHour}
                       key={openingHour.id}

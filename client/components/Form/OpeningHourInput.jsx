@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
+import moment from 'moment'
 
 import { Row, Col } from '../Grid'
 import { translateWeekDay } from '../../helpers/textHelpers'
@@ -34,7 +35,7 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
                   showTimeSelect
                   showTimeSelectOnly
                   selected={Date.parse(open)}
-                  onChange={value => onOpeningHourChange(id, value)}
+                  onChange={value => onOpeningHourChange(id, value.toString())}
                   timeIntervals={15}
                   dateFormat="HH:mm"
                   timeFormat="HH:mm"
