@@ -9,5 +9,6 @@ module Types
     field :unfavourite_business, mutation: Mutations::UnfavouriteBusiness
     field :update_business, mutation: Mutations::UpdateBusiness
     field :update_event, mutation: Mutations::UpdateEvent
+    field :update_opening_hours, mutation: Mutations::UpdateOpeningHours
   end
 end

@@ -15,6 +15,12 @@ export const DateTimeInput = dynamic({
   ssr: false
 })
 
+export const OpeningHourInput = dynamic({
+  loader: () => import('./OpeningHourInput'),
+  loading: () => <GhostCard height={50} />,
+  ssr: false
+})
+
 export { default as Input } from './Input'
 export { default as Checkbox } from './Checkbox'
 
