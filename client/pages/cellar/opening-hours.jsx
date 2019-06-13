@@ -88,14 +88,15 @@ function OpeningHoursPage({ slug }) {
     }
   })
 
-  const handleOpeningHourChange = (selectedOpeningHourId, updatedTime) => {
+  const handleOpeningHourChange = (selectedOpeningHourId, open, close) => {
     const objIndex = openingHoursState.findIndex(
       obj => obj.id === selectedOpeningHourId
     )
 
     const updatedObj = {
       ...openingHoursState[objIndex],
-      open: updatedTime
+      open,
+      close
     }
 
     const updatedOpeningHours = [
@@ -104,11 +105,7 @@ function OpeningHoursPage({ slug }) {
       ...openingHoursState.slice(objIndex + 1)
     ]
 
-    console.log(updatedTime)
-
     setOpeningHoursState(updatedOpeningHours)
-
-    console.log(openingHoursState)
   }
 
   if (loading) return 'loading..'

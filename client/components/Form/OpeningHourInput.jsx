@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
-import moment from 'moment'
 
 import { Row, Col } from '../Grid'
 import { translateWeekDay } from '../../helpers/textHelpers'
@@ -12,6 +11,12 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
   const { id, dayOfWeek, open, close } = openingHour
 
   const [isOpenOnDay, setIsOpenOnDay] = useState(open && close)
+
+  useEffect(() => {
+    if (!isOpenOnDay) {
+      onOpeningHourChange(id, '', '')
+    }
+  }, [isOpenOnDay])
 
   return (
     <div className=" mb-6 pb-4">
@@ -35,7 +40,9 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
                   showTimeSelect
                   showTimeSelectOnly
                   selected={Date.parse(open)}
-                  onChange={value => onOpeningHourChange(id, value.toString())}
+                  onChange={value =>
+                    onOpeningHourChange(id, value.toString(), close)
+                  }
                   timeIntervals={15}
                   dateFormat="HH:mm"
                   timeFormat="HH:mm"
@@ -51,7 +58,9 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
                   showTimeSelect
                   showTimeSelectOnly
                   selected={Date.parse(close)}
-                  // onChange={onChange}
+                  onChange={value =>
+                    onOpeningHourChange(id, open, value.toString())
+                  }
                   timeIntervals={15}
                   dateFormat="HH:mm"
                   timeFormat="HH:mm"
@@ -74,7 +83,8 @@ OpeningHourInput.propTypes = {
     dayOfWeek: PropTypes.string,
     open: PropTypes.string,
     close: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  onOpeningHourChange: PropTypes.func.isRequired
 }
 
 export default OpeningHourInput
