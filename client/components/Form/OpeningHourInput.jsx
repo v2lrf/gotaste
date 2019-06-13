@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import DatePicker from 'react-datepicker'
 
-import { Row, Col } from '../Grid'
 import { translateWeekDay } from '../../helpers/textHelpers'
 
 import 'react-datepicker/dist/react-datepicker.css'
@@ -34,7 +33,10 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
         {isOpenOnDay ? (
           <div className="flex">
             <div className="pr-4">
-              <label className="text-grey-dark uppercase">
+              <div
+                className="text-grey-dark uppercase"
+                htmlFor={`openingHour${id}`}
+              >
                 Åbningstid:
                 <DatePicker
                   showTimeSelect
@@ -48,11 +50,12 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
                   timeFormat="HH:mm"
                   timeCaption="Åben"
                   className="rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
+                  id={`openingHour${id}`}
                 />
-              </label>
+              </div>
             </div>
             <div>
-              <label className="text-grey-dark uppercase">
+              <div className="text-grey-dark uppercase">
                 Lukketid:
                 <DatePicker
                   showTimeSelect
@@ -67,7 +70,7 @@ function OpeningHourInput({ openingHour, onOpeningHourChange }) {
                   timeCaption="Luk"
                   className="rounded w-full mt-1 py-2 px-3 border focus:outline-none focus:shadow-outline"
                 />
-              </label>
+              </div>
             </div>
           </div>
         ) : (
