@@ -19,6 +19,7 @@ import {
   formatOpeningHours,
   translateWeekDay
 } from '../helpers/textHelpers'
+import businessStructuredData from '../helpers/businessStructuredData'
 
 import BusinessInfoFields from '../fragments/BusinessInfoFields'
 import EventInfoFields from '../fragments/EventInfoFields'
@@ -78,6 +79,7 @@ function BusinessPage({ slug }) {
 
   if (loading) return <BusinessPageLoader />
   const {
+    business,
     business: {
       logoId,
       name,
@@ -243,6 +245,9 @@ function BusinessPage({ slug }) {
           </a>
         </div>
       </Container>
+      <script type="application/ld+json">
+        {businessStructuredData(business)}
+      </script>
     </Layout>
   )
 }
