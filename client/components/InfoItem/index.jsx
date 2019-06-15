@@ -1,18 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { Image } from 'cloudinary-react'
 
-import config from '../../config'
-
-function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
-  const figureClasses = classnames(
-    'flex flex-no-shrink self-start bg-white shadow rounded-full',
-    {
-      'mr-2 w-12 h-12': !large,
-      'mr-4 w-16 h-16': large
-    }
-  )
   const headlineClasses = classnames('text-black font-bold', {
     'text-base': !large,
     'text-xl': large
@@ -23,37 +12,17 @@ function InfoItem({ imageSrc, imageAlt, headline, tagline, large }) {
   })
 
   return (
-    <div className="flex items-center">
-      <figure className={figureClasses}>
-        <Image
-          cloudName={config.cloudinaryCloudName}
-          publicId={imageSrc}
-          width="200"
-          crop="scale"
-          className="rounded-full"
-          alt={imageAlt}
-          secure="true"
-        />
-      </figure>
-      <div className="flex-grow">
-        <div className={headlineClasses}>{headline}</div>
-        <div className={taglineClasses}>{tagline}</div>
-      </div>
     </div>
   )
 }
 
 InfoItem.propTypes = {
-  imageSrc: PropTypes.string,
-  imageAlt: PropTypes.string,
   headline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   tagline: PropTypes.string.isRequired,
   large: PropTypes.bool
 }
 
 InfoItem.defaultProps = {
-  imageSrc: null,
-  imageAlt: '',
   large: false
 }
 

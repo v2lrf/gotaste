@@ -8,7 +8,7 @@ import config from '../../config'
 import FavouriteButton from '../FavouriteButton'
 import InfoItem from '../InfoItem'
 
-function BusinessCard({ name, address, logoId, heroImageId, slug }) {
+function BusinessCard({ name, address, heroImageId, slug, businessType }) {
   const { streetName, streetNumber, postalCode, city } = address
   return (
     <Link
@@ -32,7 +32,6 @@ function BusinessCard({ name, address, logoId, heroImageId, slug }) {
         </div>
         <div className="p-4">
           <InfoItem
-            imageSrc={logoId}
             headline={name}
             tagline={`${streetName} ${streetNumber}, ${postalCode} ${city}`}
           />
@@ -50,7 +49,6 @@ BusinessCard.propTypes = {
     postalCode: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired
   }).isRequired,
-  logoId: PropTypes.string.isRequired,
   heroImageId: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired
 }
