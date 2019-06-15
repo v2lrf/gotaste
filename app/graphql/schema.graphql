@@ -668,7 +668,7 @@ type OpeningHour {
   """
   The time of the day the business close.
   """
-  close: String
+  close: ISO8601DateTime
 
   """
   Name of the day.
@@ -683,7 +683,7 @@ type OpeningHour {
   """
   The time of the day the business opens.
   """
-  open: String
+  open: ISO8601DateTime
 }
 
 """
