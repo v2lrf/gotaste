@@ -7,8 +7,9 @@ import config from '../../config'
 
 import FavouriteButton from '../FavouriteButton'
 import InfoItem from '../InfoItem'
+import { translateBusinessType } from '../../helpers/textHelpers'
 
-function BusinessCard({ name, address, logoId, heroImageId, slug }) {
+function BusinessCard({ name, address, heroImageId, slug, businessType }) {
   const { streetName, streetNumber, postalCode, city } = address
   return (
     <Link
@@ -30,12 +31,20 @@ function BusinessCard({ name, address, logoId, heroImageId, slug }) {
             <FavouriteButton businessSlug={slug} />
           </div>
         </div>
-        <div className="p-4">
+        <div className="p-4 border-b border-dotted">
           <InfoItem
-            imageSrc={logoId}
             headline={name}
             tagline={`${streetName} ${streetNumber}, ${postalCode} ${city}`}
+            businessType={businessType}
           />
+        </div>
+
+        <div className="px-4 py-2 text-grey-darker text-xs">
+          <Link href={`/businesses?type=${businessType}`}>
+            <a className="text-grey-darker no-underline hover:text-grey-darkest">
+              {translateBusinessType(businessType)}
+            </a>
+          </Link>
         </div>
       </a>
     </Link>
@@ -50,8 +59,8 @@ BusinessCard.propTypes = {
     postalCode: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired
   }).isRequired,
-  logoId: PropTypes.string.isRequired,
   heroImageId: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired
+  slug: PropTypes.string.isRequired,
+  businessType: PropTypes.string.isRequired
 }
 export default BusinessCard

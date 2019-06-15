@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost'
 const BusinessInfoFields = gql`
   fragment BusinessInfoFields on Business {
     id
+    businessType
     name
     slug
     address {
