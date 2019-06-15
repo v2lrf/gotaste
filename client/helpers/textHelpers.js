@@ -41,4 +41,16 @@ export function formatOpeningHours(open, close) {
   return `${moment(open).format('HH:mm')} - ${moment(close).format('HH:mm')}`
 }
 
+export function translateBusinessType(type) {
+  if (type === 'SHOP') {
+    return 'Vinhandler'
+  }
+
+  if (type === 'BAR') {
+    return 'Bar'
+  }
+
+  return null
+}
+
 export default this

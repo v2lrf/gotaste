@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+function InfoItem({ headline, tagline, large }) {
   const headlineClasses = classnames('text-black font-bold', {
     'text-base': !large,
     'text-xl': large
@@ -12,6 +13,9 @@ import classnames from 'classnames'
   })
 
   return (
+    <div className="">
+      <div className={headlineClasses}>{headline}</div>
+      <div className={taglineClasses}>{tagline}</div>
     </div>
   )
 }
