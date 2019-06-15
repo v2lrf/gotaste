@@ -48,7 +48,6 @@ exports[`EventCard Snapshots should match the snapshot 1`] = `
       </h2>
       <InfoItem
         headline="Erik Sørensen Vin"
-        imageAlt=""
         imageSrc="GoTaste/logos/Wh1V3cNhbCPrv3ZLXcxcgyWJ"
         large={false}
         tagline="Store Kongensgade 124, 1264 København K"

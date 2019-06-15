@@ -36,15 +36,24 @@ exports[`BusinessCard Snapshots should match the snapshot 1`] = `
       </div>
     </div>
     <div
-      className="p-4"
+      className="p-4 border-b border-dotted"
     >
       <InfoItem
         headline="Fine Wines"
-        imageAlt=""
-        imageSrc="logoId"
         large={false}
         tagline="Fake Street 123, 6660 New Awesome"
       />
+    </div>
+    <div
+      className="px-4 py-2 text-grey-darker text-xs"
+    >
+      <Link
+        href="/businesses?type=undefined"
+      >
+        <a
+          className="text-grey-darker no-underline hover:text-grey-darkest"
+        />
+      </Link>
     </div>
   </a>
 </Link>
