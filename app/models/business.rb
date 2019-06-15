@@ -46,6 +46,6 @@ class Business < ApplicationRecord
   def open_now?
     opening_hours
       .where(day_of_week: Time.zone.now.wday)
-      .where('? BETWEEN open AND close', Time.zone.now).any?
+      .where('? BETWEEN open AND close', Time.zone.now + 1.hour).any?
   end
 end
