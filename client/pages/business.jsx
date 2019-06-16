@@ -17,7 +17,8 @@ import {
   displayPhoneNumber,
   displayURL,
   formatOpeningHours,
-  translateWeekDay
+  translateWeekDay,
+  translateBusinessType
 } from '../helpers/textHelpers'
 import businessStructuredData from '../helpers/businessStructuredData'
 
@@ -92,7 +93,8 @@ function BusinessPage({ slug }) {
       area: { name: areaName },
       events: { nodes: eventNodes },
       openingHours,
-      isOpenNow
+      isOpenNow,
+      businessType
     }
   } = data
 
@@ -109,34 +111,31 @@ function BusinessPage({ slug }) {
         address.city
       ]}
     >
-      <Image
-        cloudName={config.cloudinaryCloudName}
-        publicId={heroImageId}
-        height={500}
-        width={1200}
-        crop="fill"
-        className="block container mx-auto rounded-none lg:rounded shadow-lg"
-        secure="true"
-        alt={name}
-      />
-      <Container>
-        <div className="flex items-center py-2 mt-4">
-          <figure className="mr-2 w-16 h-16">
-            <Image
-              cloudName={config.cloudinaryCloudName}
-              publicId={logoId}
-              width="200"
-              height="200"
-              crop="scale"
-              className="rounded-full"
-              alt={`${name} logo`}
-              secure="true"
-            />
-          </figure>
-          <div className="flex-grow ml-2">
-            <h1 className="text-2xl sm:text-4xl text-red-dark">{name}</h1>
+      <div className="relative">
+        <Image
+          cloudName={config.cloudinaryCloudName}
+          publicId={heroImageId}
+          height={500}
+          width={1200}
+          crop="fill"
+          className="block container mx-auto rounded-none shadow-lg"
+          secure="true"
+          alt={name}
+        />
+
+        <div className="absolute pin-b pin-l ml-8 mb-20 text-white">
+          <div>
+            <div className="mb-6 pb-1 text-5xl font-bold border-b-2 border-red-light tracking-wide">
+              {name}
+            </div>
+            <div className=" py-2 px-3 bg-black rounded font-semibold text-xs uppercase">
+              {translateBusinessType(businessType)}
+            </div>
           </div>
         </div>
+      </div>
+      <div className="p-8 mx-8 bg-white border rounded-lg text-2xl">Hej</div>
+      <Container>
         <SimpleItem icon={faMapMarkerAlt}>
           {`${address.streetName} ${address.streetNumber}, ${
             address.postalCode
