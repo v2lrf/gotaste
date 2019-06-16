@@ -123,7 +123,10 @@ function BusinessPage({ slug }) {
           />
         </div>
 
-        <div className="relative px-4 -mt-16">
+        <div className="relative px-4 -mt-32">
+          <div className="p-4">
+            <h1 className="font-semibold text-3xl text-white">{name}</h1>
+          </div>
           <div className="bg-white rounded-lg p-4 shadow-lg">
             <div className="flex">
               <span className="inline-block px-2 py-1 leading-none bg-red-lightest text-grey-darkest font-semibold rounded-lg">
@@ -134,16 +137,24 @@ function BusinessPage({ slug }) {
                 {isOpenNow && 'Åben nu'}
               </div>
             </div>
-            <h1 className="my-3 font-semibold text-3xl text-red">{name}</h1>
-            <h2 className="my-3 text-xl font-normal">{shortDescription}</h2>
-            <div className="flex">
-              <span className="inline-block border rounded p-2 hover:bg-grey-lightest">
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  className="text-black text-2xl"
-                />
-              </span>
-            </div>
+            <Row>
+              <Col xs="1/1" sm="4/5">
+                <h2 className="my-3 text-xl font-normal max-w-md">
+                  {shortDescription}
+                </h2>
+              </Col>
+
+              <Col xs="1/1" sm="1/5">
+                <div className="">
+                  <span className="inline-block border rounded p-2 hover:bg-grey-lightest">
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                      className="text-black text-2xl"
+                    />
+                  </span>
+                </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </div>
@@ -153,7 +164,10 @@ function BusinessPage({ slug }) {
           <div className="sm:py-8 leading-loose">
             <Row>
               <Col xs="1/1" sm="4/5">
-                <ReactMarkdown source={description} className="rich-text" />
+                <ReactMarkdown
+                  source={description}
+                  className="rich-text max-w-md"
+                />
               </Col>
 
               <Col xs="1/1" sm="1/5">
