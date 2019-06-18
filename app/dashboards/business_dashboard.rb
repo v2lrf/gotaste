@@ -17,10 +17,6 @@ class BusinessDashboard < Administrate::BaseDashboard
     area:              Field::BelongsTo,
     events:            Field::HasMany,
     employees:         Field::HasMany,
-    opening_hours:     Field::NestedHasMany.with_options(
-      skip:  :business,
-      limit: 7
-    ),
     id:                Field::Number,
     name:              Field::String,
     website:           Field::String,
@@ -64,7 +60,6 @@ class BusinessDashboard < Administrate::BaseDashboard
     updated_at
     description
     address
-    opening_hours
     events
     employees
   ].freeze
@@ -83,7 +78,6 @@ class BusinessDashboard < Administrate::BaseDashboard
     description
     short_description
     address
-    opening_hours
     employees
   ].freeze
 
