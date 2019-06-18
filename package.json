@@ -25,7 +25,6 @@
     "@fortawesome/pro-light-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@graphql-inspector/cli": "^1.18.1",
     "@storybook/react": "^3.4.12",
     "@zeit/next-css": "1.0.2-canary.2",
     "ahoy.js": "^0.3.4",
